@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KGS HR Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>/* GitHub / own hosting: read the database URL from config.js (not needed inside Google Apps Script) */
-if(!(window.google&&google.script)&&location.protocol.indexOf('http')===0)document.write('<script src="config.js"><\/script>');</script>
+<script>/* Database: Google Sheet KGS_HR_Training_DB via Apps Script Web App (R1.7 deployment) */
+window.KGS_API_URL='https://script.google.com/macros/s/AKfycbxByYpkAPPZvDJ6i_iMaOOOq74Iwt9n7YtWVIRRHBOYwzNWMe16IFGh95ANmB6cqaPg/exec';</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -129,7 +129,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 :root[data-theme=light] .b-NotCompleted,:root[data-theme=light] .b-No,:root[data-theme=light] .b-Absent,:root[data-theme=light] .b-error{color:#b91c1c}
 :root[data-theme=light] .b-Cancelled,:root[data-theme=light] .b-same{color:#64748b}:root[data-theme=light] .b-Postponed{color:#7e22ce}
 .muted{color:var(--muted)}.small{font-size:12px}
-.warn{color:var(--warn)}.err{color:var(--danger)}
+.warn{color:var(--warn)}.err{color:var(--danger)}.ok-t{color:var(--ok,#16a34a);font-weight:600}
 .note{background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:10px 13px;font-size:13px;margin-bottom:12px}
 .note.info{background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.35)}
 /* forms */
@@ -452,6 +452,10 @@ en:{
  inserted:'Inserted',updated:'Updated',unchanged:'Unchanged',skippedN:'Skipped',errorsN:'Errors',downloadIssues:'Download issue list',
  exportData:'Export data',exportEmployees:'Employees',exportActivities:'Activities',exportParticipants:'Participants & attendance',exportReview:'Duplicate review records',
  rows:'rows',differences:'differences',nav_admin:'Administration',sub_admin:'Organisation, users, security, audit log and backup',
+ cn_title:'Connect to Google Sheet',cn_help:'Paste the Web app URL from Apps Script (Deploy → Manage deployments). It ends with /exec.',cn_url:'Web app URL (ends with /exec)',cn_test:'Test connection',cn_save:'Save',cn_reset:'Use default URL',cn_testing:'Testing…',cn_ok:'Connected',cn_saved:'Connection saved',
+ cn_badUrl:'This is not an Apps Script Web app URL (https://script.google.com/macros/s/…/exec).',cn_noReach:'Cannot reach this URL. Check the internet, and that Who has access = Anyone.',cn_notApp:'The URL answered, but it is not the KGS HR Training script (check Code.gs and the deployment).',
+ cn_where:'Data is saved in the Google Sheet KGS_HR_Training_DB. No token is needed: each person signs in with their own username.',cn_card:'Google Sheet — database connection',cn_cardNote:'All data is read from and saved straight to the Google Sheet. The default URL is built into index.html, so every computer and phone connects automatically.',
+ cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
  ad_logoHint:'PNG, JPG, WEBP or SVG, up to 5 MB. A square logo on a transparent or white background looks best. It is resized to 256 px automatically.',
@@ -560,6 +564,10 @@ lo:{
  inserted:'ເພີ່ມໃໝ່',updated:'ອັບເດດ',unchanged:'ບໍ່ປ່ຽນ',skippedN:'ຂ້າມ',errorsN:'ຜິດພາດ',downloadIssues:'ດາວໂຫຼດລາຍການບັນຫາ',
  exportData:'ສົ່ງອອກຂໍ້ມູນ',exportEmployees:'ພະນັກງານ',exportActivities:'ກິດຈະກຳ',exportParticipants:'ຜູ້ເຂົ້າຮ່ວມ & ການເຂົ້າຮ່ວມ',exportReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
  rows:'ແຖວ',differences:'ຈຸດຕ່າງ',nav_admin:'ບໍລິຫານລະບົບ',sub_admin:'ອົງກອນ, ຜູ້ໃຊ້, ຄວາມປອດໄພ, ບັນທຶກການປ່ຽນແປງ ແລະ ສຳຮອງຂໍ້ມູນ',
+ cn_title:'ເຊື່ອມຕໍ່ Google Sheet',cn_help:'ວາງ Web app URL ຈາກ Apps Script (Deploy → Manage deployments). ລົງທ້າຍດ້ວຍ /exec.',cn_url:'Web app URL (ລົງທ້າຍ /exec)',cn_test:'ທົດສອບເຊື່ອມຕໍ່',cn_save:'ບັນທຶກ',cn_reset:'ໃຊ້ URL ຫຼັກ',cn_testing:'ກຳລັງທົດສອບ…',cn_ok:'ເຊື່ອມຕໍ່ສຳເລັດ',cn_saved:'ບັນທຶກການເຊື່ອມຕໍ່ແລ້ວ',
+ cn_badUrl:'ນີ້ບໍ່ແມ່ນ Web app URL ຂອງ Apps Script (https://script.google.com/macros/s/…/exec).',cn_noReach:'ເຂົ້າ URL ນີ້ບໍ່ໄດ້. ກວດອິນເຕີເນັດ ແລະ Who has access = Anyone.',cn_notApp:'URL ຕອບກັບ ແຕ່ບໍ່ແມ່ນສະຄຣິບ KGS HR Training (ກວດ Code.gs ແລະ deployment).',
+ cn_where:'ຂໍ້ມູນຖືກບັນທຶກໃນ Google Sheet KGS_HR_Training_DB. ບໍ່ຕ້ອງໃຊ້ Token: ແຕ່ລະຄົນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ຂອງຕົນ.',cn_card:'Google Sheet — ການເຊື່ອມຕໍ່ຖານຂໍ້ມູນ',cn_cardNote:'ຂໍ້ມູນທັງໝົດອ່ານ ແລະ ບັນທຶກລົງ Google Sheet ໂດຍກົງ. URL ຫຼັກຝັງໄວ້ໃນ index.html ແລ້ວ, ທຸກຄອມ ແລະ ໂທລະສັບເຊື່ອມຕໍ່ອັດຕະໂນມັດ.',
+ cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
  ad_logoHint:'PNG, JPG, WEBP ຫຼື SVG, ບໍ່ເກີນ 5 MB. ໂລໂກ້ຮູບສີ່ຫຼ່ຽມຈະຕຸລັດ ພື້ນໂປ່ງໃສ ຫຼື ພື້ນຂາວ ຈະງາມທີ່ສຸດ. ລະບົບຫຍໍ້ເປັນ 256 px ໃຫ້ເອງ.',
@@ -761,7 +769,15 @@ let loadingN=0;function loading(on){loadingN+=on?1:-1;if(loadingN<0)loadingN=0;$
 /* Server connection: inside Google Apps Script -> google.script.run;
    page hosted elsewhere (GitHub Pages) -> POST to the Apps Script Web App URL set in config.js (window.KGS_API_URL). */
 const hasGas=()=>!!(window.google&&google.script&&google.script.run);
-const apiUrl=()=>{const u=String(window.KGS_API_URL||'').trim();return /^https:\/\/script\.google(usercontent)?\.com\/.+/.test(u)?u:'';};
+const okUrl=u=>{u=String(u||'').trim();return /^https:\/\/script\.google(usercontent)?\.com\/.+\/exec$/.test(u)?u:'';};
+const urlOverride=()=>{try{return okUrl(localStorage.getItem('kgs_api_url'));}catch(e){return '';}};
+const apiUrl=()=>urlOverride()||okUrl(window.KGS_API_URL);
+/* test a Web App URL: POST 'status' and expect this app's answer */
+function testApiUrl(u){u=okUrl(u);if(!u)return Promise.reject({message:t('cn_badUrl')});
+  return fetch(u,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'status',token:'',payload:{}})})
+   .then(r=>{if(!r.ok)throw {message:'HTTP '+r.status};return r.json();},()=>{throw {message:t('cn_noReach')};})
+   .then(r=>{if(!r||!r.ok||!r.data||!r.data.version)throw {message:t('cn_notApp')};return r.data;},e=>{throw (e&&e.message)?e:{message:t('cn_notApp')};});}
+function saveApiUrl(u){try{if(u&&u!==okUrl(window.KGS_API_URL))localStorage.setItem('kgs_api_url',u);else localStorage.removeItem('kgs_api_url');}catch(e){}}
 const apiMode=()=>!hasGas()&&!!apiUrl();
 function transport(action,payload){
   if(hasGas())return new Promise((res,rej)=>google.script.run.withSuccessHandler(res).withFailureHandler(e=>rej({message:e&&e.message?e.message:String(e)})).api(action,S.token,payload||{}));
@@ -830,9 +846,26 @@ async function start(){
   if(S.pub){renderCheckinPublic(S.pub);return;}
   if(S.token){try{await loadAll();return;}catch(e){if(e&&e.error==='MUST_CHANGE')return;S.token=null;}}
   let st;
-  try{st=await call('status');}catch(e){$('#root').innerHTML=`<div class="login"><div class="box"><h2>KGS HR</h2><p class="err">${esc(e.message)}</p></div></div>`;return;}
+  if(!hasGas()&&!apiUrl()){renderConnect('');return;}
+  try{st=await call('status');}catch(e){if(!hasGas()){renderConnect(e.message);return;}$('#root').innerHTML=`<div class="login"><div class="box"><h2>KGS HR</h2><p class="err">${esc(e.message)}</p></div></div>`;return;}
   S.version=st.version;S.settings=st.settings||{};
   renderLogin(!st.hasAdmin);
+}
+function connFields(id){return `<div class="fld"><label>${t('cn_url')}</label><input class="in" style="width:100%" id="${id}" value="${esc(apiUrl())}" placeholder="https://script.google.com/macros/s/…/exec" spellcheck="false" autocomplete="off"></div>
+   <div id="${id}Msg" class="small" style="min-height:18px;margin-bottom:8px"></div>`;}
+async function connTest(id,saveAfter){const u=$('#'+id).value.trim(),m=$('#'+id+'Msg');m.className='small muted';m.textContent=t('cn_testing');
+  try{const d=await testApiUrl(u);m.className='small ok-t';m.textContent='✓ '+t('cn_ok')+' · '+t('version')+' '+d.version;
+    if(saveAfter){saveApiUrl(okUrl(u));toast(t('cn_saved'),'ok');return true;}}
+  catch(e){m.className='small err';m.textContent='✗ '+(e.message||t('cn_notApp'));}return false;}
+function renderConnect(err){
+  $('#root').innerHTML=`<div class="login"><div class="box" id="cnBox">
+   <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;gap:10px;align-items:center;min-width:0">${logoHTML(40)}<b>KGS HR</b></div>${langSw()}</div>
+   <h2>${t('cn_title')}</h2><p>${t('cn_help')}</p>${err?`<p class="err small">${esc(err)}</p>`:''}
+   ${connFields('cnUrl')}
+   <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn" id="cnTest">${t('cn_test')}</button><button type="button" class="btn pri" id="cnSave" style="flex:1">${t('cn_save')}</button></div>
+   <p class="small muted" style="margin:14px 0 0">${t('cn_where')}</p></div></div>`;
+  $('#cnTest').onclick=()=>connTest('cnUrl',false);
+  $('#cnSave').onclick=async()=>{if(await connTest('cnUrl',true))start();};
 }
 function langSw(){return `<div class="langsw">${[['lo','ລາວ'],['en','EN']].map(([k,l])=>`<button class="${S.lang===k?'on':''}" data-act="setLang" data-arg="${k}">${l}</button>`).join('')}</div>`;}
 function renderLogin(first){
@@ -1747,6 +1780,10 @@ function admData(){
     <div class="note info small" style="margin:16px 0 0">${t('ad_restoreNote')}</div></div>
    <div class="card"><h3>${t('ad_dataOverview')}</h3><div class="tbl-wrap"><table class="tbl"><tbody>${rowsN.map(([a,b])=>`<tr><td>${esc(a)}</td><td class="num"><b>${esc(b)}</b></td></tr>`).join('')}</tbody></table></div>
     <p class="small muted" style="margin:10px 0 0">${t('ad_dupGo')}</p></div>
+   <div class="card"><h3>${t('cn_card')}</h3><p class="small" style="margin-top:0">${t('cn_cardNote')}</p>
+    ${connFields('admUrl')}
+    <p class="small muted" style="margin:0 0 10px">${urlOverride()?t('cn_isLocal'):t('cn_isDefault')}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="admUrlTest">${t('cn_test')}</button><button class="btn pri" data-act="admUrlSave">${t('cn_save')}</button>${urlOverride()?`<button class="btn" data-act="admUrlReset">${t('cn_reset')}</button>`:''}</div></div>
    <div class="card"><h3>${t('ad_sysInfo')}</h3><div class="dl" style="margin:0">
     <div><span>${t('version')}</span>${esc(S.version)}</div><div><span>${t('ad_storage')}</span>Google Sheet · Apps Script</div>
     <div><span>${t('ad_serverTime')}</span>${esc(fmtDT(S.serverTime||''))}</div><div><span>${t('ad_tz')}</span>Asia/Vientiane (UTC+7)</div>
@@ -2003,6 +2040,9 @@ const H={
    try{const r=await call('employee.setPhoto',{id,photo:''});delete S.photos[id];Object.assign(e,r);toast(t('saved'),'ok');viewEmp(id);}catch(err){fail(err);}},
  dashYear:d=>{const f=dashFilter();f.year=String(dashYear()+Number(d));dashBody();},
  admTab:k=>{S.adm.tab=k;pageAdmin();},
+ admUrlTest:()=>connTest('admUrl',false),
+ admUrlSave:async()=>{if(await connTest('admUrl',true))admData();},
+ admUrlReset:()=>{saveApiUrl('');toast(t('cn_saved'),'ok');admData();},
  admLogoRemove:()=>{S.adm.draft.logo='';admOrg();},
  admOrgReset:()=>{S.adm.draft=null;admOrg();},
  admOrgSave:async()=>{const d=S.adm.draft;
