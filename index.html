@@ -359,12 +359,39 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-last.ok{background:color-mix(in srgb,var(--ok) 14%,transparent);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
 .ci-last.warn{background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.45)}
 .ci-last.bad{background:color-mix(in srgb,var(--danger) 12%,transparent);border-color:color-mix(in srgb,var(--danger) 40%,transparent)}
-.ci-present{position:fixed;inset:0;z-index:85;background:var(--bgimg);display:flex;align-items:center;justify-content:center;gap:5vw;padding:4vw;flex-wrap:wrap}
-.ci-present .ci-pl{max-width:520px}.ci-ptitle{font-size:clamp(26px,3.6vw,52px);font-weight:800;line-height:1.2}
+.ci-present{position:fixed;inset:0;z-index:85;background:var(--bgimg);display:grid;grid-template-columns:minmax(260px,1fr) auto minmax(260px,360px);align-items:center;gap:3vw;padding:3vw 3vw 3vw 4vw;overflow:auto}
+@media(max-width:1100px){.ci-present{grid-template-columns:1fr;justify-items:center;text-align:center}.ci-present .ci-feed{width:min(520px,100%);height:40vh}}
+.ci-present .ci-pl{max-width:560px;min-width:0}
+.ci-pstat{margin-top:3vh;padding:18px 20px;border-radius:20px;background:var(--glass,rgba(255,255,255,.55));border:1px solid var(--line);box-shadow:var(--shadow)}
+.ci-pbig{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:inherit}.ci-pbig b{font-size:clamp(46px,6vw,92px);line-height:1;color:var(--brand);font-weight:800;font-variant-numeric:tabular-nums}
+.ci-pbig span{font-size:clamp(22px,2.4vw,36px);font-weight:700;color:var(--muted)}.ci-pbig em{font-style:normal;font-size:clamp(15px,1.4vw,20px);color:var(--muted)}
+.ci-pbar{height:12px;border-radius:99px;background:color-mix(in srgb,var(--brand) 14%,transparent);overflow:hidden;margin:12px 0 10px}.ci-pbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--brand),color-mix(in srgb,var(--brand) 60%,#22d3ee));transition:width .8s ease}
+.ci-pchips{display:flex;gap:8px;flex-wrap:wrap;font-size:clamp(13px,1.1vw,16px)}.ci-pchips span{padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid var(--line2)}.ci-pchips b{font-variant-numeric:tabular-nums}
+.ci-pchips .c-ok b{color:#059669}.ci-pchips .c-late b{color:#d97706}.ci-pchips .c-walk b{color:var(--brand)}.ci-pchips .c-wait b{color:var(--muted)}
+.ci-pop{animation:ciPop .5s ease}@keyframes ciPop{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}
+.ci-feed{align-self:stretch;max-height:calc(100vh - 6vw);height:100%;display:flex;flex-direction:column;border-radius:22px;background:var(--glass,rgba(255,255,255,.55));border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;text-align:left}
+.ci-feed h4{margin:0;padding:14px 18px;font-size:16px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line2)}
+.ci-flist{flex:1;overflow:hidden;padding:6px 10px 10px;scroll-behavior:auto}
+.ci-fi{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:14px}.ci-fi+.ci-fi{border-top:1px solid var(--line2)}
+.ci-fi .av{width:46px;height:46px;flex:0 0 46px;font-size:15px}.ci-fi .nm{flex:1;min-width:0}.ci-fi .nm b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ci-fi .nm small{color:var(--muted)}
+.ci-fi .tm{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;text-align:right}.ci-fi .tm small{display:block;font-weight:600;font-size:11px}
+.ci-fi.new{background:color-mix(in srgb,var(--brand) 14%,transparent);animation:ciIn .6s ease}@keyframes ciIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.ci-fempty{padding:30px 10px;text-align:center;color:var(--muted)}
+.ci-welcome{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:rgba(15,30,60,.35);backdrop-filter:blur(6px);animation:ciFade .3s ease}
+@keyframes ciFade{from{opacity:0}to{opacity:1}}
+.ci-wcard{width:min(760px,92vw);padding:42px 40px;border-radius:32px;text-align:center;background:linear-gradient(160deg,#ffffff,#eef5ff);box-shadow:0 30px 90px rgba(10,30,80,.35);animation:ciZoom .45s cubic-bezier(.2,1.4,.4,1);color:#15213b}
+@keyframes ciZoom{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.ci-wcard .hi{font-size:clamp(20px,2.4vw,30px);font-weight:700;color:#059669}
+.ci-wcard .ph{width:clamp(120px,16vw,190px);height:clamp(120px,16vw,190px);border-radius:50%;margin:18px auto;display:flex;align-items:center;justify-content:center;font-size:clamp(40px,5vw,64px);font-weight:800;color:#fff;background:var(--c,#2563eb);background-size:cover;background-position:center;box-shadow:0 0 0 8px rgba(37,99,235,.15)}
+.ci-wcard .nmL{font-size:clamp(34px,5vw,64px);font-weight:800;line-height:1.15}.ci-wcard .nmE{font-size:clamp(18px,2.2vw,28px);color:#5d6b84;margin-top:6px}
+.ci-wcard .meta{margin-top:16px;font-size:clamp(15px,1.6vw,20px);color:#5d6b84}.ci-wcard .st{display:inline-block;margin-top:16px;padding:8px 22px;border-radius:99px;font-weight:800;font-size:clamp(16px,1.8vw,22px)}
+.ci-wcard .st.ok{background:#d1fae5;color:#047857}.ci-wcard .st.late{background:#fef3c7;color:#b45309}
+.ci-wcard .more{margin-top:14px;font-size:14px;color:#5d6b84}
+.ci-snd{position:absolute;top:16px;right:72px}.ci-ptitle{font-size:clamp(26px,3.6vw,52px);font-weight:800;line-height:1.2}
 .ci-pwhen{font-size:clamp(15px,1.6vw,22px);color:var(--muted);margin-top:8px}
 .ci-pstep{font-size:clamp(18px,2vw,28px);margin-top:4vh;font-weight:600;color:var(--brand)}
 .ci-pcount{font-size:clamp(18px,2vw,28px);margin-top:2vh}.ci-pcount b{font-size:1.6em;color:var(--brand)}
-.ci-present .ci-pr{text-align:center}.ci-present .ci-pr img{width:min(70vh,46vw);aspect-ratio:1;image-rendering:pixelated;background:#fff;border-radius:24px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.ci-present .ci-pr{text-align:center}.ci-present .ci-pr img{width:min(62vh,34vw);aspect-ratio:1;image-rendering:pixelated;background:#fff;border-radius:24px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
 .ci-x{position:absolute;top:16px;right:16px}
 .ci-cam{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:1;margin-bottom:10px}
 .ci-cam video{width:100%;height:100%;object-fit:cover;display:block}
@@ -497,15 +524,15 @@ en:{
  ci_isYou:'Is this you?',ci_yes:'Yes, check me in',ci_no:'No, go back',ci_done:'Checked in at {t}',ci_already:'Already checked in at {t}',ci_walkIn:'You were not on the list — HR has been notified.',
  ci_another:'Check in another person ({n} left on this phone)',ci_limitReached:'This phone has reached its limit of 3 people.',ci_usedN:'This phone has checked in {n} of {m} people.',
  ci_today:'Today',ci_noAct:'No activity yet. Create a meeting or training first.',ci_lateRule:'late after {n} min',ci_isOpen:'Check-in open',ci_open:'Open check-in',ci_close:'Close check-in',
- ci_closeQ:'Close check-in? The QR code will stop working.',ci_qrTitle:'Meeting QR code',ci_qrHelp:'Employees scan this with their phone camera. The code changes every 30 seconds, so a photo of it cannot be shared.',
+ ci_closeQ:'Close check-in? The QR code will stop working.',ci_qrTitle:'Meeting QR code',ci_qrHelp:'Employees scan this with their phone camera. The code stays the same until you close check-in; closing it stops the code at once.',
  ci_present:'Show full screen',ci_copy:'Copy link',ci_try:'Open check-in page',ci_closedHelp:'Check-in is closed. Press “Open check-in” when the meeting starts.',
  ci_scanTitle:'HR scan (staff badge)',ci_scanPh:'Scan badge or type employee ID, then Enter',ci_camera:'Scan with camera',ci_gunHelp:'A USB barcode scanner also works in the box.',
  ci_in:'Checked in',ci_onList:'On the list',ci_walkInN:'Not on list',ci_listTitle:'Checked in (latest first)',ci_method:'Method',ci_mSelf:'Phone',ci_mHr:'HR scan',ci_walkTag:'Not on list',
- ci_waiting:'Not yet checked in',ci_refresh:'New code in {n} s',ci_presentHelp:'Scan with your phone camera to check in',ci_camHelp:'Point the camera at the QR code on the staff badge.',
+ ci_waiting:'Not yet checked in',ci_people:'people',ci_feedTitle:'Checked in',ci_feedEmpty:'Waiting for the first person…',ci_onTime:'On time',ci_notYet:'Not yet',ci_welcome:'Welcome — check-in complete',ci_morePeople:'more waiting',ci_sound:'Sound on/off',ci_refresh:'New code in {n} s',ci_fixed:'QR works until check-in is closed',ci_presentHelp:'Scan with your phone camera to check in',ci_camHelp:'Point the camera at the QR code on the staff badge.',
  ci_photo:'Take a photo of the badge',ci_noQr:'No QR code found in the photo. Try again closer.',ci_noCam:'Live camera is not available here. Use “Take a photo of the badge”.',
  ci_badges:'Print QR badges',ci_badgeHelp:'Badges for the employees in the current list. Print on A4 (8 per page, ID-card size 85.6 × 54 mm), cut and laminate.',ci_manyBadges:'Print {n} badges?',ci_libFail:'Could not load the QR library. Check the internet connection.',
  ci_checkedIn:'Checked in',
- e_CI_EXPIRED:'This QR code has expired. Please scan the QR on the screen again.',e_CI_CLOSED:'Check-in is not open for this activity.',e_CI_NOT_FOUND:'Employee ID not found.',
+ e_CI_EXPIRED:'This QR code is not valid or has expired. Please scan the QR in the meeting room again.',e_CI_CLOSED:'Check-in is not open for this activity.',e_CI_NOT_FOUND:'Employee ID not found.',
  e_CI_NOT_CURRENT:'This ID is not a current employee. Please contact HR.',e_CI_DEVICE_LIMIT:'This phone has already checked in 3 people. Please use another phone or ask HR.',
  e_PW_USER:'The password must not contain the username.',e_PW_SAME:'The new password must be different from the current one.',e_BAD_LOGIN:'Wrong username or password.',e_BAD_OLD_PW:'Current password is wrong.',
  e_LOCKED:'Account temporarily locked after too many failed attempts. Try again later or ask an administrator to unlock it.',
@@ -610,15 +637,15 @@ lo:{
  ci_isYou:'ແມ່ນທ່ານບໍ?',ci_yes:'ແມ່ນຂ້ອຍ — ລົງທະບຽນ',ci_no:'ບໍ່ແມ່ນ, ກັບຄືນ',ci_done:'ລົງທະບຽນແລ້ວ ເວລາ {t}',ci_already:'ລົງທະບຽນໄປແລ້ວ ເວລາ {t}',ci_walkIn:'ທ່ານບໍ່ໄດ້ຢູ່ໃນລາຍຊື່ — ລະບົບແຈ້ງ HR ແລ້ວ.',
  ci_another:'ລົງທະບຽນໃຫ້ຄົນອື່ນ (ໂທລະສັບນີ້ເຫຼືອ {n} ຄົນ)',ci_limitReached:'ໂທລະສັບນີ້ລົງທະບຽນຄົບ 3 ຄົນແລ້ວ.',ci_usedN:'ໂທລະສັບນີ້ລົງທະບຽນແລ້ວ {n} ຈາກ {m} ຄົນ.',
  ci_today:'ມື້ນີ້',ci_noAct:'ຍັງບໍ່ມີກິດຈະກຳ. ສ້າງກອງປະຊຸມ ຫຼື ການຝຶກກ່ອນ.',ci_lateRule:'ມາຊ້າຫຼັງ {n} ນາທີ',ci_isOpen:'ເປີດລົງທະບຽນຢູ່',ci_open:'ເປີດການລົງທະບຽນ',ci_close:'ປິດການລົງທະບຽນ',
- ci_closeQ:'ປິດການລົງທະບຽນ? QR ຈະໃຊ້ບໍ່ໄດ້ອີກ.',ci_qrTitle:'QR ກອງປະຊຸມ',ci_qrHelp:'ພະນັກງານສະແກນດ້ວຍກ້ອງໂທລະສັບ. QR ປ່ຽນທຸກ 30 ວິນາທີ ສະນັ້ນຖ່າຍຮູບສົ່ງຕໍ່ບໍ່ໄດ້.',
+ ci_closeQ:'ປິດການລົງທະບຽນ? QR ຈະໃຊ້ບໍ່ໄດ້ອີກ.',ci_qrTitle:'QR ກອງປະຊຸມ',ci_qrHelp:'ພະນັກງານສະແກນດ້ວຍກ້ອງໂທລະສັບ. QR ຄົງທີ່ຈົນກວ່າຈະປິດການລົງທະບຽນ; ເມື່ອປິດ QR ຈະໃຊ້ບໍ່ໄດ້ທັນທີ.',
  ci_present:'ສະແດງເຕັມຈໍ',ci_copy:'ສຳເນົາລິ້ງ',ci_try:'ເປີດໜ້າລົງທະບຽນ',ci_closedHelp:'ການລົງທະບຽນປິດຢູ່. ກົດ “ເປີດການລົງທະບຽນ” ເມື່ອເລີ່ມປະຊຸມ.',
  ci_scanTitle:'HR ສະແກນ (ບັດພະນັກງານ)',ci_scanPh:'ສະແກນບັດ ຫຼື ພິມລະຫັດ ແລ້ວກົດ Enter',ci_camera:'ສະແກນດ້ວຍກ້ອງ',ci_gunHelp:'ໃຊ້ເຄື່ອງຍິງບາໂຄດ USB ສະແກນໃສ່ຊ່ອງນີ້ກໍໄດ້.',
  ci_in:'ລົງທະບຽນແລ້ວ',ci_onList:'ໃນລາຍຊື່',ci_walkInN:'ນອກລາຍຊື່',ci_listTitle:'ລົງທະບຽນແລ້ວ (ຫຼ້າສຸດຢູ່ເທິງ)',ci_method:'ວິທີ',ci_mSelf:'ໂທລະສັບ',ci_mHr:'HR ສະແກນ',ci_walkTag:'ນອກລາຍຊື່',
- ci_waiting:'ຍັງບໍ່ທັນລົງທະບຽນ',ci_refresh:'QR ໃໝ່ໃນ {n} ວິ',ci_presentHelp:'ສະແກນດ້ວຍກ້ອງໂທລະສັບ ເພື່ອລົງທະບຽນ',ci_camHelp:'ສ່ອງກ້ອງໃສ່ QR ຢູ່ບັດພະນັກງານ.',
+ ci_waiting:'ຍັງບໍ່ທັນລົງທະບຽນ',ci_people:'ຄົນ',ci_feedTitle:'ລົງທະບຽນແລ້ວ',ci_feedEmpty:'ລໍຖ້າຄົນທຳອິດ…',ci_onTime:'ຕົງເວລາ',ci_notYet:'ຍັງບໍ່ມາ',ci_welcome:'ຍິນດີຕ້ອນຮັບ — ລົງທະບຽນສຳເລັດ',ci_morePeople:'ຄົນກຳລັງລໍຖ້າ',ci_sound:'ເປີດ/ປິດສຽງ',ci_refresh:'QR ໃໝ່ໃນ {n} ວິ',ci_fixed:'QR ໃຊ້ໄດ້ຈົນກວ່າຈະປິດການລົງທະບຽນ',ci_presentHelp:'ສະແກນດ້ວຍກ້ອງໂທລະສັບ ເພື່ອລົງທະບຽນ',ci_camHelp:'ສ່ອງກ້ອງໃສ່ QR ຢູ່ບັດພະນັກງານ.',
  ci_photo:'ຖ່າຍຮູບບັດ',ci_noQr:'ບໍ່ພົບ QR ໃນຮູບ. ລອງຖ່າຍໃກ້ຂຶ້ນ.',ci_noCam:'ກ້ອງແບບສົດໃຊ້ບໍ່ໄດ້ຢູ່ນີ້. ໃຊ້ “ຖ່າຍຮູບບັດ” ແທນ.',
  ci_badges:'ພິມບັດ QR',ci_badgeHelp:'ບັດຂອງພະນັກງານໃນລາຍຊື່ປັດຈຸບັນ. ພິມ A4 (8 ບັດ/ໜ້າ, ຂະໜາດບັດ 85.6 × 54 mm), ຕັດ ແລະ ເຄືອບ.',ci_manyBadges:'ພິມ {n} ບັດ?',ci_libFail:'ໂຫຼດລະບົບ QR ບໍ່ໄດ້. ກວດອິນເຕີເນັດ.',
  ci_checkedIn:'ເວລາລົງທະບຽນ',
- e_CI_EXPIRED:'QR ນີ້ໝົດອາຍຸແລ້ວ. ກະລຸນາສະແກນ QR ທີ່ຈໍອີກຄັ້ງ.',e_CI_CLOSED:'ກິດຈະກຳນີ້ຍັງບໍ່ເປີດລົງທະບຽນ.',e_CI_NOT_FOUND:'ບໍ່ພົບລະຫັດພະນັກງານນີ້.',
+ e_CI_EXPIRED:'QR ນີ້ໃຊ້ບໍ່ໄດ້ ຫຼື ໝົດອາຍຸ. ກະລຸນາສະແກນ QR ໃນຫ້ອງປະຊຸມອີກຄັ້ງ.',e_CI_CLOSED:'ກິດຈະກຳນີ້ຍັງບໍ່ເປີດລົງທະບຽນ.',e_CI_NOT_FOUND:'ບໍ່ພົບລະຫັດພະນັກງານນີ້.',
  e_CI_NOT_CURRENT:'ລະຫັດນີ້ບໍ່ແມ່ນພະນັກງານປັດຈຸບັນ. ກະລຸນາຕິດຕໍ່ HR.',e_CI_DEVICE_LIMIT:'ໂທລະສັບນີ້ລົງທະບຽນຄົບ 3 ຄົນແລ້ວ. ໃຊ້ໂທລະສັບອື່ນ ຫຼື ແຈ້ງ HR.',
  e_PW_USER:'ລະຫັດຜ່ານຕ້ອງບໍ່ມີຊື່ຜູ້ໃຊ້ຢູ່ນຳ.',e_PW_SAME:'ລະຫັດໃໝ່ຕ້ອງຕ່າງຈາກລະຫັດປັດຈຸບັນ.',e_BAD_LOGIN:'ຊື່ຜູ້ໃຊ້ ຫຼື ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ.',e_BAD_OLD_PW:'ລະຫັດຜ່ານປັດຈຸບັນບໍ່ຖືກຕ້ອງ.',
  e_LOCKED:'ບັນຊີຖືກລັອກຊົ່ວຄາວ ຍ້ອນໃສ່ລະຫັດຜິດຫຼາຍເທື່ອ. ລອງໃໝ່ພາຍຫຼັງ ຫຼື ໃຫ້ຜູ້ບໍລິຫານປົດລັອກ.',
@@ -1915,13 +1942,14 @@ function ciList(){
     {k:'Attendance',l:t('attendance'),r:p=>badge(p.Attendance)},
     {k:'CheckInBy',l:t('ci_method'),r:p=>esc(String(p.CheckInBy).startsWith('SELF')?t('ci_mSelf'):t('ci_mHr'))+(p.WalkIn==='Yes'?` <span class="badge b-dup">${t('ci_walkTag')}</span>`:'')}],
     rows,{noPage:rows.length<=100,ps:100})+(wait.length?`<details style="margin-top:12px"><summary class="small" style="cursor:pointer">${t('ci_waiting')} (${wait.length})</summary><div class="small muted" style="margin-top:8px;line-height:1.9">${wait.map(p=>{const e=empById(p.EmployeeID)||{};return esc(p.EmployeeID+' '+(e.NameLA||empName(e)));}).join(' · ')}</div></details>`:'');
-  const ov=$('#ciPresentN');if(ov)ov.textContent=c.ins;
+  if($('#ciPresent'))ciPresentSync();
 }
 async function ciToken(){
   const G=S.ci2,id=G.actId;clearTimeout(G.tk);clearInterval(G.cd);
   try{await needLib('qr');const r=await call('checkin.token',{id},{silent:true});if(S.page!=='checkin'||G.actId!==id)return;
     G.k=r.k;G.url=(apiMode()||!r.url)?location.href.split('#')[0].split('?')[0]:r.url;G.link=G.url+'?ci='+encodeURIComponent(id)+'&k='+r.k;
     const src=qrImg(G.link,10);['#ciQrImg','#ciPresentImg'].forEach(s=>{const im=$(s);if(im)im.src=src;});
+    if(r.fixed){const txt=t('ci_fixed');['#ciCd','#ciPresentCd'].forEach(x=>{const el=$(x);if(el)el.textContent=txt;});return;}
     G.secs=r.seconds;const tick=()=>{const cd=$('#ciCd'),cd2=$('#ciPresentCd');const txt=t('ci_refresh').replace('{n}',G.secs);if(cd)cd.textContent=txt;if(cd2)cd2.textContent=txt;G.secs--;};
     tick();G.cd=setInterval(tick,1000);G.tk=setTimeout(ciToken,(r.seconds+1)*1000);}
   catch(e){const cd=$('#ciCd');if(cd)cd.textContent=errText(e);G.tk=setTimeout(ciToken,8000);}
@@ -1943,10 +1971,64 @@ function ciLast(kind,r){const el=$('#ciLast');if(!el)return;
 function ciPresent(){
   const G=S.ci2,a=actById(G.actId);if(!a)return;const c=ciCounts(a);
   const d=document.createElement('div');d.id='ciPresent';d.className='ci-present';
-  d.innerHTML=`<button class="btn ci-x" data-act="ciPresentClose">✕</button><div class="ci-pl"><div class="ci-ptitle">${esc(a.Title)}</div><div class="ci-pwhen">${actWhen(a)}${a.Location?' · '+esc(tv(a.Location)):''}</div>
-    <div class="ci-pstep">${t('ci_presentHelp')}</div><div class="ci-pcount">${t('ci_in')}: <b id="ciPresentN">${c.ins}</b></div></div>
-    <div class="ci-pr"><img id="ciPresentImg" alt="QR" src="${$('#ciQrImg')?$('#ciQrImg').src:''}"><div id="ciPresentCd" class="small"></div></div>`;
+  if(G.sound===undefined)G.sound=true;
+  d.innerHTML=`<button class="btn ci-snd" data-act="ciSound" title="${t('ci_sound')}">${G.sound?'🔔':'🔕'}</button><button class="btn ci-x" data-act="ciPresentClose">✕</button>
+   <div class="ci-pl"><div class="ci-ptitle">${esc(a.Title)}</div><div class="ci-pwhen">${actWhen(a)}${a.Location?' · '+esc(tv(a.Location)):''}</div>
+    <div class="ci-pstep">${t('ci_presentHelp')}</div>
+    <div class="ci-pstat"><div class="ci-pbig"><b id="ciPresentN">${c.ins}</b><span id="ciPresentOf"></span><em>${t('ci_people')}</em></div>
+     <div class="ci-pbar"><i id="ciPresentBar"></i></div><div class="ci-pchips" id="ciPresentChips"></div></div></div>
+   <div class="ci-pr"><img id="ciPresentImg" alt="QR" src="${$('#ciQrImg')?$('#ciQrImg').src:''}"><div id="ciPresentCd" class="small">${$('#ciCd')?esc($('#ciCd').textContent):''}</div></div>
+   <div class="ci-feed"><h4><span>${t('ci_feedTitle')}</span><span id="ciFeedN" class="muted"></span></h4><div class="ci-flist" id="ciFlist"></div></div>`;
   document.body.appendChild(d);
+  G.seen=new Set(c.insList.map(p=>p.EmployeeID));G.wq=[];G.wBusy=false;G.newIds=new Set();
+  clearInterval(G.fd);G.fd=setInterval(ciFeed,3000);
+  ciPresentSync();ciAutoScroll();
+}
+/* live counter, scrolling list and big welcome card for each new check-in */
+function ciPresentSync(){
+  const G=S.ci2,a=actById(G.actId),d=$('#ciPresent');if(!a||!d)return;const c=ciCounts(a);
+  const fresh=c.insList.filter(p=>!G.seen.has(p.EmployeeID)).sort((x,y)=>String(x.CheckInAt).localeCompare(String(y.CheckInAt)));
+  fresh.forEach(p=>{G.seen.add(p.EmployeeID);G.newIds.add(p.EmployeeID);G.wq.push(p);});
+  const n=$('#ciPresentN');if(n&&n.textContent!==String(c.ins)){n.textContent=c.ins;n.classList.remove('ci-pop');void n.offsetWidth;n.classList.add('ci-pop');}
+  const onListIn=c.ins-c.walk,pct=c.list?Math.min(100,Math.round(onListIn*100/c.list)):0;
+  $('#ciPresentOf').textContent=c.list?'/ '+c.list:'';
+  $('#ciPresentBar').style.width=(c.list?pct:(c.ins?100:0))+'%';
+  $('#ciPresentBar').parentElement.style.display=c.list?'':'none';
+  $('#ciPresentChips').innerHTML=`<span class="c-ok">${t('ci_onTime')} <b>${c.ins-c.late}</b></span><span class="c-late">${t('late')} <b>${c.late}</b></span>${c.walk?`<span class="c-walk">${t('ci_walkInN')} <b>${c.walk}</b></span>`:''}${c.list?`<span class="c-wait">${t('ci_notYet')} <b>${Math.max(0,c.list-onListIn)}</b></span><span>${pct}%</span>`:''}`;
+  $('#ciFeedN').textContent=c.ins;
+  const L=$('#ciFlist');
+  L.innerHTML=c.insList.length?c.insList.map(p=>{const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
+    return `<div class="ci-fi${G.newIds.has(p.EmployeeID)?' new':''}">${ciAv(e,p.EmployeeID)}<div class="nm"><b>${esc(e.NameLA||empName(e)||p.EmployeeID)}</b><small>${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}</small></div><div class="tm">${esc(hhmm(p.CheckInAt))}<small style="color:${late?'#d97706':'#059669'}">${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</small></div></div>`;}).join('')
+    :`<div class="ci-fempty">${t('ci_feedEmpty')}</div>`;
+  if(fresh.length){L.scrollTop=0;G.scrollPause=Date.now()+6000;}
+  ciWelcomeNext();
+}
+/* avatar with the employee photo when there is one (photos are fetched once, in the background) */
+function ciAv(e,id){const ph=S.photos&&S.photos[id];
+  if(!ph&&e.HasPhoto==='Yes'){const G=S.ci2;G.phReq=G.phReq||new Set();if(!G.phReq.has(id)){G.phReq.add(id);
+    call('employee.photo',{id},{silent:true}).then(r=>{if(r&&r.Photo){(S.photos||(S.photos={}))[id]=r.Photo;ciPhotoFill(id);}}).catch(()=>{});}}
+  return `<span class="av" data-ph="${esc(id)}" style="--c:${avc(id)}">${ph?`<img src="${esc(ph)}" alt="">`:esc(initials(e))}</span>`;}
+function ciPhotoFill(id){const ph=S.photos[id];document.querySelectorAll('#ciFlist .av[data-ph]').forEach(a=>{if(a.dataset.ph===id)a.innerHTML=`<img src="${esc(ph)}" alt="">`;});}
+function ciAutoScroll(){const G=S.ci2;clearInterval(G.as);G.dir=1;
+  G.as=setInterval(()=>{const L=$('#ciFlist');if(!L){clearInterval(G.as);return;}if(Date.now()<(G.scrollPause||0))return;
+    if(L.scrollHeight<=L.clientHeight+4){L.scrollTop=0;return;}
+    if(L.scrollTop+L.clientHeight>=L.scrollHeight-1){G.scrollPause=Date.now()+2500;setTimeout(()=>{if($('#ciFlist'))$('#ciFlist').scrollTop=0;},2400);return;}
+    L.scrollTop+=1;},40);}
+function ciWelcomeNext(){
+  const G=S.ci2;if(G.wBusy||!G.wq.length||!$('#ciPresent'))return;
+  const p=G.wq.shift();G.wBusy=true;const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
+  const w=document.createElement('div');w.className='ci-welcome';w.id='ciWelcome';
+  const nmL=e.NameLA||empName(e)||p.EmployeeID,nmE=e.NameLA?empName(e):'';
+  w.innerHTML=`<div class="ci-wcard"><div class="hi">✓ ${t('ci_welcome')}</div>
+    <div class="ph" id="ciWPh" style="--c:${avc(p.EmployeeID)}${S.photos&&S.photos[p.EmployeeID]?`;background-image:url('${S.photos[p.EmployeeID]}')`:''}">${S.photos&&S.photos[p.EmployeeID]?'':esc(initials(e))}</div>
+    <div class="nmL">${esc(nmL)}</div>${nmE&&nmE!==nmL?`<div class="nmE">${esc(nmE)}</div>`:''}
+    <div class="meta">${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}${e.JobSite?' · '+esc(tv(e.JobSite)):''}</div>
+    <div class="st ${late?'late':'ok'}">${esc(hhmm(p.CheckInAt))} · ${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</div>
+    ${G.wq.length?`<div class="more">+${G.wq.length} ${t('ci_morePeople')}</div>`:''}</div>`;
+  document.body.appendChild(w);if(G.sound)beep(true);
+  if(e.HasPhoto==='Yes'&&!(S.photos&&S.photos[p.EmployeeID]))call('employee.photo',{id:p.EmployeeID},{silent:true}).then(r=>{if(r&&r.Photo){(S.photos||(S.photos={}))[p.EmployeeID]=r.Photo;const ph=$('#ciWPh');if(ph&&w.isConnected){ph.style.backgroundImage=`url('${r.Photo}')`;ph.textContent='';}}}).catch(()=>{});
+  const ms=G.wq.length>2?2200:4000;
+  G.wt=setTimeout(()=>{w.remove();G.wBusy=false;setTimeout(()=>{const x=[...document.querySelectorAll('.ci-fi.new')];if(!G.wq.length)G.newIds.clear();ciWelcomeNext();},250);},ms);
 }
 /* camera scanner (badge QR). Falls back to taking a photo when live video is not allowed. */
 async function ciCamera(){
@@ -2033,7 +2115,8 @@ const H={
  ciOpen:async v=>{const G=S.ci2,a=actById(G.actId);if(!a)return;const open=v==='1';
    if(!open&&!await ask(t('ci_closeQ')))return;
    try{const r=await call('checkin.setOpen',{id:a.ActivityID,open});Object.assign(a,r);ciStop();toast(t('saved'),'ok');pageCheckin();}catch(e){fail(e);}},
- ciPresent,ciPresentClose:()=>{const d=$('#ciPresent');if(d)d.remove();},
+ ciPresent,ciPresentClose:()=>{const G=S.ci2,d=$('#ciPresent');if(d)d.remove();const w=$('#ciWelcome');if(w)w.remove();clearTimeout(G.wt);clearInterval(G.as);G.wq=[];G.wBusy=false;if(G.fd){ciFeedStart();}},
+ ciSound:()=>{const G=S.ci2;G.sound=!G.sound;const b=document.querySelector('.ci-snd');if(b)b.textContent=G.sound?'🔔':'🔕';if(G.sound)beep(true);},
  ciCopy:()=>{const l=S.ci2&&S.ci2.link;if(!l)return;const done=()=>toast(t('copied'),'ok');try{navigator.clipboard.writeText(l).then(done,()=>{prompt('',l);});}catch(e){prompt('',l);}},
  ciTry:()=>{const l=S.ci2&&S.ci2.link;if(l)window.open(l,'_blank');},
  ciScanGo:()=>ciHr($('#ciScan').value),ciCamera,
