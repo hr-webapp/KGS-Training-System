@@ -373,7 +373,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-feed h4{margin:0;padding:14px 18px;font-size:16px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line2)}
 .ci-flist{flex:1;overflow:hidden;padding:6px 10px 10px;scroll-behavior:auto}
 .ci-fi{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:14px}.ci-fi+.ci-fi{border-top:1px solid var(--line2)}
-.ci-fi .av{width:46px;height:46px;flex:0 0 46px;font-size:15px}.ci-fi .nm{flex:1;min-width:0}.ci-fi .nm b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ci-fi .nm small{color:var(--muted)}
+.ci-fi .no{flex:0 0 26px;text-align:center;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}.ci-fi .av{width:46px;height:46px;flex:0 0 46px;font-size:15px}.ci-fi .nm{flex:1;min-width:0}.ci-fi .nm b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ci-fi .nm small{color:var(--muted)}
 .ci-fi .tm{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;text-align:right}.ci-fi .tm small{display:block;font-weight:600;font-size:11px}
 .ci-fi.new{background:color-mix(in srgb,var(--brand) 14%,transparent);animation:ciIn .6s ease}@keyframes ciIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 .ci-fempty{padding:30px 10px;text-align:center;color:var(--muted)}
@@ -387,7 +387,40 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-wcard .meta{margin-top:16px;font-size:clamp(15px,1.6vw,20px);color:#5d6b84}.ci-wcard .st{display:inline-block;margin-top:16px;padding:8px 22px;border-radius:99px;font-weight:800;font-size:clamp(16px,1.8vw,22px)}
 .ci-wcard .st.ok{background:#d1fae5;color:#047857}.ci-wcard .st.late{background:#fef3c7;color:#b45309}
 .ci-wcard .more{margin-top:14px;font-size:14px;color:#5d6b84}
-.ci-snd{position:absolute;top:16px;right:72px}.ci-ptitle{font-size:clamp(26px,3.6vw,52px);font-weight:800;line-height:1.2}
+.ci-snd{position:absolute;top:16px;right:72px}
+/* ---- meeting screen: premium dark-blue stage (independent of app light/dark) ---- */
+.ci-present{--pi:#f4f7ff;--pm:#a9bbdf;--pg:rgba(255,255,255,.075);--pl:rgba(255,255,255,.14);--brand:#60a5fa;color:var(--pi);
+  background:radial-gradient(1200px 700px at 12% 8%,rgba(37,99,235,.42),transparent 60%),radial-gradient(900px 600px at 92% 95%,rgba(14,165,233,.30),transparent 60%),radial-gradient(700px 500px at 70% 10%,rgba(99,102,241,.22),transparent 60%),linear-gradient(160deg,#061331 0%,#0a1f4d 45%,#071a3d 100%);
+  padding-top:max(96px,7vh)!important}
+.ci-present::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%)}
+.ci-present::after{content:"";position:fixed;width:60vmax;height:60vmax;left:-15vmax;top:-20vmax;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.16),transparent 65%);animation:ciAur 22s ease-in-out infinite alternate;z-index:0}
+@keyframes ciAur{to{transform:translate(70vw,55vh) scale(1.2)}}
+.ci-present>.ci-pl,.ci-present>.ci-pr,.ci-present>.ci-feed{position:relative;z-index:1}.ci-present>.ci-x,.ci-present>.ci-snd{z-index:3}
+.ci-present .ci-top{position:absolute;top:22px;left:4vw;right:150px;display:flex;align-items:center;gap:14px;z-index:2}
+.ci-present .ci-top .who b{display:block;font-size:clamp(15px,1.3vw,19px);letter-spacing:.2px}.ci-present .ci-top .who small{color:var(--pm);font-size:clamp(12px,1vw,14px)}
+.ci-present .ci-top .logo,.ci-present .ci-top .logoimg{border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.ci-present .ci-clock{margin-left:auto;text-align:right;font-variant-numeric:tabular-nums}.ci-present .ci-clock b{display:block;font-size:clamp(22px,2.2vw,34px);font-weight:700;letter-spacing:1px}.ci-present .ci-clock small{color:var(--pm);font-size:clamp(12px,1vw,14px)}
+.ci-present .ci-ptitle{color:#fff;text-shadow:0 2px 24px rgba(37,99,235,.35)}
+.ci-present .ci-pwhen{color:var(--pm)}
+.ci-present .ci-pstep{color:#7dd3fc;display:flex;align-items:center;gap:10px}
+.ci-present .ci-pstep::before{content:"";width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:ciLive 1.8s infinite;flex:0 0 10px}
+@keyframes ciLive{70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.ci-present .ci-pstat,.ci-present .ci-feed{background:var(--pg);border:1px solid var(--pl);box-shadow:0 20px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.ci-present .ci-pbig b{color:#fff;background:linear-gradient(180deg,#fff,#93c5fd);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ci-present .ci-pbig span,.ci-present .ci-pbig em{color:var(--pm)}
+.ci-present .ci-pbar{background:rgba(255,255,255,.1)}.ci-present .ci-pbar i{background:linear-gradient(90deg,#3b82f6,#22d3ee);box-shadow:0 0 16px rgba(34,211,238,.55)}
+.ci-present .ci-pchips span{background:rgba(255,255,255,.07);border-color:var(--pl);color:var(--pi)}
+.ci-present .ci-pchips .c-ok b{color:#34d399}.ci-present .ci-pchips .c-late b{color:#fbbf24}.ci-present .ci-pchips .c-walk b{color:#7dd3fc}.ci-present .ci-pchips .c-wait b{color:var(--pm)}
+.ci-present .ci-pr img{box-shadow:0 0 0 10px rgba(255,255,255,.06),0 0 0 11px rgba(147,197,253,.25),0 30px 80px rgba(0,0,0,.5)!important}
+.ci-present .ci-pr #ciPresentCd{color:var(--pm);margin-top:16px;font-size:14px}
+.ci-present .ci-feed h4{border-bottom-color:var(--pl);color:#fff}.ci-present .ci-feed h4 .muted{color:#7dd3fc}
+.ci-present .ci-fi+.ci-fi{border-top-color:rgba(255,255,255,.08)}.ci-present .ci-fi .nm small,.ci-present .ci-fi .no{color:var(--pm)}
+.ci-present .ci-fi.new{background:linear-gradient(90deg,rgba(59,130,246,.32),rgba(34,211,238,.12))}
+.ci-present .ci-fi .av{box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+.ci-present .ci-fempty{color:var(--pm)}.ci-fi .s-ok{color:#34d399}.ci-fi .s-late{color:#fbbf24}
+.ci-present .btn{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff}
+.ci-welcome{background:rgba(3,10,30,.55)}
+.ci-wcard{box-shadow:0 0 0 1px rgba(255,255,255,.6),0 40px 120px rgba(0,0,0,.55),0 0 80px rgba(59,130,246,.35)}.ci-ptitle{font-size:clamp(26px,3.6vw,52px);font-weight:800;line-height:1.2}
 .ci-pwhen{font-size:clamp(15px,1.6vw,22px);color:var(--muted);margin-top:8px}
 .ci-pstep{font-size:clamp(18px,2vw,28px);margin-top:4vh;font-weight:600;color:var(--brand)}
 .ci-pcount{font-size:clamp(18px,2vw,28px);margin-top:2vh}.ci-pcount b{font-size:1.6em;color:var(--brand)}
@@ -1836,6 +1869,16 @@ function deviceId(){let d='';try{d=localStorage.getItem('kgs_ci_dev')||'';}catch
 const hhmm=s=>String(s||'').slice(11,16);
 function beep(ok){try{const C=window.AudioContext||window.webkitAudioContext;const c=S._ac||(S._ac=new C());const o=c.createOscillator(),g=c.createGain();
   o.frequency.value=ok?880:220;g.gain.value=.08;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+(ok?.12:.3));}catch(e){}}
+/* welcome chime for the meeting screen: soft bell arpeggio (on time) / calmer two notes (late) */
+function audioCtx(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;const c=S._ac||(S._ac=new C());if(c.state==='suspended')c.resume();return c;}
+function ciChime(late){try{const c=audioCtx();if(!c)return;const t0=c.currentTime+.03;
+  const master=c.createGain();master.gain.value=.34;master.connect(c.destination);
+  const bell=(f,at,len,vol)=>{[[1,1],[2,.32],[3,.12],[4.2,.05]].forEach(([m,v])=>{const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f*m;
+      g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(vol*v,at+.012);g.gain.exponentialRampToValueAtTime(.0001,at+len/(m>1?m*.7:1));
+      o.connect(g);g.connect(master);o.start(at);o.stop(at+len+.05);});};
+  if(late){bell(784,t0,1.2,.8);bell(659.3,t0+.22,1.5,.7);}
+  else{[1046.5,1318.5,1568,2093].forEach((f,i)=>bell(f,t0+i*.11,i===3?1.8:1.1,i===3?.9:.75));}
+}catch(e){}}
 function actWhen(a){return fmtD(a.StartDate)+(a.EndDate&&a.EndDate!==a.StartDate?' – '+fmtD(a.EndDate):'')+(a.StartTime?' · '+esc(a.StartTime)+(a.EndTime?'–'+esc(a.EndTime):''):'');}
 
 /* ----- employee phone page (opened by scanning the meeting QR; no sign-in) ----- */
@@ -1971,8 +2014,8 @@ function ciLast(kind,r){const el=$('#ciLast');if(!el)return;
 function ciPresent(){
   const G=S.ci2,a=actById(G.actId);if(!a)return;const c=ciCounts(a);
   const d=document.createElement('div');d.id='ciPresent';d.className='ci-present';
-  if(G.sound===undefined)G.sound=true;
-  d.innerHTML=`<button class="btn ci-snd" data-act="ciSound" title="${t('ci_sound')}">${G.sound?'🔔':'🔕'}</button><button class="btn ci-x" data-act="ciPresentClose">✕</button>
+  if(G.sound===undefined)G.sound=true;audioCtx();
+  d.innerHTML=`<div class="ci-top">${logoHTML(46)}<div class="who"><b>${esc(companyName()||'KGS')}</b><small>${esc(cfg('sysName'))}</small></div><div class="ci-clock" id="ciClock"></div></div><button class="btn ci-snd" data-act="ciSound" title="${t('ci_sound')}">${G.sound?'🔔':'🔕'}</button><button class="btn ci-x" data-act="ciPresentClose">✕</button>
    <div class="ci-pl"><div class="ci-ptitle">${esc(a.Title)}</div><div class="ci-pwhen">${actWhen(a)}${a.Location?' · '+esc(tv(a.Location)):''}</div>
     <div class="ci-pstep">${t('ci_presentHelp')}</div>
     <div class="ci-pstat"><div class="ci-pbig"><b id="ciPresentN">${c.ins}</b><span id="ciPresentOf"></span><em>${t('ci_people')}</em></div>
@@ -1983,6 +2026,9 @@ function ciPresent(){
   G.seen=new Set(c.insList.map(p=>p.EmployeeID));G.wq=[];G.wBusy=false;G.newIds=new Set();
   clearInterval(G.fd);G.fd=setInterval(ciFeed,3000);
   ciPresentSync();ciAutoScroll();
+  const tick=()=>{const el=$('#ciClock');if(!el){clearInterval(G.ck);return;}const n=new Date(),p=x=>String(x).padStart(2,'0');
+    el.innerHTML=`<b>${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}</b><small>${fmtD(n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()))}</small>`;};
+  clearInterval(G.ck);tick();G.ck=setInterval(tick,1000);
 }
 /* live counter, scrolling list and big welcome card for each new check-in */
 function ciPresentSync(){
@@ -1997,10 +2043,11 @@ function ciPresentSync(){
   $('#ciPresentChips').innerHTML=`<span class="c-ok">${t('ci_onTime')} <b>${c.ins-c.late}</b></span><span class="c-late">${t('late')} <b>${c.late}</b></span>${c.walk?`<span class="c-walk">${t('ci_walkInN')} <b>${c.walk}</b></span>`:''}${c.list?`<span class="c-wait">${t('ci_notYet')} <b>${Math.max(0,c.list-onListIn)}</b></span><span>${pct}%</span>`:''}`;
   $('#ciFeedN').textContent=c.ins;
   const L=$('#ciFlist');
-  L.innerHTML=c.insList.length?c.insList.map(p=>{const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
-    return `<div class="ci-fi${G.newIds.has(p.EmployeeID)?' new':''}">${ciAv(e,p.EmployeeID)}<div class="nm"><b>${esc(e.NameLA||empName(e)||p.EmployeeID)}</b><small>${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}</small></div><div class="tm">${esc(hhmm(p.CheckInAt))}<small style="color:${late?'#d97706':'#059669'}">${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</small></div></div>`;}).join('')
+  const asc=c.insList.slice().reverse();   // first to arrive at the top, numbered in order
+  L.innerHTML=asc.length?asc.map((p,i)=>{const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
+    return `<div class="ci-fi${G.newIds.has(p.EmployeeID)?' new':''}"><span class="no">${i+1}</span>${ciAv(e,p.EmployeeID)}<div class="nm"><b>${esc(e.NameLA||empName(e)||p.EmployeeID)}</b><small>${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}</small></div><div class="tm">${esc(hhmm(p.CheckInAt))}<small class="${late?'s-late':'s-ok'}">${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</small></div></div>`;}).join('')
     :`<div class="ci-fempty">${t('ci_feedEmpty')}</div>`;
-  if(fresh.length){L.scrollTop=0;G.scrollPause=Date.now()+6000;}
+  if(fresh.length){L.scrollTop=L.scrollHeight;G.scrollPause=Date.now()+6000;}
   ciWelcomeNext();
 }
 /* avatar with the employee photo when there is one (photos are fetched once, in the background) */
@@ -2025,7 +2072,7 @@ function ciWelcomeNext(){
     <div class="meta">${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}${e.JobSite?' · '+esc(tv(e.JobSite)):''}</div>
     <div class="st ${late?'late':'ok'}">${esc(hhmm(p.CheckInAt))} · ${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</div>
     ${G.wq.length?`<div class="more">+${G.wq.length} ${t('ci_morePeople')}</div>`:''}</div>`;
-  document.body.appendChild(w);if(G.sound)beep(true);
+  document.body.appendChild(w);if(G.sound)ciChime(late);
   if(e.HasPhoto==='Yes'&&!(S.photos&&S.photos[p.EmployeeID]))call('employee.photo',{id:p.EmployeeID},{silent:true}).then(r=>{if(r&&r.Photo){(S.photos||(S.photos={}))[p.EmployeeID]=r.Photo;const ph=$('#ciWPh');if(ph&&w.isConnected){ph.style.backgroundImage=`url('${r.Photo}')`;ph.textContent='';}}}).catch(()=>{});
   const ms=G.wq.length>2?2200:4000;
   G.wt=setTimeout(()=>{w.remove();G.wBusy=false;setTimeout(()=>{const x=[...document.querySelectorAll('.ci-fi.new')];if(!G.wq.length)G.newIds.clear();ciWelcomeNext();},250);},ms);
@@ -2116,7 +2163,7 @@ const H={
    if(!open&&!await ask(t('ci_closeQ')))return;
    try{const r=await call('checkin.setOpen',{id:a.ActivityID,open});Object.assign(a,r);ciStop();toast(t('saved'),'ok');pageCheckin();}catch(e){fail(e);}},
  ciPresent,ciPresentClose:()=>{const G=S.ci2,d=$('#ciPresent');if(d)d.remove();const w=$('#ciWelcome');if(w)w.remove();clearTimeout(G.wt);clearInterval(G.as);G.wq=[];G.wBusy=false;if(G.fd){ciFeedStart();}},
- ciSound:()=>{const G=S.ci2;G.sound=!G.sound;const b=document.querySelector('.ci-snd');if(b)b.textContent=G.sound?'🔔':'🔕';if(G.sound)beep(true);},
+ ciSound:()=>{const G=S.ci2;G.sound=!G.sound;const b=document.querySelector('.ci-snd');if(b)b.textContent=G.sound?'🔔':'🔕';if(G.sound)ciChime(false);},
  ciCopy:()=>{const l=S.ci2&&S.ci2.link;if(!l)return;const done=()=>toast(t('copied'),'ok');try{navigator.clipboard.writeText(l).then(done,()=>{prompt('',l);});}catch(e){prompt('',l);}},
  ciTry:()=>{const l=S.ci2&&S.ci2.link;if(l)window.open(l,'_blank');},
  ciScanGo:()=>ciHr($('#ciScan').value),ciCamera,
