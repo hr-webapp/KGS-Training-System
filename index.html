@@ -455,6 +455,7 @@ en:{
  cn_title:'Connect to Google Sheet',cn_help:'Paste the Web app URL from Apps Script (Deploy → Manage deployments). It ends with /exec.',cn_url:'Web app URL (ends with /exec)',cn_test:'Test connection',cn_save:'Save',cn_reset:'Use default URL',cn_testing:'Testing…',cn_ok:'Connected',cn_saved:'Connection saved',
  cn_badUrl:'This is not an Apps Script Web app URL (https://script.google.com/macros/s/…/exec).',cn_noReach:'Cannot reach this URL. Check the internet, and that Who has access = Anyone.',cn_notApp:'The URL answered, but it is not the KGS HR Training script (check Code.gs and the deployment).',
  cn_where:'Data is saved in the Google Sheet KGS_HR_Training_DB. No token is needed: each person signs in with their own username.',cn_card:'Google Sheet — database connection',cn_cardNote:'All data is read from and saved straight to the Google Sheet. The default URL is built into index.html, so every computer and phone connects automatically.',
+ sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
@@ -567,6 +568,7 @@ lo:{
  cn_title:'ເຊື່ອມຕໍ່ Google Sheet',cn_help:'ວາງ Web app URL ຈາກ Apps Script (Deploy → Manage deployments). ລົງທ້າຍດ້ວຍ /exec.',cn_url:'Web app URL (ລົງທ້າຍ /exec)',cn_test:'ທົດສອບເຊື່ອມຕໍ່',cn_save:'ບັນທຶກ',cn_reset:'ໃຊ້ URL ຫຼັກ',cn_testing:'ກຳລັງທົດສອບ…',cn_ok:'ເຊື່ອມຕໍ່ສຳເລັດ',cn_saved:'ບັນທຶກການເຊື່ອມຕໍ່ແລ້ວ',
  cn_badUrl:'ນີ້ບໍ່ແມ່ນ Web app URL ຂອງ Apps Script (https://script.google.com/macros/s/…/exec).',cn_noReach:'ເຂົ້າ URL ນີ້ບໍ່ໄດ້. ກວດອິນເຕີເນັດ ແລະ Who has access = Anyone.',cn_notApp:'URL ຕອບກັບ ແຕ່ບໍ່ແມ່ນສະຄຣິບ KGS HR Training (ກວດ Code.gs ແລະ deployment).',
  cn_where:'ຂໍ້ມູນຖືກບັນທຶກໃນ Google Sheet KGS_HR_Training_DB. ບໍ່ຕ້ອງໃຊ້ Token: ແຕ່ລະຄົນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ຂອງຕົນ.',cn_card:'Google Sheet — ການເຊື່ອມຕໍ່ຖານຂໍ້ມູນ',cn_cardNote:'ຂໍ້ມູນທັງໝົດອ່ານ ແລະ ບັນທຶກລົງ Google Sheet ໂດຍກົງ. URL ຫຼັກຝັງໄວ້ໃນ index.html ແລ້ວ, ທຸກຄອມ ແລະ ໂທລະສັບເຊື່ອມຕໍ່ອັດຕະໂນມັດ.',
+ sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
@@ -1783,7 +1785,9 @@ function admData(){
    <div class="card"><h3>${t('cn_card')}</h3><p class="small" style="margin-top:0">${t('cn_cardNote')}</p>
     ${connFields('admUrl')}
     <p class="small muted" style="margin:0 0 10px">${urlOverride()?t('cn_isLocal'):t('cn_isDefault')}</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="admUrlTest">${t('cn_test')}</button><button class="btn pri" data-act="admUrlSave">${t('cn_save')}</button>${urlOverride()?`<button class="btn" data-act="admUrlReset">${t('cn_reset')}</button>`:''}</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="admUrlTest">${t('cn_test')}</button><button class="btn pri" data-act="admUrlSave">${t('cn_save')}</button>${urlOverride()?`<button class="btn" data-act="admUrlReset">${t('cn_reset')}</button>`:''}</div>
+    <div style="border-top:1px solid var(--line2);margin:16px 0 0;padding-top:14px"><p class="small" style="margin:0 0 10px">${t('sf_note')}</p>
+    <button class="btn" data-act="admSheetFmt">${ic('layers',16)} ${t('sf_btn')}</button></div></div>
    <div class="card"><h3>${t('ad_sysInfo')}</h3><div class="dl" style="margin:0">
     <div><span>${t('version')}</span>${esc(S.version)}</div><div><span>${t('ad_storage')}</span>Google Sheet · Apps Script</div>
     <div><span>${t('ad_serverTime')}</span>${esc(fmtDT(S.serverTime||''))}</div><div><span>${t('ad_tz')}</span>Asia/Vientiane (UTC+7)</div>
@@ -2041,6 +2045,7 @@ const H={
  dashYear:d=>{const f=dashFilter();f.year=String(dashYear()+Number(d));dashBody();},
  admTab:k=>{S.adm.tab=k;pageAdmin();},
  admUrlTest:()=>connTest('admUrl',false),
+ admSheetFmt:async()=>{try{const r=await call('sheet.format');toast(t('sf_done').replace('{n}',r.tabs),'ok');}catch(e){fail(e);}},
  admUrlSave:async()=>{if(await connTest('admUrl',true))admData();},
  admUrlReset:()=>{saveApiUrl('');toast(t('cn_saved'),'ok');admData();},
  admLogoRemove:()=>{S.adm.draft.logo='';admOrg();},
