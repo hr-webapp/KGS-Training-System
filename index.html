@@ -417,7 +417,42 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-present .ci-fi+.ci-fi{border-top-color:rgba(255,255,255,.08)}.ci-present .ci-fi .nm small,.ci-present .ci-fi .no{color:var(--pm)}
 .ci-present .ci-fi.new{background:linear-gradient(90deg,rgba(59,130,246,.32),rgba(34,211,238,.12))}
 .ci-present .ci-fi .av{box-shadow:0 0 0 2px rgba(255,255,255,.25)}
-.ci-present .ci-fempty{color:var(--pm)}.ci-fi .s-ok{color:#34d399}.ci-fi .s-late{color:#fbbf24}
+.ci-present .ci-fempty{color:var(--pm)}
+/* Lao ornaments (original kanok / prachamyam / rosette drawings) */
+.ci-orn{position:fixed;inset:0;pointer-events:none;z-index:0}
+.ci-orn .oc{position:absolute;width:clamp(150px,15vw,250px);aspect-ratio:1;opacity:.9;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}
+.ci-orn .oc svg{width:100%;height:100%;display:block}
+.ci-orn .bl{left:6px;bottom:22px}.ci-orn .br{right:6px;bottom:22px;transform:scaleX(-1)}
+.ci-orn .tl,.ci-orn .tr{width:clamp(90px,8vw,130px);opacity:.55}.ci-orn .tl{left:6px;top:22px;transform:scaleY(-1)}.ci-orn .tr{right:6px;top:22px;transform:scale(-1,-1)}
+.ci-orn .ob{position:absolute;left:0;right:0;height:24px;background-repeat:repeat-x;background-size:48px 24px;opacity:.7}.ci-orn .ob.top{top:0}.ci-orn .ob.bot{bottom:0}
+.ci-present .ci-top{top:34px}
+.ci-present .ci-x,.ci-present .ci-snd{top:34px}
+.ci-present .ci-pdeco{display:block;width:min(420px,80%);margin:2px 0 18px}.ci-present .ci-pdeco svg{width:100%;height:auto;display:block}
+.ci-qrw{position:relative;display:inline-block}.ci-present .ci-ptitle,.ci-present .ci-pdeco{position:relative;z-index:2}.ci-present .ci-feed{max-height:calc(100vh - 220px)!important;align-self:start;margin-top:40px}
+.ci-ros{position:absolute;left:50%;top:50%;width:132%;aspect-ratio:1;transform:translate(-50%,-50%);opacity:.22;pointer-events:none;animation:ciRot 240s linear infinite}
+.ci-ros svg{width:100%;height:100%;display:block}
+@keyframes ciRot{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.ci-qrw img{position:relative;display:block}
+.ci-wcard{border-top:4px solid #d7a64e}.ci-wcard .wdeco{width:min(320px,70%);margin:8px auto 0}.ci-wcard .wdeco svg{width:100%;height:auto;display:block}
+@media(max-width:1100px){.ci-orn .oc{opacity:.45}}
+/* layout v2: wide left, title above QR, slim list */
+.ci-present{grid-template-columns:minmax(320px,1fr) auto clamp(220px,18vw,290px)!important;gap:3vw!important}
+.ci-present .ci-pl{max-width:none}
+.ci-present .ci-pr{display:flex;flex-direction:column;align-items:center;max-width:min(38vw,600px)}
+.ci-present .ci-pr img{width:min(52vh,32vw)!important}
+.ci-present .ci-ptitle{font-size:clamp(28px,3.1vw,52px);font-weight:800;line-height:1.25;text-align:center;letter-spacing:.3px;margin:0 0 6px;
+  background:linear-gradient(100deg,#fff7dc 0%,#f5d98e 28%,#d7a64e 52%,#fbe6a6 74%,#fff7dc 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 22px rgba(215,166,78,.35));animation:ciShine 7s linear infinite;text-shadow:none}
+@keyframes ciShine{to{background-position:-220% 0}}
+.ci-present .ci-pdeco{display:flex;align-items:center;gap:12px;width:min(420px,70%);margin:6px 0 22px}.ci-present .ci-pdeco i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(245,217,142,.8),transparent)}.ci-present .ci-pdeco b{color:#f5d98e;font-size:12px}
+.ci-present .ci-pinfo{display:flex;flex-direction:column;gap:12px;font-size:clamp(17px,1.6vw,24px)}
+.ci-present .ci-pinfo div{display:flex;align-items:center;gap:12px}.ci-present .ci-pinfo .ico{color:#7dd3fc;flex:0 0 auto}
+.ci-present .ci-pstep{margin-top:3.5vh}
+.ci-present .ci-pstat{padding:22px 26px}
+.ci-present .ci-feed h4{padding:12px 14px;font-size:15px}.ci-present .ci-flist{padding:4px 6px 8px}
+.ci-present .ci-fi{gap:8px;padding:8px 6px}.ci-present .ci-fi .no{flex:0 0 18px;font-size:13px}.ci-present .ci-fi .av{width:36px;height:36px;flex:0 0 36px;font-size:12px}
+.ci-present .ci-fi .nm b{font-size:14px}.ci-present .ci-fi .nm small{font-size:11.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ci-present .ci-fi .tm{font-size:13px}
+@media(max-width:1100px){.ci-present{grid-template-columns:1fr!important}.ci-present .ci-pr{order:-1}.ci-present .ci-pr img{width:min(60vh,80vw)!important}}.ci-fi .s-ok{color:#34d399}.ci-fi .s-late{color:#fbbf24}
 .ci-present .btn{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff}
 .ci-welcome{background:rgba(3,10,30,.55)}
 .ci-wcard{box-shadow:0 0 0 1px rgba(255,255,255,.6),0 40px 120px rgba(0,0,0,.55),0 0 80px rgba(59,130,246,.35)}.ci-ptitle{font-size:clamp(26px,3.6vw,52px);font-weight:800;line-height:1.2}
@@ -492,7 +527,7 @@ en:{
  // calendar
  month:'Month',week:'Week',day:'Day',today:'Today',year:'Year',goDate:'Go to date',prev:'Previous',
  // attendance
- selectActivity:'Select an activity',addParticipants:'Add participants',markAllPresent:'Mark all Present',saveAttendance:'Save attendance',
+ selectActivity:'Select an activity',addParticipants:'Add participants',markAllPresent:'Mark Present (selected / all)',markPresentQ:'Mark {n} people as Present and save now?',markNone:'Nothing to mark — everyone selected is already Present or Late.',ci_mManual:'Marked by HR',saveAttendance:'Save attendance',
  removeSelected:'Remove selected',selectAllFiltered:'Select all shown',alreadyAdded:'already added',selected:'selected',
  unsaved:'You have unsaved changes',overCapacity:'Over capacity. Add anyway?',
  attendance:'Attendance',completion:'Completion',certificate:'Certificate',remarks:'Remarks',
@@ -517,6 +552,7 @@ en:{
  cn_where:'Data is saved in the Google Sheet KGS_HR_Training_DB. No token is needed: each person signs in with their own username.',cn_card:'Google Sheet — database connection',cn_cardNote:'All data is read from and saved straight to the Google Sheet. The default URL is built into index.html, so every computer and phone connects automatically.',
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
+ bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
  ad_logoHint:'PNG, JPG, WEBP or SVG, up to 5 MB. A square logo on a transparent or white background looks best. It is resized to 256 px automatically.',
@@ -546,7 +582,7 @@ en:{
  ad_review:'User access review',ad_reviewHelp:'Every 3 months, check that each user still needs access and has the right role, then confirm here.',
  ad_reviewBtn:'Confirm review done',ad_reviewQ:'Confirm that you have checked every user and role?',ad_by:'by',
  ad_auditNote:'The audit log cannot be edited or deleted from the app.',
- ad_backup:'Backup',ad_backupBtn:'Download full backup (Excel)',ad_backupNote:'One Excel file with every table (no passwords, no employee photos). It contains personal data — keep it in a protected folder. Photos stay in the Photos tab of the Google Sheet (back it up with File → Make a copy).',
+ ad_backup:'Backup',ad_backupBtn:'Export to Excel (for reading, not restorable)',ad_backupNote:'One Excel file with every table (no passwords, no employee photos). It contains personal data — keep it in a protected folder. Photos stay in the Photos tab of the Google Sheet (back it up with File → Make a copy).',
  ad_lastBackup:'Last backup',ad_restoreNote:'To restore an earlier state, open the Google Sheet → File → Version history.',ad_backupDone:'Backup downloaded',
  ad_dataOverview:'Records',ad_dupGo:'Duplicate review records are on the Import / Export page.',ad_sysInfo:'System information',ad_storage:'Database',ad_serverTime:'Server time',ad_tz:'Time zone',
  ad_goAdmin:'Open Administration',ad_adminHint:'Users, logo, security and the audit log are managed in Administration (or click the logo at the top of the menu).',
@@ -608,7 +644,7 @@ lo:{
  completeConfirm:'ໝາຍກິດຈະກຳນີ້ວ່າ ສຳເລັດ? ກະລຸນາຢືນຢັນວ່າໄດ້ກວດການເຂົ້າຮ່ວມ ແລະ ຜົນສຳເລັດແລ້ວ.',
  companyWide:'ທົ່ວບໍລິສັດ',other:'ອື່ນໆ',
  month:'ເດືອນ',week:'ອາທິດ',day:'ມື້',today:'ມື້ນີ້',year:'ປີ',goDate:'ໄປວັນທີ',prev:'ກ່ອນໜ້າ',
- selectActivity:'ເລືອກກິດຈະກຳ',addParticipants:'ເພີ່ມຜູ້ເຂົ້າຮ່ວມ',markAllPresent:'ໝາຍທັງໝົດວ່າ ມາ',saveAttendance:'ບັນທຶກການເຂົ້າຮ່ວມ',
+ selectActivity:'ເລືອກກິດຈະກຳ',addParticipants:'ເພີ່ມຜູ້ເຂົ້າຮ່ວມ',markAllPresent:'ໝາຍວ່າ ມາ (ທີ່ເລືອກ / ທັງໝົດ)',markPresentQ:'ໝາຍ {n} ຄົນວ່າ "ມາ" ແລະ ບັນທຶກເລີຍບໍ?',markNone:'ບໍ່ມີໃຜຕ້ອງໝາຍ — ຄົນທີ່ເລືອກໝາຍ ມາ ຫຼື ມາຊ້າ ແລ້ວ.',ci_mManual:'HR ໝາຍ',saveAttendance:'ບັນທຶກການເຂົ້າຮ່ວມ',
  removeSelected:'ລຶບທີ່ເລືອກອອກ',selectAllFiltered:'ເລືອກທັງໝົດທີ່ສະແດງ',alreadyAdded:'ເພີ່ມແລ້ວ',selected:'ເລືອກແລ້ວ',
  unsaved:'ມີການປ່ຽນແປງທີ່ຍັງບໍ່ໄດ້ບັນທຶກ',overCapacity:'ເກີນຈຳນວນສູງສຸດ. ເພີ່ມຕໍ່ບໍ?',
  attendance:'ການເຂົ້າຮ່ວມ',completion:'ຜົນສຳເລັດ',certificate:'ໃບຢັ້ງຢືນ',remarks:'ໝາຍເຫດ',
@@ -630,6 +666,7 @@ lo:{
  cn_where:'ຂໍ້ມູນຖືກບັນທຶກໃນ Google Sheet KGS_HR_Training_DB. ບໍ່ຕ້ອງໃຊ້ Token: ແຕ່ລະຄົນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ຂອງຕົນ.',cn_card:'Google Sheet — ການເຊື່ອມຕໍ່ຖານຂໍ້ມູນ',cn_cardNote:'ຂໍ້ມູນທັງໝົດອ່ານ ແລະ ບັນທຶກລົງ Google Sheet ໂດຍກົງ. URL ຫຼັກຝັງໄວ້ໃນ index.html ແລ້ວ, ທຸກຄອມ ແລະ ໂທລະສັບເຊື່ອມຕໍ່ອັດຕະໂນມັດ.',
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
+ bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
  ad_logoHint:'PNG, JPG, WEBP ຫຼື SVG, ບໍ່ເກີນ 5 MB. ໂລໂກ້ຮູບສີ່ຫຼ່ຽມຈະຕຸລັດ ພື້ນໂປ່ງໃສ ຫຼື ພື້ນຂາວ ຈະງາມທີ່ສຸດ. ລະບົບຫຍໍ້ເປັນ 256 px ໃຫ້ເອງ.',
@@ -659,7 +696,7 @@ lo:{
  ad_review:'ການກວດສິດຜູ້ໃຊ້',ad_reviewHelp:'ທຸກ 3 ເດືອນ ກວດວ່າຜູ້ໃຊ້ແຕ່ລະຄົນ ຍັງຕ້ອງໃຊ້ລະບົບ ແລະ ມີສິດຖືກຕ້ອງ, ແລ້ວຢືນຢັນຢູ່ນີ້.',
  ad_reviewBtn:'ຢືນຢັນວ່າກວດແລ້ວ',ad_reviewQ:'ຢືນຢັນວ່າໄດ້ກວດຜູ້ໃຊ້ ແລະ ສິດທຸກຄົນແລ້ວ?',ad_by:'ໂດຍ',
  ad_auditNote:'ບັນທຶກການປ່ຽນແປງ ບໍ່ສາມາດແກ້ໄຂ ຫຼື ລຶບໄດ້ຈາກແອັບ.',
- ad_backup:'ສຳຮອງຂໍ້ມູນ',ad_backupBtn:'ດາວໂຫຼດສຳຮອງທັງໝົດ (Excel)',ad_backupNote:'ໄຟລ໌ Excel ດຽວ ມີທຸກຕາຕະລາງ (ບໍ່ມີລະຫັດຜ່ານ ແລະ ບໍ່ມີຮູບພະນັກງານ). ມີຂໍ້ມູນສ່ວນຕົວ — ເກັບໄວ້ໃນໂຟນເດີທີ່ປ້ອງກັນ. ຮູບຢູ່ແຖບ Photos ໃນ Google Sheet (ສຳຮອງດ້ວຍ File → Make a copy).',
+ ad_backup:'ສຳຮອງຂໍ້ມູນ',ad_backupBtn:'ສົ່ງອອກ Excel (ໄວ້ອ່ານ, ກູ້ຄືນບໍ່ໄດ້)',ad_backupNote:'ໄຟລ໌ Excel ດຽວ ມີທຸກຕາຕະລາງ (ບໍ່ມີລະຫັດຜ່ານ ແລະ ບໍ່ມີຮູບພະນັກງານ). ມີຂໍ້ມູນສ່ວນຕົວ — ເກັບໄວ້ໃນໂຟນເດີທີ່ປ້ອງກັນ. ຮູບຢູ່ແຖບ Photos ໃນ Google Sheet (ສຳຮອງດ້ວຍ File → Make a copy).',
  ad_lastBackup:'ສຳຮອງຄັ້ງລ່າສຸດ',ad_restoreNote:'ຖ້າຕ້ອງການກູ້ຄືນ, ເປີດ Google Sheet → File → Version history.',ad_backupDone:'ດາວໂຫຼດສຳຮອງແລ້ວ',
  ad_dataOverview:'ຈຳນວນຂໍ້ມູນ',ad_dupGo:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ ຢູ່ໜ້າ ນຳເຂົ້າ / ສົ່ງອອກ.',ad_sysInfo:'ຂໍ້ມູນລະບົບ',ad_storage:'ຖານຂໍ້ມູນ',ad_serverTime:'ເວລາເຊີບເວີ',ad_tz:'ເຂດເວລາ',
  ad_goAdmin:'ເປີດໜ້າບໍລິຫານລະບົບ',ad_adminHint:'ຜູ້ໃຊ້, ໂລໂກ້, ຄວາມປອດໄພ ແລະ ບັນທຶກການປ່ຽນແປງ ຈັດການຢູ່ໜ້າ ບໍລິຫານລະບົບ (ຫຼື ກົດທີ່ໂລໂກ້ ເທິງເມນູ).',
@@ -899,6 +936,54 @@ function exportXlsx(name,sheets){
     sheets.forEach(s=>{const ws=XLSX.utils.aoa_to_sheet([s.head,...s.rows]);ws['!cols']=s.head.map(()=>({wch:18}));XLSX.utils.book_append_sheet(wb,ws,s.name.slice(0,31));});
     XLSX.writeFile(wb,name+'_'+todayStr()+'.xlsx');}catch(e){toast('Export failed: '+e.message,'bad');}
 }
+/* ===== full backup file (.kgsbak): AES-256-GCM encrypted JSON, password chosen by the admin ===== */
+const u8b64=u=>{let s='';for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s);};
+const b64u8=b=>Uint8Array.from(atob(b),c=>c.charCodeAt(0));
+async function bkKey(pw,salt){const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:200000,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);}
+async function bkSeal(obj,pw){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
+  const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await bkKey(pw,salt),new TextEncoder().encode(JSON.stringify(obj))));
+  const counts={};Object.keys(obj.tables).forEach(n=>counts[n]=obj.tables[n].length);
+  return JSON.stringify({kgsBackup:1,app:obj.app,createdAt:obj.createdAt,createdBy:obj.createdBy,counts,enc:'AES-256-GCM/PBKDF2-SHA256-200000',salt:u8b64(salt),iv:u8b64(iv),data:u8b64(ct)});}
+async function bkOpen(file,pw){const o=JSON.parse(file);
+  try{const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64u8(o.iv)},await bkKey(pw,b64u8(o.salt)),b64u8(o.data));return JSON.parse(new TextDecoder().decode(pt));}
+  catch(e){throw {message:t('bk_badPw')};}}
+function bkPwModal(title,twice){return new Promise(res=>{
+  modal(title,`<p class="small" style="margin-top:0">${twice?t('bk_pwHelp'):t('bk_pwAsk')}</p>
+   <div class="fld"><label>${t('password')}</label><input type="password" class="in" style="width:100%" id="bkPw" autocomplete="new-password"></div>
+   ${twice?`<div class="fld"><label>${t('confirmPassword')}</label><input type="password" class="in" style="width:100%" id="bkPw2" autocomplete="new-password"></div>`:''}
+   <div class="err small" id="bkErr" style="min-height:18px"></div>`,
+   `<button class="btn" id="bkNo">${t('cancel')}</button><button class="btn pri" id="bkOk">${t('confirm')}</button>`,'sm');
+  const ok=()=>{const a=$('#bkPw').value;if(twice){if(a.length<8){$('#bkErr').textContent=t('bk_pwShort');return;}if(a!==$('#bkPw2').value){$('#bkErr').textContent=t('pwMismatch');return;}}else if(!a)return;closeModal();res(a);};
+  $('#bkOk').onclick=ok;$('#bkNo').onclick=()=>{closeModal();res(null);};
+  document.querySelectorAll('#bkPw,#bkPw2').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();ok();}}));setTimeout(()=>$('#bkPw')&&$('#bkPw').focus(),50);});}
+async function bkFull(){
+  const pw=await bkPwModal(t('bk_full'),true);if(!pw)return;
+  try{loading(true);const d=await call('backup.full',{},{silent:true});const txt=await bkSeal(d,pw);
+    const p=x=>String(x).padStart(2,'0'),n=new Date(),name=`KGS_HR_Backup_${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}_${p(n.getHours())}${p(n.getMinutes())}.kgsbak`;
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'application/octet-stream'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);
+    S.settings=Object.assign(S.settings||{},{lastBackup:d.createdAt,lastBackupBy:d.createdBy});toast(t('bk_done'),'ok');if(S.page==='admin')admData();}
+  catch(e){fail(e);}finally{loading(false);}
+}
+function bkRestoreFlow(onNew){
+  const inp=document.createElement('input');inp.type='file';inp.accept='.kgsbak,application/json';
+  inp.onchange=async()=>{const f=inp.files[0];if(!f)return;let raw,head;
+    try{raw=await f.text();head=JSON.parse(raw);if(!head.kgsBackup||!head.data)throw 0;}catch(e){toast(t('bk_notFile'),'bad');return;}
+    const pw=await bkPwModal(t('bk_restore'),false);if(!pw)return;
+    let b;try{loading(true);b=await bkOpen(raw,pw);}catch(e){loading(false);toast(e.message,'bad');return;}loading(false);
+    const c=head.counts||{};const L=[['nav_employees','Employees'],['nav_activities','Activities'],['participants','Participants'],['users','Users'],['auditLog','AuditLog'],['bk_photos','Photos'],['bk_settings','Settings']];
+    modal(t('bk_restore'),`<p style="margin-top:0">${t('bk_fileInfo').replace('{d}',esc(fmtDT(b.createdAt))).replace('{u}',esc(b.createdBy||'')).replace('{v}',esc(b.app||''))}</p>
+      <div class="tbl-wrap"><table class="tbl"><tbody>${L.map(([k,n])=>`<tr><td>${esc(t(k)||n)}</td><td class="num"><b>${(b.tables[n]||[]).length}</b></td></tr>`).join('')}</tbody></table></div>
+      <div class="note warn small" style="margin:12px 0 0">${onNew?t('bk_warnNew'):t('bk_warn')}</div>
+      <div class="fld" style="margin-top:12px"><label>${t('bk_type')}</label><input class="in" style="width:100%" id="bkType" placeholder="RESTORE"></div>`,
+     `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn danger" id="bkGo">${t('bk_restoreGo')}</button>`,'sm');
+    $('#bkGo').onclick=async()=>{if($('#bkType').value.trim().toUpperCase()!=='RESTORE'){$('#bkType').focus();return;}
+      try{const r=await call('backup.restore',{backup:b});closeModal();toast(t('bk_restored'),'ok');
+        if(!onNew){try{localStorage.removeItem('kgs_hr_token');}catch(e){}S.token=null;S.me=null;}
+        setTimeout(()=>start(),600);}catch(e){fail(e);}};
+  };
+  inp.click();
+}
 function tableToSheet(name,cols,rows){return{name,head:cols.map(c=>c.l),rows:rows.map(r=>cols.map(c=>c.x?c.x(r):(r[c.k]??'')))};}
 
 /* ================= auth screens ================= */
@@ -941,7 +1026,9 @@ function renderLogin(first){
    <div id="lgErr" class="err small" style="min-height:18px;margin-bottom:6px"></div>
    <button type="button" id="lgBtn" class="btn pri" style="width:100%">${first?t('create'):t('signIn')}</button>
    ${!first&&cfg('loginBanner')?`<div class="note info small" style="margin:14px 0 0;white-space:pre-wrap">${esc(cfg('loginBanner'))}</div>`:''}
+   ${first?`<div style="text-align:center;margin-top:14px"><button type="button" class="btn" id="lgRestore">${ic('upload',15)} ${t('bk_restoreNew')}</button><div class="small muted" style="margin-top:6px">${t('bk_restoreNewHelp')}</div></div>`:''}
    <p class="small muted" style="margin:14px 0 0;text-align:center">${t('version')} ${esc(S.version)}</p></form></div>`;
+  if(first)$('#lgRestore').onclick=()=>bkRestoreFlow(true);
   const doLogin=async()=>{if(S.busyLogin)return;S.busyLogin=true;$('#lgBtn').disabled=true;
     const u=$('#lgUser').value.trim(),p=$('#lgPass').value;$('#lgErr').textContent='';
     try{
@@ -1836,10 +1923,13 @@ function admData(){
   const s=S.settings||{},cur=curEmps().length;
   const rowsN=[[t('nav_employees'),cur+' / '+S.emps.length+' ('+t('scopeCur')+' / '+t('all')+')'],[t('nav_activities'),S.acts.length],[t('participants'),S.parts.length],[t('users'),S.users.length]];
   $('#admBody').innerHTML=`<div class="grid two">
-   <div class="card"><h3>${t('ad_backup')}</h3><p class="small" style="margin-top:0">${t('ad_backupNote')}</p>
-    <p class="small muted">${t('ad_lastBackup')}: ${s.lastBackup?esc(fmtDT(s.lastBackup))+' · '+t('ad_by')+' '+esc(s.lastBackupBy||''):t('ad_never')}</p>
-    <button class="btn pri" data-act="admBackup">${ic('download',16)} ${t('ad_backupBtn')}</button>
-    <div class="note info small" style="margin:16px 0 0">${t('ad_restoreNote')}</div></div>
+   <div class="card"><h3>${t('ad_backup')}</h3><p class="small" style="margin-top:0">${t('bk_note')}</p>
+    <p class="small muted">${t('ad_lastBackup')}: ${s.lastBackup?esc(fmtDT(s.lastBackup))+' · '+t('ad_by')+' '+esc(s.lastBackupBy||''):t('ad_never')}${s.lastAutoBackup?' · '+t('bk_lastAuto')+': '+esc(fmtDT(s.lastAutoBackup)):''}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn pri" data-act="bkFull">${ic('download',16)} ${t('bk_full')}</button>
+    <button class="btn danger" data-act="bkRestore">${ic('upload',16)} ${t('bk_restore')}</button></div>
+    <div style="border-top:1px solid var(--line2);margin:16px 0 0;padding-top:12px"><p class="small muted" style="margin:0 0 8px">${t('ad_backupNote')}</p>
+    <button class="btn" data-act="admBackup">${ic('download',16)} ${t('ad_backupBtn')}</button></div>
+    <div class="note info small" style="margin:14px 0 0">${t('bk_auto')}</div></div>
    <div class="card"><h3>${t('ad_dataOverview')}</h3><div class="tbl-wrap"><table class="tbl"><tbody>${rowsN.map(([a,b])=>`<tr><td>${esc(a)}</td><td class="num"><b>${esc(b)}</b></td></tr>`).join('')}</tbody></table></div>
     <p class="small muted" style="margin:10px 0 0">${t('ad_dupGo')}</p></div>
    <div class="card"><h3>${t('cn_card')}</h3><p class="small" style="margin-top:0">${t('cn_cardNote')}</p>
@@ -1949,8 +2039,11 @@ function pageCheckin(){
   ciBody();
 }
 function ciStop(){const G=S.ci2;if(!G)return;clearTimeout(G.tk);clearInterval(G.cd);clearInterval(G.fd);G.tk=G.cd=G.fd=null;scanStop();const ov=$('#ciPresent');if(ov)ov.remove();}
-function ciCounts(a){const ps=S.partsByAct[a.ActivityID]||[];const ins=ps.filter(p=>p.CheckInAt);
-  return{list:ps.filter(p=>p.WalkIn!=='Yes').length,ins:ins.length,late:ins.filter(p=>p.Attendance==='Late').length,walk:ins.filter(p=>p.WalkIn==='Yes').length,ps,insList:ins.slice().sort((x,y)=>String(y.CheckInAt).localeCompare(String(x.CheckInAt)))};}
+/* "in" = checked in by QR/HR scan OR marked Present/Late on the attendance page */
+const ciIn=p=>!!p.CheckInAt||p.Attendance==='Present'||p.Attendance==='Late';
+const ciKey=p=>String(p.CheckInAt||p.UpdatedAt||p.AddedAt||'');
+function ciCounts(a){const ps=S.partsByAct[a.ActivityID]||[];const ins=ps.filter(ciIn);
+  return{list:ps.filter(p=>p.WalkIn!=='Yes').length,ins:ins.length,late:ins.filter(p=>p.Attendance==='Late').length,walk:ins.filter(p=>p.WalkIn==='Yes').length,ps,insList:ins.slice().sort((x,y)=>ciKey(y).localeCompare(ciKey(x)))};}
 function ciBody(){
   const G=S.ci2,a=actById(G.actId),el=$('#ciBody');if(!el)return;
   if(!a){el.innerHTML=`<div class="card muted">${t('ci_noAct')}</div>`;return;}
@@ -1978,12 +2071,12 @@ function ciList(){
   const a=actById(S.ci2.actId);if(!a||!$('#ciList'))return;const c=ciCounts(a);
   $('#ciKpi').innerHTML=`<div><span>${t('ci_in')}</span><b>${c.ins}</b></div><div><span>${t('ci_onList')}</span><b>${c.list}</b></div><div><span>${t('late')}</span><b>${c.late}</b></div><div><span>${t('ci_walkInN')}</span><b>${c.walk}</b></div>`;
   const rows=c.insList.map(p=>{const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};return{...p,Name:empName(e),NameLA:e.NameLA||'',_e:e};});
-  const wait=c.ps.filter(p=>!p.CheckInAt);
-  $('#ciList').innerHTML=dataTable('ci',[{k:'CheckInAt',l:t('time'),r:p=>`<b>${esc(hhmm(p.CheckInAt))}</b>`},
+  const wait=c.ps.filter(p=>!ciIn(p));
+  $('#ciList').innerHTML=dataTable('ci',[{k:'CheckInAt',l:t('time'),r:p=>p.CheckInAt?`<b>${esc(hhmm(p.CheckInAt))}</b>`:'<span class="muted">—</span>'},
     {k:'EmployeeID',l:fl('EmployeeID'),r:p=>`<div class="idcell"><span class="av" style="--c:${avc(p.EmployeeID)}">${esc(initials(p._e))}</span><b>${esc(p.EmployeeID)}</b></div>`},
     {k:'Name',l:fl('Name'),r:p=>esc(p.NameLA||p.Name)+(p.NameLA&&p.Name?`<div class="small muted">${esc(p.Name)}</div>`:'')},
     {k:'Attendance',l:t('attendance'),r:p=>badge(p.Attendance)},
-    {k:'CheckInBy',l:t('ci_method'),r:p=>esc(String(p.CheckInBy).startsWith('SELF')?t('ci_mSelf'):t('ci_mHr'))+(p.WalkIn==='Yes'?` <span class="badge b-dup">${t('ci_walkTag')}</span>`:'')}],
+    {k:'CheckInBy',l:t('ci_method'),r:p=>esc(!p.CheckInAt?t('ci_mManual'):String(p.CheckInBy).startsWith('SELF')?t('ci_mSelf'):t('ci_mHr'))+(p.WalkIn==='Yes'?` <span class="badge b-dup">${t('ci_walkTag')}</span>`:'')}],
     rows,{noPage:rows.length<=100,ps:100})+(wait.length?`<details style="margin-top:12px"><summary class="small" style="cursor:pointer">${t('ci_waiting')} (${wait.length})</summary><div class="small muted" style="margin-top:8px;line-height:1.9">${wait.map(p=>{const e=empById(p.EmployeeID)||{};return esc(p.EmployeeID+' '+(e.NameLA||empName(e)));}).join(' · ')}</div></details>`:'');
   if($('#ciPresent'))ciPresentSync();
 }
@@ -2015,12 +2108,12 @@ function ciPresent(){
   const G=S.ci2,a=actById(G.actId);if(!a)return;const c=ciCounts(a);
   const d=document.createElement('div');d.id='ciPresent';d.className='ci-present';
   if(G.sound===undefined)G.sound=true;audioCtx();
-  d.innerHTML=`<div class="ci-top">${logoHTML(46)}<div class="who"><b>${esc(companyName()||'KGS')}</b><small>${esc(cfg('sysName'))}</small></div><div class="ci-clock" id="ciClock"></div></div><button class="btn ci-snd" data-act="ciSound" title="${t('ci_sound')}">${G.sound?'🔔':'🔕'}</button><button class="btn ci-x" data-act="ciPresentClose">✕</button>
-   <div class="ci-pl"><div class="ci-ptitle">${esc(a.Title)}</div><div class="ci-pwhen">${actWhen(a)}${a.Location?' · '+esc(tv(a.Location)):''}</div>
+  d.innerHTML=`<div class="ci-orn" aria-hidden="true"><div class="oc bl">${ornCorner('ornC1')}</div><div class="oc br">${ornCorner('ornC2')}</div><div class="oc tl">${ornCorner('ornC3')}</div><div class="oc tr">${ornCorner('ornC4')}</div><div class="ob top" style="background-image:${ornBand()}"></div><div class="ob bot" style="background-image:${ornBand()}"></div></div><div class="ci-top">${logoHTML(46)}<div class="who"><b>${esc(companyName()||'KGS')}</b><small>${esc(cfg('sysName'))}</small></div><div class="ci-clock" id="ciClock"></div></div><button class="btn ci-snd" data-act="ciSound" title="${t('ci_sound')}">${G.sound?'🔔':'🔕'}</button><button class="btn ci-x" data-act="ciPresentClose">✕</button>
+   <div class="ci-pl"><div class="ci-pinfo"><div>${ic('cal',20)}<span>${fmtD(a.StartDate)}${a.EndDate&&a.EndDate!==a.StartDate?' – '+fmtD(a.EndDate):''}</span></div>${a.StartTime?`<div>${ic('clock',20)}<span>${esc(a.StartTime)}${a.EndTime?' – '+esc(a.EndTime):''}</span></div>`:''}${a.Location?`<div>${ic('building',20)}<span>${esc(tv(a.Location))}</span></div>`:''}</div>
     <div class="ci-pstep">${t('ci_presentHelp')}</div>
     <div class="ci-pstat"><div class="ci-pbig"><b id="ciPresentN">${c.ins}</b><span id="ciPresentOf"></span><em>${t('ci_people')}</em></div>
      <div class="ci-pbar"><i id="ciPresentBar"></i></div><div class="ci-pchips" id="ciPresentChips"></div></div></div>
-   <div class="ci-pr"><img id="ciPresentImg" alt="QR" src="${$('#ciQrImg')?$('#ciQrImg').src:''}"><div id="ciPresentCd" class="small">${$('#ciCd')?esc($('#ciCd').textContent):''}</div></div>
+   <div class="ci-pr"><div class="ci-ptitle">${esc(a.Title)}</div><div class="ci-pdeco">${ornDivider('ornDv')}</div><div class="ci-qrw"><div class="ci-ros">${ornRosette('ornRs')}</div><img id="ciPresentImg" alt="QR" src="${$('#ciQrImg')?$('#ciQrImg').src:''}"></div><div id="ciPresentCd" class="small">${$('#ciCd')?esc($('#ciCd').textContent):''}</div></div>
    <div class="ci-feed"><h4><span>${t('ci_feedTitle')}</span><span id="ciFeedN" class="muted"></span></h4><div class="ci-flist" id="ciFlist"></div></div>`;
   document.body.appendChild(d);
   G.seen=new Set(c.insList.map(p=>p.EmployeeID));G.wq=[];G.wBusy=false;G.newIds=new Set();
@@ -2030,11 +2123,52 @@ function ciPresent(){
     el.innerHTML=`<b>${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}</b><small>${fmtD(n.getFullYear()+'-'+p(n.getMonth()+1)+'-'+p(n.getDate()))}</small>`;};
   clearInterval(G.ck);tick();G.ck=setInterval(tick,1000);
 }
+/* Original Lao-style ornaments (kanok flame, prachamyam band, rosette, lotus divider) drawn as SVG */
+function ornDefs(id){return `<defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c4"/><stop offset=".45" stop-color="#e2b866"/><stop offset="1" stop-color="#a8762c"/></linearGradient></defs>`;}
+/* one kanok flame: body + curled tip + inner veins; drawn pointing up, base at (0,0) */
+function kanok(s,flip){return `<g transform="scale(${flip?-s:s},${s})">
+ <path d="M-18 0 C-30 -30 -30 -60 -16 -90 C-6 -112 -14 -136 -34 -160 C-4 -150 14 -134 14 -112 L28 -126 C26 -108 22 -100 12 -94 C28 -92 36 -84 36 -70 L50 -84 C48 -64 42 -56 30 -50 C44 -46 52 -36 50 -22 L62 -34 C60 -14 46 -4 24 0 Z"/>
+ <path d="M-34 -160 C-46 -168 -54 -156 -47 -149 C-42 -144 -36 -149 -39 -153" fill="none" stroke-width="3.5" stroke-linecap="round"/>
+ <path d="M0 -6 C-12 -40 -10 -80 -2 -100 C4 -114 -4 -132 -20 -148 M4 -36 C16 -42 26 -48 36 -56 M2 -74 C12 -80 20 -88 26 -100 M-8 -18 C-18 -36 -20 -56 -14 -74" fill="none" stroke="#0a1f4d" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/></g>`;}
+/* corner piece (drawn for the bottom-left corner; mirror with CSS for the others) */
+function ornCorner(id){return `<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">${ornDefs(id)}<g fill="url(#${id})" stroke="url(#${id})">
+ <path d="M10 10 V250 C10 286 34 310 70 310 H310" fill="none" stroke-width="2"/>
+ <path d="M22 30 V246 C22 278 42 298 74 298 H290" fill="none" stroke-width=".9"/>
+ <g transform="translate(58 282) rotate(42)">${kanok(1.02)}</g>
+ <g transform="translate(44 270) rotate(4)">${kanok(.66,true)}</g>
+ <g transform="translate(74 290) rotate(80)">${kanok(.62)}</g>
+ <g transform="translate(34 150) rotate(12)">${kanok(.36,true)}</g>
+ <g transform="translate(176 290) rotate(84)">${kanok(.36)}</g>
+ <path d="M40 300 C30 300 26 290 32 284 C38 278 48 282 46 290" fill="none" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="10" cy="10" r="4"/><circle cx="310" cy="310" r="4"/>
+ <path d="M10 60 l-6 7 l6 7 l6 -7z M260 310 l7 -6 l7 6 l-7 6z" stroke="none"/></g></svg>`;}
+/* rosette (round "dok chan" wheel) */
+function ornRosette(id){let p='';const R=100;
+ for(let i=0;i<32;i++){const a=i*360/32;p+=`<path transform="rotate(${a})" d="M0 -96 C6 -90 7 -82 0 -76 C-7 -82 -6 -90 0 -96Z"/>`;}
+ for(let i=0;i<64;i++){const a=i*360/64*Math.PI/180;p+=`<circle cx="${(70*Math.sin(a)).toFixed(2)}" cy="${(-70*Math.cos(a)).toFixed(2)}" r="1.6"/>`;}
+ for(let i=0;i<16;i++){const a=i*360/16;p+=`<path transform="rotate(${a})" d="M0 -64 C10 -56 10 -46 0 -40 C-10 -46 -10 -56 0 -64Z M0 -60 L0 -46" />`;}
+ return `<svg viewBox="-104 -104 208 208" xmlns="http://www.w3.org/2000/svg">${ornDefs(id)}<g fill="url(#${id})" stroke="url(#${id})">
+  <circle r="101" fill="none" stroke-width="1.6"/><circle r="98" fill="none" stroke-width=".8"/>${p}
+  <circle r="74" fill="none" stroke-width="1.2"/><circle r="66" fill="none" stroke-width="1.2"/><circle r="36" fill="none" stroke-width="1"/></g></svg>`;}
+/* prachamyam band tile (four-petal flower in a diamond), used as repeating background */
+function ornBand(){const u=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24" width="48" height="24"><defs><linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#f5d98e"/><stop offset="1" stop-color="#c8963f"/></linearGradient></defs><g fill="url(#b)" stroke="url(#b)">
+ <path d="M24 2 L36 12 L24 22 L12 12Z" fill="none" stroke-width="1.2"/>
+ <path d="M24 5 C27 8 27 10 24 12 C21 10 21 8 24 5Z M24 19 C27 16 27 14 24 12 C21 14 21 16 24 19Z M17 12 C20 9 22 9 24 12 C22 15 20 15 17 12Z M31 12 C28 9 26 9 24 12 C26 15 28 15 31 12Z"/>
+ <circle cx="24" cy="12" r="1.4" fill="#0a1f4d"/><circle cx="0" cy="12" r="2"/><circle cx="48" cy="12" r="2"/>
+ <path d="M0 2 H48 M0 22 H48" stroke-width=".8" fill="none"/></g></svg>`;return "url('data:image/svg+xml,"+encodeURIComponent(u)+"')";}
+/* lotus divider for the title */
+function ornDivider(id){return `<svg viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg">${ornDefs(id)}<g fill="url(#${id})" stroke="url(#${id})">
+ <path d="M10 22 H160 C172 22 176 14 170 10 C164 6 158 12 164 16" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+ <path d="M410 22 H260 C248 22 244 14 250 10 C256 6 262 12 256 16" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+ <path d="M210 2 C222 12 224 26 210 36 C196 26 198 12 210 2Z"/>
+ <path d="M210 36 C196 34 184 26 180 14 C192 16 202 22 210 36Z M210 36 C224 34 236 26 240 14 C228 16 218 22 210 36Z"/>
+ <path d="M188 30 l-6 -4 M232 30 l6 -4" stroke-width="2"/><circle cx="174" cy="22" r="2.5"/><circle cx="246" cy="22" r="2.5"/></g></svg>`;}
+
 /* live counter, scrolling list and big welcome card for each new check-in */
 function ciPresentSync(){
   const G=S.ci2,a=actById(G.actId),d=$('#ciPresent');if(!a||!d)return;const c=ciCounts(a);
-  const fresh=c.insList.filter(p=>!G.seen.has(p.EmployeeID)).sort((x,y)=>String(x.CheckInAt).localeCompare(String(y.CheckInAt)));
-  fresh.forEach(p=>{G.seen.add(p.EmployeeID);G.newIds.add(p.EmployeeID);G.wq.push(p);});
+  const fresh=c.insList.filter(p=>!G.seen.has(p.EmployeeID)).sort((x,y)=>ciKey(x).localeCompare(ciKey(y)));
+  fresh.forEach(p=>{G.seen.add(p.EmployeeID);G.newIds.add(p.EmployeeID);if(p.CheckInAt)G.wq.push(p);});   // welcome card only for real scans
   const n=$('#ciPresentN');if(n&&n.textContent!==String(c.ins)){n.textContent=c.ins;n.classList.remove('ci-pop');void n.offsetWidth;n.classList.add('ci-pop');}
   const onListIn=c.ins-c.walk,pct=c.list?Math.min(100,Math.round(onListIn*100/c.list)):0;
   $('#ciPresentOf').textContent=c.list?'/ '+c.list:'';
@@ -2045,7 +2179,7 @@ function ciPresentSync(){
   const L=$('#ciFlist');
   const asc=c.insList.slice().reverse();   // first to arrive at the top, numbered in order
   L.innerHTML=asc.length?asc.map((p,i)=>{const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
-    return `<div class="ci-fi${G.newIds.has(p.EmployeeID)?' new':''}"><span class="no">${i+1}</span>${ciAv(e,p.EmployeeID)}<div class="nm"><b>${esc(e.NameLA||empName(e)||p.EmployeeID)}</b><small>${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}</small></div><div class="tm">${esc(hhmm(p.CheckInAt))}<small class="${late?'s-late':'s-ok'}">${late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</small></div></div>`;}).join('')
+    return `<div class="ci-fi${G.newIds.has(p.EmployeeID)?' new':''}"><span class="no">${i+1}</span>${ciAv(e,p.EmployeeID)}<div class="nm"><b>${esc(e.NameLA||empName(e)||p.EmployeeID)}</b><small>${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}</small></div><div class="tm">${p.CheckInAt?esc(hhmm(p.CheckInAt)):'✓'}<small class="${late?'s-late':'s-ok'}">${!p.CheckInAt?t('ci_mManual'):late?t('late'):t('ci_onTime')}${p.WalkIn==='Yes'?' · '+t('ci_walkTag'):''}</small></div></div>`;}).join('')
     :`<div class="ci-fempty">${t('ci_feedEmpty')}</div>`;
   if(fresh.length){L.scrollTop=L.scrollHeight;G.scrollPause=Date.now()+6000;}
   ciWelcomeNext();
@@ -2066,7 +2200,7 @@ function ciWelcomeNext(){
   const p=G.wq.shift();G.wBusy=true;const e=empById(p.EmployeeID)||{EmployeeID:p.EmployeeID};const late=p.Attendance==='Late';
   const w=document.createElement('div');w.className='ci-welcome';w.id='ciWelcome';
   const nmL=e.NameLA||empName(e)||p.EmployeeID,nmE=e.NameLA?empName(e):'';
-  w.innerHTML=`<div class="ci-wcard"><div class="hi">✓ ${t('ci_welcome')}</div>
+  w.innerHTML=`<div class="ci-wcard"><div class="hi">✓ ${t('ci_welcome')}</div><div class="wdeco">${ornDivider('ornWd')}</div>
     <div class="ph" id="ciWPh" style="--c:${avc(p.EmployeeID)}${S.photos&&S.photos[p.EmployeeID]?`;background-image:url('${S.photos[p.EmployeeID]}')`:''}">${S.photos&&S.photos[p.EmployeeID]?'':esc(initials(e))}</div>
     <div class="nmL">${esc(nmL)}</div>${nmE&&nmE!==nmL?`<div class="nmE">${esc(nmE)}</div>`:''}
     <div class="meta">${esc(p.EmployeeID)}${e.Position?' · '+esc(tv(e.Position)):''}${e.JobSite?' · '+esc(tv(e.JobSite)):''}</div>
@@ -2139,7 +2273,12 @@ const H={
  calView:v=>{S.cal.view=v;pageCalendar();},
  calDay:d=>{S.cal.date=d;S.cal.view='day';pageCalendar();},
  pickParts,saveAtt,
- allPresent:()=>{const a=actById(S.att.actId);(S.partsByAct[a.ActivityID]||[]).forEach(p=>{const cur=S.att.dirty[p.EmployeeID]||{Attendance:p.Attendance,Completion:p.Completion,Certificate:p.Certificate,Remarks:p.Remarks};if(!cur.Attendance){cur.Attendance='Present';S.att.dirty[p.EmployeeID]=cur;}});attBody();},
+ allPresent:async()=>{const a=actById(S.att.actId);const picked=new Set([...document.querySelectorAll('.atChk:checked')].map(c=>c.value));
+   let n=0;(S.partsByAct[a.ActivityID]||[]).forEach(p=>{if(picked.size&&!picked.has(p.EmployeeID))return;const cur=S.att.dirty[p.EmployeeID]||{Attendance:p.Attendance,Completion:p.Completion,Certificate:p.Certificate,Remarks:p.Remarks};
+     if(cur.Attendance==='Present'||cur.Attendance==='Late')return;if(!picked.size&&cur.Attendance)return;cur.Attendance='Present';S.att.dirty[p.EmployeeID]=cur;n++;});
+   if(!n){toast(t('markNone'));return;}
+   if(!await ask(t('markPresentQ').replace('{n}',n))){S.att.dirty={};attBody();return;}
+   await saveAtt();},
  removeParts:async()=>{const ids=[...document.querySelectorAll('.atChk:checked')].map(c=>c.value);if(!ids.length)return;
    if(!await ask(t('removeSelected')+' ('+ids.length+')?',{danger:true}))return;
    try{const r=await call('participants.remove',{activityId:S.att.actId,employeeIds:ids});S.parts=S.parts.filter(p=>!(p.ActivityID===S.att.actId&&ids.includes(p.EmployeeID)));ids.forEach(i=>delete S.att.dirty[i]);reindex();toast('− '+r.removed,'ok');attBody();}catch(e){fail(e);}},
@@ -2191,6 +2330,7 @@ const H={
  exportAudit:()=>exportXlsx('KGS_Audit_Log',[{name:'Audit',head:[t('time'),t('user'),t('action'),t('entity'),'ID',t('details')],rows:auditFiltered().map(x=>[x.Time,x.User,x.Action,x.Entity,x.EntityID,String(x.Details).slice(0,32000)])}]),
  exportUsers:()=>exportXlsx('KGS_Users',[{name:'Users',head:[t('username'),t('fullName'),t('email'),t('role'),fl('Status'),t('ad_mustCh'),t('lastLogin'),t('ad_created')],
    rows:S.users.map(u=>[u.Username,u.FullName,u.Email||'',t('r_'+u.Role),t(uState(u)==='active'?'ad_stActive':uState(u)==='locked'?'ad_stLocked':'ad_stDisabled'),u.MustChange==='Yes'?t('yes'):t('no'),u.LastLogin||'',u.CreatedAt||''])}]),
+ bkFull,bkRestore:()=>bkRestoreFlow(false),
  admBackup:async()=>{try{const d=await call('backup.export');
    const sheets=Object.keys(d.tables).map(n=>{const head=d.heads[n]||(d.tables[n][0]?Object.keys(d.tables[n][0]):[]);
      return{name:n,head,rows:d.tables[n].map(r=>head.map(k=>{const v=r[k]??'';return typeof v==='string'&&v.length>32000?v.slice(0,32000):v;}))};});
