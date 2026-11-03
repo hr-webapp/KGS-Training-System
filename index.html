@@ -129,6 +129,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 :root[data-theme=light] .b-NotCompleted,:root[data-theme=light] .b-No,:root[data-theme=light] .b-Absent,:root[data-theme=light] .b-error{color:#b91c1c}
 :root[data-theme=light] .b-Cancelled,:root[data-theme=light] .b-same{color:#64748b}:root[data-theme=light] .b-Postponed{color:#7e22ce}
 .muted{color:var(--muted)}.small{font-size:12px}
+.b-meet{background:color-mix(in srgb,#7c3aed 14%,transparent);color:#7c3aed}.b-train{background:color-mix(in srgb,#0891b2 14%,transparent);color:#0e7490}
 .warn{color:var(--warn)}.err{color:var(--danger)}.ok-t{color:var(--ok,#16a34a);font-weight:600}
 .note{background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:10px 13px;font-size:13px;margin-bottom:12px}
 .note.info{background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.35)}
@@ -465,6 +466,18 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-cam video{width:100%;height:100%;object-fit:cover;display:block}
 .ci-aim{position:absolute;inset:18%;border:3px solid rgba(255,255,255,.85);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
 #printArea{display:none}
+.es-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 14px}
+.es-b{padding:12px 14px;border-radius:14px;background:var(--glass2);border:1px solid var(--line2);border-left:4px solid var(--c)}
+.es-b span{display:block;font-size:12px;color:var(--muted)}.es-b b{display:block;font-size:22px;color:var(--c);line-height:1.3}.es-b small{font-size:11.5px;color:var(--muted)}
+.pr-page{font-family:'Phetsarath','Noto Sans Lao',sans-serif;color:#111827;font-size:10.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pr-head{display:flex;align-items:center;gap:10px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}.pr-head img{width:14mm;height:14mm;object-fit:contain}.pr-head .bl{width:14mm;height:14mm;border-radius:3mm;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+.pr-head b{display:block;font-size:12pt}.pr-head span{font-size:9pt;color:#475569}.pr-date{margin-left:auto;text-align:right;font-size:8.5pt;color:#475569}
+.pr-page h1{font-size:15pt;text-align:center;margin:12px 0 10px;color:#1e3a8a}.pr-page h2{font-size:11.5pt;margin:14px 0 6px;color:#1e3a8a}
+.pr-top{display:flex;gap:12px;align-items:flex-start}.pr-ph{width:28mm;height:34mm;object-fit:cover;border:1px solid #cbd5e1;border-radius:2mm}
+.pr-info{border-collapse:collapse;flex:1}.pr-info th{text-align:left;width:38mm;color:#475569;font-weight:600;padding:2px 6px}.pr-info td{padding:2px 6px}
+.pr-sum,.pr-t{width:100%;border-collapse:collapse}.pr-sum th,.pr-sum td,.pr-t th,.pr-t td{border:1px solid #cbd5e1;padding:4px 6px;text-align:left;font-size:9.5pt}
+.pr-sum th,.pr-t th{background:#eef4ff;color:#1e3a8a}.pr-sum td{text-align:center;font-weight:700;font-size:11pt}.pr-t tr{page-break-inside:avoid}
+.pr-none{color:#64748b;font-style:italic}.pr-sign{display:flex;justify-content:space-around;margin-top:24px;text-align:center;font-size:10pt}.pr-foot{margin-top:18px;font-size:8pt;color:#64748b;text-align:center}
 .badge-prev{background:#e5e7eb;border-radius:12px;padding:14px;overflow:auto;max-height:60vh}
 .badge-sheet{display:grid;grid-template-columns:repeat(2,85.6mm);gap:5mm;justify-content:center;color:#0f172a;font-family:var(--f)}
 .bcard{width:85.6mm;height:54mm;background:#fff;border:.3mm solid #cbd5e1;border-radius:3mm;overflow:hidden;display:flex;flex-direction:column;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -553,6 +566,7 @@ en:{
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
+ cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
  ad_logoHint:'PNG, JPG, WEBP or SVG, up to 5 MB. A square logo on a transparent or white background looks best. It is resized to 256 px automatically.',
@@ -667,6 +681,7 @@ lo:{
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
+ cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
  ad_logoHint:'PNG, JPG, WEBP ຫຼື SVG, ບໍ່ເກີນ 5 MB. ໂລໂກ້ຮູບສີ່ຫຼ່ຽມຈະຕຸລັດ ພື້ນໂປ່ງໃສ ຫຼື ພື້ນຂາວ ຈະງາມທີ່ສຸດ. ລະບົບຫຍໍ້ເປັນ 256 px ໃຫ້ເອງ.',
@@ -755,6 +770,9 @@ const VL = { lo:{ 'Planning':'ກຳລັງວາງແຜນ','Planned':'ວ�
  'Company Office':'ຫ້ອງການບໍລິສັດ','External Venue':'ສະຖານທີ່ພາຍນອກ','Online':'ອອນລາຍ','Yes':'ແມ່ນ','No':'ບໍ່' } };
 
 /* ================= constants ================= */
+/* two big groups asked by management: meetings vs training (every non-meeting type counts as training) */
+const actCat=a=>(a&&a.Type)==='Meeting'?'meeting':'training';
+const catBadge=c=>`<span class="badge ${c==='meeting'?'b-meet':'b-train'}">${t('cat_'+c)}</span>`;
 const ACT_TYPES=['Internal Training','External Training','Meeting','Workshop','Seminar','Orientation','Safety Training','Other'];
 const LOCATIONS=['Internal Meeting Room','Training Room','Company Office','External Venue','Online','Other'];
 const ACT_STATUS=['Planning','Planned','In Progress','Completed','Not Completed','Cancelled','Postponed'];
@@ -772,8 +790,9 @@ const AVC=SHADES;
 const avc=s=>{let x=7;for(const ch of String(s))x=(x*31+ch.charCodeAt(0))>>>0;return AVC[x%AVC.length];};
 const ROLE_C={admin:SHADES[1],staff:SHADES[0],viewer:SHADES[4]};
 const roleTag=r=>`<span class="role" style="--c:${ROLE_C[r]||'#64748b'}">${esc(t('r_'+r))}</span>`;
-const NAV=[['dashboard','grid'],['employees','users'],['activities','book'],['calendar','cal'],['attendance','check'],['history','history'],['reports','chart'],['import','swap'],['settings','gear']];
+const NAV=[['dashboard','grid'],['employees','users'],['former','archive'],['activities','book'],['calendar','cal'],['attendance','check'],['history','history'],['reports','chart'],['import','swap'],['settings','gear']];
 const ICONS={qr:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3M6 6h.01M17 6h.01M6 17h.01"/>',
+ archive:'<rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8M10 12h4"/>',
  camera:'<path d="M4 8a2 2 0 0 1 2-2h2l2-2h4l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/>',
  expand:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',
  link:'<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>',
@@ -1133,7 +1152,7 @@ function dashBody(){
   const rc=acts.filter(a=>a.StartDate<today).sort((a,b)=>b.StartDate.localeCompare(a.StartDate)).slice(0,8);
   const mini=list=>dataTable('dash'+Math.random(),[{l:fl('StartDate'),r:a=>fmtD(a.StartDate)},{l:fl('Title'),r:a=>esc(a.Title)},{l:fl('Type'),r:a=>esc(tv(a.Type))},{l:fl('Status'),r:a=>badge(a.Status)}],list,{noPage:true,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});
   $('#dashBody').innerHTML=`<div class="grid kpis dash">
-   ${k(t('totalEmployees'),fmtN(emps),t('activeOnly'))}${k(t('totalActivities'),fmtN(acts.length))}${k(t('planned'),cnt(['Planning','Planned']),t('kpiPlannedNote'))}
+   ${k(t('totalEmployees'),fmtN(emps),t('activeOnly'))}${k(t('totalActivities'),fmtN(acts.length),t('cat_training')+' '+acts.filter(a=>actCat(a)==='training').length+' · '+t('cat_meeting')+' '+acts.filter(a=>actCat(a)==='meeting').length)}${k(t('planned'),cnt(['Planning','Planned']),t('kpiPlannedNote'))}
    ${k(t('inProgress'),cnt(['In Progress']))}${k(t('completed'),cnt(['Completed']))}${k(t('cancelled'),cnt(['Cancelled']))}
    ${k(t('totalParticipants'),fmtN(parts.length))}${k(t('attendanceRate'),pr+ab?Math.round(pr*100/(pr+ab))+'%':'—',t('kpiRateNote'))}
    ${k(t('trainingHours'),fmtN(comp.reduce((s,a)=>s+num(a.DurationHours),0),1),t('kpiHoursNote'))}${k(t('trainingDays'),fmtN(comp.reduce((s,a)=>s+num(a.DurationDays),0),1),t('kpiHoursNote'))}
@@ -1168,7 +1187,7 @@ function pageEmployees(){
   const f=S.f.emp||(S.f.emp={q:'',div:'',pos:'',site:'',st:'',scope:'cur'});
   const B=scopeEmps(f.scope),nCur=curEmps().length;
   $('#page').innerHTML=`<div class="bar no-print">
-   <select class="in" id="eScope" style="font-weight:600">${opts([['cur',t('scopeCur')+' ('+nCur+')'],['former',t('scopeFormer')+' ('+(S.emps.length-nCur)+')'],['all',t('all')+' ('+S.emps.length+')']],f.scope)}</select>
+   <select class="in" id="eScope" style="font-weight:600">${opts([['cur',t('scopeCur')+' ('+nCur+')'],['all',t('all')+' ('+S.emps.length+')']],f.scope==='former'?'cur':f.scope)}</select>
    <input class="in search" id="eQ" placeholder="${t('search')}: ${fl('EmployeeID')} / ${fl('Name')}" value="${esc(f.q)}">
    <select class="in" id="eDiv">${opts(facet(B.map(e=>e.Division)),f.div,fl('Division')+': '+t('all'))}</select>
    <select class="in" id="ePos">${opts(facet(B.map(e=>e.Position)),f.pos,fl('Position')+': '+t('all'))}</select>
@@ -1193,16 +1212,32 @@ function empCols(){return[{k:'EmployeeID',l:fl('EmployeeID'),r:e=>`<div class="i
   {k:'ServiceType',l:fl('ServiceType')},{k:'JobSite',l:fl('JobSite')},{k:'Branch',l:fl('Branch')},{k:'EmploymentStatus',l:fl('EmploymentStatus')},{k:'Active',l:t('activeState'),r:e=>actBadge(e)}];}
 function historyRows(filter){
   return S.parts.filter(filter||(()=>true)).map(p=>{const a=actById(p.ActivityID)||{},e=empById(p.EmployeeID)||{};
-    return{...p,Name:empName(e),NameLA:e.NameLA||'',Division:e.Division||'',Title:a.Title||p.ActivityID,Type:a.Type||'',Topic:a.Topic||'',Trainer:a.Trainer||'',
+    return{...p,Name:empName(e),NameLA:e.NameLA||'',Division:e.Division||'',Title:a.Title||p.ActivityID,Type:a.Type||'',Cat:actCat(a),Topic:a.Topic||'',Trainer:a.Trainer||'',
       StartDate:a.StartDate||'',EndDate:a.EndDate||'',DurationDays:a.DurationDays||'',DurationHours:a.DurationHours||'',ActStatus:a.Status||'',ActDept:a.Department||''};});
 }
 function histCols(withEmp){return[
   ...(withEmp?[{k:'EmployeeID',l:fl('EmployeeID')},{k:'Name',l:fl('Name')}]:[]),
-  {k:'Title',l:fl('Title')},{k:'Type',l:fl('Type'),r:r=>esc(tv(r.Type)),x:r=>r.Type},{k:'Topic',l:fl('Topic')},{k:'Trainer',l:fl('Trainer')},
+  {k:'Title',l:fl('Title')},{k:'Cat',l:t('cat_label'),r:r=>catBadge(r.Cat),x:r=>t('cat_'+r.Cat)},{k:'Type',l:fl('Type'),r:r=>esc(tv(r.Type)),x:r=>r.Type},{k:'Topic',l:fl('Topic')},{k:'Trainer',l:fl('Trainer')},
   {k:'StartDate',l:fl('StartDate'),r:r=>fmtD(r.StartDate)},{k:'EndDate',l:fl('EndDate'),r:r=>fmtD(r.EndDate)},
   {k:'DurationHours',l:fl('Duration'),sv:r=>num(r.DurationHours),r:r=>esc([r.DurationDays?r.DurationDays+' '+t('days'):'',r.DurationHours?r.DurationHours+' '+t('hours'):''].filter(Boolean).join(' / ')),x:r=>[r.DurationDays&&r.DurationDays+' d',r.DurationHours&&r.DurationHours+' h'].filter(Boolean).join(' / ')},
   {k:'Attendance',l:t('attendance'),r:r=>badge(r.Attendance),x:r=>r.Attendance},{k:'Completion',l:t('completion'),r:r=>esc(tv(r.Completion)||'—'),x:r=>r.Completion},
   {k:'Certificate',l:t('certificate'),r:r=>esc(tv(r.Certificate)||'—'),x:r=>r.Certificate},{k:'Remarks',l:t('remarks')}];}
+/* personal record since joining: trainings & meetings attended, hours, absences, certificates */
+function empSummary(id){
+  const e=empById(id)||{},h=historyRows(p=>p.EmployeeID===id).filter(r=>r.ActStatus!=='Cancelled');
+  const went=r=>r.Attendance==='Present'||r.Attendance==='Late';
+  const tr=h.filter(r=>r.Cat==='training'),mt=h.filter(r=>r.Cat==='meeting');
+  const hrs=tr.filter(went).reduce((a,r)=>a+(num(r.DurationHours)||0),0);
+  const from=e.JoiningDate||'',to=isCurrent(e)?todayStr():(e.EndDate||todayStr());
+  let yrs='';if(/^\d{4}-\d{2}-\d{2}$/.test(from)){const m=(Number(to.slice(0,4))-Number(from.slice(0,4)))*12+(Number(to.slice(5,7))-Number(from.slice(5,7)));if(m>=0)yrs=Math.floor(m/12)+' '+t('yrs')+' '+(m%12)+' '+t('mos');}
+  return{e,h,tr,mt,trIn:tr.filter(went).length,mtIn:mt.filter(went).length,absent:h.filter(r=>r.Attendance==='Absent').length,late:h.filter(r=>r.Attendance==='Late').length,
+    done:tr.filter(r=>r.Completion==='Completed').length,cert:h.filter(r=>r.Certificate==='Issued').length,hrs:Math.round(hrs*10)/10,yrs,from};
+}
+function empSummaryHTML(S2){
+  const box=(l,v,s,c)=>`<div class="es-b" style="--c:${c}"><span>${esc(l)}</span><b>${v}</b>${s?`<small>${esc(s)}</small>`:''}</div>`;
+  return `<div class="es-grid">${box(t('cat_training'),S2.trIn+' / '+S2.tr.length,t('es_attended'),'#0891b2')}${box(t('cat_meeting'),S2.mtIn+' / '+S2.mt.length,t('es_attended'),'#7c3aed')}
+   ${box(t('es_hours'),fmtN(S2.hrs),t('cat_training'),'#ea580c')}${box(t('es_done'),S2.done,t('es_cert')+' '+S2.cert,'#059669')}${box(t('absent'),S2.absent,t('late')+' '+S2.late,'#dc2626')}${box(t('es_service'),esc(S2.yrs||'—'),S2.from?t('es_since')+' '+fmtD(S2.from):'','#2563eb')}</div>`;
+}
 function viewEmp(id){
   const e=empById(id);if(!e)return;
   const show=EMP_FIELDS;
@@ -1211,12 +1246,14 @@ function viewEmp(id){
   modal(t('profile')+' · '+id,`<div class="ephead">${photoBox(e)}<div class="dl">${show.filter(k=>!(hidden&&['DOB','WhatsApp','Phone','Email'].includes(k))).map(k=>`<div><span>${esc(fl(k))}</span>${DATE_FIELDS.includes(k)?fmtD(e[k]):esc(e[k]||'—')}</div>`).join('')}
     <div><span>${t('activeState')}</span>${actBadge(e)}</div></div></div>
     ${hidden?`<p class="small muted">${t('sensitiveHidden')}</p>`:''}
+    <h3 style="font-size:14px">${t('es_title')}</h3>${empSummaryHTML(empSummary(id))}
     <h3 style="font-size:14px">${t('history')} (${hist.length})</h3>${dataTable('ehist',histCols(false),hist,{sortK:'StartDate',sortD:-1,ps:10})}
     <div id="rawBox"></div>`,
    `${canEdit()?`<button class="btn sm" data-act="showRaw" data-arg="${esc(id)}">${t('rawData')}</button>
+    <button class="btn" data-act="printEmpReport" data-arg="${esc(id)}">${ic('download',15)} ${t('es_print')}</button>
     <button class="btn" data-act="exportOneHist" data-arg="${esc(id)}">${t('export')}</button>
     <button class="btn danger" data-act="toggleEmp" data-arg="${esc(id)}">${e.Active==='No'?t('reactivate'):t('deactivate')}</button>
-    <button class="btn pri" data-act="empForm" data-arg="${esc(id)}">${t('edit')}</button>`:`<button class="btn" data-act="exportOneHist" data-arg="${esc(id)}">${t('export')}</button>`}
+    <button class="btn pri" data-act="empForm" data-arg="${esc(id)}">${t('edit')}</button>`:`<button class="btn" data-act="printEmpReport" data-arg="${esc(id)}">${ic('download',15)} ${t('es_print')}</button><button class="btn" data-act="exportOneHist" data-arg="${esc(id)}">${t('export')}</button>`}
     <button class="btn" data-act="closeModal">${t('close')}</button>`,'lg');
   S.modalRefresh=()=>viewEmp(id);
   loadPhoto(e);
@@ -1279,20 +1316,21 @@ function pageActivities(){
   $('#page').innerHTML=`<div class="bar no-print">
    <input class="in search" id="aQ" placeholder="${t('search')}" value="${esc(f.q)}">
    <select class="in" id="aSt">${opts(ACT_STATUS,f.st,fl('Status')+': '+t('all'))}</select>
+   <select class="in" id="aCat">${opts([['training',t('cat_training')],['meeting',t('cat_meeting')]],f.cat,t('cat_label')+': '+t('all'))}</select>
    <select class="in" id="aType">${opts(types,f.type,fl('Type')+': '+t('all'))}</select>
    <select class="in" id="aDept">${opts(facet([...S.emps.map(e=>e.Division),...S.acts.map(a=>a.Department)],false),f.dept,t('allDepts'))}</select>
    <select class="in" id="aSite">${opts(facet([...S.emps.map(e=>e.JobSite),...S.acts.map(a=>a.JobSite)],false),f.site,fl('JobSite')+': '+t('all'))}</select>
    <input type="date" class="in" id="aFrom" value="${f.from}" title="${t('dateFrom')}"><input type="date" class="in" id="aTo" value="${f.to}" title="${t('dateTo')}">
    <span class="grow"></span><button class="btn" data-act="exportActs">${t('export')}</button>
    ${canEdit()?`<button class="btn pri" data-act="actForm">+ ${t('newActivity')}</button>`:''}</div><div id="aList"></div>`;
-  const upd=()=>{f.q=$('#aQ').value;f.st=$('#aSt').value;f.type=$('#aType').value;f.dept=$('#aDept').value;f.site=$('#aSite').value;f.from=$('#aFrom').value;f.to=$('#aTo').value;S.tbl.act&&(S.tbl.act.p=1);S.refresh();};
-  $('#aQ').oninput=upd;['aSt','aType','aDept','aSite','aFrom','aTo'].forEach(i=>$('#'+i).onchange=upd);
+  const upd=()=>{f.q=$('#aQ').value;f.st=$('#aSt').value;f.type=$('#aType').value;f.cat=$('#aCat').value;f.dept=$('#aDept').value;f.site=$('#aSite').value;f.from=$('#aFrom').value;f.to=$('#aTo').value;S.tbl.act&&(S.tbl.act.p=1);S.refresh();};
+  $('#aQ').oninput=upd;['aSt','aCat','aType','aDept','aSite','aFrom','aTo'].forEach(i=>$('#'+i).onchange=upd);
   S.refresh=()=>{$('#aList').innerHTML=dataTable('act',actCols(),actFilteredList(),{sortK:'StartDate',sortD:-1,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});};
   S.refresh();
 }
 function actFilteredList(){const f=S.f.act,q=(f.q||'').toLowerCase();
-  return S.acts.filter(a=>(!q||[a.ActivityID,a.Title,a.Topic,a.Trainer,a.Provider,a.Location,a.JobSite].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.st||a.Status===f.st)&&(!f.type||a.Type===f.type)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.site||nk(a.JobSite)===f.site)&&(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to));}
-function actCols(){return[{k:'ActivityID',l:fl('ActivityID'),r:a=>`<b>${esc(a.ActivityID)}</b>`},{k:'Title',l:fl('Title')},{k:'Type',l:fl('Type'),r:a=>esc(tv(a.Type)),x:a=>a.Type},
+  return S.acts.filter(a=>(!q||[a.ActivityID,a.Title,a.Topic,a.Trainer,a.Provider,a.Location,a.JobSite].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.st||a.Status===f.st)&&(!f.type||a.Type===f.type)&&(!f.cat||actCat(a)===f.cat)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.site||nk(a.JobSite)===f.site)&&(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to));}
+function actCols(){return[{k:'ActivityID',l:fl('ActivityID'),r:a=>`<b>${esc(a.ActivityID)}</b>`},{k:'Title',l:fl('Title')},{k:'_cat',l:t('cat_label'),sv:a=>actCat(a),r:a=>catBadge(actCat(a)),x:a=>t('cat_'+actCat(a))},{k:'Type',l:fl('Type'),r:a=>esc(tv(a.Type)),x:a=>a.Type},
   {k:'StartDate',l:fl('StartDate'),r:a=>fmtD(a.StartDate)+(a.EndDate&&a.EndDate!==a.StartDate?' → '+fmtD(a.EndDate):'')+(a.StartTime?`<div class="small muted">${esc(a.StartTime)}–${esc(a.EndTime)}</div>`:''),x:a=>a.StartDate},
   {k:'EndDate',l:fl('EndDate'),r:a=>fmtD(a.EndDate),x:a=>a.EndDate},
   {k:'Location',l:fl('Location'),r:a=>esc(tv(a.Location))},{k:'JobSite',l:fl('JobSite')},{k:'Department',l:fl('Department')},
@@ -1489,18 +1527,19 @@ async function saveAtt(){
 function pageHistory(){
   const f=S.f.hist||(S.f.hist={q:'',type:'',att:'',comp:'',div:'',from:'',to:''});
   $('#page').innerHTML=`<div class="bar no-print"><input class="in search" id="hQ" placeholder="${t('search')}: ${fl('EmployeeID')} / ${fl('Name')} / ${fl('Title')}" value="${esc(f.q)}">
+   <select class="in" id="hCat">${opts([['training',t('cat_training')],['meeting',t('cat_meeting')]],f.cat,t('cat_label')+': '+t('all'))}</select>
    <select class="in" id="hType">${opts(uniq([...ACT_TYPES,...S.acts.map(a=>a.Type)]),f.type,fl('Type')+': '+t('all'))}</select>
    <select class="in" id="hAtt">${opts(ATTENDANCE,f.att,t('attendance')+': '+t('all'))}</select>
    <select class="in" id="hComp">${opts(COMPLETION,f.comp,t('completion')+': '+t('all'))}</select>
    <select class="in" id="hDiv">${opts(facet(S.emps.map(e=>e.Division)),f.div,fl('Division')+': '+t('all'))}</select>
    <input type="date" class="in" id="hFrom" value="${f.from}"><input type="date" class="in" id="hTo" value="${f.to}">
    <span class="grow"></span><button class="btn" data-act="exportHist">${t('export')}</button></div><div id="hList"></div>`;
-  const upd=()=>{f.q=$('#hQ').value;f.type=$('#hType').value;f.att=$('#hAtt').value;f.comp=$('#hComp').value;f.div=$('#hDiv').value;f.from=$('#hFrom').value;f.to=$('#hTo').value;S.tbl.hist&&(S.tbl.hist.p=1);S.refresh();};
-  $('#hQ').oninput=upd;['hType','hAtt','hComp','hDiv','hFrom','hTo'].forEach(i=>$('#'+i).onchange=upd);
+  const upd=()=>{f.q=$('#hQ').value;f.type=$('#hType').value;f.cat=$('#hCat').value;f.att=$('#hAtt').value;f.comp=$('#hComp').value;f.div=$('#hDiv').value;f.from=$('#hFrom').value;f.to=$('#hTo').value;S.tbl.hist&&(S.tbl.hist.p=1);S.refresh();};
+  $('#hQ').oninput=upd;['hCat','hType','hAtt','hComp','hDiv','hFrom','hTo'].forEach(i=>$('#'+i).onchange=upd);
   S.refresh=()=>{$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});};S.refresh();
 }
 function histFiltered(){const f=S.f.hist,q=(f.q||'').toLowerCase();
-  return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.att||r.Attendance===f.att)&&(!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
+  return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.cat||r.Cat===f.cat)&&(!f.att||r.Attendance===f.att)&&(!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
 
 /* ================= REPORTS ================= */
 const REPORTS=['r_month','r_dept','r_emp','r_att','r_comp','r_dur','r_cost','r_up'];
@@ -2246,6 +2285,48 @@ async function printBadges(list){
    `<button class="btn" data-act="closeModal">${t('close')}</button><button class="btn pri" data-act="printBadgesGo">${ic('download',15)} ${t('print')}</button>`,'lg');
 }
 
+/* ================= individual A4 report ================= */
+function printEmpReport(id){
+  const X=empSummary(id),e=X.e,hide=role()==='viewer';
+  const logo=hasLogo()?`<img src="${esc(cfg('logo'))}" alt="">`:`<span class="bl">KGS</span>`;
+  const row=(l,v)=>`<tr><th>${esc(l)}</th><td>${v||'—'}</td></tr>`;
+  const list=(rows)=>rows.length?`<table class="pr-t"><thead><tr><th>#</th><th>${fl('StartDate')}</th><th>${fl('Title')}</th><th>${fl('Type')}</th><th>${fl('Duration')}</th><th>${t('attendance')}</th><th>${t('completion')}</th><th>${t('certificate')}</th></tr></thead><tbody>${
+    rows.slice().sort((a,b)=>String(a.StartDate).localeCompare(String(b.StartDate))).map((r,i)=>`<tr><td>${i+1}</td><td>${fmtD(r.StartDate)}</td><td>${esc(r.Title)}</td><td>${esc(tv(r.Type))}</td><td>${esc(r.DurationHours?r.DurationHours+' '+t('hours'):(r.DurationDays?r.DurationDays+' '+t('days'):''))}</td><td>${esc(tv(r.Attendance)||'—')}</td><td>${esc(tv(r.Completion)||'—')}</td><td>${esc(tv(r.Certificate)||'—')}</td></tr>`).join('')}</tbody></table>`:`<p class="pr-none">${t('noData')}</p>`;
+  let pa=$('#printArea');if(!pa){pa=document.createElement('div');pa.id='printArea';document.body.appendChild(pa);}
+  pa.innerHTML=`<div class="pr-page"><div class="pr-head">${logo}<div><b>${esc(companyName())}</b><span>${esc(cfg('sysName'))}</span></div><div class="pr-date">${t('es_printed')}: ${fmtD(todayStr())}<br>${esc(S.me?S.me.FullName||S.me.Username:'')}</div></div>
+   <h1>${t('es_docTitle')}</h1>
+   <div class="pr-top">${S.photos&&S.photos[id]?`<img class="pr-ph" src="${esc(S.photos[id])}" alt="">`:''}<table class="pr-info">${row(fl('EmployeeID'),'<b>'+esc(e.EmployeeID)+'</b>')}${row(fl('NameLA'),esc(e.NameLA))}${row(fl('NameEN'),esc(e.NameEN))}${row(fl('Position'),esc(e.Position))}${row(fl('Division'),esc(e.Division))}${row(fl('JobSite'),esc(e.JobSite))}${row(fl('JoiningDate'),fmtD(e.JoiningDate))}${!isCurrent(e)?row(fl('EndDate'),fmtD(e.EndDate)):''}${row(fl('EmploymentStatus'),esc(e.EmploymentStatus))}${row(t('es_service'),esc(X.yrs))}</table></div>
+   <h2>${t('es_title')}</h2><table class="pr-sum"><tr><th>${t('cat_training')} (${t('es_attended')})</th><th>${t('cat_meeting')} (${t('es_attended')})</th><th>${t('es_hours')}</th><th>${t('es_done')}</th><th>${t('es_cert')}</th><th>${t('absent')}</th><th>${t('late')}</th></tr>
+    <tr><td>${X.trIn} / ${X.tr.length}</td><td>${X.mtIn} / ${X.mt.length}</td><td>${fmtN(X.hrs)}</td><td>${X.done}</td><td>${X.cert}</td><td>${X.absent}</td><td>${X.late}</td></tr></table>
+   <h2>1. ${t('cat_training')} (${X.tr.length})</h2>${list(X.tr)}
+   <h2>2. ${t('cat_meeting')} (${X.mt.length})</h2>${list(X.mt)}
+   <div class="pr-sign"><div>${t('es_signHR')}<br><br><br>.............................................</div><div>${t('es_signMgr')}<br><br><br>.............................................</div></div>
+   <p class="pr-foot">${t('es_conf')}</p></div>`;
+  document.body.classList.add('printing-badges');const done=()=>{document.body.classList.remove('printing-badges');window.removeEventListener('afterprint',done);};window.addEventListener('afterprint',done);window.print();setTimeout(done,60000);
+}
+
+/* ================= FORMER EMPLOYEES (archive) ================= */
+function pageFormer(){
+  const f=S.f.fmr||(S.f.fmr={q:'',div:'',st:'',year:''});
+  const B=S.emps.filter(e=>!isCurrent(e));
+  const years=uniq(B.map(e=>String(e.EndDate||'').slice(0,4)).filter(y=>/^\d{4}$/.test(y))).sort().reverse();
+  $('#page').innerHTML=`<div class="note info small no-print" style="margin:0 0 12px">${t('fm_note')}</div><div class="bar no-print">
+   <input class="in search" id="fQ" placeholder="${t('search')}: ${fl('EmployeeID')} / ${fl('Name')}" value="${esc(f.q)}">
+   <select class="in" id="fDiv">${opts(facet(B.map(e=>e.Division)),f.div,fl('Division')+': '+t('all'))}</select>
+   <select class="in" id="fSt">${opts(facet(B.map(e=>e.EmploymentStatus)),f.st,fl('EmploymentStatus')+': '+t('all'))}</select>
+   <select class="in" id="fYr">${opts(years,f.year,t('fm_yearLeft')+': '+t('all'))}</select>
+   <span class="grow"></span><button class="btn" data-act="exportFormer">${t('export')}</button></div><div id="fList"></div>`;
+  const upd=()=>{f.q=$('#fQ').value;f.div=$('#fDiv').value;f.st=$('#fSt').value;f.year=$('#fYr').value;S.tbl.fmr&&(S.tbl.fmr.p=1);S.refresh();};
+  $('#fQ').oninput=upd;['fDiv','fSt','fYr'].forEach(i=>$('#'+i).onchange=upd);
+  S.refresh=()=>{$('#fList').innerHTML=dataTable('fmr',formerCols(),formerFiltered(),{sortK:'EndDate',sortD:-1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});};S.refresh();
+}
+function formerFiltered(){const f=S.f.fmr,q=(f.q||'').toLowerCase().trim();
+  return S.emps.filter(e=>!isCurrent(e)).filter(e=>(!q||[e.EmployeeID,e.NameEN,e.NameLA,e.Nickname].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.div||nk(e.Division)===f.div)&&(!f.st||nk(e.EmploymentStatus)===f.st)&&(!f.year||String(e.EndDate||'').startsWith(f.year)))
+   .map(e=>{const h=historyRows(p=>p.EmployeeID===e.EmployeeID);return{...e,_tr:h.filter(r=>r.Cat==='training').length,_mt:h.filter(r=>r.Cat==='meeting').length};});}
+function formerCols(){return[{k:'EmployeeID',l:fl('EmployeeID'),r:e=>`<b>${esc(e.EmployeeID)}</b>`,x:e=>e.EmployeeID},{k:'NameEN',l:fl('NameEN')},{k:'NameLA',l:fl('NameLA')},{k:'Position',l:fl('Position')},{k:'Division',l:fl('Division')},
+  {k:'JoiningDate',l:fl('JoiningDate'),r:e=>fmtD(e.JoiningDate),x:e=>e.JoiningDate},{k:'EndDate',l:fl('EndDate'),r:e=>fmtD(e.EndDate),x:e=>e.EndDate},{k:'EmploymentStatus',l:fl('EmploymentStatus')},
+  {k:'_tr',l:t('cat_training'),sv:e=>e._tr,r:e=>`<b>${e._tr}</b>`,x:e=>e._tr},{k:'_mt',l:t('cat_meeting'),sv:e=>e._mt,r:e=>`<b>${e._mt}</b>`,x:e=>e._mt}];}
+
 /* ================= exports ================= */
 function empExportCols(){return EMP_FIELDS.filter(k=>!(role()==='viewer'&&['DOB','WhatsApp','Phone','Email'].includes(k))).map(k=>({k,l:fl(k)})).concat([{k:'Active',l:t('activeState'),x:e=>e.Active||'Yes'}]);}
 const ACT_EXPORT=['ActivityID','Title','Type','Description','Topic','Trainer','Provider','StartDate','EndDate','StartTime','EndTime','DurationDays','DurationHours','Location','JobSite','Department','MaxParticipants','Budget','Cost','Organizer','Remarks','Status'];
@@ -2285,6 +2366,7 @@ const H={
  exportEmps:()=>{const rows=S.page==='employees'?empFiltered():S.emps;exportXlsx('KGS_Employees',[tableToSheet('Employees',empExportCols(),rows)]);},
  exportActs:()=>{const rows=S.page==='activities'?actFilteredList():S.acts;exportXlsx('KGS_Activities',[tableToSheet('Activities',ACT_EXPORT.map(k=>({k,l:fl(k)})).concat([{l:t('participants'),x:a=>(S.partsByAct[a.ActivityID]||[]).length}]),rows)]);},
  exportHist:()=>{const rows=S.page==='history'?histFiltered():historyRows();exportXlsx('KGS_Training_History',[tableToSheet('History',histCols(true).concat([{k:'ActivityID',l:fl('ActivityID')},{k:'Division',l:fl('Division')}]),rows)]);},
+ printEmpReport,exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
  exportReport:()=>{const R=buildReport();exportXlsx('KGS_Report_'+S.f.rep.r,[tableToSheet(t(S.f.rep.r),R.cols,R.rows)]);},
@@ -2350,7 +2432,7 @@ function tblRefresh(id){
   if(id==='rev'){H.loadReview();return;}
   S.refresh&&S.refresh();
 }
-const PAGES={checkin:pageCheckin,dashboard:pageDashboard,employees:pageEmployees,activities:pageActivities,calendar:pageCalendar,attendance:pageAttendance,history:pageHistory,reports:pageReports,import:pageImport,settings:pageSettings,admin:pageAdmin};
+const PAGES={checkin:pageCheckin,dashboard:pageDashboard,employees:pageEmployees,former:pageFormer,activities:pageActivities,calendar:pageCalendar,attendance:pageAttendance,history:pageHistory,reports:pageReports,import:pageImport,settings:pageSettings,admin:pageAdmin};
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modalRoot').innerHTML)closeModal();});
 applyTheme();
 start();
