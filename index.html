@@ -466,6 +466,102 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-cam video{width:100%;height:100%;object-fit:cover;display:block}
 .ci-aim{position:absolute;inset:18%;border:3px solid rgba(255,255,255,.85);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
 #printArea{display:none}
+.hv-ins ul{margin:6px 0 0;padding-left:20px;line-height:1.9}.hv-ins h3{display:flex;align-items:center;gap:8px}.hv-an{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.hv-an>*{min-width:0}.hv-an .chart-box{height:300px}.hv-k{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+@media(max-width:1200px){.hv-k{grid-template-columns:repeat(3,minmax(0,1fr))!important}}@media(max-width:900px){.hv-an{grid-template-columns:1fr}.hv-k{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.hz{--hv1:#1d4ed8;--hv2:#38bdf8}
+.hz-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:center;padding:24px 28px;border-radius:24px;color:#fff;position:relative;overflow:hidden;
+  background:radial-gradient(600px 260px at 0% 0%,rgba(56,189,248,.35),transparent 60%),radial-gradient(500px 300px at 100% 100%,rgba(99,102,241,.35),transparent 60%),linear-gradient(130deg,#0b2a6f 0%,#1d4ed8 55%,#0369a1 100%);box-shadow:0 22px 50px rgba(29,78,216,.28)}
+.hz-hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.2px);background-size:22px 22px;pointer-events:none}
+.hz-hero>*{position:relative;z-index:1}
+.hz-pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;letter-spacing:.6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:4px 10px;border-radius:99px}
+.hz-tt h2{margin:10px 0 2px;font-size:24px;letter-spacing:.2px}.hz-tt small{color:#cfe3ff}
+.hz-m{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}.hz-m>div{padding:0 16px;border-left:1px solid rgba(255,255,255,.2)}.hz-m>div:first-child{padding-left:0;border-left:0}
+.hz-m span{display:block;font-size:12.5px;color:#cfe3ff}.hz-m b{display:block;font-size:34px;font-weight:800;line-height:1.2}.hz-m small{font-size:12px;color:#e0ecff}
+.hz-rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px;border-radius:20px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+.hz-ring{text-align:center}.hz-rc{position:relative;height:96px}.hz-ring b{display:block;font-size:12.5px;margin-top:6px}.hz-ring small{font-size:11.5px;color:#cfe3ff}
+.hz-row{display:grid;gap:16px;margin-top:16px}.hz-r1{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}.hz-r2{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.hz-row>*{min-width:0}
+.hz-card{padding:18px 20px;border-radius:22px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow)}
+.hz-ch{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.hz-ch h3{margin:0;font-size:15px;display:flex;align-items:center;gap:8px}.hz-ch h3::before{content:"";width:4px;height:16px;border-radius:4px;background:linear-gradient(#38bdf8,#1d4ed8)}
+.hz-lg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}.hz-lg i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-left:8px}
+.hz-mix{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.hz-dn{position:relative;height:190px}
+.hz-mx{display:grid;grid-template-columns:12px minmax(0,1fr) auto 44px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line2);font-size:13px}.hz-mx i{width:12px;height:12px;border-radius:4px}.hz-mx b{font-variant-numeric:tabular-nums}.hz-mx em{font-style:normal;color:var(--muted);text-align:right;font-size:12px}
+.hz-dh,.hz-dr{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.3fr) 64px 50px;gap:12px;align-items:center}
+.hz-dh{font-size:11.5px;color:var(--muted);font-weight:600;padding:0 0 8px;border-bottom:1px solid var(--line2)}.hz-dh span:nth-child(n+3){text-align:center}
+.hz-dr{padding:9px 0;border-bottom:1px solid var(--line2);font-size:13.5px}.hz-dr .nm{display:flex;align-items:center;gap:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hz-dr .nm em{font-style:normal;width:22px;height:22px;flex:0 0 22px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;color:#1d4ed8;background:#dbeafe}
+.hz-dr .hb{display:flex;align-items:center;gap:8px}.hz-dr .hb i{display:block;height:8px;border-radius:9px;background:linear-gradient(90deg,#38bdf8,#1d4ed8);min-width:4px}.hz-dr .hb b{font-size:12.5px;font-variant-numeric:tabular-nums}
+.hz-dr .rt{text-align:center;font-weight:700;font-size:12.5px;border-radius:99px;padding:3px 0}.hz-dr .rt.g{background:#dbeafe;color:#1d4ed8}.hz-dr .rt.m{background:#e0f2fe;color:#0369a1}.hz-dr .rt.l{background:#e2e8f0;color:#334155}.hz-dr .pp{text-align:center;color:var(--muted)}
+.hz .hz-dr .rt.g{background:#dcfce7!important;color:#15803d!important}.hz .hz-dr .rt.m{background:#fef3c7!important;color:#b45309!important}.hz .hz-dr .rt.l{background:#fee2e2!important;color:#b91c1c!important}
+.hz .hz-bad .hz-ii{background:linear-gradient(135deg,#f87171,#dc2626)!important}.hz .hz-good .hz-ii{background:linear-gradient(135deg,#4ade80,#16a34a)!important}.hz .hz-mid .hz-ii{background:linear-gradient(135deg,#fcd34d,#f59e0b)!important}.hz .hz-info .hz-ii{background:linear-gradient(135deg,#60a5fa,#1d4ed8)!important;color:#fff}
+.hz-bad{border-left:4px solid #dc2626!important}.hz-good{border-left:4px solid #16a34a!important}.hz-mid{border-left:4px solid #f59e0b!important}.hz-info{border-left:4px solid #2563eb!important}
+.hz-ins{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.hz-in{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:18px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow)}.hz-in p{margin:0;font-size:13.5px;line-height:1.6}
+.hz-ii{flex:0 0 34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#38bdf8,#1d4ed8)}
+@media(max-width:1100px){.hz-hero,.hz-r1,.hz-r2{grid-template-columns:1fr}}
+/* themes */
+.hzt1{--hv1:#22d3ee;--hv2:#818cf8;padding:18px;border-radius:26px;background:radial-gradient(800px 400px at 0% 0%,rgba(34,211,238,.18),transparent 60%),linear-gradient(160deg,#020617,#0b1530 60%,#0f172a);color:#e2e8f0}
+.hzt1 .hz-hero{background:linear-gradient(130deg,rgba(34,211,238,.18),rgba(129,140,248,.18));border:1px solid rgba(255,255,255,.1);box-shadow:none}
+.hzt1 .hz-card,.hzt1 .hz-in{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.09);box-shadow:none;color:#e2e8f0}
+.hzt1 .hz-mx,.hzt1 .hz-dr,.hzt1 .hz-dh,.hzt1 .hvl-r{border-color:rgba(255,255,255,.07)}.hzt1 .hz-mx em,.hzt1 .hz-dh,.hzt1 .hz-dr .pp,.hzt1 .hvl-t small,.hzt1 .hz-lg{color:#94a3b8}
+.hzt1 .hz-dr .nm em{background:rgba(34,211,238,.15);color:#22d3ee}.hzt1 .hz-dr .rt.g,.hzt1 .hz-dr .rt.m,.hzt1 .hz-dr .rt.l{background:rgba(34,211,238,.12);color:#67e8f9}.hzt1 .hz-dr .hb i,.hzt1 .hz-ii{background:linear-gradient(90deg,#818cf8,#22d3ee)}.hzt1 .hz-ch h3::before{background:linear-gradient(#22d3ee,#818cf8)}
+.hzt2 .hz-hero{background:#fff;color:#0f172a;border:1px solid #e5eaf2;box-shadow:0 1px 2px rgba(15,23,42,.05),0 10px 30px rgba(15,23,42,.06)}.hzt2 .hz-hero::after{display:none}
+.hzt2 .hz-pill{background:#eff6ff;border-color:#dbeafe;color:#2563eb}.hzt2 .hz-tt small,.hzt2 .hz-m span,.hzt2 .hz-m small,.hzt2 .hz-ring small{color:#64748b}.hzt2 .hz-m b{color:#2563eb}.hzt2 .hz-m>div{border-color:#e5eaf2}
+.hzt2 .hz-rings{background:#f8fafc;border-color:#eef2f7;backdrop-filter:none}.hzt2 .hz-card,.hzt2 .hz-in{background:#fff;border-color:#e5eaf2;box-shadow:0 1px 2px rgba(15,23,42,.04)}.hzt2 .hz-ii{background:#eff6ff;color:#2563eb}
+.hzt3 .hz-hero{background:radial-gradient(600px 260px at 100% 0%,rgba(125,211,252,.55),transparent 60%),linear-gradient(130deg,#e0f2fe,#f0f9ff 60%,#e0e7ff);color:#0c4a6e;box-shadow:0 16px 40px rgba(2,132,199,.14)}.hzt3 .hz-hero::after{background-image:radial-gradient(rgba(2,132,199,.10) 1px,transparent 1.2px)}
+.hzt3 .hz-pill{background:rgba(2,132,199,.1);border-color:rgba(2,132,199,.2);color:#0369a1}.hzt3 .hz-tt small,.hzt3 .hz-m span,.hzt3 .hz-m small,.hzt3 .hz-ring small{color:#0369a1}.hzt3 .hz-m b{color:#0284c7}.hzt3 .hz-m>div{border-color:rgba(2,132,199,.2)}.hzt3 .hz-rings{background:rgba(255,255,255,.6);border-color:rgba(2,132,199,.15)}
+.hzt3 .hz-ii,.hzt3 .hz-dr .hb i{background:linear-gradient(135deg,#7dd3fc,#0284c7)}
+.hzt4{display:grid;grid-template-columns:300px minmax(0,1fr);gap:16px;align-items:start}.hzt4>.hz-hero{grid-row:1/span 3;grid-template-columns:1fr;position:sticky;top:90px;align-self:start}.hzt4 .hz-m{grid-template-columns:1fr;row-gap:14px}.hzt4 .hz-m>div{border-left:0;padding:0 0 12px;border-bottom:1px solid rgba(255,255,255,.18)}
+.hzt4 .hz-rings{grid-template-columns:1fr;gap:6px}.hzt4 .hz-ring{display:grid;grid-template-columns:76px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;text-align:left}.hzt4 .hz-rc{height:76px;grid-row:1/span 2}.hzt4 .hz-ring b{margin:0;align-self:end}.hzt4 .hz-ring small{align-self:start}.hzt4 .hz-tt h2{font-size:19px;line-height:1.35}.hzt4 .hz-row{margin-top:0}.hzt4 .hz-ins{margin-top:0}.hzt4 .hz-r1,.hzt4 .hz-r2{grid-template-columns:1fr 1fr}
+.hzt5 .hz-hero{background:radial-gradient(700px 300px at 0% 0%,rgba(37,99,235,.4),transparent 60%),linear-gradient(140deg,#061331,#0a1f4d 55%,#071a3d);border:1px solid rgba(226,184,102,.35)}
+.hzt5 .hz-tt h2,.hzt5 .hz-m b{background:linear-gradient(100deg,#fff7dc,#e2b866 55%,#fbe6a6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.hzt5 .hz-pill{border-color:rgba(226,184,102,.5);color:#f5d98e;background:rgba(226,184,102,.1)}
+.hzt5 .hz-rings{border-color:rgba(226,184,102,.3)}.hzt5 .hz-orn{width:260px;margin-top:8px}.hzt5 .hz-orn svg{width:100%;height:auto;display:block}.hzt5 .hz-ch h3::before{background:linear-gradient(#f5d98e,#a8762c)}.hzt5 .hz-dr .nm em{background:#fdf3dc;color:#a8762c}.hzt5 .hz-ii,.hzt5 .hz-dr .hb i{background:linear-gradient(135deg,#f5d98e,#a8762c)}.hzt5 .hz-dr .rt.g{background:#fdf3dc;color:#8a5a14}
+.hzt5{--hv1:#a8762c;--hv2:#f5d98e}
+.hzt6 .hz-hero{background:radial-gradient(600px 260px at 0% 0%,rgba(59,130,246,.28),transparent 60%),linear-gradient(130deg,#0f172a,#1e293b 60%,#334155)}.hzt6{--hv1:#334155;--hv2:#3b82f6}.hzt6 .hz-ch h3::before{background:linear-gradient(#3b82f6,#334155)}.hzt6 .hz-dr .hb i{background:linear-gradient(90deg,#94a3b8,#334155)}.hzt6 .hz-dr .nm em{background:#e2e8f0;color:#334155}
+.hzt7 .hz-hero{background:radial-gradient(600px 260px at 100% 0%,rgba(167,139,250,.45),transparent 60%),linear-gradient(130deg,#1e1b4b,#4338ca 55%,#6d28d9)}.hzt7{--hv1:#4f46e5;--hv2:#a78bfa}.hzt7 .hz-ch h3::before{background:linear-gradient(#a78bfa,#4f46e5)}.hzt7 .hz-dr .hb i{background:linear-gradient(90deg,#a78bfa,#4f46e5)}.hzt7 .hz-dr .nm em{background:#ede9fe;color:#4f46e5}
+.hzt8 .hz-hero{background:radial-gradient(600px 260px at 0% 100%,rgba(45,212,191,.35),transparent 60%),linear-gradient(130deg,#042f2e,#0f766e 55%,#0e7490)}.hzt8{--hv1:#0f766e;--hv2:#2dd4bf}.hzt8 .hz-ch h3::before{background:linear-gradient(#2dd4bf,#0f766e)}.hzt8 .hz-dr .hb i{background:linear-gradient(90deg,#5eead4,#0f766e)}.hzt8 .hz-dr .nm em{background:#ccfbf1;color:#0f766e}
+/* 9 bento: hero split into tiles */
+.hzt9 .hz-hero{background:none;box-shadow:none;padding:0;color:var(--ink);grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}.hzt9 .hz-hero::after{display:none}
+.hzt9 .hz-hl{padding:20px 22px;border-radius:22px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow)}.hzt9 .hz-pill{background:#eff6ff;border-color:#dbeafe;color:#1d4ed8}.hzt9 .hz-tt small,.hzt9 .hz-m span,.hzt9 .hz-m small,.hzt9 .hz-ring small{color:var(--muted)}
+.hzt9 .hz-m{gap:12px}.hzt9 .hz-m>div{border:0;padding:14px;border-radius:16px;background:linear-gradient(135deg,#eff6ff,#e0f2fe)}.hzt9 .hz-m b{color:#1d4ed8}
+.hzt9 .hz-rings{background:none;border:0;padding:0;gap:12px;backdrop-filter:none}.hzt9 .hz-ring{padding:14px 8px;border-radius:20px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow)}
+/* 10 compact: tighter, three-column rows */
+.hzt10 .hz-hero{padding:16px 20px;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.hzt10 .hz-tt h2{font-size:19px;margin-top:6px}.hzt10 .hz-m{margin-top:10px}.hzt10 .hz-m b{font-size:26px}.hzt10 .hz-rc{height:76px}.hzt10 .hz-rings{padding:10px}
+.hzt10 .hz-row{gap:12px;margin-top:12px}.hzt10 .hz-r1{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.hzt10 .hz-card{padding:14px 16px;border-radius:16px}.hzt10 .hz-dr{padding:6px 0;font-size:12.5px}.hzt10 .hvl-r{padding:5px 0}.hzt10 .hz-ins{gap:10px;margin-top:12px}.hzt10 .hz-in{padding:10px 12px;border-radius:14px}.hzt10 .chart-box{height:230px!important}.hzt10 .hz-dn{height:150px}
+
+@media(max-width:1100px){.hzt4{grid-template-columns:1fr}.hzt4>.hz-hero{grid-row:auto;position:static}.hzt4 .hz-r1,.hzt4 .hz-r2{grid-template-columns:1fr}}
+@media(max-width:640px){.hz-m{grid-template-columns:1fr;row-gap:10px}.hz-m>div{border-left:0;padding-left:0}.hz-rings{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.hvx{border-radius:24px}.hv-h{display:flex;justify-content:space-between;align-items:flex-end;margin:0 0 12px}.hv-h h2{margin:0;font-size:20px}.hv-h small{color:var(--muted)}
+.hv-kp{display:grid;grid-template-columns:repeat(3,minmax(0,1.2fr)) repeat(3,minmax(0,1fr));gap:14px}
+.hvk{position:relative;padding:16px 18px;border-radius:20px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;height:150px;display:flex;flex-direction:column}
+.hvk-h span{font-size:13px;color:var(--muted);font-weight:600}.hvk-v{font-size:34px;font-weight:800;line-height:1.2;margin-top:4px;color:var(--hv1)}.hvk-s{font-size:12px;color:var(--muted)}
+.hvk-sp{position:absolute;left:0;right:0;bottom:0;height:46px;opacity:.9}.hvk-ring{align-items:center}.hvk-ring .hvk-h{align-self:flex-start}.hvk-rg{position:relative;width:100%;height:92px;margin-top:6px}
+.hv-r2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;margin-top:14px}.hv-r2b{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hv-r2>*{min-width:0}
+.hvc{padding:18px 20px;border-radius:20px;background:var(--glass2);border:1px solid var(--line);box-shadow:var(--shadow)}.hvc h3{margin:0 0 10px;font-size:15px}
+.hvl-r{display:grid;grid-template-columns:minmax(0,1fr) 90px 44px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line2)}.hvl-t b{display:block;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hvl-t small{color:var(--muted);font-size:11.5px}
+.hvl-b{height:8px;border-radius:9px;background:color-mix(in srgb,var(--hv1) 14%,transparent);overflow:hidden}.hvl-b i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--hv2),var(--hv1))}.hvl-r>span{font-weight:800;text-align:right;color:var(--hv1)}
+.hv-ins2 ul{margin:0;padding-left:18px;line-height:2}
+.hv-e{--hv1:#1d4ed8;--hv2:#60a5fa}
+.hv-g{--hv1:#0f2a5c;--hv2:#3b82f6}.hv-g .hvk,.hv-g .hvc{background:#fff;border-color:#e5eaf2;box-shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.05);color:#0f172a}.hv-g .hvk-h span,.hv-g .hvk-s,.hv-g .hvl-t small{color:#64748b}.hv-g .hvc h3{color:#0f2a5c;text-transform:none;border-left:3px solid #3b82f6;padding-left:10px}.hv-g .hv-h h2{color:#0f2a5c}
+.hv-f{--hv1:#e2b866;--hv2:#7dd3fc;padding:22px;color:#e2e8f0;background:radial-gradient(900px 400px at 10% 0%,rgba(37,99,235,.35),transparent 60%),linear-gradient(160deg,#061331,#0a1f4d 55%,#071a3d);box-shadow:0 20px 60px rgba(6,19,49,.35)}
+.hv-f .hvk,.hv-f .hvc{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.hv-f .hvk-h span,.hv-f .hvk-s,.hv-f .hvl-t small,.hv-f .muted{color:#a9bbdf}.hv-f .hvc h3{color:#f5d98e}.hv-f .hvl-r{border-color:rgba(255,255,255,.08)}
+.hv-f .hvk-v{background:linear-gradient(100deg,#fff7dc,#e2b866 60%,#fbe6a6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hvf-h{display:flex;justify-content:space-between;align-items:flex-end}.hvf-h small{color:#a9bbdf}.hvf-h h2{margin:2px 0 0;font-size:22px;background:linear-gradient(100deg,#fff7dc,#e2b866,#fbe6a6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.hvf-h>span{font-size:13px;color:#a9bbdf}
+.hvf-dv{width:min(380px,60%);margin:6px auto 14px}.hvf-dv svg{width:100%;height:auto;display:block}
+@media(max-width:1200px){.hv-kp{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:900px){.hv-kp{grid-template-columns:repeat(2,minmax(0,1fr))}.hv-r2,.hv-r2b{grid-template-columns:1fr}}
+.hv-pick{display:flex;gap:6px;align-items:center;justify-content:flex-end;margin:0 0 10px;flex-wrap:wrap}.hv-pick button{border:1px solid var(--line2);background:var(--glass2);border-radius:99px;padding:5px 12px;cursor:pointer;color:var(--ink);font:inherit;font-size:13px}.hv-pick button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.hv-2{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px;margin-top:14px}.hv-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}.hv-2>*,.hv-3>*{min-width:0}
+.hx-hero{border-radius:22px;padding:22px 26px;color:#fff;background:radial-gradient(700px 300px at 10% 0%,rgba(59,130,246,.45),transparent 60%),linear-gradient(135deg,#0a1f4d,#1e3a8a 60%,#0e7490);box-shadow:0 18px 50px rgba(15,40,100,.25)}
+.hx-t{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}.hx-t small{color:#bfdbfe;letter-spacing:.5px}.hx-t h2{margin:2px 0 0;font-size:22px}.hx-p{background:rgba(255,255,255,.14);padding:5px 12px;border-radius:99px;font-size:13px}
+.hx-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:18px}.hx-i{padding:4px 14px;border-left:1px solid rgba(255,255,255,.18)}.hx-i:first-child{border-left:0;padding-left:0}
+.hx-i span{display:block;font-size:12.5px;color:#bfdbfe}.hx-i b{display:block;font-size:30px;line-height:1.25;font-weight:800}.hx-i small{font-size:12px;color:#dbeafe}
+.hc-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:14px;margin-bottom:14px}.hc-grid>*{min-width:0}
+.hc-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.hc-chip{display:flex;flex-direction:column;padding:8px 14px;border-radius:14px;background:color-mix(in srgb,var(--c) 10%,transparent);font-size:12px;color:var(--muted);min-width:110px}.hc-chip b{font-size:22px;color:var(--c)}
+.hc-heat{border-collapse:separate;border-spacing:3px;width:100%;font-size:12px}.hc-heat th{font-weight:600;color:var(--muted);text-align:left;white-space:nowrap;padding:2px 6px}.hc-heat td{text-align:center;border-radius:6px;height:30px;min-width:30px;background:rgba(37,99,235,calc(.08 + var(--a)*.82));color:#0b1b3f;font-weight:700}
+.hc-rank>div{display:grid;grid-template-columns:22px minmax(0,1fr) 80px 44px 40px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line2);font-size:13px}.hc-rank .n{font-weight:800;color:var(--brand)}.hc-rank .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hc-rank .bar{height:7px;border-radius:9px;background:var(--line2);overflow:hidden}.hc-rank .bar i{display:block;height:100%;background:linear-gradient(90deg,#f97316,#fbbf24)}.hc-rank small{color:var(--muted);text-align:right}
+.hd{padding:26px 30px}.hd-top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #1e3a8a;padding-bottom:10px;margin-bottom:16px}.hd-top small{color:var(--muted)}.hd-top h2{margin:2px 0 0;font-size:20px;color:#1e3a8a}.hd-top>span{font-size:13px;color:var(--muted)}
+.hd-sum{width:100%;border-collapse:collapse;margin-bottom:8px}.hd-sum th{font-size:12px;color:var(--muted);font-weight:600;text-align:left;padding:6px 10px;border-bottom:1px solid var(--line2)}.hd-sum td{padding:8px 10px;font-size:24px;font-weight:800;color:#1e3a8a;vertical-align:top}.hd-sum small{display:block;font-size:11.5px;font-weight:500;color:var(--muted)}
+.hd-sec{margin-top:20px}.hd-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}.hd-h span{width:26px;height:26px;border-radius:50%;background:#1e3a8a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}.hd-h h3{margin:0;font-size:15px}
+.hd-b{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;align-items:center}.hd-txt{font-size:14px;line-height:1.7;border-left:3px solid #cbd5e1;padding-left:14px}.hd-list{line-height:1.9;margin:0;padding-left:22px}
+@media(max-width:1100px){.hx-row{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}.hx-i:nth-child(4){border-left:0;padding-left:0}.hv-3{grid-template-columns:1fr}.hv-2,.hc-grid,.hd-b{grid-template-columns:1fr}}
 .hv-bar{display:inline-block;width:60px;height:6px;border-radius:9px;background:var(--line2);vertical-align:middle;margin-right:6px;overflow:hidden}.hv-bar i{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#10b981)}
 .es-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 14px}
 .es-b{padding:12px 14px;border-radius:14px;background:var(--glass2);border:1px solid var(--line2);border-left:4px solid var(--c)}
@@ -567,6 +663,8 @@ en:{
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
+ hv_design:'Design:',hv_th0:'Ocean',hv_th1:'1 · Midnight',hv_th2:'2 · Minimal',hv_th3:'3 · Sky light',hv_th4:'4 · Side panel',hv_th5:'5 · Lao gold',hv_th6:'6 · Graphite',hv_th7:'7 · Indigo',hv_th8:'8 · Teal',hv_th9:'9 · Bento tiles',hv_th10:'10 · Compact',hv_dz_e:'1 · Sky glass',hv_dz_f:'2 · Navy & gold',hv_dz_g:'3 · Corporate',hv_c6:'Latest activities — attendance',hv_person:'person',hv_dz_a:'A · Cards',hv_dz_b:'B · Executive',hv_dz_c:'C · Analytics',hv_dz_d:'D · Report',hv_exec:'EXECUTIVE SUMMARY',hv_title:'Training & Meeting Analysis',hv_c5:'Attendance mix',hv_heat:'Attendances by department and month',hv_rank:'Department ranking (training hours · rate)',hv_d1:'{a} training sessions and {b} meetings; {c} attendances in total.',hv_d2hi:'Best attendance: <b>{a}</b> ({n}%).',hv_d2lo:'Needs follow-up: <b>{a}</b> ({n}%).',hv_d3:'Lowest attendance rate: <b>{d}</b> ({n}%).',
+ hv_cov:'Training coverage',hv_covNote:'{n} trained of {m} current staff',hv_avg:'avg',hv_lateRate:'Late rate',hv_c1:'Attendance by activity (latest 10)',hv_c2:'Monthly trend — attendances',hv_c3:'Training hours by department',hv_c4:'Attendance rate by department',hv_nm:'Not recorded',hv_ins:'Key findings',hv_i_low:'Lowest attendance: <b>{a}</b> ({n}%).',hv_i_div:'Most training hours: <b>{d}</b> ({n} h).',hv_i_late:'{n}% of attendances were late.',hv_i_cov:'Training coverage of current staff: <b>{n}%</b> — about {m} people have no training yet.',
  hv_byAct:'By activity',hv_byEmp:'By employee',hv_detail:'Detail (all rows)',hv_attend:'Attendances',hv_people:'people',hv_hoursNote:'training hours attended',hv_rate:'Attendance rate',hv_invited:'Invited',hv_in:'Attended (incl. late)',hv_last:'Last attended',
  cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
@@ -683,6 +781,8 @@ lo:{
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
+ hv_design:'ຮູບແບບ:',hv_th0:'ແບບປັດຈຸບັນ',hv_th1:'1 · ກາງຄືນ',hv_th2:'2 · ຂາວລຽບ',hv_th3:'3 · ຟ້າອ່ອນ',hv_th4:'4 · ແຖບຂ້າງ',hv_th5:'5 · ລາວ-ທອງ',hv_th6:'6 · ເທົາເຂັ້ມ',hv_th7:'7 · ຄາມ',hv_th8:'8 · ຂຽວທະເລ',hv_th9:'9 · ກະເບື້ອງ',hv_th10:'10 · ກະທັດຮັດ',hv_dz_e:'1 · ຟ້າແກ້ວ',hv_dz_f:'2 · ກົມທ່າ-ທອງ',hv_dz_g:'3 · ອົງກອນ',hv_c6:'ກິດຈະກຳລ່າສຸດ — ອັດຕາເຂົ້າຮ່ວມ',hv_person:'ຄົນ',hv_dz_a:'A · ກ່ອງ',hv_dz_b:'B · ຜູ້ບໍລິຫານ',hv_dz_c:'C · ວິເຄາະ',hv_dz_d:'D · ລາຍງານ',hv_exec:'ສະຫຼຸບສຳລັບຜູ້ບໍລິຫານ',hv_title:'ການວິເຄາະ ການຝຶກອົບຮົມ ແລະ ປະຊຸມ',hv_c5:'ສັດສ່ວນການເຂົ້າຮ່ວມ',hv_heat:'ການເຂົ້າຮ່ວມ ຕາມພະແນກ ແລະ ເດືອນ',hv_rank:'ອັນດັບພະແນກ (ຊົ່ວໂມງຝຶກ · ອັດຕາ)',hv_d1:'ຝຶກອົບຮົມ {a} ຄັ້ງ ແລະ ປະຊຸມ {b} ຄັ້ງ; ເຂົ້າຮ່ວມລວມ {c} ຄັ້ງ.',hv_d2hi:'ເຂົ້າຮ່ວມດີທີ່ສຸດ: <b>{a}</b> ({n}%).',hv_d2lo:'ຄວນຕິດຕາມ: <b>{a}</b> ({n}%).',hv_d3:'ອັດຕາເຂົ້າຮ່ວມຕ່ຳສຸດ: <b>{d}</b> ({n}%).',
+ hv_cov:'ຄວາມຄອບຄຸມການຝຶກ',hv_covNote:'ຝຶກແລ້ວ {n} ຈາກ {m} ຄົນ (ປັດຈຸບັນ)',hv_avg:'ສະເລ່ຍ',hv_lateRate:'ອັດຕາມາຊ້າ',hv_c1:'ການເຂົ້າຮ່ວມຕາມກິດຈະກຳ (10 ລ່າສຸດ)',hv_c2:'ແນວໂນ້ມລາຍເດືອນ — ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_c3:'ຊົ່ວໂມງຝຶກຕາມພະແນກ',hv_c4:'ອັດຕາເຂົ້າຮ່ວມຕາມພະແນກ',hv_nm:'ຍັງບໍ່ບັນທຶກ',hv_ins:'ຂໍ້ສັງເກດສຳຄັນ',hv_i_low:'ກິດຈະກຳທີ່ເຂົ້າຮ່ວມໜ້ອຍສຸດ: <b>{a}</b> ({n}%).',hv_i_div:'ພະແນກທີ່ມີຊົ່ວໂມງຝຶກຫຼາຍສຸດ: <b>{d}</b> ({n} ຊົ່ວໂມງ).',hv_i_late:'{n}% ຂອງການເຂົ້າຮ່ວມ ແມ່ນມາຊ້າ.',hv_i_cov:'ພະນັກງານປັດຈຸບັນໄດ້ຮັບການຝຶກແລ້ວ <b>{n}%</b> — ຍັງມີປະມານ {m} ຄົນທີ່ບໍ່ທັນໄດ້ຝຶກເລີຍ.',
  hv_byAct:'ຕາມກິດຈະກຳ',hv_byEmp:'ຕາມພະນັກງານ',hv_detail:'ລາຍລະອຽດ (ທຸກແຖວ)',hv_attend:'ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_people:'ຄົນ',hv_hoursNote:'ຊົ່ວໂມງຝຶກທີ່ເຂົ້າຮ່ວມ',hv_rate:'ອັດຕາເຂົ້າຮ່ວມ',hv_invited:'ເຊີນ',hv_in:'ເຂົ້າຮ່ວມ (ລວມຊ້າ)',hv_last:'ເຂົ້າຮ່ວມລ່າສຸດ',
  cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
@@ -1543,24 +1643,136 @@ function pageHistory(){
   S.refresh=histBody;S.refresh();
 }
 /* overview: KPI + per activity + per employee; the old row list stays as "detail" */
-function histBody(){
-  const f=S.f.hist,v=f.view||'act';
-  ['hAtt','hComp'].forEach(i=>{const el=$('#'+i);if(el)el.style.display=v==='det'?'':'none';});
-  const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
+/* History analytics — 4 designs to choose from (A cards · B executive · C analytics grid · D report). */
+function hvData(){
+  const f=S.f.hist;const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
   const went=r=>r.Attendance==='Present'||r.Attendance==='Late';
-  const acts=new Set(R.map(r=>r.ActivityID)),ins=R.filter(went).length,ab=R.filter(r=>r.Attendance==='Absent').length;
-  const hrs=R.filter(r=>went(r)&&r.Cat==='training').reduce((a,r)=>a+num(r.DurationHours),0);
+  const W=R.filter(went),acts=new Set(R.map(r=>r.ActivityID)),ins=W.length,ab=R.filter(r=>r.Attendance==='Absent').length,late=R.filter(r=>r.Attendance==='Late').length,on=R.filter(r=>r.Attendance==='Present').length;
+  const nm=R.filter(r=>!r.Attendance||r.Attendance==='Excused').length;
+  const hrs=W.filter(r=>r.Cat==='training').reduce((a,r)=>a+num(r.DurationHours),0);
   const tr=new Set(R.filter(r=>r.Cat==='training').map(r=>r.ActivityID)).size,mt=acts.size-tr;
-  const box=(l,v2,s2,c)=>`<div class="es-b" style="--c:${c}"><span>${esc(l)}</span><b>${v2}</b>${s2?`<small>${esc(s2)}</small>`:''}</div>`;
-  $('#hKpi').innerHTML=`<div class="es-grid">${box(t('nav_activities'),acts.size,t('cat_training')+' '+tr+' · '+t('cat_meeting')+' '+mt,'#2563eb')}${box(t('hv_attend'),fmtN(ins),t('hv_people')+' '+new Set(R.filter(went).map(r=>r.EmployeeID)).size,'#059669')}${box(t('es_hours'),fmtN(Math.round(hrs*10)/10),t('hv_hoursNote'),'#ea580c')}${box(t('hv_rate'),(ins+ab?Math.round(ins*100/(ins+ab)):0)+'%',t('absent')+' '+ab,'#7c3aed')}</div>`;
-  if(v==='det'){$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});return;}
-  if(v==='act'){$('#hList').innerHTML=dataTable('hact',histActCols(),histByAct(R),{sortK:'StartDate',sortD:-1,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});return;}
-  $('#hList').innerHTML=dataTable('hemp',histEmpCols(),histByEmp(R),{sortK:'_in',sortD:-1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});
+  const people=new Set(W.map(r=>r.EmployeeID)),trained=new Set(W.filter(r=>r.Cat==='training').map(r=>r.EmployeeID));
+  const curN=curEmps().filter(e=>!f.div||nk(e.Division)===f.div).length;
+  const trainedCur=[...trained].filter(id=>{const e=empById(id);return e&&isCurrent(e)&&(!f.div||nk(e.Division)===f.div);}).length;
+  const cov=curN?Math.round(trainedCur*100/curN):0;
+  const rate=ins+ab?Math.round(ins*100/(ins+ab)):0,lateR=ins?Math.round(late*100/ins):0;
+  const A=histByAct(R).sort((a,b)=>String(b.StartDate).localeCompare(String(a.StartDate)));
+  const byDiv={};R.forEach(r=>{const d=r.Division||'—';const o=byDiv[d]||(byDiv[d]={hrs:0,inn:0,ab:0,inv:0});o.inv++;if(went(r)){o.inn++;if(r.Cat==='training')o.hrs+=num(r.DurationHours);}if(r.Attendance==='Absent')o.ab++;});
+  Object.values(byDiv).forEach(o=>{o.hrs=Math.round(o.hrs*10)/10;o.rate=o.inn+o.ab?Math.round(o.inn*100/(o.inn+o.ab)):null;});
+  let months=[];const ds=R.map(r=>String(r.StartDate).slice(0,7)).filter(Boolean).sort();
+  {let a=f.from?f.from.slice(0,7):'',b=f.to?f.to.slice(0,7):'';if(!b)b=todayStr().slice(0,7);if(!a){if(ds[0])a=ds[0];else{const d=parseD(b+'-01');d.setMonth(d.getMonth()-11);a=d.getFullYear()+'-'+pad(d.getMonth()+1);}}if(ds.length&&(ds[ds.length-1]>b||!f.to))b=ds[ds.length-1];
+   let d=parseD(a+'-01');const end=parseD(b+'-01');while(d&&end&&d<=end&&months.length<36){months.push(d.getFullYear()+'-'+pad(d.getMonth()+1));d.setMonth(d.getMonth()+1);}}
+  const ML=MSHORT[S.lang==='lo'?'lo':'en'],mLab=months.map(m=>ML[Number(m.slice(5,7))-1]+' '+m.slice(2,4));
+  const mTr=months.map(m=>W.filter(r=>r.Cat==='training'&&String(r.StartDate).startsWith(m)).length),mMt=months.map(m=>W.filter(r=>r.Cat==='meeting'&&String(r.StartDate).startsWith(m)).length);
+  const insights=[],insKind=[];
+  {const lo=A.filter(a=>a.rate!=null).sort((a,b)=>a.rate-b.rate)[0];if(lo&&lo.rate<100)insKind.push('low')&&insights.push(t('hv_i_low').replace('{a}',esc(lo.Title)).replace('{n}',lo.rate));}
+  {const d=Object.entries(byDiv).sort((a,b)=>b[1].hrs-a[1].hrs)[0];if(d&&d[1].hrs)insKind.push('top')&&insights.push(t('hv_i_div').replace('{d}',esc(d[0])).replace('{n}',fmtN(d[1].hrs)));}
+  if(ins)insKind.push('late')&&insights.push(t('hv_i_late').replace('{n}',lateR));
+  if(curN&&cov<100)insKind.push('cov')&&insights.push(t('hv_i_cov').replace('{n}',cov).replace('{m}',curN-trainedCur));
+  const period=f.from||f.to?(f.from?fmtD(f.from):'…')+' – '+(f.to?fmtD(f.to):'…'):(months.length?mLab[0]+' – '+mLab[mLab.length-1]:'');
+  return{f,R,W,acts,ins,ab,late,on,nm,hrs:Math.round(hrs*10)/10,tr,mt,people,trained,curN,cov,rate,lateR,A,byDiv,months,mLab,mTr,mMt,insights,insKind,period,avg:trained.size?Math.round(hrs/trained.size*10)/10:0};
+}
+/* chart builders (Chart.js) */
+const HVC={on:'#10b981',late:'#f59e0b',ab:'#ef4444',nm:'#cbd5e1',tr:'#0891b2',mt:'#7c3aed',hrs:'#ea580c',navy:'#1e3a8a'};
+const hvShort=x=>{x=String(x||'');return x.length>26?x.slice(0,25)+'…':x;};
+const hvA=(hex,al)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${al})`;};
+function hvChart(id,cfg){const el=$('#'+id);if(el&&window.Chart)S.charts.push(new Chart(el,cfg));}
+function hvActChart(id,D,mono){const A10=D.A.slice(0,10);const st=(a,k)=>D.R.filter(r=>r.ActivityID===a.ActivityID&&(k==='nm'?!r.Attendance||r.Attendance==='Excused':r.Attendance===k)).length;
+  const c=mono?{on:HVC.navy,late:'#64748b',ab:'#b91c1c',nm:'#e2e8f0'}:HVC;
+  hvChart(id,{type:'bar',data:{labels:A10.map(a=>hvShort(a.Title)),datasets:[{label:t('ci_onTime'),data:A10.map(a=>st(a,'Present')),backgroundColor:c.on},{label:t('late'),data:A10.map(a=>st(a,'Late')),backgroundColor:c.late},{label:t('absent'),data:A10.map(a=>st(a,'Absent')),backgroundColor:c.ab},{label:t('hv_nm'),data:A10.map(a=>st(a,'nm')),backgroundColor:c.nm}]},
+   options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}},tooltip:{callbacks:{title:it=>A10[it[0].dataIndex].Title}}},scales:{x:{stacked:true,beginAtZero:true,ticks:{precision:0}},y:{stacked:true}},datasets:{bar:{borderRadius:4,maxBarThickness:20}}}});}
+function hvTrendChart(id,D,kind){const area=kind==='area';
+  hvChart(id,{type:area?'line':'bar',data:{labels:D.mLab,datasets:[{label:t('cat_training'),data:D.mTr,backgroundColor:area?'rgba(8,145,178,.18)':HVC.tr,borderColor:HVC.tr,fill:area,tension:.35,pointRadius:area?3:0,borderRadius:5,maxBarThickness:26},
+   {label:t('cat_meeting'),data:D.mMt,backgroundColor:area?'rgba(124,58,237,.14)':HVC.mt,borderColor:HVC.mt,fill:area,tension:.35,pointRadius:area?3:0,borderRadius:5,maxBarThickness:26}]},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},scales:{x:{stacked:!area,ticks:{maxRotation:45,autoSkip:false}},y:{stacked:!area,beginAtZero:true,ticks:{precision:0}}}}});}
+function hvHrsChart(id,D,color){const dk=Object.keys(D.byDiv).filter(d=>D.byDiv[d].hrs>0).sort((a,b)=>D.byDiv[b].hrs-D.byDiv[a].hrs).slice(0,12);
+  hvChart(id,{type:'bar',data:{labels:dk.map(hvShort),datasets:[{label:t('es_hours'),data:dk.map(d=>D.byDiv[d].hrs),backgroundColor:(color||HVC.hrs)+'cc',hoverBackgroundColor:color||HVC.hrs,borderRadius:6,maxBarThickness:20}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true}}}});}
+function hvRateChart(id,D,mono){const rk=Object.keys(D.byDiv).filter(d=>D.byDiv[d].rate!=null).sort((a,b)=>D.byDiv[b].inv-D.byDiv[a].inv).slice(0,12);const rv=rk.map(d=>D.byDiv[d].rate);
+  hvChart(id,{type:'bar',data:{labels:rk.map(hvShort),datasets:[{label:t('hv_rate'),data:rv,backgroundColor:rv.map(x=>mono?(x>=90?HVC.navy:x>=75?'#64748b':'#b91c1c'):(x>=90?HVC.on:x>=75?HVC.late:HVC.ab)),borderRadius:6,maxBarThickness:20}]},
+   options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:it=>it.raw+'%'}}},scales:{x:{beginAtZero:true,max:100,ticks:{callback:x=>x+'%'}}}}});}
+function hvDonut(id,D,center){hvChart(id,{type:'doughnut',data:{labels:[t('ci_onTime'),t('late'),t('absent'),t('hv_nm')],datasets:[{data:[D.on,D.late,D.ab,D.nm],backgroundColor:[HVC.on,HVC.late,HVC.ab,HVC.nm],borderWidth:0,hoverOffset:6}]},
+  options:{maintainAspectRatio:false,cutout:'70%',plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}}},plugins:center?[{id:'c',afterDraw(ch){const{ctx,chartArea:a}=ch;ctx.save();ctx.textAlign='center';ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--ink')||'#111';ctx.font="700 26px Inter,'Noto Sans Lao'";ctx.fillText(D.rate+'%',(a.left+a.right)/2,(a.top+a.bottom)/2+6);ctx.font="12px Inter,'Noto Sans Lao'";ctx.fillStyle='#64748b';ctx.fillText(t('hv_rate'),(a.left+a.right)/2,(a.top+a.bottom)/2+26);ctx.restore();}}]:[]});}
+function hvKpiCards(D){const KI=[['layers','#2563eb'],['uchk','#059669'],['users','#0891b2'],['clock','#ea580c'],['pct','#7c3aed'],['play','#d97706']];let ki=0;
+  const k=(l,v2,s2)=>{const[i,c]=KI[ki++%KI.length];return `<div class="kpi" style="--c:${c}"><span class="kbg">${ic(i)}</span><div class="kh"><span class="kic" style="--c:${c}">${ic(i)}</span><span class="l">${esc(l)}</span></div><div class="v">${v2}</div>${s2?`<div class="s">${esc(s2)}</div>`:''}</div>`;};
+  return `<div class="grid kpis dash hv-k">${k(t('nav_activities'),fmtN(D.acts.size),t('cat_training')+' '+D.tr+' · '+t('cat_meeting')+' '+D.mt)}${k(t('hv_attend'),fmtN(D.ins),t('hv_people')+' '+D.people.size)}${k(t('hv_cov'),D.cov+'%',t('hv_covNote').replace('{n}',D.trained.size).replace('{m}',D.curN))}${k(t('es_hours'),fmtN(D.hrs),t('hv_avg')+' '+fmtN(D.avg)+' '+t('hours'))}${k(t('hv_rate'),D.rate+'%',t('absent')+' '+D.ab)}${k(t('hv_lateRate'),D.lateR+'%',t('late')+' '+D.late)}</div>`;}
+const hvIns=(D,cls)=>D.insights.length?`<div class="card hv-ins ${cls||''}"><h3>${ic('chart',16)} ${t('hv_ins')}</h3><ul>${D.insights.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:'';
+const hvCard=(id,title,h,cls)=>`<div class="card ${cls||''}"><h3>${title}</h3><div class="chart-box" style="height:${h||300}px"><canvas id="${id}"></canvas></div></div>`;
+function hvGrad(c,a,b){return ctx=>{const ch=ctx.chart,ar=ch.chartArea;if(!ar)return a;const g=ch.ctx.createLinearGradient(0,ar.top,0,ar.bottom);g.addColorStop(0,a);g.addColorStop(1,b);return g;};}
+function hvActList(D,T){const A=D.A.slice(0,8);return A.length?`<div class="hvl">${A.map(a=>`<div class="hvl-r"><div class="hvl-t"><b>${esc(a.Title)}</b><small>${fmtD(a.StartDate)} · ${t('cat_'+a.Cat)} · ${a.inn}/${a.inv}</small></div><div class="hvl-b"><i style="width:${a.rate||0}%;background:${semRate(a.rate)}"></i></div><span style="color:${semRate(a.rate)}">${a.rate==null?'—':a.rate+'%'}</span></div>`).join('')}</div>`:`<p class="muted">${t('noData')}</p>`;}
+/* ---- final analysis design: blue hero + glass cards, one blue colour family ---- */
+/* meaning colours (same in every design): good / watch / problem / no data */
+const SEM={on:'#16a34a',late:'#f59e0b',ab:'#dc2626',nm:'#94a3b8',good:'#16a34a',mid:'#f59e0b',bad:'#dc2626'};
+const semRate=v=>v==null?SEM.nm:v>=90?SEM.good:v>=75?SEM.mid:SEM.bad;
+const semCls=v=>v==null?'':v>=90?'g':v>=75?'m':'l';
+const HVB={c1:'#1d4ed8',c2:'#38bdf8',c3:'#93c5fd',c4:'#dbeafe',deep:'#0b2a6f'};
+/* 6 looks for the analysis page: 0 Ocean (default) · 1 Midnight · 2 Minimal · 3 Sky light · 4 Side panel · 5 Lao gold */
+const HVP=[{c1:'#1d4ed8',c2:'#38bdf8',ab:'#64748b',nm:'#cbd5e1',ring:'#fff',ringBg:'rgba(255,255,255,.18)',ringTxt:'#fff',dnTxt:'#1d4ed8'},
+ {c1:'#22d3ee',c2:'#818cf8',ab:'#475569',nm:'#1e293b',ring:'#22d3ee',ringBg:'rgba(255,255,255,.10)',ringTxt:'#e0f2fe',dnTxt:'#e0f2fe',dark:true},
+ {c1:'#2563eb',c2:'#93c5fd',ab:'#94a3b8',nm:'#e2e8f0',ring:'#2563eb',ringBg:'#e8eefb',ringTxt:'#0f172a',dnTxt:'#2563eb'},
+ {c1:'#0284c7',c2:'#7dd3fc',ab:'#94a3b8',nm:'#e0f2fe',ring:'#0284c7',ringBg:'rgba(2,132,199,.14)',ringTxt:'#075985',dnTxt:'#0284c7'},
+ {c1:'#1e40af',c2:'#60a5fa',ab:'#64748b',nm:'#cbd5e1',ring:'#fff',ringBg:'rgba(255,255,255,.18)',ringTxt:'#fff',dnTxt:'#1e40af'},
+ {c1:'#d4a24c',c2:'#60a5fa',ab:'#64748b',nm:'#cbd5e1',ring:'#e2b866',ringBg:'rgba(255,255,255,.12)',ringTxt:'#fff7dc',dnTxt:'#a8762c'},
+ {c1:'#334155',c2:'#3b82f6',ring:'#fff',ringBg:'rgba(255,255,255,.16)',ringTxt:'#fff'},
+ {c1:'#4f46e5',c2:'#a78bfa',ring:'#fff',ringBg:'rgba(255,255,255,.18)',ringTxt:'#fff'},
+ {c1:'#0f766e',c2:'#2dd4bf',ring:'#fff',ringBg:'rgba(255,255,255,.18)',ringTxt:'#fff'},
+ {c1:'#1d4ed8',c2:'#38bdf8',ring:'#1d4ed8',ringBg:'#e8eefb',ringTxt:'#0f172a'},
+ {c1:'#1d4ed8',c2:'#38bdf8',ring:'#fff',ringBg:'rgba(255,255,255,.18)',ringTxt:'#fff'}];
+function hvTheme(){return 10;}   // chosen by the user 2026-11-03: Compact
+function hvRender(D){
+  const pct=(a,b)=>b?Math.round(a*100/b):0,tot=D.on+D.late+D.ab+D.nm,onP=D.ins?pct(D.on,D.ins):0;
+  const ring=(id,l,s)=>`<div class="hz-ring"><div class="hz-rc"><canvas id="${id}"></canvas></div><b>${esc(l)}</b><small>${esc(s)}</small></div>`;
+  const mixRow=(c,l,n)=>`<div class="hz-mx"><i style="background:${c}"></i><span>${esc(l)}</span><b>${fmtN(n)}</b><em>${pct(n,tot)}%</em></div>`;
+  const divs=Object.entries(D.byDiv).filter(([,o])=>o.inv).sort((a,b)=>b[1].hrs-a[1].hrs||b[1].inn-a[1].inn).slice(0,8),mx=Math.max(1,...divs.map(([,o])=>o.hrs));
+  const ppl=d=>new Set(D.W.filter(r=>(r.Division||'—')===d).map(r=>r.EmployeeID)).size;
+  const icoI=['alert','star','clock','users'];
+  const th=hvTheme();
+  return `<div class="hz hzt${th}">
+   <div class="hz-hero"><div class="hz-hl">
+     <div class="hz-tt"><span class="hz-pill">${ic('chart',14)} ${t('hv_exec')}</span><h2>${t('hv_title')}</h2><small>${esc(companyName())} · ${esc(D.period)}</small>${th===5?`<div class="hz-orn">${ornDivider('hzOrn')}</div>`:''}</div>
+     <div class="hz-m">${[[t('nav_activities'),fmtN(D.acts.size),t('cat_training')+' '+D.tr+' · '+t('cat_meeting')+' '+D.mt],[t('hv_attend'),fmtN(D.ins),D.people.size+' '+t('hv_people')],[t('es_hours'),fmtN(D.hrs),t('hv_avg')+' '+fmtN(D.avg)+' '+t('hours')+'/'+t('hv_person')]].map(([l,v,s])=>`<div><span>${esc(l)}</span><b>${v}</b><small>${esc(s)}</small></div>`).join('')}</div></div>
+     <div class="hz-rings">${ring('hzr1',t('hv_rate'),t('absent')+' '+D.ab)}${ring('hzr2',t('hv_cov'),D.trained.size+' / '+D.curN)}${ring('hzr3',t('ci_onTime'),t('late')+' '+D.late)}</div></div>
+   <div class="hz-row hz-r1">
+     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c2')}</h3><span class="hz-lg"><i style="background:${HVP[th].c1}"></i>${t('cat_training')}<i style="background:${HVP[th].c2}"></i>${t('cat_meeting')}</span></div><div class="chart-box" style="height:280px"><canvas id="hz1"></canvas></div></div>
+     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c5')}</h3></div><div class="hz-mix"><div class="hz-dn"><canvas id="hz2"></canvas></div><div class="hz-mxl">${mixRow(SEM.on,t('ci_onTime'),D.on)}${mixRow(SEM.late,t('late'),D.late)}${mixRow(SEM.ab,t('absent'),D.ab)}${mixRow(SEM.nm,t('hv_nm'),D.nm)}</div></div></div></div>
+   <div class="hz-row hz-r2">
+     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_rank')}</h3></div>
+       <div class="hz-dt"><div class="hz-dh"><span>${fl('Division')}</span><span>${t('es_hours')}</span><span>${t('hv_rate')}</span><span>${t('hv_people')}</span></div>
+       ${divs.length?divs.map(([d,o],i)=>`<div class="hz-dr"><span class="nm"><em>${i+1}</em>${esc(d)}</span><span class="hb"><i style="width:${Math.round(o.hrs*100/mx)}%"></i><b>${fmtN(o.hrs)}</b></span><span class="rt ${semCls(o.rate)}">${o.rate==null?'—':o.rate+'%'}</span><span class="pp">${ppl(d)}</span></div>`).join(''):`<p class="muted">${t('noData')}</p>`}</div></div>
+     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c6')}</h3></div>${hvActList(D)}</div></div>
+   ${D.insights.length?`<div class="hz-ins">${D.insights.map(x=>{const k=D.insKind?D.insKind[D.insights.indexOf(x)]:'info';const m={low:['xc','bad'],top:['ok','good'],late:['clock','mid'],cov:['users','info']}[k]||['chart','info'];return `<div class="hz-in hz-${m[1]}"><span class="hz-ii">${ic(m[0],18)}</span><p>${x}</p></div>`;}).join('')}</div>`:''}
+  </div>`;
+}
+function hvCharts(D){
+  if(!window.Chart)return;const P=HVP[hvTheme()];
+  {const cs=getComputedStyle(document.documentElement);Chart.defaults.color=cs.getPropertyValue('--muted').trim()||'#64748b';Chart.defaults.borderColor=cs.getPropertyValue('--line2').trim()||'rgba(0,0,0,.07)';Chart.defaults.font.family="Inter,'Noto Sans Lao',sans-serif";}
+  const darkHero=[0,1,4,5,6,7,8,10].includes(hvTheme()),RB={good:'#4ade80',mid:'#fbbf24',bad:'#f87171'};
+  const rc=v=>darkHero?(v>=90?RB.good:v>=75?RB.mid:RB.bad):semRate(v);
+  const ringW=(id,v)=>hvChart(id,{type:'doughnut',data:{datasets:[{data:[v,Math.max(0,100-v)],backgroundColor:[rc(v),P.ringBg],borderWidth:0,borderRadius:v>0&&v<100?20:0}]},
+    options:{maintainAspectRatio:false,cutout:'78%',events:[],plugins:{legend:{display:false},tooltip:{enabled:false}}},
+    plugins:[{id:'c',afterDraw(ch){const{ctx,chartArea:a}=ch;const r=Math.min(a.width,a.height);ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=P.ringTxt;ctx.font="800 "+Math.round(r/4.3)+"px Inter,'Noto Sans Lao'";ctx.fillText(v+'%',(a.left+a.right)/2,(a.top+a.bottom)/2);ctx.restore();}}]});
+  ringW('hzr1',D.rate);ringW('hzr2',D.cov);ringW('hzr3',D.ins?Math.round(D.on*100/D.ins):0);
+  hvChart('hz1',{type:'line',data:{labels:D.mLab,datasets:[
+    {label:t('cat_training'),data:D.mTr,borderColor:P.c1,backgroundColor:hvGrad(0,hvA(P.c1,.32),hvA(P.c1,0)),fill:true,tension:.4,borderWidth:3,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#fff',pointBorderWidth:2},
+    {label:t('cat_meeting'),data:D.mMt,borderColor:P.c2,backgroundColor:hvGrad(0,hvA(P.c2,.25),hvA(P.c2,0)),fill:true,tension:.4,borderWidth:3,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#fff',pointBorderWidth:2}]},
+   options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,ticks:{precision:0},border:{display:false}}}}});
+  hvChart('hz2',{type:'doughnut',data:{labels:[t('ci_onTime'),t('late'),t('absent'),t('hv_nm')],datasets:[{data:[D.on,D.late,D.ab,D.nm],backgroundColor:[SEM.on,SEM.late,SEM.ab,SEM.nm],borderWidth:0,spacing:3,borderRadius:6}]},
+   options:{maintainAspectRatio:false,cutout:'74%',plugins:{legend:{display:false}}},
+   plugins:[{id:'c',afterDraw(ch){const{ctx,chartArea:a}=ch;const r=Math.min(a.width,a.height),x=(a.left+a.right)/2,y=(a.top+a.bottom)/2;ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=semRate(D.rate);ctx.font="800 "+Math.round(r/5)+"px Inter,'Noto Sans Lao'";ctx.fillText(D.rate+'%',x,y-r/16);ctx.fillStyle='#64748b';ctx.font=Math.round(r/14)+"px Inter,'Noto Sans Lao'";ctx.fillText(t('hv_rate'),x,y+r/8);ctx.restore();}}]});
+}
+function histBody(){
+  const f=S.f.hist,v=f.view||'act';S.charts.forEach(c=>c.destroy());S.charts=[];
+  ['hAtt','hComp'].forEach(i=>{const el=$('#'+i);if(el)el.style.display=v==='det'?'':'none';});
+  const D=hvData();
+  $('#hKpi').innerHTML=hvRender(D);
+  if(v==='det')$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});
+  else if(v==='act')$('#hList').innerHTML=dataTable('hact',histActCols(),histByAct(D.R),{sortK:'StartDate',sortD:-1,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});
+  else $('#hList').innerHTML=dataTable('hemp',histEmpCols(),histByEmp(D.R),{sortK:'_in',sortD:-1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});
+  hvCharts(D);
 }
 function histByAct(R){const m={};R.forEach(r=>{const a=m[r.ActivityID]||(m[r.ActivityID]={ActivityID:r.ActivityID,Title:r.Title,Cat:r.Cat,Type:r.Type,StartDate:r.StartDate,DurationHours:r.DurationHours,inv:0,inn:0,ab:0,late:0,done:0});
   a.inv++;if(r.Attendance==='Present'||r.Attendance==='Late')a.inn++;if(r.Attendance==='Absent')a.ab++;if(r.Attendance==='Late')a.late++;if(r.Completion==='Completed')a.done++;});
   return Object.values(m).map(a=>({...a,rate:a.inn+a.ab?Math.round(a.inn*100/(a.inn+a.ab)):null}));}
-function histActCols(){const pct=a=>a.rate==null?'—':`<div class="hv-bar"><i style="width:${a.rate}%"></i></div><b>${a.rate}%</b>`;return[
+function histActCols(){const pct=a=>a.rate==null?'—':`<div class="hv-bar"><i style="width:${a.rate}%;background:${semRate(a.rate)}"></i></div><b style="color:${semRate(a.rate)}">${a.rate}%</b>`;return[
   {k:'StartDate',l:fl('StartDate'),r:a=>fmtD(a.StartDate),x:a=>a.StartDate},{k:'Title',l:fl('Title'),r:a=>`<b>${esc(a.Title)}</b>`,x:a=>a.Title},{k:'Cat',l:t('cat_label'),r:a=>catBadge(a.Cat),x:a=>t('cat_'+a.Cat)},
   {k:'Type',l:fl('Type'),r:a=>esc(tv(a.Type)),x:a=>a.Type},{k:'inv',l:t('hv_invited'),sv:a=>a.inv,r:a=>a.inv,x:a=>a.inv},{k:'inn',l:t('hv_in'),sv:a=>a.inn,r:a=>`<b class="ok-t">${a.inn}</b>`,x:a=>a.inn},
   {k:'late',l:t('late'),sv:a=>a.late,r:a=>a.late,x:a=>a.late},{k:'ab',l:t('absent'),sv:a=>a.ab,r:a=>a.ab?`<b class="err">${a.ab}</b>`:'0',x:a=>a.ab},{k:'done',l:t('es_done'),sv:a=>a.done,r:a=>a.done,x:a=>a.done},
