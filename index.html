@@ -153,7 +153,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .dl>div>span:first-child{display:block;font-size:11px;color:var(--muted);margin-bottom:2px}
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line2);margin-bottom:14px;flex-wrap:wrap}
 .tabs button{border:0;background:none;padding:8px 12px;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);font-weight:500}
-.tabs button.on{border-color:var(--brand);color:var(--brand)}
+.tabs button{display:inline-flex;align-items:center;gap:6px}.tabs button.on{border-color:var(--brand);color:var(--brand)}
 /* toast/loading */
 #toast{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;flex-direction:column;gap:8px}
 .t{background:var(--glass-strong);border:1px solid var(--line);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);color:var(--ink);padding:11px 15px;border-radius:12px;max-width:360px;box-shadow:var(--shadow);font-size:13px}
@@ -466,6 +466,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-cam video{width:100%;height:100%;object-fit:cover;display:block}
 .ci-aim{position:absolute;inset:18%;border:3px solid rgba(255,255,255,.85);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
 #printArea{display:none}
+.hv-bar{display:inline-block;width:60px;height:6px;border-radius:9px;background:var(--line2);vertical-align:middle;margin-right:6px;overflow:hidden}.hv-bar i{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#10b981)}
 .es-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 14px}
 .es-b{padding:12px 14px;border-radius:14px;background:var(--glass2);border:1px solid var(--line2);border-left:4px solid var(--c)}
 .es-b span{display:block;font-size:12px;color:var(--muted)}.es-b b{display:block;font-size:22px;color:var(--c);line-height:1.3}.es-b small{font-size:11.5px;color:var(--muted)}
@@ -566,6 +567,7 @@ en:{
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
+ hv_byAct:'By activity',hv_byEmp:'By employee',hv_detail:'Detail (all rows)',hv_attend:'Attendances',hv_people:'people',hv_hoursNote:'training hours attended',hv_rate:'Attendance rate',hv_invited:'Invited',hv_in:'Attended (incl. late)',hv_last:'Last attended',
  cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
@@ -681,6 +683,7 @@ lo:{
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
+ hv_byAct:'ຕາມກິດຈະກຳ',hv_byEmp:'ຕາມພະນັກງານ',hv_detail:'ລາຍລະອຽດ (ທຸກແຖວ)',hv_attend:'ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_people:'ຄົນ',hv_hoursNote:'ຊົ່ວໂມງຝຶກທີ່ເຂົ້າຮ່ວມ',hv_rate:'ອັດຕາເຂົ້າຮ່ວມ',hv_invited:'ເຊີນ',hv_in:'ເຂົ້າຮ່ວມ (ລວມຊ້າ)',hv_last:'ເຂົ້າຮ່ວມລ່າສຸດ',
  cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
@@ -1533,13 +1536,43 @@ function pageHistory(){
    <select class="in" id="hComp">${opts(COMPLETION,f.comp,t('completion')+': '+t('all'))}</select>
    <select class="in" id="hDiv">${opts(facet(S.emps.map(e=>e.Division)),f.div,fl('Division')+': '+t('all'))}</select>
    <input type="date" class="in" id="hFrom" value="${f.from}"><input type="date" class="in" id="hTo" value="${f.to}">
-   <span class="grow"></span><button class="btn" data-act="exportHist">${t('export')}</button></div><div id="hList"></div>`;
+   <span class="grow"></span><button class="btn" data-act="exportHist">${t('export')}</button></div>
+   <div id="hKpi"></div><div class="tabs no-print">${[['act','book',t('hv_byAct')],['emp','users',t('hv_byEmp')],['det','clip',t('hv_detail')]].map(([k,i,l])=>`<button class="${(f.view||'act')===k?'on':''}" data-act="histView" data-arg="${k}">${ic(i,15)} ${esc(l)}</button>`).join('')}</div><div id="hList"></div>`;
   const upd=()=>{f.q=$('#hQ').value;f.type=$('#hType').value;f.cat=$('#hCat').value;f.att=$('#hAtt').value;f.comp=$('#hComp').value;f.div=$('#hDiv').value;f.from=$('#hFrom').value;f.to=$('#hTo').value;S.tbl.hist&&(S.tbl.hist.p=1);S.refresh();};
   $('#hQ').oninput=upd;['hCat','hType','hAtt','hComp','hDiv','hFrom','hTo'].forEach(i=>$('#'+i).onchange=upd);
-  S.refresh=()=>{$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});};S.refresh();
+  S.refresh=histBody;S.refresh();
 }
-function histFiltered(){const f=S.f.hist,q=(f.q||'').toLowerCase();
-  return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.cat||r.Cat===f.cat)&&(!f.att||r.Attendance===f.att)&&(!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
+/* overview: KPI + per activity + per employee; the old row list stays as "detail" */
+function histBody(){
+  const f=S.f.hist,v=f.view||'act';
+  ['hAtt','hComp'].forEach(i=>{const el=$('#'+i);if(el)el.style.display=v==='det'?'':'none';});
+  const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
+  const went=r=>r.Attendance==='Present'||r.Attendance==='Late';
+  const acts=new Set(R.map(r=>r.ActivityID)),ins=R.filter(went).length,ab=R.filter(r=>r.Attendance==='Absent').length;
+  const hrs=R.filter(r=>went(r)&&r.Cat==='training').reduce((a,r)=>a+num(r.DurationHours),0);
+  const tr=new Set(R.filter(r=>r.Cat==='training').map(r=>r.ActivityID)).size,mt=acts.size-tr;
+  const box=(l,v2,s2,c)=>`<div class="es-b" style="--c:${c}"><span>${esc(l)}</span><b>${v2}</b>${s2?`<small>${esc(s2)}</small>`:''}</div>`;
+  $('#hKpi').innerHTML=`<div class="es-grid">${box(t('nav_activities'),acts.size,t('cat_training')+' '+tr+' · '+t('cat_meeting')+' '+mt,'#2563eb')}${box(t('hv_attend'),fmtN(ins),t('hv_people')+' '+new Set(R.filter(went).map(r=>r.EmployeeID)).size,'#059669')}${box(t('es_hours'),fmtN(Math.round(hrs*10)/10),t('hv_hoursNote'),'#ea580c')}${box(t('hv_rate'),(ins+ab?Math.round(ins*100/(ins+ab)):0)+'%',t('absent')+' '+ab,'#7c3aed')}</div>`;
+  if(v==='det'){$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});return;}
+  if(v==='act'){$('#hList').innerHTML=dataTable('hact',histActCols(),histByAct(R),{sortK:'StartDate',sortD:-1,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});return;}
+  $('#hList').innerHTML=dataTable('hemp',histEmpCols(),histByEmp(R),{sortK:'_in',sortD:-1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});
+}
+function histByAct(R){const m={};R.forEach(r=>{const a=m[r.ActivityID]||(m[r.ActivityID]={ActivityID:r.ActivityID,Title:r.Title,Cat:r.Cat,Type:r.Type,StartDate:r.StartDate,DurationHours:r.DurationHours,inv:0,inn:0,ab:0,late:0,done:0});
+  a.inv++;if(r.Attendance==='Present'||r.Attendance==='Late')a.inn++;if(r.Attendance==='Absent')a.ab++;if(r.Attendance==='Late')a.late++;if(r.Completion==='Completed')a.done++;});
+  return Object.values(m).map(a=>({...a,rate:a.inn+a.ab?Math.round(a.inn*100/(a.inn+a.ab)):null}));}
+function histActCols(){const pct=a=>a.rate==null?'—':`<div class="hv-bar"><i style="width:${a.rate}%"></i></div><b>${a.rate}%</b>`;return[
+  {k:'StartDate',l:fl('StartDate'),r:a=>fmtD(a.StartDate),x:a=>a.StartDate},{k:'Title',l:fl('Title'),r:a=>`<b>${esc(a.Title)}</b>`,x:a=>a.Title},{k:'Cat',l:t('cat_label'),r:a=>catBadge(a.Cat),x:a=>t('cat_'+a.Cat)},
+  {k:'Type',l:fl('Type'),r:a=>esc(tv(a.Type)),x:a=>a.Type},{k:'inv',l:t('hv_invited'),sv:a=>a.inv,r:a=>a.inv,x:a=>a.inv},{k:'inn',l:t('hv_in'),sv:a=>a.inn,r:a=>`<b class="ok-t">${a.inn}</b>`,x:a=>a.inn},
+  {k:'late',l:t('late'),sv:a=>a.late,r:a=>a.late,x:a=>a.late},{k:'ab',l:t('absent'),sv:a=>a.ab,r:a=>a.ab?`<b class="err">${a.ab}</b>`:'0',x:a=>a.ab},{k:'done',l:t('es_done'),sv:a=>a.done,r:a=>a.done,x:a=>a.done},
+  {k:'rate',l:t('hv_rate'),sv:a=>a.rate??-1,r:pct,x:a=>a.rate==null?'':a.rate+'%'}];}
+function histByEmp(R){const m={};R.forEach(r=>{const e=m[r.EmployeeID]||(m[r.EmployeeID]={EmployeeID:r.EmployeeID,Name:r.Name,NameLA:r.NameLA,Division:r.Division,tr:0,mt:0,hrs:0,ab:0,last:''});
+  const w=r.Attendance==='Present'||r.Attendance==='Late';if(w){r.Cat==='meeting'?e.mt++:e.tr++;if(r.Cat==='training')e.hrs+=num(r.DurationHours);if(String(r.StartDate)>e.last)e.last=r.StartDate;}if(r.Attendance==='Absent')e.ab++;});
+  return Object.values(m).map(e=>({...e,hrs:Math.round(e.hrs*10)/10,_in:e.tr+e.mt}));}
+function histEmpCols(){return[{k:'EmployeeID',l:fl('EmployeeID'),r:e=>`<b>${esc(e.EmployeeID)}</b>`,x:e=>e.EmployeeID},{k:'Name',l:fl('Name'),r:e=>esc(e.NameLA||e.Name)+(e.NameLA&&e.Name?`<div class="small muted">${esc(e.Name)}</div>`:''),x:e=>e.Name},
+  {k:'Division',l:fl('Division')},{k:'tr',l:t('cat_training'),sv:e=>e.tr,r:e=>`<b style="color:#0e7490">${e.tr}</b>`,x:e=>e.tr},{k:'mt',l:t('cat_meeting'),sv:e=>e.mt,r:e=>`<b style="color:#7c3aed">${e.mt}</b>`,x:e=>e.mt},
+  {k:'hrs',l:t('es_hours'),sv:e=>e.hrs,r:e=>fmtN(e.hrs),x:e=>e.hrs},{k:'ab',l:t('absent'),sv:e=>e.ab,r:e=>e.ab?`<b class="err">${e.ab}</b>`:'0',x:e=>e.ab},{k:'last',l:t('hv_last'),r:e=>fmtD(e.last),x:e=>e.last}];}
+function histFiltered(noAtt){const f=S.f.hist,q=(f.q||'').toLowerCase();
+  return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.cat||r.Cat===f.cat)&&(noAtt||!f.att||r.Attendance===f.att)&&(noAtt||!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
 
 /* ================= REPORTS ================= */
 const REPORTS=['r_month','r_dept','r_emp','r_att','r_comp','r_dur','r_cost','r_up'];
@@ -2365,7 +2398,10 @@ const H={
    try{const r=await call('participants.remove',{activityId:S.att.actId,employeeIds:ids});S.parts=S.parts.filter(p=>!(p.ActivityID===S.att.actId&&ids.includes(p.EmployeeID)));ids.forEach(i=>delete S.att.dirty[i]);reindex();toast('− '+r.removed,'ok');attBody();}catch(e){fail(e);}},
  exportEmps:()=>{const rows=S.page==='employees'?empFiltered():S.emps;exportXlsx('KGS_Employees',[tableToSheet('Employees',empExportCols(),rows)]);},
  exportActs:()=>{const rows=S.page==='activities'?actFilteredList():S.acts;exportXlsx('KGS_Activities',[tableToSheet('Activities',ACT_EXPORT.map(k=>({k,l:fl(k)})).concat([{l:t('participants'),x:a=>(S.partsByAct[a.ActivityID]||[]).length}]),rows)]);},
- exportHist:()=>{const rows=S.page==='history'?histFiltered():historyRows();exportXlsx('KGS_Training_History',[tableToSheet('History',histCols(true).concat([{k:'ActivityID',l:fl('ActivityID')},{k:'Division',l:fl('Division')}]),rows)]);},
+ histView:k=>{S.f.hist.view=k;pageHistory();},
+ exportHist:()=>{const v=S.page==='history'&&S.f.hist?S.f.hist.view||'act':'det';
+   if(v!=='det'){const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
+     exportXlsx(v==='act'?'KGS_History_by_Activity':'KGS_History_by_Employee',[v==='act'?tableToSheet('By activity',histActCols(),histByAct(R)):tableToSheet('By employee',histEmpCols(),histByEmp(R))]);return;}const rows=S.page==='history'?histFiltered():historyRows();exportXlsx('KGS_Training_History',[tableToSheet('History',histCols(true).concat([{k:'ActivityID',l:fl('ActivityID')},{k:'Division',l:fl('Division')}]),rows)]);},
  printEmpReport,exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
