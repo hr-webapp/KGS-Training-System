@@ -472,6 +472,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .xl-wrap{max-height:460px;overflow:auto;border:1px solid #d6e2f5;border-radius:12px}
 .xl{border-collapse:collapse;width:100%;font-size:13px;background:#fff;color:#0f172a}.xl th,.xl td{border:1px solid #e2e8f0;padding:6px 10px;white-space:nowrap}.xl thead th{position:sticky;top:0;background:#1e3a8a;color:#fff;font-weight:600;z-index:1;text-align:left}.xl th.n,.xl td.n{text-align:right;font-variant-numeric:tabular-nums}
 .xl tbody tr:nth-child(even){background:#f5f8ff}.xl tbody tr:hover{background:#e8f0ff}.xl .rn{width:34px;text-align:center;color:#64748b;background:#f1f5f9}.xl thead .rn{background:#172f6e;color:#cbd5e1}
+.xl td .z{color:#cbd5e1}.xl-card .hz-ch{gap:10px}.xl-card .grow{flex:1}
 .xl tfoot td{position:sticky;bottom:0;background:#dbeafe;border-top:2px solid #1e3a8a;font-weight:700}
 .hz{--hv1:#1d4ed8;--hv2:#38bdf8}
 .hz-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:center;padding:24px 28px;border-radius:24px;color:#fff;position:relative;overflow:hidden;
@@ -1815,7 +1816,7 @@ function pageReports(){
    <div class="print-title"><div style="display:flex;gap:10px;align-items:center;margin-bottom:6px">${logoHTML(36)}<b>${esc(companyName())}</b></div><h2 id="rpTitle"></h2><div class="small" id="rpSub"></div></div><div id="rBody"></div>`;
   ['rR','rFrom','rTo','rDept','rType','rSt'].forEach(i=>$('#'+i).onchange=()=>{f.r=$('#rR').value;f.from=$('#rFrom').value;f.to=$('#rTo').value;f.dept=$('#rDept').value;f.type=$('#rType').value;f.st=$('#rSt').value;S.tbl.rep&&(S.tbl.rep.p=1,S.tbl.rep.k=null);S.refresh();});
   S.refresh=()=>{S.charts.forEach(c=>c.destroy());S.charts=[];
-    if(f.r==='r_analysis'){$('#rpTitle').textContent=t(f.r);$('#rpSub').textContent='';const D=repAnalysisData();$('#rBody').innerHTML=hvRender(D)+xlHTML(D);hvCharts(D);return;}
+    if(f.r==='r_analysis'){$('#rpTitle').textContent=t(f.r);$('#rpSub').textContent='';const D=repAnalysisData();$('#rBody').innerHTML=hvRender(D)+xlHTML(D);hvCharts(D);{const y=$('#xlY');if(y)y.onchange=()=>{S.f.rep.xy=Number(y.value);xlRedraw();};}return;}
     const R=buildReport();$('#rpTitle').textContent=t(f.r);
     $('#rpSub').textContent=`KGS · ${f.from||'…'} → ${f.to||'…'} · ${f.dept||t('allDepts')} · ${f.type||''} ${f.st||''} · ${todayStr()}`;
     $('#rBody').innerHTML=(R.note?`<p class="small muted">${esc(R.note)}</p>`:'')+dataTable('rep',R.cols,R.rows,{noPage:true});};S.refresh();
@@ -1830,30 +1831,39 @@ function xlSummaries(D){
   const base=[C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),C('inv',t('hv_invited'),'n'),C('on',t('ci_onTime'),'n'),C('late',t('late'),'n'),C('ab',t('absent'),'n'),C('nm',t('hv_nm'),'n'),C('rate',t('hv_rate'),'p'),C('hrs',t('es_hours'),'n'),C('ppl',t('hv_people'),'n')];
   const by=(keyFn)=>{const g={};D.R.forEach(r=>{const k=keyFn(r)||'—';(g[k]=g[k]||[]).push(r);});return g;};
   const ML=MONTHS[S.lang==='lo'?'lo':'en'];
-  const gm=by(r=>String(r.StartDate).slice(0,7));const months=Object.keys(gm).filter(k=>k!=='—').sort();
-  const mRows=months.map(m=>({_k:ML[Number(m.slice(5,7))-1]+' '+m.slice(0,4),...agg(gm[m])}));
+  /* month table always shows a full calendar year (Jan–Dec, empty months = 0), or every month of the chosen date range */
+  const gm=by(r=>String(r.StartDate).slice(0,7));const fr=S.f.rep||{};let months=[];
+  if(fr.from&&fr.to){let d=parseD(fr.from);d.setDate(1);const end=parseD(fr.to);while(d<=end&&months.length<60){months.push(d.getFullYear()+'-'+pad(d.getMonth()+1));d.setMonth(d.getMonth()+1);}}
+  else{const y=xlYear();for(let i=1;i<=12;i++)months.push(y+'-'+pad(i));}
+  const mSet=new Set(months);
+  const mRows=months.map(m=>({_k:ML[Number(m.slice(5,7))-1]+' '+m.slice(0,4),...agg(gm[m]||[])}));
+  const mTot=agg(D.R.filter(r=>mSet.has(String(r.StartDate).slice(0,7))));
   const gd=by(r=>r.Division);const dRows=Object.keys(gd).sort().map(d=>({_k:d,...agg(gd[d])}));
   const gt=by(r=>r.Type);const tRows=Object.keys(gt).sort().map(k=>({_k:tv(k)+' ('+t('cat_'+(k==='Meeting'?'meeting':'training'))+')',...agg(gt[k])}));
   const A=histByAct(D.R).sort((a,b)=>String(a.StartDate).localeCompare(String(b.StartDate))).map(a=>{const rr=D.R.filter(r=>r.ActivityID===a.ActivityID);return{_k:a.Title,_d:fmtD(a.StartDate),_c:t('cat_'+a.Cat),...agg(rr)};});
   const E=histByEmp(D.R).sort((a,b)=>String(a.EmployeeID).localeCompare(String(b.EmployeeID))).map(e=>{const rr=D.R.filter(r=>r.EmployeeID===e.EmployeeID);return{_k:e.EmployeeID,_n:e.NameLA||e.Name,_dv:e.Division,...agg(rr),last:fmtD(e.last)};});
   const tot=agg(D.R);
   return [
-   {key:'m',title:t('xl_month'),cols:[C('_k',t('xl_monthCol'),'s'),...base],rows:mRows,total:tot},
+   {key:'m',title:t('xl_month'),cols:[C('_k',t('xl_monthCol'),'s'),...base],rows:mRows,total:mTot},
    {key:'d',title:t('xl_dept'),cols:[C('_k',fl('Division'),'s'),C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),...base.slice(2)],rows:dRows,total:tot},
    {key:'t',title:t('xl_type'),cols:[C('_k',fl('Type'),'s'),...base],rows:tRows,total:tot},
    {key:'a',title:t('hv_byAct'),cols:[C('_d',fl('StartDate'),'s'),C('_k',fl('Title'),'s'),C('_c',t('cat_label'),'s'),...base.slice(2)],rows:A,total:tot},
    {key:'e',title:t('hv_byEmp'),cols:[C('_k',fl('EmployeeID'),'s'),C('_n',fl('Name'),'s'),C('_dv',fl('Division'),'s'),C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),C('inv',t('hv_invited'),'n'),C('on',t('ci_onTime'),'n'),C('late',t('late'),'n'),C('ab',t('absent'),'n'),C('rate',t('hv_rate'),'p'),C('hrs',t('es_hours'),'n'),C('last',t('hv_last'),'s')],rows:E,total:tot}];
 }
-function xlCell(c,r,isTot){const v=r[c.k];if(c.ty==='p')return v==null?'—':`<span style="color:${semRate(v)};font-weight:700">${fmtN(v,1)}%</span>`;if(c.ty==='n')return v==null||v===''?'':fmtN(v,c.k==='hrs'?1:0);return esc(v==null?'':v);}
+function xlYear(){const f=S.f.rep||{};if(f.xy)return Number(f.xy);return new Date().getFullYear();}
+function xlYears(){const ys=new Set([new Date().getFullYear()]);S.acts.forEach(a=>{const y=Number(String(a.StartDate).slice(0,4));if(y)ys.add(y);});return [...ys].sort();}
+function xlCell(c,r,isTot){const v=r[c.k];if(c.ty==='p')return v==null?'—':`<span style="color:${semRate(v)};font-weight:700">${fmtN(v,1)}%</span>`;if(c.ty==='n')return v==null||v===''?'':(v===0?'<span class="z">0</span>':fmtN(v,c.k==='hrs'?1:0));return esc(v==null?'':v);}
 function xlHTML(D){
   const X=xlSummaries(D),f=S.f.rep;const cur=X.find(x=>x.key===(f.xt||'m'))||X[0];
   const totRow=cur.cols.map((c,i)=>i===0?`<td><b>${t('xl_total')}</b></td>`:(c.ty==='s'?'<td></td>':`<td class="n"><b>${xlCell(c,cur.total,true)}</b></td>`)).join('');
-  return `<div class="hz-card xl-card"><div class="hz-ch"><h3>${t('xl_title')}</h3><button class="btn pri sm" data-act="xlExport">${ic('download',15)} ${t('xl_export')}</button></div>
+  const yr=cur.key==='m'&&!(f.from&&f.to)?`<div class="yrsel"><button class="iconbtn sm" data-act="xlYear" data-arg="-1">‹</button><select class="in" id="xlY">${xlYears().map(y=>`<option ${y===xlYear()?'selected':''}>${y}</option>`).join('')}</select><button class="iconbtn sm" data-act="xlYear" data-arg="1">›</button></div>`:'';
+  return `<div class="hz-card xl-card"><div class="hz-ch"><h3>${t('xl_title')}</h3><span class="grow"></span>${yr}<button class="btn pri sm" data-act="xlExport">${ic('download',15)} ${t('xl_export')}</button></div>
    <div class="xl-tabs">${X.map(x=>`<button class="${x.key===cur.key?'on':''}" data-act="xlTab" data-arg="${x.key}">${esc(x.title)} <small>${x.rows.length}</small></button>`).join('')}</div>
    <div class="tbl-wrap xl-wrap"><table class="xl"><thead><tr><th class="rn">#</th>${cur.cols.map(c=>`<th class="${c.ty==='s'?'':'n'}">${esc(c.l)}</th>`).join('')}</tr></thead>
    <tbody>${cur.rows.length?cur.rows.map((r,i)=>`<tr><td class="rn">${i+1}</td>${cur.cols.map(c=>`<td class="${c.ty==='s'?'':'n'}">${xlCell(c,r)}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${cur.cols.length+1}" class="muted">${t('noData')}</td></tr>`}</tbody>
    <tfoot><tr><td class="rn"></td>${totRow}</tr></tfoot></table></div><p class="small muted" style="margin:8px 0 0">${t('xl_note')}</p></div>`;
 }
+function xlRedraw(){const D=repAnalysisData();const el=document.querySelector('.xl-card');if(el){el.outerHTML=xlHTML(D);const y=$('#xlY');if(y)y.onchange=()=>{S.f.rep.xy=Number(y.value);xlRedraw();};}}
 function xlExport(){
   const D=repAnalysisData(),X=xlSummaries(D),f=S.f.rep;
   const val=(c,r)=>{const v=r[c.k];return c.ty==='p'?(v==null?'':v/100):(c.ty==='n'?(v===''||v==null?'':Number(v)):(v==null?'':String(v)));};
@@ -2686,7 +2696,8 @@ const H={
  printEmpReport,exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
- xlTab:k=>{S.f.rep.xt=k;const D=repAnalysisData();const el=document.querySelector('.xl-card');if(el)el.outerHTML=xlHTML(D);},xlExport,
+ xlTab:k=>{S.f.rep.xt=k;xlRedraw();},xlExport,
+ xlYear:d=>{const ys=xlYears();let y=xlYear()+Number(d);if(y<ys[0]-1||y>ys[ys.length-1]+1)return;S.f.rep.xy=y;xlRedraw();},
  exportReport:()=>{if(S.f.rep.r==='r_analysis'){xlExport();return;}const R=buildReport();exportXlsx('KGS_Report_'+S.f.rep.r,[tableToSheet(t(S.f.rep.r),R.cols,R.rows)]);},
  printReport:()=>window.print(),
  impReset:()=>{S.imp=null;rerender();},impBack:()=>{S.imp.step=2;rerender();},impPreview,impCommit,
