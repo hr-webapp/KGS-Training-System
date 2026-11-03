@@ -643,7 +643,7 @@ en:{
  attendance:'Attendance',completion:'Completion',certificate:'Certificate',remarks:'Remarks',
  // history
  // reports
- reportType:'Report',r_month:'Training activities by month',r_dept:'Training activities by department',r_emp:'Employee training history',
+ reportType:'Report',r_analysis:'Analysis overview (charts)',r_month:'Training activities by month',r_dept:'Training activities by department',r_emp:'Employee training history',
  r_att:'Attendance report',r_comp:'Completed and incomplete training',r_dur:'Training duration by employee',r_cost:'Training costs',r_up:'Upcoming training activities',
  // import
  importTitle:'Import employees from Excel',step1:'1. File',step2:'2. Map columns',step3:'3. Preview & resolve',step4:'4. Result',
@@ -762,7 +762,7 @@ lo:{
  removeSelected:'ລຶບທີ່ເລືອກອອກ',selectAllFiltered:'ເລືອກທັງໝົດທີ່ສະແດງ',alreadyAdded:'ເພີ່ມແລ້ວ',selected:'ເລືອກແລ້ວ',
  unsaved:'ມີການປ່ຽນແປງທີ່ຍັງບໍ່ໄດ້ບັນທຶກ',overCapacity:'ເກີນຈຳນວນສູງສຸດ. ເພີ່ມຕໍ່ບໍ?',
  attendance:'ການເຂົ້າຮ່ວມ',completion:'ຜົນສຳເລັດ',certificate:'ໃບຢັ້ງຢືນ',remarks:'ໝາຍເຫດ',
- reportType:'ລາຍງານ',r_month:'ກິດຈະກຳຕາມເດືອນ',r_dept:'ກິດຈະກຳຕາມພະແນກ',r_emp:'ປະຫວັດຝຶກຂອງພະນັກງານ',
+ reportType:'ລາຍງານ',r_analysis:'ການວິເຄາະພາບລວມ (ກຣາຟ)',r_month:'ກິດຈະກຳຕາມເດືອນ',r_dept:'ກິດຈະກຳຕາມພະແນກ',r_emp:'ປະຫວັດຝຶກຂອງພະນັກງານ',
  r_att:'ລາຍງານການເຂົ້າຮ່ວມ',r_comp:'ຝຶກສຳເລັດ ແລະ ບໍ່ສຳເລັດ',r_dur:'ໄລຍະເວລາຝຶກຕໍ່ພະນັກງານ',r_cost:'ຄ່າໃຊ້ຈ່າຍຝຶກອົບຮົມ',r_up:'ກິດຈະກຳທີ່ຈະມາເຖິງ',
  importTitle:'ນຳເຂົ້າພະນັກງານຈາກ Excel',step1:'1. ໄຟລ໌',step2:'2. ຈັບຄູ່ຖັນ',step3:'3. ກວດ & ແກ້ຊ້ຳ',step4:'4. ຜົນ',
  chooseFile:'ເລືອກໄຟລ໌ Excel (.xlsx)',worksheet:'ແຜ່ນງານ',excludedSheet:'ບໍ່ແມ່ນຂໍ້ມູນພະນັກງານ',headerRow:'ແຖວຫົວຖັນ',
@@ -1201,7 +1201,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span>${t('version')} ${esc(S.version)}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-03">${t('version')} ${esc(S.version)} · UI 11-03</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -1644,8 +1644,8 @@ function pageHistory(){
 }
 /* overview: KPI + per activity + per employee; the old row list stays as "detail" */
 /* History analytics — 4 designs to choose from (A cards · B executive · C analytics grid · D report). */
-function hvData(){
-  const f=S.f.hist;const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
+function hvData(src){
+  const f=src?src.f:S.f.hist;const R=(src?src.rows:histFiltered(true)).filter(r=>r.ActStatus!=='Cancelled');
   const went=r=>r.Attendance==='Present'||r.Attendance==='Late';
   const W=R.filter(went),acts=new Set(R.map(r=>r.ActivityID)),ins=W.length,ab=R.filter(r=>r.Attendance==='Absent').length,late=R.filter(r=>r.Attendance==='Late').length,on=R.filter(r=>r.Attendance==='Present').length;
   const nm=R.filter(r=>!r.Attendance||r.Attendance==='Excused').length;
@@ -1787,9 +1787,9 @@ function histFiltered(noAtt){const f=S.f.hist,q=(f.q||'').toLowerCase();
   return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.cat||r.Cat===f.cat)&&(noAtt||!f.att||r.Attendance===f.att)&&(noAtt||!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
 
 /* ================= REPORTS ================= */
-const REPORTS=['r_month','r_dept','r_emp','r_att','r_comp','r_dur','r_cost','r_up'];
+const REPORTS=['r_analysis','r_month','r_dept','r_emp','r_att','r_comp','r_dur','r_cost','r_up'];
 function pageReports(){
-  const f=S.f.rep||(S.f.rep={r:'r_month',from:'',to:'',dept:'',type:'',st:''});
+  const f=S.f.rep||(S.f.rep={r:'r_analysis',from:'',to:'',dept:'',type:'',st:''});
   $('#page').innerHTML=`<div class="bar no-print"><select class="in" id="rR">${opts(REPORTS.map(r=>[r,t(r)]),f.r)}</select>
    <input type="date" class="in" id="rFrom" value="${f.from}"><input type="date" class="in" id="rTo" value="${f.to}">
    <select class="in" id="rDept">${opts(facet([...S.emps.map(e=>e.Division),...S.acts.map(a=>a.Department)],false),f.dept,t('allDepts'))}</select>
@@ -1798,10 +1798,16 @@ function pageReports(){
    <span class="grow"></span><button class="btn" data-act="exportReport">${t('export')}</button><button class="btn" data-act="printReport">${t('print')}</button></div>
    <div class="print-title"><div style="display:flex;gap:10px;align-items:center;margin-bottom:6px">${logoHTML(36)}<b>${esc(companyName())}</b></div><h2 id="rpTitle"></h2><div class="small" id="rpSub"></div></div><div id="rBody"></div>`;
   ['rR','rFrom','rTo','rDept','rType','rSt'].forEach(i=>$('#'+i).onchange=()=>{f.r=$('#rR').value;f.from=$('#rFrom').value;f.to=$('#rTo').value;f.dept=$('#rDept').value;f.type=$('#rType').value;f.st=$('#rSt').value;S.tbl.rep&&(S.tbl.rep.p=1,S.tbl.rep.k=null);S.refresh();});
-  S.refresh=()=>{const R=buildReport();$('#rpTitle').textContent=t(f.r);
+  S.refresh=()=>{S.charts.forEach(c=>c.destroy());S.charts=[];
+    if(f.r==='r_analysis'){$('#rpTitle').textContent=t(f.r);$('#rpSub').textContent='';const D=repAnalysisData();$('#rBody').innerHTML=hvRender(D);hvCharts(D);return;}
+    const R=buildReport();$('#rpTitle').textContent=t(f.r);
     $('#rpSub').textContent=`KGS · ${f.from||'…'} → ${f.to||'…'} · ${f.dept||t('allDepts')} · ${f.type||''} ${f.st||''} · ${todayStr()}`;
     $('#rBody').innerHTML=(R.note?`<p class="small muted">${esc(R.note)}</p>`:'')+dataTable('rep',R.cols,R.rows,{noPage:true});};S.refresh();
 }
+/* analysis page inside Reports: same design as History, filtered by the Reports filters (activity level) */
+function repAnalysisData(){const f=S.f.rep;
+  const ok=a=>(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.type||a.Type===f.type)&&(!f.st||a.Status===f.st);
+  return hvData({f:{from:f.from,to:f.to,div:''},rows:historyRows(p=>{const a=actById(p.ActivityID);return a&&ok(a);})});}
 function buildReport(){
   const f=S.f.rep;
   const acts=S.acts.filter(a=>(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.type||a.Type===f.type)&&(!f.st||a.Status===f.st));
@@ -2617,7 +2623,7 @@ const H={
  printEmpReport,exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
- exportReport:()=>{const R=buildReport();exportXlsx('KGS_Report_'+S.f.rep.r,[tableToSheet(t(S.f.rep.r),R.cols,R.rows)]);},
+ exportReport:()=>{if(S.f.rep.r==='r_analysis'){const D=repAnalysisData();exportXlsx('KGS_Analysis',[tableToSheet(t('hv_byAct'),histActCols(),histByAct(D.R)),tableToSheet(t('hv_byEmp'),histEmpCols(),histByEmp(D.R))]);return;}const R=buildReport();exportXlsx('KGS_Report_'+S.f.rep.r,[tableToSheet(t(S.f.rep.r),R.cols,R.rows)]);},
  printReport:()=>window.print(),
  impReset:()=>{S.imp=null;rerender();},impBack:()=>{S.imp.step=2;rerender();},impPreview,impCommit,
  impTab:s=>{S.imp.tab=s;S.tbl.imp.p=1;impRender();},
