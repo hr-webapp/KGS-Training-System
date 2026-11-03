@@ -472,6 +472,7 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .xl-wrap{max-height:460px;overflow:auto;border:1px solid #d6e2f5;border-radius:12px}
 .xl{border-collapse:collapse;width:100%;font-size:13px;background:#fff;color:#0f172a}.xl th,.xl td{border:1px solid #e2e8f0;padding:6px 10px;white-space:nowrap}.xl thead th{position:sticky;top:0;background:#1e3a8a;color:#fff;font-weight:600;z-index:1;text-align:left}.xl th.n,.xl td.n{text-align:right;font-variant-numeric:tabular-nums}
 .xl tbody tr:nth-child(even){background:#f5f8ff}.xl tbody tr:hover{background:#e8f0ff}.xl .rn{width:34px;text-align:center;color:#64748b;background:#f1f5f9}.xl thead .rn{background:#172f6e;color:#cbd5e1}
+.hz-yr{display:flex;align-items:center;gap:6px;margin-left:auto;margin-right:12px}.hz-yr b{min-width:44px;text-align:center}
 .xl td .z{color:#cbd5e1}.xl-card .hz-ch{gap:10px}.xl-card .grow{flex:1}
 .xl tfoot td{position:sticky;bottom:0;background:#dbeafe;border-top:2px solid #1e3a8a;font-weight:700}
 .hz{--hv1:#1d4ed8;--hv2:#38bdf8}
@@ -669,10 +670,11 @@ en:{
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
- hv_design:'Design:',hv_th0:'Ocean',hv_th1:'1 · Midnight',hv_th2:'2 · Minimal',hv_th3:'3 · Sky light',hv_th4:'4 · Side panel',hv_th5:'5 · Lao gold',hv_th6:'6 · Graphite',hv_th7:'7 · Indigo',hv_th8:'8 · Teal',hv_th9:'9 · Bento tiles',hv_th10:'10 · Compact',hv_dz_e:'1 · Sky glass',hv_dz_f:'2 · Navy & gold',hv_dz_g:'3 · Corporate',hv_c6:'Latest activities — attendance',hv_person:'person',hv_dz_a:'A · Cards',hv_dz_b:'B · Executive',hv_dz_c:'C · Analytics',hv_dz_d:'D · Report',hv_exec:'EXECUTIVE SUMMARY',hv_title:'Training & Meeting Analysis',hv_c5:'Attendance mix',hv_heat:'Attendances by department and month',hv_rank:'Department ranking (training hours · rate)',hv_d1:'{a} training sessions and {b} meetings; {c} attendances in total.',hv_d2hi:'Best attendance: <b>{a}</b> ({n}%).',hv_d2lo:'Needs follow-up: <b>{a}</b> ({n}%).',hv_d3:'Lowest attendance rate: <b>{d}</b> ({n}%).',
+ hv_design:'Design:',hv_year:'Year',hv_th0:'Ocean',hv_th1:'1 · Midnight',hv_th2:'2 · Minimal',hv_th3:'3 · Sky light',hv_th4:'4 · Side panel',hv_th5:'5 · Lao gold',hv_th6:'6 · Graphite',hv_th7:'7 · Indigo',hv_th8:'8 · Teal',hv_th9:'9 · Bento tiles',hv_th10:'10 · Compact',hv_dz_e:'1 · Sky glass',hv_dz_f:'2 · Navy & gold',hv_dz_g:'3 · Corporate',hv_c6:'Latest activities — attendance',hv_person:'person',hv_dz_a:'A · Cards',hv_dz_b:'B · Executive',hv_dz_c:'C · Analytics',hv_dz_d:'D · Report',hv_exec:'EXECUTIVE SUMMARY',hv_title:'Training & Meeting Analysis',hv_c5:'Attendance mix',hv_heat:'Attendances by department and month',hv_rank:'Department ranking (training hours · rate)',hv_d1:'{a} training sessions and {b} meetings; {c} attendances in total.',hv_d2hi:'Best attendance: <b>{a}</b> ({n}%).',hv_d2lo:'Needs follow-up: <b>{a}</b> ({n}%).',hv_d3:'Lowest attendance rate: <b>{d}</b> ({n}%).',
  xl_title:'Summary tables (Excel)',xl_export:'Export all to Excel',xl_month:'By month',xl_monthCol:'Month',xl_dept:'By department',xl_type:'By type',xl_total:'Total',xl_note:'Uses the filters above. The Excel file has one sheet per table plus a summary sheet, with filters and % formatting.',xl_sum:'Summary',xl_period:'Period',xl_made:'Prepared',xl_done:'Excel file downloaded',
  hv_cov:'Training coverage',hv_covNote:'{n} trained of {m} current staff',hv_avg:'avg',hv_lateRate:'Late rate',hv_c1:'Attendance by activity (latest 10)',hv_c2:'Monthly trend — attendances',hv_c3:'Training hours by department',hv_c4:'Attendance rate by department',hv_nm:'Not recorded',hv_ins:'Key findings',hv_i_low:'Lowest attendance: <b>{a}</b> ({n}%).',hv_i_div:'Most training hours: <b>{d}</b> ({n} h).',hv_i_late:'{n}% of attendances were late.',hv_i_cov:'Training coverage of current staff: <b>{n}%</b> — about {m} people have no training yet.',
  hv_byAct:'By activity',hv_byEmp:'By employee',hv_detail:'Detail (all rows)',hv_attend:'Attendances',hv_people:'people',hv_hoursNote:'training hours attended',hv_rate:'Attendance rate',hv_invited:'Invited',hv_in:'Attended (incl. late)',hv_last:'Last attended',
+ st_ACTIVE:'Working',st_PROBATION:'Probation',st_RESIGNED:'Resigned',st_TERMINATED:'Terminated',st_CONTRACT:'Contract ended',st_RETIRED:'Retired',st_INACTIVE:'Inactive',st_needEnd:'Please enter the End Date for an employee who has left.',st_formerHint:'→ moves to Former Employees (history is kept).',st_currentHint:'→ current employee.',
  cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
@@ -788,10 +790,11 @@ lo:{
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
- hv_design:'ຮູບແບບ:',hv_th0:'ແບບປັດຈຸບັນ',hv_th1:'1 · ກາງຄືນ',hv_th2:'2 · ຂາວລຽບ',hv_th3:'3 · ຟ້າອ່ອນ',hv_th4:'4 · ແຖບຂ້າງ',hv_th5:'5 · ລາວ-ທອງ',hv_th6:'6 · ເທົາເຂັ້ມ',hv_th7:'7 · ຄາມ',hv_th8:'8 · ຂຽວທະເລ',hv_th9:'9 · ກະເບື້ອງ',hv_th10:'10 · ກະທັດຮັດ',hv_dz_e:'1 · ຟ້າແກ້ວ',hv_dz_f:'2 · ກົມທ່າ-ທອງ',hv_dz_g:'3 · ອົງກອນ',hv_c6:'ກິດຈະກຳລ່າສຸດ — ອັດຕາເຂົ້າຮ່ວມ',hv_person:'ຄົນ',hv_dz_a:'A · ກ່ອງ',hv_dz_b:'B · ຜູ້ບໍລິຫານ',hv_dz_c:'C · ວິເຄາະ',hv_dz_d:'D · ລາຍງານ',hv_exec:'ສະຫຼຸບສຳລັບຜູ້ບໍລິຫານ',hv_title:'ການວິເຄາະ ການຝຶກອົບຮົມ ແລະ ປະຊຸມ',hv_c5:'ສັດສ່ວນການເຂົ້າຮ່ວມ',hv_heat:'ການເຂົ້າຮ່ວມ ຕາມພະແນກ ແລະ ເດືອນ',hv_rank:'ອັນດັບພະແນກ (ຊົ່ວໂມງຝຶກ · ອັດຕາ)',hv_d1:'ຝຶກອົບຮົມ {a} ຄັ້ງ ແລະ ປະຊຸມ {b} ຄັ້ງ; ເຂົ້າຮ່ວມລວມ {c} ຄັ້ງ.',hv_d2hi:'ເຂົ້າຮ່ວມດີທີ່ສຸດ: <b>{a}</b> ({n}%).',hv_d2lo:'ຄວນຕິດຕາມ: <b>{a}</b> ({n}%).',hv_d3:'ອັດຕາເຂົ້າຮ່ວມຕ່ຳສຸດ: <b>{d}</b> ({n}%).',
+ hv_design:'ຮູບແບບ:',hv_year:'ປີ',hv_th0:'ແບບປັດຈຸບັນ',hv_th1:'1 · ກາງຄືນ',hv_th2:'2 · ຂາວລຽບ',hv_th3:'3 · ຟ້າອ່ອນ',hv_th4:'4 · ແຖບຂ້າງ',hv_th5:'5 · ລາວ-ທອງ',hv_th6:'6 · ເທົາເຂັ້ມ',hv_th7:'7 · ຄາມ',hv_th8:'8 · ຂຽວທະເລ',hv_th9:'9 · ກະເບື້ອງ',hv_th10:'10 · ກະທັດຮັດ',hv_dz_e:'1 · ຟ້າແກ້ວ',hv_dz_f:'2 · ກົມທ່າ-ທອງ',hv_dz_g:'3 · ອົງກອນ',hv_c6:'ກິດຈະກຳລ່າສຸດ — ອັດຕາເຂົ້າຮ່ວມ',hv_person:'ຄົນ',hv_dz_a:'A · ກ່ອງ',hv_dz_b:'B · ຜູ້ບໍລິຫານ',hv_dz_c:'C · ວິເຄາະ',hv_dz_d:'D · ລາຍງານ',hv_exec:'ສະຫຼຸບສຳລັບຜູ້ບໍລິຫານ',hv_title:'ການວິເຄາະ ການຝຶກອົບຮົມ ແລະ ປະຊຸມ',hv_c5:'ສັດສ່ວນການເຂົ້າຮ່ວມ',hv_heat:'ການເຂົ້າຮ່ວມ ຕາມພະແນກ ແລະ ເດືອນ',hv_rank:'ອັນດັບພະແນກ (ຊົ່ວໂມງຝຶກ · ອັດຕາ)',hv_d1:'ຝຶກອົບຮົມ {a} ຄັ້ງ ແລະ ປະຊຸມ {b} ຄັ້ງ; ເຂົ້າຮ່ວມລວມ {c} ຄັ້ງ.',hv_d2hi:'ເຂົ້າຮ່ວມດີທີ່ສຸດ: <b>{a}</b> ({n}%).',hv_d2lo:'ຄວນຕິດຕາມ: <b>{a}</b> ({n}%).',hv_d3:'ອັດຕາເຂົ້າຮ່ວມຕ່ຳສຸດ: <b>{d}</b> ({n}%).',
  xl_title:'ຕາຕະລາງສະຫຼຸບ (Excel)',xl_export:'ສົ່ງອອກ Excel ທຸກຕາຕະລາງ',xl_month:'ຕາມເດືອນ',xl_monthCol:'ເດືອນ',xl_dept:'ຕາມພະແນກ',xl_type:'ຕາມປະເພດ',xl_total:'ລວມ',xl_note:'ໃຊ້ຕົວກອງດ້ານເທິງ. ໄຟລ໌ Excel ມີ 1 ແຜ່ນຕໍ່ 1 ຕາຕະລາງ ແລະ ແຜ່ນສະຫຼຸບ, ມີຕົວກອງ ແລະ ຮູບແບບ %.',xl_sum:'ສະຫຼຸບ',xl_period:'ໄລຍະ',xl_made:'ສ້າງວັນທີ',xl_done:'ດາວໂຫຼດ Excel ແລ້ວ',
  hv_cov:'ຄວາມຄອບຄຸມການຝຶກ',hv_covNote:'ຝຶກແລ້ວ {n} ຈາກ {m} ຄົນ (ປັດຈຸບັນ)',hv_avg:'ສະເລ່ຍ',hv_lateRate:'ອັດຕາມາຊ້າ',hv_c1:'ການເຂົ້າຮ່ວມຕາມກິດຈະກຳ (10 ລ່າສຸດ)',hv_c2:'ແນວໂນ້ມລາຍເດືອນ — ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_c3:'ຊົ່ວໂມງຝຶກຕາມພະແນກ',hv_c4:'ອັດຕາເຂົ້າຮ່ວມຕາມພະແນກ',hv_nm:'ຍັງບໍ່ບັນທຶກ',hv_ins:'ຂໍ້ສັງເກດສຳຄັນ',hv_i_low:'ກິດຈະກຳທີ່ເຂົ້າຮ່ວມໜ້ອຍສຸດ: <b>{a}</b> ({n}%).',hv_i_div:'ພະແນກທີ່ມີຊົ່ວໂມງຝຶກຫຼາຍສຸດ: <b>{d}</b> ({n} ຊົ່ວໂມງ).',hv_i_late:'{n}% ຂອງການເຂົ້າຮ່ວມ ແມ່ນມາຊ້າ.',hv_i_cov:'ພະນັກງານປັດຈຸບັນໄດ້ຮັບການຝຶກແລ້ວ <b>{n}%</b> — ຍັງມີປະມານ {m} ຄົນທີ່ບໍ່ທັນໄດ້ຝຶກເລີຍ.',
  hv_byAct:'ຕາມກິດຈະກຳ',hv_byEmp:'ຕາມພະນັກງານ',hv_detail:'ລາຍລະອຽດ (ທຸກແຖວ)',hv_attend:'ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_people:'ຄົນ',hv_hoursNote:'ຊົ່ວໂມງຝຶກທີ່ເຂົ້າຮ່ວມ',hv_rate:'ອັດຕາເຂົ້າຮ່ວມ',hv_invited:'ເຊີນ',hv_in:'ເຂົ້າຮ່ວມ (ລວມຊ້າ)',hv_last:'ເຂົ້າຮ່ວມລ່າສຸດ',
+ st_ACTIVE:'ກຳລັງເຮັດວຽກ',st_PROBATION:'ທົດລອງງານ',st_RESIGNED:'ລາອອກ',st_TERMINATED:'ເລີກຈ້າງ',st_CONTRACT:'ໝົດສັນຍາ',st_RETIRED:'ບຳນານ',st_INACTIVE:'ຢຸດວຽກ',st_needEnd:'ກະລຸນາໃສ່ ວັນສິ້ນສຸດ ສຳລັບພະນັກງານທີ່ອອກແລ້ວ.',st_formerHint:'→ ຈະຍ້າຍໄປ ພະນັກງານເກົ່າ (ປະຫວັດການຝຶກຍັງຢູ່).',st_currentHint:'→ ພະນັກງານປັດຈຸບັນ.',
  cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
@@ -984,7 +987,9 @@ const nk=v=>String(v??'').trim().replace(/\s+/g,' ').toUpperCase();
 function facetRaw(list){const m={};list.forEach(v=>{const s=String(v??'').trim();if(!s)return;const k=nk(s);const o=m[k]||(m[k]={n:0,s:{}});o.n++;o.s[s]=(o.s[s]||0)+1;});
   return Object.entries(m).map(([k,o])=>({k,n:o.n,label:Object.entries(o.s).sort((a,b)=>b[1]-a[1])[0][0]})).sort((a,b)=>a.label.localeCompare(b.label,undefined,{numeric:true}));}
 // current employee = record not deactivated AND employment status is not a "left the company" status
-const FORMER_RE=/^(INACTIVE|IN-ACTIVE|NOT ACTIVE|RESIGN|TERMINAT|QUIT|LEFT|EXIT|FORMER|DISMISS)|ອອກ/;
+const FORMER_RE=/^(INACTIVE|IN-ACTIVE|NOT ACTIVE|RESIGN|TERMINAT|QUIT|LEFT|EXIT|FORMER|DISMISS|CONTRACT END|RETIR)|ອອກ/;
+/* standard employment statuses (HR export values); current = ACTIVE / PROBATION, former = the rest */
+const EMP_STATUS=[['ACTIVE','st_ACTIVE'],['PROBATION','st_PROBATION'],['RESIGNED','st_RESIGNED'],['TERMINATED','st_TERMINATED'],['CONTRACT ENDED','st_CONTRACT'],['RETIRED','st_RETIRED'],['INACTIVE','st_INACTIVE']];
 const isCurrent=e=>e.Active!=='No'&&!FORMER_RE.test(nk(e.EmploymentStatus));
 const curEmps=()=>S.emps.filter(isCurrent);
 const facet=(list,counts=true)=>facetRaw(list).map(o=>[o.k,o.label+(counts?' ('+o.n+')':'')]);
@@ -1403,6 +1408,8 @@ function photoFromFile(f){return new Promise((res,rej)=>{
 function empForm(id){
   const e=id?empById(id):{};const isNew=!id;
   const inp=k=>{const v=esc(e[k]||'');
+    if(k==='EmploymentStatus'){const cur=String(e[k]||'').toUpperCase(),known=EMP_STATUS.some(([v])=>v===cur);
+      return `<select class="in" id="ef_${k}">${EMP_STATUS.map(([v,l])=>`<option value="${v}" ${cur===v||(!cur&&v==='ACTIVE')?'selected':''}>${v} — ${esc(t(l))}</option>`).join('')}${cur&&!known?`<option value="${esc(e[k])}" selected>${esc(e[k])}</option>`:''}</select><div class="small muted" id="efStHint" style="margin-top:4px"></div>`;}
     if(k==='Gender')return `<select class="in" id="ef_${k}">${opts(uniq(['Male','Female',...S.emps.map(x=>x.Gender)]).concat(e[k]&&!['Male','Female'].includes(e[k])?[]:[]),e[k],'—')}</select>`;
     if(DATE_FIELDS.includes(k))return `<input class="in" type="date" id="ef_${k}" value="${/^\d{4}-\d{2}-\d{2}$/.test(e[k]||'')?v:''}">${e[k]&&!/^\d{4}-\d{2}-\d{2}$/.test(e[k])?`<div class="small warn">${esc(e[k])}</div>`:''}`;
     const dl=['Position','Division','Province','Region','JobSite','EmploymentStatus','SourceSheet','ServiceType','Branch'].includes(k)?`list="dl_${k}"`:'';
@@ -1410,10 +1417,12 @@ function empForm(id){
   modal(isNew?t('addEmployee'):t('editEmployee'),`<div class="form">${EMP_FIELDS.map(k=>`<div class="fld"><label class="${k==='EmployeeID'?'req':''}">${esc(fl(k))}</label>${inp(k)}</div>`).join('')}</div>
    <p class="small muted">* ${fl('EmployeeID')} + ${fl('NameEN')} / ${fl('NameLA')}</p><div id="efErr" class="err small"></div>`,
    `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" id="efSave">${t('save')}</button>`);
+  {const st=$('#ef_EmploymentStatus'),h=$('#efStHint');const upd=()=>{if(h)h.textContent=FORMER_RE.test(nk(st.value))?t('st_formerHint'):t('st_currentHint');};if(st){st.onchange=upd;upd();}}
   $('#efSave').onclick=async()=>{
     const o={};EMP_FIELDS.forEach(k=>{const el=$('#ef_'+k);o[k]=el?el.value.trim():'';});
     if(DATE_FIELDS.some(k=>!o[k]&&e[k]&&!/^\d{4}-\d{2}-\d{2}$/.test(e[k])))DATE_FIELDS.forEach(k=>{if(!o[k]&&e[k]&&!/^\d{4}-\d{2}-\d{2}$/.test(e[k]))o[k]=e[k];});
     if(!o.EmployeeID||(!o.NameEN&&!o.NameLA)){$('#efErr').textContent=fl('EmployeeID')+' / '+fl('NameEN')+' ?';return;}
+    if(FORMER_RE.test(nk(o.EmploymentStatus))&&!o.EndDate){$('#efErr').textContent=t('st_needEnd');$('#ef_EndDate').focus();return;}
     try{const r=await call('employee.save',{employee:o,isNew});
       if(isNew)S.emps.push(r);else Object.assign(empById(id),r);
       reindex();toast(t('saved'),'ok');closeModal();S.refresh&&S.refresh();viewEmp(r.EmployeeID);}catch(err){$('#efErr').textContent=err.message;}
@@ -1653,7 +1662,9 @@ function pageHistory(){
 /* overview: KPI + per activity + per employee; the old row list stays as "detail" */
 /* History analytics — 4 designs to choose from (A cards · B executive · C analytics grid · D report). */
 function hvData(src){
-  const f=src?src.f:S.f.hist;const R=(src?src.rows:histFiltered(true)).filter(r=>r.ActStatus!=='Cancelled');
+  const f=src?src.f:S.f.hist;const ranged=!!(f.from||f.to),Y=Number(f.xy)||new Date().getFullYear();
+  /* no date filter -> the whole analysis is for one calendar year (Jan–Dec), chosen with ‹ year › */
+  const R=(src?src.rows:histFiltered(true)).filter(r=>r.ActStatus!=='Cancelled'&&(ranged||String(r.StartDate).slice(0,4)===String(Y)));
   const went=r=>r.Attendance==='Present'||r.Attendance==='Late';
   const W=R.filter(went),acts=new Set(R.map(r=>r.ActivityID)),ins=W.length,ab=R.filter(r=>r.Attendance==='Absent').length,late=R.filter(r=>r.Attendance==='Late').length,on=R.filter(r=>r.Attendance==='Present').length;
   const nm=R.filter(r=>!r.Attendance||r.Attendance==='Excused').length;
@@ -1668,7 +1679,8 @@ function hvData(src){
   const byDiv={};R.forEach(r=>{const d=r.Division||'—';const o=byDiv[d]||(byDiv[d]={hrs:0,inn:0,ab:0,inv:0});o.inv++;if(went(r)){o.inn++;if(r.Cat==='training')o.hrs+=num(r.DurationHours);}if(r.Attendance==='Absent')o.ab++;});
   Object.values(byDiv).forEach(o=>{o.hrs=Math.round(o.hrs*10)/10;o.rate=o.inn+o.ab?Math.round(o.inn*100/(o.inn+o.ab)):null;});
   let months=[];const ds=R.map(r=>String(r.StartDate).slice(0,7)).filter(Boolean).sort();
-  {let a=f.from?f.from.slice(0,7):'',b=f.to?f.to.slice(0,7):'';if(!b)b=todayStr().slice(0,7);if(!a){if(ds[0])a=ds[0];else{const d=parseD(b+'-01');d.setMonth(d.getMonth()-11);a=d.getFullYear()+'-'+pad(d.getMonth()+1);}}if(ds.length&&(ds[ds.length-1]>b||!f.to))b=ds[ds.length-1];
+  if(!ranged){for(let i=1;i<=12;i++)months.push(Y+'-'+pad(i));}
+  else{let a=f.from?f.from.slice(0,7):'',b=f.to?f.to.slice(0,7):'';if(!b)b=todayStr().slice(0,7);if(!a){if(ds[0])a=ds[0];else{const d=parseD(b+'-01');d.setMonth(d.getMonth()-11);a=d.getFullYear()+'-'+pad(d.getMonth()+1);}}if(ds.length&&(ds[ds.length-1]>b||!f.to))b=ds[ds.length-1];
    let d=parseD(a+'-01');const end=parseD(b+'-01');while(d&&end&&d<=end&&months.length<36){months.push(d.getFullYear()+'-'+pad(d.getMonth()+1));d.setMonth(d.getMonth()+1);}}
   const ML=MSHORT[S.lang==='lo'?'lo':'en'],mLab=months.map(m=>ML[Number(m.slice(5,7))-1]+' '+m.slice(2,4));
   const mTr=months.map(m=>W.filter(r=>r.Cat==='training'&&String(r.StartDate).startsWith(m)).length),mMt=months.map(m=>W.filter(r=>r.Cat==='meeting'&&String(r.StartDate).startsWith(m)).length);
@@ -1677,8 +1689,8 @@ function hvData(src){
   {const d=Object.entries(byDiv).sort((a,b)=>b[1].hrs-a[1].hrs)[0];if(d&&d[1].hrs)insKind.push('top')&&insights.push(t('hv_i_div').replace('{d}',esc(d[0])).replace('{n}',fmtN(d[1].hrs)));}
   if(ins)insKind.push('late')&&insights.push(t('hv_i_late').replace('{n}',lateR));
   if(curN&&cov<100)insKind.push('cov')&&insights.push(t('hv_i_cov').replace('{n}',cov).replace('{m}',curN-trainedCur));
-  const period=f.from||f.to?(f.from?fmtD(f.from):'…')+' – '+(f.to?fmtD(f.to):'…'):(months.length?mLab[0]+' – '+mLab[mLab.length-1]:'');
-  return{f,R,W,acts,ins,ab,late,on,nm,hrs:Math.round(hrs*10)/10,tr,mt,people,trained,curN,cov,rate,lateR,A,byDiv,months,mLab,mTr,mMt,insights,insKind,period,avg:trained.size?Math.round(hrs/trained.size*10)/10:0};
+  const period=!ranged?t('hv_year')+' '+Y:f.from||f.to?(f.from?fmtD(f.from):'…')+' – '+(f.to?fmtD(f.to):'…'):(months.length?mLab[0]+' – '+mLab[mLab.length-1]:'');
+  return{f,R,W,acts,ins,ab,late,on,nm,hrs:Math.round(hrs*10)/10,tr,mt,people,trained,curN,cov,rate,lateR,A,byDiv,months,mLab,mTr,mMt,insights,insKind,period,ranged,Y,avg:trained.size?Math.round(hrs/trained.size*10)/10:0};
 }
 /* chart builders (Chart.js) */
 const HVC={on:'#10b981',late:'#f59e0b',ab:'#ef4444',nm:'#cbd5e1',tr:'#0891b2',mt:'#7c3aed',hrs:'#ea580c',navy:'#1e3a8a'};
@@ -1740,7 +1752,7 @@ function hvRender(D){
      <div class="hz-m">${[[t('nav_activities'),fmtN(D.acts.size),t('cat_training')+' '+D.tr+' · '+t('cat_meeting')+' '+D.mt],[t('hv_attend'),fmtN(D.ins),D.people.size+' '+t('hv_people')],[t('es_hours'),fmtN(D.hrs),t('hv_avg')+' '+fmtN(D.avg)+' '+t('hours')+'/'+t('hv_person')]].map(([l,v,s])=>`<div><span>${esc(l)}</span><b>${v}</b><small>${esc(s)}</small></div>`).join('')}</div></div>
      <div class="hz-rings">${ring('hzr1',t('hv_rate'),t('absent')+' '+D.ab)}${ring('hzr2',t('hv_cov'),D.trained.size+' / '+D.curN)}${ring('hzr3',t('ci_onTime'),t('late')+' '+D.late)}</div></div>
    <div class="hz-row hz-r1">
-     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c2')}</h3><span class="hz-lg"><i style="background:${HVP[th].c1}"></i>${t('cat_training')}<i style="background:${HVP[th].c2}"></i>${t('cat_meeting')}</span></div><div class="chart-box" style="height:280px"><canvas id="hz1"></canvas></div></div>
+     <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c2')}</h3>${D.ranged?'':`<div class="yrsel hz-yr"><button class="iconbtn sm" data-act="hvYear" data-arg="-1">‹</button><b>${D.Y}</b><button class="iconbtn sm" data-act="hvYear" data-arg="1">›</button></div>`}<span class="hz-lg"><i style="background:${HVP[th].c1}"></i>${t('cat_training')}<i style="background:${HVP[th].c2}"></i>${t('cat_meeting')}</span></div><div class="chart-box" style="height:280px"><canvas id="hz1"></canvas></div></div>
      <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c5')}</h3></div><div class="hz-mix"><div class="hz-dn"><canvas id="hz2"></canvas></div><div class="hz-mxl">${mixRow(SEM.on,t('ci_onTime'),D.on)}${mixRow(SEM.late,t('late'),D.late)}${mixRow(SEM.ab,t('absent'),D.ab)}${mixRow(SEM.nm,t('hv_nm'),D.nm)}</div></div></div></div>
    <div class="hz-row hz-r2">
      <div class="hz-card"><div class="hz-ch"><h3>${t('hv_rank')}</h3></div>
@@ -1760,7 +1772,7 @@ function hvCharts(D){
     plugins:[{id:'c',afterDraw(ch){const{ctx,chartArea:a}=ch;const r=Math.min(a.width,a.height);ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=P.ringTxt;ctx.font="800 "+Math.round(r/4.3)+"px Inter,'Noto Sans Lao'";ctx.fillText(v+'%',(a.left+a.right)/2,(a.top+a.bottom)/2);ctx.restore();}}]});
   ringW('hzr1',D.rate);ringW('hzr2',D.cov);ringW('hzr3',D.ins?Math.round(D.on*100/D.ins):0);
   /* few months -> grouped bars (lines between 2-3 points look like a fake trend); 6+ months -> smooth area */
-  if(D.months.length<6){
+  if(D.months.length<=12){
     hvChart('hz1',{type:'bar',data:{labels:D.mLab,datasets:[
       {label:t('cat_training'),data:D.mTr,backgroundColor:hvGrad(0,P.c1,hvA(P.c1,.65)),borderRadius:8,borderSkipped:false,maxBarThickness:46,categoryPercentage:.6,barPercentage:.85},
       {label:t('cat_meeting'),data:D.mMt,backgroundColor:hvGrad(0,P.c2,hvA(P.c2,.6)),borderRadius:8,borderSkipped:false,maxBarThickness:46,categoryPercentage:.6,barPercentage:.85}]},
@@ -1816,7 +1828,7 @@ function pageReports(){
    <div class="print-title"><div style="display:flex;gap:10px;align-items:center;margin-bottom:6px">${logoHTML(36)}<b>${esc(companyName())}</b></div><h2 id="rpTitle"></h2><div class="small" id="rpSub"></div></div><div id="rBody"></div>`;
   ['rR','rFrom','rTo','rDept','rType','rSt'].forEach(i=>$('#'+i).onchange=()=>{f.r=$('#rR').value;f.from=$('#rFrom').value;f.to=$('#rTo').value;f.dept=$('#rDept').value;f.type=$('#rType').value;f.st=$('#rSt').value;S.tbl.rep&&(S.tbl.rep.p=1,S.tbl.rep.k=null);S.refresh();});
   S.refresh=()=>{S.charts.forEach(c=>c.destroy());S.charts=[];
-    if(f.r==='r_analysis'){$('#rpTitle').textContent=t(f.r);$('#rpSub').textContent='';const D=repAnalysisData();$('#rBody').innerHTML=hvRender(D)+xlHTML(D);hvCharts(D);{const y=$('#xlY');if(y)y.onchange=()=>{S.f.rep.xy=Number(y.value);xlRedraw();};}return;}
+    if(f.r==='r_analysis'){$('#rpTitle').textContent=t(f.r);$('#rpSub').textContent='';const D=repAnalysisData();$('#rBody').innerHTML=hvRender(D)+xlHTML(D);hvCharts(D);{const y=$('#xlY');if(y)y.onchange=()=>{S.f.rep.xy=Number(y.value);S.refresh();};}return;}
     const R=buildReport();$('#rpTitle').textContent=t(f.r);
     $('#rpSub').textContent=`KGS · ${f.from||'…'} → ${f.to||'…'} · ${f.dept||t('allDepts')} · ${f.type||''} ${f.st||''} · ${todayStr()}`;
     $('#rBody').innerHTML=(R.note?`<p class="small muted">${esc(R.note)}</p>`:'')+dataTable('rep',R.cols,R.rows,{noPage:true});};S.refresh();
@@ -1880,7 +1892,7 @@ function xlExport(){
 /* analysis page inside Reports: same design as History, filtered by the Reports filters (activity level) */
 function repAnalysisData(){const f=S.f.rep;
   const ok=a=>(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.type||a.Type===f.type)&&(!f.st||a.Status===f.st);
-  return hvData({f:{from:f.from,to:f.to,div:''},rows:historyRows(p=>{const a=actById(p.ActivityID);return a&&ok(a);})});}
+  return hvData({f:{from:f.from,to:f.to,div:'',xy:f.xy},rows:historyRows(p=>{const a=actById(p.ActivityID);return a&&ok(a);})});}
 function buildReport(){
   const f=S.f.rep;
   const acts=S.acts.filter(a=>(!f.from||(a.EndDate||a.StartDate)>=f.from)&&(!f.to||a.StartDate<=f.to)&&(!f.dept||nk(a.Department)===f.dept)&&(!f.type||a.Type===f.type)&&(!f.st||a.Status===f.st));
@@ -2697,7 +2709,8 @@ const H={
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
  xlTab:k=>{S.f.rep.xt=k;xlRedraw();},xlExport,
- xlYear:d=>{const ys=xlYears();let y=xlYear()+Number(d);if(y<ys[0]-1||y>ys[ys.length-1]+1)return;S.f.rep.xy=y;xlRedraw();},
+ xlYear:d=>{const ys=xlYears();let y=xlYear()+Number(d);if(y<ys[0]-1||y>ys[ys.length-1]+1)return;S.f.rep.xy=y;S.refresh();},
+ hvYear:d=>{const F=S.page==='reports'?S.f.rep:S.f.hist;const ys=xlYears();const cur=Number(F.xy)||new Date().getFullYear();const y=cur+Number(d);if(y<ys[0]-1||y>ys[ys.length-1]+1)return;F.xy=y;S.refresh();},
  exportReport:()=>{if(S.f.rep.r==='r_analysis'){xlExport();return;}const R=buildReport();exportXlsx('KGS_Report_'+S.f.rep.r,[tableToSheet(t(S.f.rep.r),R.cols,R.rows)]);},
  printReport:()=>window.print(),
  impReset:()=>{S.imp=null;rerender();},impBack:()=>{S.imp.step=2;rerender();},impPreview,impCommit,
