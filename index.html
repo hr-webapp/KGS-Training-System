@@ -1751,6 +1751,15 @@ function hvCharts(D){
     options:{maintainAspectRatio:false,cutout:'78%',events:[],plugins:{legend:{display:false},tooltip:{enabled:false}}},
     plugins:[{id:'c',afterDraw(ch){const{ctx,chartArea:a}=ch;const r=Math.min(a.width,a.height);ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=P.ringTxt;ctx.font="800 "+Math.round(r/4.3)+"px Inter,'Noto Sans Lao'";ctx.fillText(v+'%',(a.left+a.right)/2,(a.top+a.bottom)/2);ctx.restore();}}]});
   ringW('hzr1',D.rate);ringW('hzr2',D.cov);ringW('hzr3',D.ins?Math.round(D.on*100/D.ins):0);
+  /* few months -> grouped bars (lines between 2-3 points look like a fake trend); 6+ months -> smooth area */
+  if(D.months.length<6){
+    hvChart('hz1',{type:'bar',data:{labels:D.mLab,datasets:[
+      {label:t('cat_training'),data:D.mTr,backgroundColor:hvGrad(0,P.c1,hvA(P.c1,.65)),borderRadius:8,borderSkipped:false,maxBarThickness:46,categoryPercentage:.6,barPercentage:.85},
+      {label:t('cat_meeting'),data:D.mMt,backgroundColor:hvGrad(0,P.c2,hvA(P.c2,.6)),borderRadius:8,borderSkipped:false,maxBarThickness:46,categoryPercentage:.6,barPercentage:.85}]},
+     options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,grace:'15%',ticks:{precision:0},border:{display:false}}}},
+     plugins:[{id:'v',afterDatasetsDraw(ch){const{ctx}=ch;ctx.save();ctx.font="700 12px Inter,'Noto Sans Lao'";ctx.textAlign='center';ctx.fillStyle='#334155';
+       ch.data.datasets.forEach((ds,i)=>ch.getDatasetMeta(i).data.forEach((bar,j)=>{const v=ds.data[j];if(v)ctx.fillText(v,bar.x,bar.y-6);}));ctx.restore();}}]});
+  }else
   hvChart('hz1',{type:'line',data:{labels:D.mLab,datasets:[
     {label:t('cat_training'),data:D.mTr,borderColor:P.c1,backgroundColor:hvGrad(0,hvA(P.c1,.32),hvA(P.c1,0)),fill:true,tension:.4,borderWidth:3,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#fff',pointBorderWidth:2},
     {label:t('cat_meeting'),data:D.mMt,borderColor:P.c2,backgroundColor:hvGrad(0,hvA(P.c2,.25),hvA(P.c2,0)),fill:true,tension:.4,borderWidth:3,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#fff',pointBorderWidth:2}]},
