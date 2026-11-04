@@ -7,7 +7,10 @@
 <title>KGS HR Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>/* Database: Google Sheet KGS_HR_Training_DB via Apps Script Web App (R1.7 deployment) */
-window.KGS_API_URL='https://script.google.com/macros/s/AKfycbxByYpkAPPZvDJ6i_iMaOOOq74Iwt9n7YtWVIRRHBOYwzNWMe16IFGh95ANmB6cqaPg/exec';</script>
+window.KGS_API_URL='https://script.google.com/macros/s/AKfycbxByYpkAPPZvDJ6i_iMaOOOq74Iwt9n7YtWVIRRHBOYwzNWMe16IFGh95ANmB6cqaPg/exec';
+/* Supabase (SQL) back end — publishable key is meant for web pages; data is only reachable through the kgs-api function */
+window.KGS_SB_URL='https://hgizlrrqkpzembubtdpj.supabase.co/functions/v1/kgs-api';
+window.KGS_SB_KEY='sb_publishable_cGEByWLvzXYbjVAOv80Opw_Gp8F-YqC';</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -665,8 +668,9 @@ en:{
  exportData:'Export data',exportEmployees:'Employees',exportActivities:'Activities',exportParticipants:'Participants & attendance',exportReview:'Duplicate review records',
  rows:'rows',differences:'differences',nav_admin:'Administration',sub_admin:'Organisation, users, security, audit log and backup',
  cn_title:'Connect to Google Sheet',cn_help:'Paste the Web app URL from Apps Script (Deploy → Manage deployments). It ends with /exec.',cn_url:'Web app URL (ends with /exec)',cn_test:'Test connection',cn_save:'Save',cn_reset:'Use default URL',cn_testing:'Testing…',cn_ok:'Connected',cn_saved:'Connection saved',
- cn_badUrl:'This is not an Apps Script Web app URL (https://script.google.com/macros/s/…/exec).',cn_noReach:'Cannot reach this URL. Check the internet, and that Who has access = Anyone.',cn_notApp:'The URL answered, but it is not the KGS HR Training script (check Code.gs and the deployment).',
+ cn_badUrl:'Use the Apps Script Web app URL (…/exec) or the Supabase function URL (https://….supabase.co/functions/v1/kgs-api).',cn_noReach:'Cannot reach this URL. Check the internet, and that Who has access = Anyone.',cn_notApp:'The URL answered, but it is not the KGS HR Training script (check Code.gs and the deployment).',
  cn_where:'Data is saved in the Google Sheet KGS_HR_Training_DB. No token is needed: each person signs in with their own username.',cn_card:'Google Sheet — database connection',cn_cardNote:'All data is read from and saved straight to the Google Sheet. The default URL is built into index.html, so every computer and phone connects automatically.',
+ cn_useSB:'Fill in the Supabase (SQL) address',cn_useGS:'Fill in the Google Sheet address',
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
  bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
@@ -785,8 +789,9 @@ lo:{
  exportData:'ສົ່ງອອກຂໍ້ມູນ',exportEmployees:'ພະນັກງານ',exportActivities:'ກິດຈະກຳ',exportParticipants:'ຜູ້ເຂົ້າຮ່ວມ & ການເຂົ້າຮ່ວມ',exportReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
  rows:'ແຖວ',differences:'ຈຸດຕ່າງ',nav_admin:'ບໍລິຫານລະບົບ',sub_admin:'ອົງກອນ, ຜູ້ໃຊ້, ຄວາມປອດໄພ, ບັນທຶກການປ່ຽນແປງ ແລະ ສຳຮອງຂໍ້ມູນ',
  cn_title:'ເຊື່ອມຕໍ່ Google Sheet',cn_help:'ວາງ Web app URL ຈາກ Apps Script (Deploy → Manage deployments). ລົງທ້າຍດ້ວຍ /exec.',cn_url:'Web app URL (ລົງທ້າຍ /exec)',cn_test:'ທົດສອບເຊື່ອມຕໍ່',cn_save:'ບັນທຶກ',cn_reset:'ໃຊ້ URL ຫຼັກ',cn_testing:'ກຳລັງທົດສອບ…',cn_ok:'ເຊື່ອມຕໍ່ສຳເລັດ',cn_saved:'ບັນທຶກການເຊື່ອມຕໍ່ແລ້ວ',
- cn_badUrl:'ນີ້ບໍ່ແມ່ນ Web app URL ຂອງ Apps Script (https://script.google.com/macros/s/…/exec).',cn_noReach:'ເຂົ້າ URL ນີ້ບໍ່ໄດ້. ກວດອິນເຕີເນັດ ແລະ Who has access = Anyone.',cn_notApp:'URL ຕອບກັບ ແຕ່ບໍ່ແມ່ນສະຄຣິບ KGS HR Training (ກວດ Code.gs ແລະ deployment).',
+ cn_badUrl:'ໃຊ້ Web app URL ຂອງ Apps Script (…/exec) ຫຼື URL ຂອງ Supabase (https://….supabase.co/functions/v1/kgs-api).',cn_noReach:'ເຂົ້າ URL ນີ້ບໍ່ໄດ້. ກວດອິນເຕີເນັດ ແລະ Who has access = Anyone.',cn_notApp:'URL ຕອບກັບ ແຕ່ບໍ່ແມ່ນສະຄຣິບ KGS HR Training (ກວດ Code.gs ແລະ deployment).',
  cn_where:'ຂໍ້ມູນຖືກບັນທຶກໃນ Google Sheet KGS_HR_Training_DB. ບໍ່ຕ້ອງໃຊ້ Token: ແຕ່ລະຄົນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ຂອງຕົນ.',cn_card:'Google Sheet — ການເຊື່ອມຕໍ່ຖານຂໍ້ມູນ',cn_cardNote:'ຂໍ້ມູນທັງໝົດອ່ານ ແລະ ບັນທຶກລົງ Google Sheet ໂດຍກົງ. URL ຫຼັກຝັງໄວ້ໃນ index.html ແລ້ວ, ທຸກຄອມ ແລະ ໂທລະສັບເຊື່ອມຕໍ່ອັດຕະໂນມັດ.',
+ cn_useSB:'ໃສ່ທີ່ຢູ່ Supabase (SQL)',cn_useGS:'ໃສ່ທີ່ຢູ່ Google Sheet',
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
  bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
@@ -1003,19 +1008,24 @@ let loadingN=0;function loading(on){loadingN+=on?1:-1;if(loadingN<0)loadingN=0;$
 /* Server connection: inside Google Apps Script -> google.script.run;
    page hosted elsewhere (GitHub Pages) -> POST to the Apps Script Web App URL set in config.js (window.KGS_API_URL). */
 const hasGas=()=>!!(window.google&&google.script&&google.script.run);
-const okUrl=u=>{u=String(u||'').trim();return /^https:\/\/script\.google(usercontent)?\.com\/.+\/exec$/.test(u)?u:'';};
+const okUrl=u=>{u=String(u||'').trim();return /^https:\/\/script\.google(usercontent)?\.com\/.+\/exec$/.test(u)||isSB(u)?u:'';};
+const isSB=u=>/^https:\/\/[a-z0-9]+\.supabase\.co\/functions\/v1\/[\w-]+$/.test(String(u||'').trim());
+const sbMode=()=>!hasGas()&&isSB(apiUrl());
+/* one POST for both back ends: Apps Script = text/plain (no pre-flight); Supabase = JSON + apikey */
+function apiPost(u,body){return fetch(u,isSB(u)?{method:'POST',headers:{'Content-Type':'application/json','apikey':window.KGS_SB_KEY||''},body:JSON.stringify(body)}
+  :{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});}
 const urlOverride=()=>{try{return okUrl(localStorage.getItem('kgs_api_url'));}catch(e){return '';}};
 const apiUrl=()=>urlOverride()||okUrl(window.KGS_API_URL);
 /* test a Web App URL: POST 'status' and expect this app's answer */
 function testApiUrl(u){u=okUrl(u);if(!u)return Promise.reject({message:t('cn_badUrl')});
-  return fetch(u,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'status',token:'',payload:{}})})
+  return apiPost(u,{action:'status',token:'',payload:{}})
    .then(r=>{if(!r.ok)throw {message:'HTTP '+r.status};return r.json();},()=>{throw {message:t('cn_noReach')};})
    .then(r=>{if(!r||!r.ok||!r.data||!r.data.version)throw {message:t('cn_notApp')};return r.data;},e=>{throw (e&&e.message)?e:{message:t('cn_notApp')};});}
 function saveApiUrl(u){try{if(u&&u!==okUrl(window.KGS_API_URL))localStorage.setItem('kgs_api_url',u);else localStorage.removeItem('kgs_api_url');}catch(e){}}
 const apiMode=()=>!hasGas()&&!!apiUrl();
 function transport(action,payload){
   if(hasGas())return new Promise((res,rej)=>google.script.run.withSuccessHandler(res).withFailureHandler(e=>rej({message:e&&e.message?e.message:String(e)})).api(action,S.token,payload||{}));
-  if(apiUrl())return fetch(apiUrl(),{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,token:S.token||'',payload:payload||{}})})
+  if(apiUrl())return apiPost(apiUrl(),{action,token:S.token||'',payload:payload||{}})
     .then(r=>{if(!r.ok)throw {message:'HTTP '+r.status};return r.json();})
     .catch(e=>{throw {error:e&&e.error||'NET',message:(e&&e.message&&!/fetch|network/i.test(e.message))?e.message:t('netErr')};});
   return Promise.reject({message:t('notConfigured')});
@@ -1214,7 +1224,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-03">${t('version')} ${esc(S.version)} · UI 11-03</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04">${t('version')} ${esc(S.version)} · UI 11-04${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -2310,11 +2320,12 @@ function admData(){
    <div class="card"><h3>${t('cn_card')}</h3><p class="small" style="margin-top:0">${t('cn_cardNote')}</p>
     ${connFields('admUrl')}
     <p class="small muted" style="margin:0 0 10px">${urlOverride()?t('cn_isLocal'):t('cn_isDefault')}</p>
+    ${window.KGS_SB_URL?`<p class="small" style="margin:0 0 10px"><a href="#" data-act="admUseSB">${t('cn_useSB')}</a> · <a href="#" data-act="admUseGS">${t('cn_useGS')}</a></p>`:''}
     <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="admUrlTest">${t('cn_test')}</button><button class="btn pri" data-act="admUrlSave">${t('cn_save')}</button>${urlOverride()?`<button class="btn" data-act="admUrlReset">${t('cn_reset')}</button>`:''}</div>
-    <div style="border-top:1px solid var(--line2);margin:16px 0 0;padding-top:14px"><p class="small" style="margin:0 0 10px">${t('sf_note')}</p>
-    <button class="btn" data-act="admSheetFmt">${ic('layers',16)} ${t('sf_btn')}</button></div></div>
+    ${sbMode()?'':`<div style="border-top:1px solid var(--line2);margin:16px 0 0;padding-top:14px"><p class="small" style="margin:0 0 10px">${t('sf_note')}</p>
+    <button class="btn" data-act="admSheetFmt">${ic('layers',16)} ${t('sf_btn')}</button></div>`}</div>
    <div class="card"><h3>${t('ad_sysInfo')}</h3><div class="dl" style="margin:0">
-    <div><span>${t('version')}</span>${esc(S.version)}</div><div><span>${t('ad_storage')}</span>Google Sheet · Apps Script</div>
+    <div><span>${t('version')}</span>${esc(S.version)}</div><div><span>${t('ad_storage')}</span>${sbMode()?'Supabase · PostgreSQL (SQL)':'Google Sheet · Apps Script'}</div>
     <div><span>${t('ad_serverTime')}</span>${esc(fmtDT(S.serverTime||''))}</div><div><span>${t('ad_tz')}</span>Asia/Vientiane (UTC+7)</div>
     <div><span>${t('user')}</span>${esc(S.me.Username)} · ${esc(t('r_'+S.me.Role))}</div></div></div></div>`;
 }
@@ -2738,6 +2749,7 @@ const H={
  dashYear:d=>{const f=dashFilter();f.year=String(dashYear()+Number(d));dashBody();},
  admTab:k=>{S.adm.tab=k;pageAdmin();},
  admUrlTest:()=>connTest('admUrl',false),
+ admUseSB:()=>{$('#admUrl').value=window.KGS_SB_URL;connTest('admUrl',false);},admUseGS:()=>{$('#admUrl').value=window.KGS_API_URL;connTest('admUrl',false);},
  admSheetFmt:async()=>{try{const r=await call('sheet.format');toast(t('sf_done').replace('{n}',r.tabs),'ok');}catch(e){fail(e);}},
  admUrlSave:async()=>{if(await connTest('admUrl',true))admData();},
  admUrlReset:()=>{saveApiUrl('');toast(t('cn_saved'),'ok');admData();},
