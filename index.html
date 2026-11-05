@@ -7,7 +7,8 @@
 <title>KGS HR Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>/* Database: Google Sheet KGS_HR_Training_DB via Apps Script Web App (R1.7 deployment) */
-window.KGS_API_URL='https://script.google.com/macros/s/AKfycbxByYpkAPPZvDJ6i_iMaOOOq74Iwt9n7YtWVIRRHBOYwzNWMe16IFGh95ANmB6cqaPg/exec';
+window.KGS_GAS_URL='https://script.google.com/macros/s/AKfycbxByYpkAPPZvDJ6i_iMaOOOq74Iwt9n7YtWVIRRHBOYwzNWMe16IFGh95ANmB6cqaPg/exec';
+window.KGS_API_URL='https://hgizlrrqkpzembubtdpj.supabase.co/functions/v1/kgs-api';
 /* Supabase (SQL) back end — publishable key is meant for web pages; data is only reachable through the kgs-api function */
 window.KGS_SB_URL='https://hgizlrrqkpzembubtdpj.supabase.co/functions/v1/kgs-api';
 window.KGS_SB_KEY='sb_publishable_cGEByWLvzXYbjVAOv80Opw_Gp8F-YqC';</script>
@@ -1226,7 +1227,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-04b${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-05${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -2339,7 +2340,7 @@ async function mirLoad(){const el=$('#mirBody');if(!el)return;
     el.className='small';
     el.innerHTML=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="badge ${st.on?'b-Present':'b-Cancelled'}">${st.on?'● '+t('mr_on'):t('mr_off')}</span>${st.on&&st.pending?`<span class="warn">${t('mr_pending').replace('{n}',st.pending)}</span>`:''}</div>
      ${st.last?`<div class="muted">${t('mr_last')}: ${esc(fmtDT(st.last))}</div>`:''}${st.error?`<div class="err" style="margin-top:4px">✗ ${esc(st.error)}</div>`:''}
-     <div class="fld" style="margin-top:10px"><label>${t('mr_url')}</label><input class="in" style="width:100%" id="mirUrl" value="${esc(st.url||window.KGS_API_URL||'')}" spellcheck="false"></div>
+     <div class="fld" style="margin-top:10px"><label>${t('mr_url')}</label><input class="in" style="width:100%" id="mirUrl" value="${esc(st.url||window.KGS_GAS_URL||'')}" spellcheck="false"></div>
      <div class="fld"><label>${t('mr_secret')}${st.hasSecret?' ✓':''}</label><input class="in" style="width:100%" id="mirSec" type="password" autocomplete="off" placeholder="${esc(st.hasSecret?t('mr_secretKeep'):t('mr_secretHelp'))}"></div>
      <div style="display:flex;gap:8px;flex-wrap:wrap">${st.on?`<button class="btn" data-act="mirResync">${t('mr_resync')}</button><button class="btn" data-act="mirLoad">${t('mr_refresh')}</button><button class="btn danger" data-act="mirOff">${t('mr_turnOff')}</button>`:`<button class="btn pri" data-act="mirOn">${t('mr_turnOn')}</button>`}</div>`;}
   catch(e){el.className='small err';el.textContent=errText(e);}}
@@ -2768,7 +2769,7 @@ const H={
  admUrlTest:()=>connTest('admUrl',false),
  mirLoad,mirOn,mirResync:async()=>{try{await call('mirror.resync');toast(t('mr_started'),'ok');setTimeout(mirLoad,2500);}catch(e){fail(e);}},
  mirOff:async()=>{if(!await ask(t('mr_offQ'),{danger:true}))return;try{await call('mirror.config',{on:false});mirLoad();}catch(e){fail(e);}},
- admUseSB:()=>{$('#admUrl').value=window.KGS_SB_URL;connTest('admUrl',false);},admUseGS:()=>{$('#admUrl').value=window.KGS_API_URL;connTest('admUrl',false);},
+ admUseSB:()=>{$('#admUrl').value=window.KGS_SB_URL;connTest('admUrl',false);},admUseGS:()=>{$('#admUrl').value=window.KGS_GAS_URL;connTest('admUrl',false);},
  admSheetFmt:async()=>{try{const r=await call('sheet.format');toast(t('sf_done').replace('{n}',r.tabs),'ok');}catch(e){fail(e);}},
  admUrlSave:async()=>{if(await connTest('admUrl',true))admData();},
  admUrlReset:()=>{saveApiUrl('');toast(t('cn_saved'),'ok');admData();},
