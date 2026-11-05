@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html translate="no">
 <head>
 <base target="_top">
 <meta charset="utf-8">
+<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KGS HR Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -674,7 +675,7 @@ en:{
  cn_useSB:'Fill in the Supabase (SQL) address',cn_useGS:'Fill in the Google Sheet address',
  sf_note:'Tidy the Google Sheet: Phetsarath font on every tab, blue header, alternating rows, column widths, status colours; technical columns (password hash, raw data, photo data) hidden.',sf_btn:'Format Google Sheet',sf_done:'Google Sheet formatted ({n} tabs)',
  cn_isDefault:'Using the default URL built into the app (all devices).',cn_isLocal:'Using a URL saved in THIS browser only; other devices still use the default.',
- bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo and employee photos — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
+ bk_note:'Full backup file (.kgsbak): every table incl. user accounts, settings, logo, employee photos and the QR key — enough to rebuild the whole system on a new, empty installation. The file is encrypted with a password you choose.',bk_full:'Download full backup (restorable)',bk_restore:'Restore from backup file',bk_restoreNew:'Restore from a backup file',bk_restoreNewHelp:'New installation? Load a .kgsbak file to bring everything back, including user accounts.',bk_lastAuto:'Last automatic copy',bk_auto:'Automatic: in the Google Sheet open menu KGS HR → Turn on nightly backup (once). A full copy of the Sheet is saved to Google Drive every night; the newest 30 are kept.',bk_pwHelp:'Choose a password for this backup file (8+ characters). Without it the file cannot be opened — keep it safe, separately from the file.',bk_pwAsk:'Enter the password of this backup file.',bk_pwShort:'At least 8 characters.',bk_badPw:'Wrong password or damaged file.',bk_notFile:'This is not a KGS HR backup file (.kgsbak).',bk_done:'Backup file downloaded — store it in a protected place.',bk_fileInfo:'Backup made {d} by {u} (version {v}). It contains:',bk_warn:'Everything currently in the system will be REPLACED by this backup. Everyone will need to sign in again.',bk_warnNew:'The empty system will be filled with this backup. Afterwards sign in with your usual username and password.',bk_type:'Type RESTORE to confirm',bk_restoreGo:'Restore now',bk_restored:'Restore complete',bk_photos:'Employee photos',bk_settings:'Settings rows',
  hv_design:'Design:',hv_year:'Year',hv_th0:'Ocean',hv_th1:'1 · Midnight',hv_th2:'2 · Minimal',hv_th3:'3 · Sky light',hv_th4:'4 · Side panel',hv_th5:'5 · Lao gold',hv_th6:'6 · Graphite',hv_th7:'7 · Indigo',hv_th8:'8 · Teal',hv_th9:'9 · Bento tiles',hv_th10:'10 · Compact',hv_dz_e:'1 · Sky glass',hv_dz_f:'2 · Navy & gold',hv_dz_g:'3 · Corporate',hv_c6:'Latest activities — attendance',hv_person:'person',hv_dz_a:'A · Cards',hv_dz_b:'B · Executive',hv_dz_c:'C · Analytics',hv_dz_d:'D · Report',hv_exec:'EXECUTIVE SUMMARY',hv_title:'Training & Meeting Analysis',hv_c5:'Attendance mix',hv_heat:'Attendances by department and month',hv_rank:'Department ranking (training hours · rate)',hv_d1:'{a} training sessions and {b} meetings; {c} attendances in total.',hv_d2hi:'Best attendance: <b>{a}</b> ({n}%).',hv_d2lo:'Needs follow-up: <b>{a}</b> ({n}%).',hv_d3:'Lowest attendance rate: <b>{d}</b> ({n}%).',
  xl_title:'Summary tables (Excel)',xl_export:'Export all to Excel',xl_month:'By month',xl_monthCol:'Month',xl_dept:'By department',xl_type:'By type',xl_total:'Total',xl_note:'Uses the filters above. The Excel file has one sheet per table plus a summary sheet, with filters and % formatting.',xl_sum:'Summary',xl_period:'Period',xl_made:'Prepared',xl_done:'Excel file downloaded',
  hv_cov:'Training coverage',hv_covNote:'{n} trained of {m} current staff',hv_avg:'avg',hv_lateRate:'Late rate',hv_c1:'Attendance by activity (latest 10)',hv_c2:'Monthly trend — attendances',hv_c3:'Training hours by department',hv_c4:'Attendance rate by department',hv_nm:'Not recorded',hv_ins:'Key findings',hv_i_low:'Lowest attendance: <b>{a}</b> ({n}%).',hv_i_div:'Most training hours: <b>{d}</b> ({n} h).',hv_i_late:'{n}% of attendances were late.',hv_i_cov:'Training coverage of current staff: <b>{n}%</b> — about {m} people have no training yet.',
@@ -711,7 +712,7 @@ en:{
  ad_review:'User access review',ad_reviewHelp:'Every 3 months, check that each user still needs access and has the right role, then confirm here.',
  ad_reviewBtn:'Confirm review done',ad_reviewQ:'Confirm that you have checked every user and role?',ad_by:'by',
  ad_auditNote:'The audit log cannot be edited or deleted from the app.',
- ad_backup:'Backup',ad_backupBtn:'Export to Excel (for reading, not restorable)',ad_backupNote:'One Excel file with every table (no passwords, no employee photos). It contains personal data — keep it in a protected folder. Photos stay in the Photos tab of the Google Sheet (back it up with File → Make a copy).',
+ ad_backup:'Backup',xa_cur:'Current employees',xa_former:'Former employees',xa_cat:'Group',xa_dup:'Duplicate review',xa_toc:'Contents',xa_title:'KGS HR Training — all data',xa_sheet:'Sheet',xa_rows:'Rows',xa_note1:'This file has every table and every summary of the system (for reading or moving to another app).',xa_note2:'Not included: passwords and employee photos. To rebuild this system use the .kgsbak backup file.',xa_note3:'Contains personal data — keep it in a protected folder.',ad_backupBtn:'Export everything to Excel',ad_backupNote:'One Excel file with every table and every summary (current and former employees, activities, attendance, reports, users, settings, change history). For reading or moving to another app — not restorable. No passwords, no photos. Contains personal data — keep it protected.',
  ad_lastBackup:'Last backup',ad_restoreNote:'To restore an earlier state, open the Google Sheet → File → Version history.',ad_backupDone:'Backup downloaded',
  ad_dataOverview:'Records',ad_dupGo:'Duplicate review records are on the Import / Export page.',ad_sysInfo:'System information',ad_storage:'Database',ad_serverTime:'Server time',ad_tz:'Time zone',
  ad_goAdmin:'Open Administration',ad_adminHint:'Users, logo, security and the audit log are managed in Administration (or click the logo at the top of the menu).',
@@ -796,7 +797,7 @@ lo:{
  cn_useSB:'ໃສ່ທີ່ຢູ່ Supabase (SQL)',cn_useGS:'ໃສ່ທີ່ຢູ່ Google Sheet',
  sf_note:'ຈັດໜ້າ Google Sheet ໃຫ້ເປັນລະບຽບ: ຟອນ Phetsarath ທຸກແຖບ, ຫົວຕາຕະລາງສີຟ້າ, ແຖວສະຫຼັບສີ, ຄວາມກວ້າງຖັນ, ສີສະຖານະ; ເຊື່ອງຖັນເຕັກນິກ (ລະຫັດຜ່ານ, ຂໍ້ມູນດິບ, ຮູບ).',sf_btn:'ຈັດຮູບແບບ Google Sheet',sf_done:'ຈັດຮູບແບບ Google Sheet ແລ້ວ ({n} ແຖບ)',
  cn_isDefault:'ກຳລັງໃຊ້ URL ຫຼັກທີ່ຝັງໃນແອັບ (ທຸກເຄື່ອງ).',cn_isLocal:'ກຳລັງໃຊ້ URL ທີ່ບັນທຶກໃນ browser ນີ້ເທົ່ານັ້ນ; ເຄື່ອງອື່ນຍັງໃຊ້ URL ຫຼັກ.',
- bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້ ແລະ ຮູບພະນັກງານ — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
+ bk_note:'ໄຟລ໌ສຳຮອງເຕັມ (.kgsbak): ທຸກຕາຕະລາງ ລວມບັນຊີຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ໂລໂກ້, ຮູບພະນັກງານ ແລະ ລະຫັດ QR — ພຽງພໍທີ່ຈະລົງລະບົບໃໝ່ທັງໝົດຄືເກົ່າ. ໄຟລ໌ຖືກເຂົ້າລະຫັດດ້ວຍລະຫັດຜ່ານທີ່ທ່ານຕັ້ງເອງ.',bk_full:'ດາວໂຫຼດສຳຮອງເຕັມ (ກູ້ຄືນໄດ້)',bk_restore:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNew:'ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ',bk_restoreNewHelp:'ລົງລະບົບໃໝ່? ເລືອກໄຟລ໌ .kgsbak ເພື່ອເອົາຂໍ້ມູນທັງໝົດກັບຄືນ ລວມທັງບັນຊີຜູ້ໃຊ້.',bk_lastAuto:'ສຳເນົາອັດຕະໂນມັດລ່າສຸດ',bk_auto:'ອັດຕະໂນມັດ: ໃນ Google Sheet ເປີດເມນູ KGS HR → ເປີດສຳຮອງອັດຕະໂນມັດທຸກຄືນ (ຄັ້ງດຽວ). ລະບົບຈະສຳເນົາ Sheet ທັງໝົດໄວ້ໃນ Google Drive ທຸກຄືນ, ເກັບ 30 ສະບັບລ່າສຸດ.',bk_pwHelp:'ຕັ້ງລະຫັດຜ່ານໃຫ້ໄຟລ໌ສຳຮອງນີ້ (8 ຕົວຂຶ້ນໄປ). ບໍ່ມີລະຫັດ ເປີດໄຟລ໌ບໍ່ໄດ້ — ເກັບລະຫັດໄວ້ໃຫ້ດີ ແຍກຈາກໄຟລ໌.',bk_pwAsk:'ໃສ່ລະຫັດຜ່ານຂອງໄຟລ໌ສຳຮອງນີ້.',bk_pwShort:'ຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ.',bk_badPw:'ລະຫັດຜ່ານຜິດ ຫຼື ໄຟລ໌ເສຍຫາຍ.',bk_notFile:'ນີ້ບໍ່ແມ່ນໄຟລ໌ສຳຮອງ KGS HR (.kgsbak).',bk_done:'ດາວໂຫຼດໄຟລ໌ສຳຮອງແລ້ວ — ເກັບໄວ້ບ່ອນປອດໄພ.',bk_fileInfo:'ສຳຮອງເມື່ອ {d} ໂດຍ {u} (ເວີຊັນ {v}). ມີຂໍ້ມູນ:',bk_warn:'ຂໍ້ມູນທັງໝົດໃນລະບົບປັດຈຸບັນ ຈະຖືກແທນທີ່ດ້ວຍໄຟລ໌ສຳຮອງນີ້. ທຸກຄົນຕ້ອງເຂົ້າລະບົບໃໝ່.',bk_warnNew:'ລະບົບທີ່ວ່າງເປົ່າ ຈະຖືກເຕີມດ້ວຍຂໍ້ມູນຈາກໄຟລ໌ນີ້. ຈາກນັ້ນເຂົ້າລະບົບດ້ວຍຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານເດີມ.',bk_type:'ພິມຄຳວ່າ RESTORE ເພື່ອຢືນຢັນ',bk_restoreGo:'ກູ້ຄືນດຽວນີ້',bk_restored:'ກູ້ຄືນສຳເລັດ',bk_photos:'ຮູບພະນັກງານ',bk_settings:'ແຖວການຕັ້ງຄ່າ',
  hv_design:'ຮູບແບບ:',hv_year:'ປີ',hv_th0:'ແບບປັດຈຸບັນ',hv_th1:'1 · ກາງຄືນ',hv_th2:'2 · ຂາວລຽບ',hv_th3:'3 · ຟ້າອ່ອນ',hv_th4:'4 · ແຖບຂ້າງ',hv_th5:'5 · ລາວ-ທອງ',hv_th6:'6 · ເທົາເຂັ້ມ',hv_th7:'7 · ຄາມ',hv_th8:'8 · ຂຽວທະເລ',hv_th9:'9 · ກະເບື້ອງ',hv_th10:'10 · ກະທັດຮັດ',hv_dz_e:'1 · ຟ້າແກ້ວ',hv_dz_f:'2 · ກົມທ່າ-ທອງ',hv_dz_g:'3 · ອົງກອນ',hv_c6:'ກິດຈະກຳລ່າສຸດ — ອັດຕາເຂົ້າຮ່ວມ',hv_person:'ຄົນ',hv_dz_a:'A · ກ່ອງ',hv_dz_b:'B · ຜູ້ບໍລິຫານ',hv_dz_c:'C · ວິເຄາະ',hv_dz_d:'D · ລາຍງານ',hv_exec:'ສະຫຼຸບສຳລັບຜູ້ບໍລິຫານ',hv_title:'ການວິເຄາະ ການຝຶກອົບຮົມ ແລະ ປະຊຸມ',hv_c5:'ສັດສ່ວນການເຂົ້າຮ່ວມ',hv_heat:'ການເຂົ້າຮ່ວມ ຕາມພະແນກ ແລະ ເດືອນ',hv_rank:'ອັນດັບພະແນກ (ຊົ່ວໂມງຝຶກ · ອັດຕາ)',hv_d1:'ຝຶກອົບຮົມ {a} ຄັ້ງ ແລະ ປະຊຸມ {b} ຄັ້ງ; ເຂົ້າຮ່ວມລວມ {c} ຄັ້ງ.',hv_d2hi:'ເຂົ້າຮ່ວມດີທີ່ສຸດ: <b>{a}</b> ({n}%).',hv_d2lo:'ຄວນຕິດຕາມ: <b>{a}</b> ({n}%).',hv_d3:'ອັດຕາເຂົ້າຮ່ວມຕ່ຳສຸດ: <b>{d}</b> ({n}%).',
  xl_title:'ຕາຕະລາງສະຫຼຸບ (Excel)',xl_export:'ສົ່ງອອກ Excel ທຸກຕາຕະລາງ',xl_month:'ຕາມເດືອນ',xl_monthCol:'ເດືອນ',xl_dept:'ຕາມພະແນກ',xl_type:'ຕາມປະເພດ',xl_total:'ລວມ',xl_note:'ໃຊ້ຕົວກອງດ້ານເທິງ. ໄຟລ໌ Excel ມີ 1 ແຜ່ນຕໍ່ 1 ຕາຕະລາງ ແລະ ແຜ່ນສະຫຼຸບ, ມີຕົວກອງ ແລະ ຮູບແບບ %.',xl_sum:'ສະຫຼຸບ',xl_period:'ໄລຍະ',xl_made:'ສ້າງວັນທີ',xl_done:'ດາວໂຫຼດ Excel ແລ້ວ',
  hv_cov:'ຄວາມຄອບຄຸມການຝຶກ',hv_covNote:'ຝຶກແລ້ວ {n} ຈາກ {m} ຄົນ (ປັດຈຸບັນ)',hv_avg:'ສະເລ່ຍ',hv_lateRate:'ອັດຕາມາຊ້າ',hv_c1:'ການເຂົ້າຮ່ວມຕາມກິດຈະກຳ (10 ລ່າສຸດ)',hv_c2:'ແນວໂນ້ມລາຍເດືອນ — ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_c3:'ຊົ່ວໂມງຝຶກຕາມພະແນກ',hv_c4:'ອັດຕາເຂົ້າຮ່ວມຕາມພະແນກ',hv_nm:'ຍັງບໍ່ບັນທຶກ',hv_ins:'ຂໍ້ສັງເກດສຳຄັນ',hv_i_low:'ກິດຈະກຳທີ່ເຂົ້າຮ່ວມໜ້ອຍສຸດ: <b>{a}</b> ({n}%).',hv_i_div:'ພະແນກທີ່ມີຊົ່ວໂມງຝຶກຫຼາຍສຸດ: <b>{d}</b> ({n} ຊົ່ວໂມງ).',hv_i_late:'{n}% ຂອງການເຂົ້າຮ່ວມ ແມ່ນມາຊ້າ.',hv_i_cov:'ພະນັກງານປັດຈຸບັນໄດ້ຮັບການຝຶກແລ້ວ <b>{n}%</b> — ຍັງມີປະມານ {m} ຄົນທີ່ບໍ່ທັນໄດ້ຝຶກເລີຍ.',
@@ -833,7 +834,7 @@ lo:{
  ad_review:'ການກວດສິດຜູ້ໃຊ້',ad_reviewHelp:'ທຸກ 3 ເດືອນ ກວດວ່າຜູ້ໃຊ້ແຕ່ລະຄົນ ຍັງຕ້ອງໃຊ້ລະບົບ ແລະ ມີສິດຖືກຕ້ອງ, ແລ້ວຢືນຢັນຢູ່ນີ້.',
  ad_reviewBtn:'ຢືນຢັນວ່າກວດແລ້ວ',ad_reviewQ:'ຢືນຢັນວ່າໄດ້ກວດຜູ້ໃຊ້ ແລະ ສິດທຸກຄົນແລ້ວ?',ad_by:'ໂດຍ',
  ad_auditNote:'ບັນທຶກການປ່ຽນແປງ ບໍ່ສາມາດແກ້ໄຂ ຫຼື ລຶບໄດ້ຈາກແອັບ.',
- ad_backup:'ສຳຮອງຂໍ້ມູນ',ad_backupBtn:'ສົ່ງອອກ Excel (ໄວ້ອ່ານ, ກູ້ຄືນບໍ່ໄດ້)',ad_backupNote:'ໄຟລ໌ Excel ດຽວ ມີທຸກຕາຕະລາງ (ບໍ່ມີລະຫັດຜ່ານ ແລະ ບໍ່ມີຮູບພະນັກງານ). ມີຂໍ້ມູນສ່ວນຕົວ — ເກັບໄວ້ໃນໂຟນເດີທີ່ປ້ອງກັນ. ຮູບຢູ່ແຖບ Photos ໃນ Google Sheet (ສຳຮອງດ້ວຍ File → Make a copy).',
+ ad_backup:'ສຳຮອງຂໍ້ມູນ',xa_cur:'ພະນັກງານປັດຈຸບັນ',xa_former:'ພະນັກງານເກົ່າ',xa_cat:'ກຸ່ມ',xa_dup:'ລາຍການຊື່ຊ້ຳ',xa_toc:'ສາລະບານ',xa_title:'KGS HR Training — ຂໍ້ມູນທັງໝົດ',xa_sheet:'ແຜ່ນ',xa_rows:'ແຖວ',xa_note1:'ໄຟລ໌ນີ້ມີທຸກຕາຕະລາງ ແລະ ທຸກບົດສະຫຼຸບຂອງລະບົບ (ໄວ້ອ່ານ ຫຼື ຍ້າຍໄປແອັບອື່ນ).',xa_note2:'ບໍ່ມີ: ລະຫັດຜ່ານ ແລະ ຮູບພະນັກງານ. ຖ້າຈະລົງລະບົບນີ້ຄືນ ໃຊ້ໄຟລ໌ສຳຮອງ .kgsbak.',xa_note3:'ມີຂໍ້ມູນສ່ວນຕົວ — ເກັບໄວ້ໃນໂຟນເດີທີ່ປ້ອງກັນ.',ad_backupBtn:'ສົ່ງອອກທຸກຢ່າງເປັນ Excel',ad_backupNote:'ໄຟລ໌ Excel ດຽວ ມີທຸກຕາຕະລາງ ແລະ ທຸກບົດສະຫຼຸບ (ພະນັກງານປັດຈຸບັນ ແລະ ເກົ່າ, ກິດຈະກຳ, ການເຂົ້າຮ່ວມ, ລາຍງານ, ຜູ້ໃຊ້, ການຕັ້ງຄ່າ, ປະຫວັດການແກ້ໄຂ). ໄວ້ອ່ານ ຫຼື ຍ້າຍໄປແອັບອື່ນ — ກູ້ຄືນບໍ່ໄດ້. ບໍ່ມີລະຫັດຜ່ານ ແລະ ຮູບ. ມີຂໍ້ມູນສ່ວນຕົວ — ເກັບໄວ້ໃຫ້ປອດໄພ.',
  ad_lastBackup:'ສຳຮອງຄັ້ງລ່າສຸດ',ad_restoreNote:'ຖ້າຕ້ອງການກູ້ຄືນ, ເປີດ Google Sheet → File → Version history.',ad_backupDone:'ດາວໂຫຼດສຳຮອງແລ້ວ',
  ad_dataOverview:'ຈຳນວນຂໍ້ມູນ',ad_dupGo:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ ຢູ່ໜ້າ ນຳເຂົ້າ / ສົ່ງອອກ.',ad_sysInfo:'ຂໍ້ມູນລະບົບ',ad_storage:'ຖານຂໍ້ມູນ',ad_serverTime:'ເວລາເຊີບເວີ',ad_tz:'ເຂດເວລາ',
  ad_goAdmin:'ເປີດໜ້າບໍລິຫານລະບົບ',ad_adminHint:'ຜູ້ໃຊ້, ໂລໂກ້, ຄວາມປອດໄພ ແລະ ບັນທຶກການປ່ຽນແປງ ຈັດການຢູ່ໜ້າ ບໍລິຫານລະບົບ (ຫຼື ກົດທີ່ໂລໂກ້ ເທິງເມນູ).',
@@ -936,6 +937,7 @@ grid:'<rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width=
  pct:'<path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',
  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+ vol:'<path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>',mute:'<path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4z"/><path d="m16 9.5 5 5m0-5-5 5"/>',
  moon:'<path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a6.5 6.5 0 0 0 10 10z"/>',
  out:'<path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H3"/>',
  menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',
@@ -1004,7 +1006,7 @@ const facet=(list,counts=true)=>facetRaw(list).map(o=>[o.k,o.label+(counts?' ('+
 function divisions(){return facetRaw(curEmps().map(e=>e.Division)).map(o=>o.label);}
 function jobSites(empOnly){return facetRaw([...curEmps().map(e=>e.JobSite),...(empOnly?[]:S.acts.map(a=>a.JobSite))]).map(o=>o.label);}
 
-function toast(msg,type){const d=document.createElement('div');d.className='t '+(type||'');d.textContent=msg;$('#toast').appendChild(d);setTimeout(()=>d.remove(),type==='bad'?6000:3000);}
+function toast(msg,type){try{if(!S.pub&&window.KFX){if(type==='ok')KFX.sfx.save();else if(type==='bad')KFX.sfx.error();}}catch(e){}const d=document.createElement('div');d.className='t '+(type||'');d.textContent=msg;$('#toast').appendChild(d);setTimeout(()=>d.remove(),type==='bad'?6000:3000);}
 let loadingN=0;function loading(on){loadingN+=on?1:-1;if(loadingN<0)loadingN=0;$('#loading').classList.toggle('hidden',loadingN===0);}
 
 /* ================= server ================= */
@@ -1045,6 +1047,84 @@ function call(action,payload,opt){
     e=>{if(!opt.silent)loading(false);throw e;});
 }
 const fail=e=>toast(errText(e),'bad');
+const LX=(lo,en)=>S.lang==='en'?en:lo;
+
+
+/* ================= R2.3 progress overlay + sounds (approved design 2026-11-05; isolated in Shadow DOM) ================= */
+window.KFX=(function(){
+let R=null;const CSS=":host{all:initial;font-family:Inter,\"Noto Sans Lao\",\"Phetsarath OT\",sans-serif}\n*{box-sizing:border-box}\n.btn{all:unset;cursor:pointer;padding:10px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.2);font-size:14px;font-weight:600}\n.btn:active{transform:scale(.97)}\n/* ===== FX overlay ===== */\n.fx{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(4,10,35,.62);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}\n.fx.show{opacity:1;pointer-events:auto}\n.fxc{position:relative;width:min(560px,calc(100% - 32px));border-radius:26px;padding:26px 24px 24px;overflow:hidden;color:#dbe8ff;text-align:center;\n  background:radial-gradient(120% 90% at 50% 30%,#13307a 0%,#0a1846 45%,#060d2b 100%);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 0 0 1px rgba(120,170,255,.18);transform:scale(.94);transition:transform .35s cubic-bezier(.2,.9,.3,1.3)}\n.fx.show .fxc{transform:none}\n.fxc{box-shadow:0 34px 90px rgba(0,0,0,.55),inset 0 0 0 1px rgba(120,170,255,.22),inset 0 1px 0 rgba(255,255,255,.09)!important}\n.fxc::before{content:\"\";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(120,170,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(120,170,255,.06) 1px,transparent 1px);background-size:24px 24px;-webkit-mask:radial-gradient(65% 55% at 50% 32%,#000,transparent);mask:radial-gradient(65% 55% at 50% 32%,#000,transparent)}\n.fxc::after{content:\"\";position:absolute;left:50%;top:-120px;width:460px;height:300px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(70,150,255,.32),transparent);pointer-events:none;transition:background .6s}\n.done.fxc::after{background:radial-gradient(closest-side,rgba(40,210,150,.28),transparent)}.err.fxc::after{background:radial-gradient(closest-side,rgba(255,90,90,.25),transparent)}\n.fxc>*{position:relative;z-index:1}.fxc>.circ{position:absolute;z-index:0}\n.spark{transform-origin:120px 120px;opacity:0}.done .spark{animation:spark .9s ease-out forwards}\n@keyframes spark{0%{opacity:1;transform:scale(.6)}100%{opacity:0;transform:scale(1.3)}}\n.circ{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}\n.circ path{fill:none;stroke:#4f8dff;stroke-width:1.2;opacity:.55}\n.circ .flow{stroke:#9fd0ff;stroke-width:2;stroke-dasharray:10 160;animation:flow 2.6s linear infinite;opacity:.9}\n.circ circle{fill:#7fc4ff}\n@keyframes flow{to{stroke-dashoffset:-170}}\n.ring{position:relative;width:230px;height:230px;margin:0 auto 6px;cursor:default}\n.ring svg{width:100%;height:100%;overflow:visible}\n.glow{filter:drop-shadow(0 0 6px #4fb3ff) drop-shadow(0 0 16px #2f7bff)}\n.spin{transform-origin:120px 120px;animation:spin 8s linear infinite}.spinr{transform-origin:120px 120px;animation:spin 14s linear infinite reverse}\n.spinf{transform-origin:120px 120px;animation:spin 2.4s linear infinite}\n@keyframes spin{to{transform:rotate(360deg)}}\n.fp path{fill:none;stroke:#8fd8ff;stroke-width:2.2;stroke-linecap:round}\n.scan{animation:scan 1.8s ease-in-out infinite}\n@keyframes scan{0%,100%{transform:translateY(-26px);opacity:0}15%,85%{opacity:1}50%{transform:translateY(26px)}}\n.ico{transition:opacity .35s,transform .45s cubic-bezier(.2,.9,.3,1.4);transform-origin:120px 120px}\n.done .lockI{opacity:0;transform:scale(.6)}.shieldI{opacity:0;transform:scale(.5)}.done .shieldI{opacity:1;transform:scale(1)}\n.err .lockI{opacity:0}.errI{opacity:0;transform:scale(.5)}.err .errI{opacity:1;transform:scale(1)}\n.done .spin,.done .spinr,.done .spinf,.err .spin,.err .spinr,.err .spinf{animation-play-state:paused}\n.done .ringc{stroke:#5ff0b5}.err .ringc{stroke:#ff6b6b}\n.done .glow{filter:drop-shadow(0 0 6px #4ff0b0) drop-shadow(0 0 18px #19c48a)}\n.err .glow{filter:drop-shadow(0 0 6px #ff7070) drop-shadow(0 0 16px #d92d20)}\n.ripple{transform-origin:120px 120px;opacity:0}\n.done .ripple{animation:rip 1.6s ease-out infinite}\n@keyframes rip{0%{transform:scale(.55);opacity:.8}100%{transform:scale(1.25);opacity:0}}\n.done .ring{cursor:pointer}.done .shieldI{animation:beat 1.6s ease-in-out .5s infinite}\n@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}\n.wk{fill:none;stroke:url(#ig);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}\n.wkf{fill:rgba(80,170,255,.22)}\n.drop{animation:drop 1.3s ease-in infinite}@keyframes drop{0%{transform:translateY(-10px);opacity:0}30%{opacity:1}100%{transform:translateY(12px);opacity:0}}\n.rise{animation:rise 1.3s ease-out infinite}@keyframes rise{0%{transform:translateY(12px);opacity:0}30%{opacity:1}100%{transform:translateY(-10px);opacity:0}}\n.rot{transform-box:fill-box;transform-origin:center;animation:spin 1.6s linear infinite}.rotr{transform-box:fill-box;transform-origin:center;animation:spin 1.6s linear infinite reverse}\n.cell{fill:rgba(127,224,255,.12);animation:cell 2.4s ease-in-out infinite}@keyframes cell{0%,100%{fill:rgba(127,224,255,.10)}40%{fill:rgba(127,224,255,.75)}}\n.dot{fill:#bff0ff;animation:dotx 1.4s linear infinite}@keyframes dotx{0%{transform:translateX(0);opacity:0}15%,85%{opacity:1}100%{transform:translateX(34px);opacity:0}}\n.pop{transform-box:fill-box;transform-origin:center;animation:pop 1.4s ease-in-out infinite}@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}\n.ttl{font-size:22px;font-weight:700;color:#fff;margin:6px 0 4px;text-shadow:0 2px 12px rgba(60,140,255,.35);position:relative}\n.sub{font-size:14px;color:#a9c3f5;line-height:1.5;min-height:20px;position:relative}\n.bar{position:relative;height:6px;border-radius:9px;background:rgba(120,170,255,.18);margin:16px 24px 6px;overflow:hidden}\n.bar i{position:absolute;inset:0 auto 0 0;width:0;border-radius:9px;background:linear-gradient(90deg,#3d8bff,#7fe3ff);box-shadow:0 0 12px #59b8ff;transition:width .45s cubic-bezier(.3,.8,.3,1);overflow:hidden}\n.bar i::after{content:\"\";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-100%);animation:sheen 1.6s ease-in-out infinite}@keyframes sheen{to{transform:translateX(100%)}}.done .bar i::after,.err .bar i::after{display:none}\n.done .bar i{background:linear-gradient(90deg,#19c48a,#7ff5c9);box-shadow:0 0 12px #3fe0a3}\n.err .bar i{background:#ff6b6b;box-shadow:none}\n.pct{font-size:12px;color:#7f9bd6;position:relative}\n.steps{list-style:none;padding:0;margin:14px auto 0;max-width:330px;text-align:left;font-size:13px;position:relative}\n.steps li{display:flex;gap:10px;align-items:center;padding:4px 0;color:#6f86ba;transition:color .3s}.steps li span{flex:1}.steps li em{font-style:normal;font-size:11.5px;color:#5f79ad;font-variant-numeric:tabular-nums}.steps li.ok em{color:#6fc6a4}\n.steps li b{width:16px;height:16px;border-radius:50%;border:1.5px solid #3f5f9f;flex:none;display:grid;place-items:center;font-size:10px;color:transparent;background:#071338}\n.steps li.now{color:#dbe8ff}.steps li.now b{border-color:#6fc3ff;border-top-color:transparent;animation:spin .8s linear infinite;box-shadow:0 0 10px rgba(111,195,255,.5)}\n.steps li.ok{color:#9fe6c6}.steps li.ok b{background:linear-gradient(135deg,#22d39b,#0fa874);border-color:transparent;color:#fff}\n.steps li.bad{color:#ffb9b4}.steps li.bad b{background:#e0453a;border-color:transparent;color:#fff}\n.hint{margin:14px auto 0;width:max-content;padding:8px 18px;border-radius:99px;font-size:13.5px;font-weight:600;color:#06301f;background:linear-gradient(135deg,#8ff5cc,#3fe0a3);box-shadow:0 6px 24px rgba(63,224,163,.4);cursor:pointer;position:relative;display:none;animation:ctaP 1.8s ease-in-out infinite}@keyframes ctaP{50%{box-shadow:0 6px 34px rgba(63,224,163,.65)}}.done .hint{display:block}\n.acts{display:none;gap:10px;justify-content:center;margin-top:14px;position:relative}.err .acts{display:flex}\n.acts .btn{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)}\n.note{font-size:12px;color:#5b6785}\n\n@media (max-width:520px){.ring{width:190px;height:190px}.fxc{padding:20px 16px}}\n@media (prefers-reduced-motion:reduce){.spin,.spinr,.spinf,.circ .flow,.bar i::after{animation:none}}\n",HTML="<div class=\"fx\" id=\"fx\" role=\"dialog\" aria-modal=\"true\">\n <div class=\"fxc\" id=\"fxc\">\n  <svg class=\"circ\" viewBox=\"0 0 560 520\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n   <g id=\"trace\"></g>\n  </svg>\n  <div class=\"ring\" id=\"ring\" title=\"\">\n   <svg viewBox=\"0 0 240 240\" aria-hidden=\"true\">\n    <defs><radialGradient id=\"cg\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0\" stop-color=\"#1c4fb8\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#0a1846\" stop-opacity=\"0\"/></radialGradient>\n     <linearGradient id=\"ig\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"/><stop offset=\"1\" stop-color=\"#8fd6ff\"/></linearGradient>\n     <radialGradient id=\"dg\" cx=\"50%\" cy=\"30%\" r=\"75%\"><stop offset=\"0\" stop-color=\"#2a63d6\" stop-opacity=\".5\"/><stop offset=\"1\" stop-color=\"#071338\" stop-opacity=\".9\"/></radialGradient>\n     <linearGradient id=\"sg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"/><stop offset=\"1\" stop-color=\"#d6ebff\"/></linearGradient>\n     <linearGradient id=\"kg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#3b82f6\"/><stop offset=\"1\" stop-color=\"#1d4ed8\"/></linearGradient></defs>\n    <circle cx=\"120\" cy=\"120\" r=\"70\" fill=\"url(#cg)\"/>\n    <circle cx=\"120\" cy=\"120\" r=\"62\" fill=\"url(#dg)\" stroke=\"rgba(190,225,255,.2)\" stroke-width=\"1\"/>\n    <g id=\"sparks\"></g>\n    <circle class=\"ripple ringc\" cx=\"120\" cy=\"120\" r=\"96\" fill=\"none\" stroke=\"#5ff0b5\" stroke-width=\"2\"/>\n    <g class=\"glow\">\n     <circle class=\"ringc\" cx=\"120\" cy=\"120\" r=\"112\" fill=\"none\" stroke=\"#5fb8ff\" stroke-width=\"1.2\" opacity=\".45\"/>\n     <g class=\"spin\"><circle class=\"ringc\" cx=\"120\" cy=\"120\" r=\"112\" fill=\"none\" stroke=\"#9fe0ff\" stroke-width=\"3\" stroke-dasharray=\"60 115 25 150\" stroke-linecap=\"round\"/></g>\n     <g class=\"spinr\" id=\"ticks\"></g>\n     <g class=\"spinf\"><circle class=\"ringc\" cx=\"120\" cy=\"120\" r=\"84\" fill=\"none\" stroke=\"#6fd0ff\" stroke-width=\"10\" stroke-dasharray=\"3 3.6\" opacity=\".85\"/></g>\n     <circle class=\"ringc\" cx=\"120\" cy=\"120\" r=\"72\" fill=\"none\" stroke=\"#bfefff\" stroke-width=\"1.5\" opacity=\".7\"/>\n     <circle id=\"prog\" class=\"ringc\" cx=\"120\" cy=\"120\" r=\"102\" fill=\"none\" stroke=\"#e8fbff\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-dasharray=\"0 641\" transform=\"rotate(-90 120 120)\"/>\n    </g>\n    <!-- work icon (changes with the job) -->\n    <g class=\"ico lockI\" id=\"workI\"></g>\n    <!-- shield + check -->\n    <g class=\"ico shieldI\">\n     <path d=\"M120 80l35 12.5v27c0 22.5-14.5 37-35 45.5-20.5-8.5-35-23-35-45.5v-27z\" fill=\"url(#sg)\" stroke=\"#ffffff\" stroke-width=\"1.5\"/>\n     <path d=\"M120 89l27 9.6v21c0 17.5-11.2 28.8-27 35.4-15.8-6.6-27-17.9-27-35.4v-21z\" fill=\"none\" stroke=\"#19c48a\" stroke-width=\"1.4\" opacity=\".55\"/>\n     <circle cx=\"120\" cy=\"121\" r=\"16.5\" fill=\"url(#kg)\"/>\n     <path d=\"M112.5 121.5l5.5 5.5 10-11\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    </g>\n    <!-- error -->\n    <g class=\"ico errI\">\n     <path d=\"M120 82l34 12v26c0 22-14 36-34 44-20-8-34-22-34-44V94z\" fill=\"rgba(255,240,240,.95)\" stroke=\"#ffb4b4\" stroke-width=\"2\"/>\n     <path d=\"M120 104v22\" stroke=\"#d92d20\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"120\" cy=\"138\" r=\"3.6\" fill=\"#d92d20\"/>\n    </g>\n   </svg>\n  </div>\n  <div class=\"ttl\" id=\"fxT\">\u0e81\u0eb3\u0ea5\u0eb1\u0e87\u0e94\u0eb3\u0ec0\u0e99\u0eb5\u0e99\u0e81\u0eb2\u0e99\u2026</div>\n  <div class=\"sub\" id=\"fxS\">\u0e81\u0eb0\u0ea5\u0eb8\u0e99\u0eb2\u0ea5\u0ecd\u0e96\u0ec9\u0eb2, \u0ea2\u0ec8\u0eb2\u0e9b\u0eb4\u0e94\u0edc\u0ec9\u0eb2\u0e99\u0eb5\u0ec9</div>\n  <div class=\"bar\"><i id=\"fxB\"></i></div><div class=\"pct\" id=\"fxP\">0%</div>\n  <ul class=\"steps\" id=\"fxL\"></ul>\n  <div class=\"hint\">\u0e81\u0ebb\u0e94\u0e97\u0eb5\u0ec8\u0ec2\u0ea5\u0ec9 \u0ec0\u0e9e\u0eb7\u0ec8\u0ead\u0ea2\u0eb7\u0e99\u0ea2\u0eb1\u0e99</div>\n  <div class=\"acts\"><button class=\"btn\" id=\"fxRetry\">\u0ea5\u0ead\u0e87\u0ec3\u0edd\u0ec8</button><button class=\"btn\" id=\"fxClose\">\u0e9b\u0eb4\u0e94</button></div>\n </div>\n</div>\n\n";
+/* ===== sound engine (Web Audio, no files) ===== */
+const SND={on:true,vol:.6,ctx:null};try{SND.on=localStorage.getItem('kgs_snd')!=='0';const v=localStorage.getItem('kgs_vol');if(v!==null)SND.vol=Math.max(0,Math.min(1,Number(v)));}catch(e){}
+function ac(){if(!SND.ctx){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;const c=SND.ctx=new C();const m=c.createGain();m.connect(c.destination);const L=c.sampleRate*1.4,ir=c.createBuffer(2,L,c.sampleRate);for(let h=0;h<2;h++){const d=ir.getChannelData(h);for(let i=0;i<L;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/L,3.2);}const cv=c.createConvolver();cv.buffer=ir;const w=c.createGain();w.gain.value=.18;cv.connect(w).connect(m);SND.out=m;SND.rev=cv;}if(SND.ctx.state==='suspended')SND.ctx.resume();return SND.ctx;}
+function tone(f,d,o={}){if(!SND.on||!SND.vol)return;const c=ac();if(!c)return;const t=c.currentTime+(o.at||0);
+  const g=c.createGain(),os=c.createOscillator();os.type=o.type||'sine';os.frequency.setValueAtTime(f,t);if(o.to)os.frequency.exponentialRampToValueAtTime(o.to,t+d);
+  const v=(o.v||.18)*SND.vol;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+(o.a||.006));g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  os.connect(g);g.connect(SND.out);if(d>.08)g.connect(SND.rev);os.start(t);os.stop(t+d+.02);}
+function noise(d,o={}){if(!SND.on||!SND.vol)return;const c=ac();if(!c)return;const t=c.currentTime+(o.at||0),n=c.sampleRate*d,b=c.createBuffer(1,n,c.sampleRate),a=b.getChannelData(0);
+  for(let i=0;i<n;i++)a[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=b;const fl=c.createBiquadFilter();fl.type='bandpass';fl.Q.value=1.2;
+  fl.frequency.setValueAtTime(o.f||400,t);fl.frequency.exponentialRampToValueAtTime(o.to||3000,t+d);const g=c.createGain();g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime((o.v||.12)*SND.vol,t+d*.4);g.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(fl).connect(g);g.connect(SND.out);g.connect(SND.rev);s.start(t);}
+const sfx={
+  nav:()=>tone(1500,.05,{type:'sine',v:.10}),
+  tab:()=>tone(1100,.045,{type:'triangle',v:.10}),
+  tap:()=>{tone(700,.06,{type:'triangle',v:.14,to:500});},
+  save:()=>{tone(784,.12,{type:'sine',v:.16});tone(1175,.18,{type:'sine',v:.16,at:.09});},
+  present:()=>{tone(988,.1,{v:.15});tone(1319,.16,{v:.13,at:.07});},
+  danger:()=>{tone(220,.18,{type:'triangle',v:.2,to:160});},
+  error:()=>{tone(392,.14,{type:'square',v:.07});tone(294,.24,{type:'square',v:.07,at:.13});},
+  start:()=>{noise(.5,{f:300,to:4000,v:.10});tone(440,.35,{v:.08,to:880,at:.05});},
+  step:()=>{tone(1568,.16,{v:.05});tone(3150,.08,{v:.015});},
+  pulse:()=>tone(1760,.04,{v:.035}),
+  success:()=>{[659,784,1047].forEach((f,i)=>tone(f,.5,{v:.14,at:i*.11}));tone(2093,.7,{v:.05,at:.33});},
+  confirm:()=>{tone(150,.16,{type:'triangle',v:.28,to:90});noise(.08,{f:2000,to:6000,v:.06});tone(1568,.25,{v:.07,at:.06});},
+  fail:()=>{tone(330,.2,{type:'sawtooth',v:.06});tone(247,.35,{type:'sawtooth',v:.06,at:.16});}
+};
+/* ===== ticks + circuit traces ===== */
+function decor(){{let k='';for(let i=0;i<12;i++){const a=i*30*Math.PI/180;k+=`<line class="spark" x1="${120+80*Math.cos(a)}" y1="${120+80*Math.sin(a)}" x2="${120+96*Math.cos(a)}" y2="${120+96*Math.sin(a)}" stroke="${i%2?'#bfefff':'#7ff5c9'}" stroke-width="2" stroke-linecap="round"/>`;}R.getElementById('sparks').innerHTML=k;}let s='';for(let i=0;i<72;i++){const a=i*5*Math.PI/180,r1=i%6?95:91,r2=100;s+=`<line x1="${120+r1*Math.cos(a)}" y1="${120+r1*Math.sin(a)}" x2="${120+r2*Math.cos(a)}" y2="${120+r2*Math.sin(a)}" stroke="#7fd0ff" stroke-width="${i%6?1:2}" opacity="${i%6?.5:.9}"/>`;}R.getElementById('ticks').innerHTML=s;
+ const P=['M560 70H470L440 100H380','M560 130H500L470 160H400','M560 200H430L410 180H385','M560 300H480L450 330H395','M560 380H500L470 350H410','M0 90H70L100 120H170','M0 170H60L85 145H160','M0 290H90L115 315H175','M0 400H50L80 370H150'];
+ R.getElementById('trace').innerHTML=P.map((d,i)=>`<path d="${d}"/><path class="flow" d="${d}" style="animation-delay:${-i*.37}s"/><circle cx="${d.split(' ').pop().slice(1).split('H').pop()}" cy="0" r="0"/>`).join('');}
+/* job icons: database = data, arrows show the direction of the work */
+const DB=(x,y,w,h)=>{const rx=w/2,ry=w/7,cx=x+rx;return `<path class="wk wkf" d="M${x} ${y}v${h}a${rx} ${ry} 0 0 0 ${w} 0v-${h}"/><ellipse class="wk" cx="${cx}" cy="${y}" rx="${rx}" ry="${ry}" style="fill:rgba(120,200,255,.35)"/><path class="wk" d="M${x} ${y+h/2}a${rx} ${ry} 0 0 0 ${w} 0" opacity=".7"/>`;};
+const ICO={
+ backup:DB(96,112,48,34)+`<g class="drop"><path class="wk" d="M120 78v20M111 90l9 9 9-9"/></g>`,
+ restore:DB(96,96,48,34)+`<g transform="translate(132 136)"><circle r="15" fill="#0b1f5c" stroke="#a9e6ff" stroke-width="2"/><g class="rotr"><path class="wk" d="M-8 0a8 8 0 1 1 3 6.2" style="stroke-width:2.6"/><path class="wk" d="M-11 -3l3 3 3-3" style="stroke-width:2.6"/></g></g>`,
+ excel:`<rect class="wk wkf" x="90" y="92" width="60" height="58" rx="6"/>`+[0,1,2].map(r=>[0,1].map(c=>`<rect class="cell" x="${95+c*26}" y="${100+r*16}" width="22" height="12" rx="2" style="animation-delay:${(r*2+c)*.3}s"/>`).join('')).join('')+`<path class="wk" d="M90 104h60" opacity=".6"/>`,
+ import:`<circle class="wk wkf" cx="108" cy="110" r="10"/><path class="wk" d="M90 146c1-13 8-20 18-20s17 7 18 20"/><circle class="wk" cx="134" cy="112" r="8" opacity=".75"/><path class="wk" d="M128 128c8 0 14 6 15 16" opacity=".75"/><g transform="translate(142 92)"><circle r="12" fill="#0b1f5c" stroke="#a9e6ff" stroke-width="2"/><g class="pop"><path class="wk" d="M0 -6v12M-6 0h12" style="stroke-width:2.6"/></g></g>`,
+ update:`<g class="rot"><path class="wk" d="M146 120a26 26 0 0 1-47 15"/><path class="wk" d="M94 120a26 26 0 0 1 47-15"/><path class="wk" d="M141 96v10h-10M99 144v-10h10"/></g><circle cx="120" cy="120" r="5" fill="#a9e6ff"/>`,
+ sync:DB(84,108,30,26)+DB(126,108,30,26)+`<g><circle class="dot" cx="104" cy="96" r="3"/><circle class="dot" cx="104" cy="96" r="3" style="animation-delay:.45s"/><circle class="dot" cx="104" cy="96" r="3" style="animation-delay:.9s"/></g><path class="wk" d="M104 96h32" opacity=".35" style="stroke-dasharray:3 4"/>`
+};
+
+const $=id=>R.getElementById(id);const FX={};
+const TX=()=>window.S&&S.lang==='en'?{wait:'Please wait — do not close this page',done:'Completed',fail:'Not completed',hint:'Tap the shield to confirm',retry:'Try again',close:'Close',sec:'s'}
+  :{wait:'ກະລຸນາລໍຖ້າ — ຢ່າປິດໜ້ານີ້',done:'ສຳເລັດແລ້ວ',fail:'ບໍ່ສຳເລັດ',hint:'ກົດທີ່ໂລ້ ເພື່ອຢືນຢັນ',retry:'ລອງໃໝ່',close:'ປິດ',sec:'ວິ'};
+function mount(){if(R)return;const h=document.createElement('div');h.id='kfxHost';document.body.appendChild(h);R=h.attachShadow({mode:'open'});
+  R.innerHTML='<style>'+CSS+'</style>'+HTML;decor();
+  $('ring').onclick=confirm_;R.querySelector('.hint').onclick=confirm_;
+  $('fxClose').onclick=()=>{sfx.tap();FX.ans&&FX.ans('close');};$('fxRetry').onclick=()=>{sfx.tap();FX.ans&&FX.ans('retry');};
+  document.addEventListener('keydown',e=>{if(!$('fx').classList.contains('show'))return;if((e.key==='Enter'||e.key===' ')&&$('fxc').classList.contains('done')){e.preventDefault();confirm_();}if(e.key==='Escape'&&$('fxc').classList.contains('err')){FX.ans&&FX.ans('close');}},true);}
+function show(title,steps,ico){mount();const x=TX();$('workI').innerHTML=ICO[ico]||ICO.update;const c=$('fxc');c.classList.remove('done','err');$('fxT').textContent=title;$('fxS').textContent=x.wait;
+  R.querySelector('.hint').textContent=x.hint;$('fxRetry').textContent=x.retry;$('fxClose').textContent=x.close;
+  $('fxL').innerHTML=steps.map(s=>'<li><b>✓</b><span></span><em></em></li>').join('');[...$('fxL').children].forEach((li,i)=>li.querySelector('span').textContent=steps[i]);
+  FX.cur=-1;FX.at=[];set(0,0);$('fx').classList.add('show');sfx.start();clearInterval(FX.pt);FX.pt=setInterval(sfx.pulse,1200);}
+function set(pct,step){$('fxB').style.width=pct+'%';$('fxP').textContent=Math.round(pct)+'%';$('prog').setAttribute('stroke-dasharray',(6.41*pct)+' 641');
+  const L=[...$('fxL').children];if(step!==FX.cur){const n=performance.now();if(FX.cur>=0&&L[FX.cur]){L[FX.cur].querySelector('em').textContent=((n-FX.at[FX.cur])/1000).toFixed(1)+' '+TX().sec;if(step>FX.cur)sfx.step();}FX.at[step]=n;FX.cur=step;}
+  L.forEach((li,i)=>li.className=i<step?'ok':i===step?'now':'');}
+function done(msg){clearInterval(FX.pt);set(100,99);$('fxc').classList.add('done');R.querySelectorAll('.spark').forEach(x=>{x.style.animation='none';x.getBBox();x.style.animation='';});$('fxT').textContent=TX().done;$('fxS').textContent=msg||'';sfx.success();}
+function fail(msg){clearInterval(FX.pt);{const li=$('fxL').children[FX.cur];if(li){li.className='bad';li.querySelector('b').textContent='✕';}}$('fxc').classList.add('err');$('fxT').textContent=TX().fail;$('fxS').textContent=msg;sfx.fail();}
+function hide(){if(R)$('fx').classList.remove('show');clearInterval(FX.pt);clearInterval(FX.iv);}
+function confirm_(){if(!$('fxc').classList.contains('done'))return;sfx.confirm();FX.ans&&FX.ans('ok');}
+/* job({title, steps:[..], icon:'backup|restore|excel|import|sync|update', run:async step=>message}) -> resolves true after the user confirms, false if it failed and was closed */
+async function job(o){
+  show(o.title,o.steps,o.icon);const n=o.steps.length;let p=0,cur=0;
+  const step=i=>{cur=Math.max(cur,Math.min(n-1,i));};
+  clearInterval(FX.iv);FX.iv=setInterval(()=>{const cap=(cur+0.92)/n*100;p+=Math.max(0,(cap-p))*0.07;set(p,cur);},160);
+  const wait=()=>new Promise(r=>{FX.ans=v=>{FX.ans=null;r(v);};});
+  try{const msg=await o.run(step);clearInterval(FX.iv);done(msg);await wait();setTimeout(hide,160);if(o.onOk)o.onOk();return true;}
+  catch(e){clearInterval(FX.iv);fail((window.errText?errText(e):(e&&e.message))||'Error');const a=await wait();hide();if(a==='retry'){await new Promise(r=>setTimeout(r,350));return job(o);}return false;}
+}
+function sound(on,vol){if(on!==undefined){SND.on=!!on;try{localStorage.setItem('kgs_snd',on?'1':'0');}catch(e){}}if(vol!==undefined){SND.vol=vol;try{localStorage.setItem('kgs_vol',String(vol));}catch(e){}}return{on:SND.on,vol:SND.vol};}
+return{job,sfx,sound,hide};
+})();
 
 /* ================= modal / confirm ================= */
 function modal(title,body,foot,size){
@@ -1107,11 +1187,14 @@ function bkPwModal(title,twice){return new Promise(res=>{
   document.querySelectorAll('#bkPw,#bkPw2').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();ok();}}));setTimeout(()=>$('#bkPw')&&$('#bkPw').focus(),50);});}
 async function bkFull(){
   const pw=await bkPwModal(t('bk_full'),true);if(!pw)return;
-  try{loading(true);const d=await call('backup.full',{},{silent:true});const txt=await bkSeal(d,pw);
+  await KFX.job({title:LX('ສຳຮອງຂໍ້ມູນທັງໝົດ','Full backup'),icon:'backup',
+   steps:[LX('ອ່ານຂໍ້ມູນທຸກຕາຕະລາງ','Reading every table'),LX('ລວມຮູບພະນັກງານ ແລະ ລະຫັດ QR','Adding photos and the QR key'),LX('ເຂົ້າລະຫັດໄຟລ໌ (AES-256)','Encrypting (AES-256)'),LX('ບັນທຶກໄຟລ໌ .kgsbak','Saving the .kgsbak file')],
+   onOk:()=>{if(S.page==='admin')admData();},
+   run:async step=>{step(0);const d=await call('backup.full',{},{silent:true});step(1);await new Promise(r=>setTimeout(r,250));step(2);const txt=await bkSeal(d,pw);step(3);
     const p=x=>String(x).padStart(2,'0'),n=new Date(),name=`KGS_HR_Backup_${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}_${p(n.getHours())}${p(n.getMinutes())}.kgsbak`;
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'application/octet-stream'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);
-    S.settings=Object.assign(S.settings||{},{lastBackup:d.createdAt,lastBackupBy:d.createdBy});toast(t('bk_done'),'ok');if(S.page==='admin')admData();}
-  catch(e){fail(e);}finally{loading(false);}
+    S.settings=Object.assign(S.settings||{},{lastBackup:d.createdAt,lastBackupBy:d.createdBy});
+    const T=d.tables||{};return name+' · '+(T.Employees||[]).length+' '+LX('ພະນັກງານ','employees')+' · '+(T.Activities||[]).length+' '+LX('ກິດຈະກຳ','activities');}});
 }
 function bkRestoreFlow(onNew){
   const inp=document.createElement('input');inp.type='file';inp.accept='.kgsbak,application/json';
@@ -1126,9 +1209,12 @@ function bkRestoreFlow(onNew){
       <div class="fld" style="margin-top:12px"><label>${t('bk_type')}</label><input class="in" style="width:100%" id="bkType" placeholder="RESTORE"></div>`,
      `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn danger" id="bkGo">${t('bk_restoreGo')}</button>`,'sm');
     $('#bkGo').onclick=async()=>{if($('#bkType').value.trim().toUpperCase()!=='RESTORE'){$('#bkType').focus();return;}
-      try{const r=await call('backup.restore',{backup:b});closeModal();toast(t('bk_restored'),'ok');
-        if(!onNew){try{localStorage.removeItem('kgs_hr_token');}catch(e){}S.token=null;S.me=null;}
-        setTimeout(()=>start(),600);}catch(e){fail(e);}};
+      closeModal();
+      await KFX.job({title:LX('ກູ້ຄືນຂໍ້ມູນ','Restoring the backup'),icon:'restore',
+       steps:[LX('ກວດໄຟລ໌ສຳຮອງ','Checking the backup file'),LX('ຂຽນຂໍ້ມູນລົງຖານຂໍ້ມູນ','Writing to the database'),...(sbMode()?[LX('ສົ່ງສຳເນົາໄປ Google Sheet','Queueing the Google Sheet copy')]:[])],
+       onOk:()=>{if(!onNew){try{localStorage.removeItem('kgs_hr_token');}catch(e){}S.token=null;S.me=null;}start();},
+       run:async step=>{step(0);await new Promise(r=>setTimeout(r,300));step(1);const r=await call('backup.restore',{backup:b},{silent:true});if(sbMode())step(2);
+        const c=r.counts||{};return (c.Employees||0)+' '+LX('ພະນັກງານ','employees')+' · '+(c.Activities||0)+' '+LX('ກິດຈະກຳ','activities')+' · '+(c.Participants||0)+' '+LX('ການເຂົ້າຮ່ວມ','attendance rows');}});};
   };
   inp.click();
 }
@@ -1227,9 +1313,9 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-05${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-05c${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
-   <button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
+   <button class="iconbtn" data-act="toggleSnd" id="sndBtn" title="${LX('ສຽງ','Sound')}">${ic(KFX.sound().on?'vol':'mute')}</button><button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
   const h=(location.hash||'').replace('#','');
   go(navItems().some(n=>n[0]===h)?h:S.page);
@@ -1889,18 +1975,54 @@ function xlHTML(D){
    <tfoot><tr><td class="rn"></td>${totRow}</tr></tfoot></table></div><p class="small muted" style="margin:8px 0 0">${t('xl_note')}</p></div>`;
 }
 function xlRedraw(){const D=repAnalysisData();const el=document.querySelector('.xl-card');if(el){el.outerHTML=xlHTML(D);const y=$('#xlY');if(y)y.onchange=()=>{S.f.rep.xy=Number(y.value);xlRedraw();};}}
-function xlExport(){
-  const D=repAnalysisData(),X=xlSummaries(D),f=S.f.rep;
+function xlAppendSummaries(wb,D){const X=xlSummaries(D);
   const val=(c,r)=>{const v=r[c.k];return c.ty==='p'?(v==null?'':v/100):(c.ty==='n'?(v===''||v==null?'':Number(v)):(v==null?'':String(v)));};
   const sum=[[t('hv_title')],[companyName()],[t('xl_period'),D.period],[t('xl_made'),fmtD(todayStr())+' · '+(S.me?S.me.FullName||S.me.Username:'')],[],
     [t('nav_activities'),D.acts.size],[t('cat_training'),D.tr],[t('cat_meeting'),D.mt],[t('hv_attend'),D.ins],[t('hv_people'),D.people.size],[t('es_hours'),D.hrs],[t('hv_rate')+' %',D.rate],[t('hv_cov')+' %',D.cov],[t('hv_lateRate')+' %',D.lateR],[t('absent'),D.ab],[t('late'),D.late]];
-  try{const wb=XLSX.utils.book_new();
-    const ws0=XLSX.utils.aoa_to_sheet(sum);ws0['!cols']=[{wch:34},{wch:28}];XLSX.utils.book_append_sheet(wb,ws0,t('xl_sum').slice(0,31));
-    X.forEach(x=>{const head=x.cols.map(c=>c.l),rows=x.rows.map(r=>x.cols.map(c=>val(c,r)));const tot=x.cols.map((c,i)=>i===0?t('xl_total'):(c.ty==='s'?'':val(c,x.total)));
-      const ws=XLSX.utils.aoa_to_sheet([head,...rows,tot]);ws['!cols']=x.cols.map(c=>({wch:c.ty==='s'?28:12}));ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:0,c:0},e:{r:rows.length,c:head.length-1}})};
-      x.cols.forEach((c,ci)=>{if(c.ty!=='p')return;for(let ri=1;ri<=rows.length+1;ri++){const a=XLSX.utils.encode_cell({r:ri,c:ci});if(ws[a]&&ws[a].v!=='')ws[a].z='0.0%';}});
-      XLSX.utils.book_append_sheet(wb,ws,x.title.replace(/[\\/?*\[\]:]/g,' ').slice(0,31));});
+  const ws0=XLSX.utils.aoa_to_sheet(sum);ws0['!cols']=[{wch:34},{wch:28}];XLSX.utils.book_append_sheet(wb,ws0,t('xl_sum').slice(0,31));
+  const out=[[t('xl_sum'),sum.length]];
+  X.forEach(x=>{const head=x.cols.map(c=>c.l),rows=x.rows.map(r=>x.cols.map(c=>val(c,r)));const tot=x.cols.map((c,i)=>i===0?t('xl_total'):(c.ty==='s'?'':val(c,x.total)));
+    const ws=XLSX.utils.aoa_to_sheet([head,...rows,tot]);ws['!cols']=x.cols.map(c=>({wch:c.ty==='s'?28:12}));ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:0,c:0},e:{r:rows.length,c:head.length-1}})};
+    x.cols.forEach((c,ci)=>{if(c.ty!=='p')return;for(let ri=1;ri<=rows.length+1;ri++){const a=XLSX.utils.encode_cell({r:ri,c:ci});if(ws[a]&&ws[a].v!=='')ws[a].z='0.0%';}});
+    const nm=x.title.replace(/[\\/?*\[\]:]/g,' ').slice(0,31);XLSX.utils.book_append_sheet(wb,ws,nm);out.push([nm,rows.length]);});
+  return out;}
+function xlExport(){
+  try{const wb=XLSX.utils.book_new();xlAppendSummaries(wb,repAnalysisData());
     XLSX.writeFile(wb,'KGS_Training_Summary_'+todayStr()+'.xlsx');toast(t('xl_done'),'ok');}catch(e){toast('Export failed: '+e.message,'bad');}
+}
+/* R2.2: one Excel workbook with EVERYTHING (every table + every summary), readable by people and by other apps.
+   Not restorable — the .kgsbak file is the restore file. No passwords, no photos. */
+async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
+  await KFX.job({title:LX('ສ້າງໄຟລ໌ Excel ທັງໝົດ','Exporting everything to Excel'),icon:'excel',
+   steps:[LX('ດຶງຂໍ້ມູນທຸກຕາຕະລາງ','Reading every table'),LX('ຄິດໄລ່ບົດສະຫຼຸບ','Calculating summaries'),LX('ສ້າງໄຟລ໌ Excel','Building the Excel file')],
+   onOk:()=>{if(S.page==='admin')admData();},
+   run:async step=>{step(0);const d=await call('backup.export',null,{silent:true});step(1);await new Promise(r=>setTimeout(r,60));
+    const wb=XLSX.utils.book_new(),toc=[];
+    const cut=v=>{v=v??'';return typeof v==='string'&&v.length>32000?v.slice(0,32000):v;};
+    const add=(name,head,rows)=>{const ws=XLSX.utils.aoa_to_sheet([head,...rows]);ws['!cols']=head.map(h=>({wch:Math.min(40,Math.max(10,String(h).length+2))}));
+      if(rows.length)ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:0,c:0},e:{r:rows.length,c:head.length-1}})};
+      const nm=name.replace(/[\\/?*\[\]:]/g,' ').slice(0,31);XLSX.utils.book_append_sheet(wb,ws,nm);toc.push([nm,rows.length]);};
+    const T=d.tables,H=d.heads,raw=(n,skip)=>{const h=(H[n]||[]).filter(c=>(skip||[]).indexOf(c)<0);return{h,rows:(T[n]||[]).map(r=>h.map(c=>cut(r[c])))};};
+    const eh=(H.Employees||[]).filter(c=>c!=='RawData'),emps=T.Employees||[];
+    add(t('xa_cur'),eh,emps.filter(e=>isCurrent(e)).map(e=>eh.map(c=>cut(e[c]))));
+    add(t('xa_former'),eh,emps.filter(e=>!isCurrent(e)).map(e=>eh.map(c=>cut(e[c]))));
+    {const h=H.Activities||[];add(t('nav_activities'),[...h,t('xa_cat')],(T.Activities||[]).map(a=>[...h.map(c=>cut(a[c])),actCat(a)==='meeting'?t('cat_meeting'):t('cat_training')]));}
+    {const E={},A={};emps.forEach(e=>E[e.EmployeeID]=e);(T.Activities||[]).forEach(a=>A[a.ActivityID]=a);const ph=H.Participants||[];
+      const lead=['EmployeeID','NameEN','NameLA','Division','ActivityID','Title','Type',t('xa_cat'),'StartDate','EndDate','DurationHours'];
+      add(t('participants'),[...lead,...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID')],(T.Participants||[]).map(p=>{const e=E[p.EmployeeID]||{},a=A[p.ActivityID]||{};
+        return[p.EmployeeID,e.NameEN||'',e.NameLA||'',e.Division||'',p.ActivityID,a.Title||'',a.Type||'',a.ActivityID?(actCat(a)==='meeting'?t('cat_meeting'):t('cat_training')):'',a.StartDate||'',a.EndDate||'',a.DurationHours||'',...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID').map(c=>cut(p[c]))];}));}
+    const f=S.f.rep||{};const D=hvData({f:{from:'',to:'',div:'',xy:f.xy},rows:historyRows()});
+    xlAppendSummaries(wb,D).forEach(x=>toc.push(x));step(2);
+    {const r=raw('Users');add(t('users'),r.h,r.rows);}
+    {const r=raw('Settings');add(t('nav_settings'),r.h,r.rows);}
+    {const r=raw('AuditLog');add(t('auditLog'),r.h,r.rows);}
+    {const r=raw('DuplicateReview',['RawData']);add(t('xa_dup'),r.h,r.rows);}
+    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-05c'],[],
+      [t('xa_sheet'),t('xa_rows')],...toc,[],[t('xa_note1')],[t('xa_note2')],[t('xa_note3')]];
+    const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
+    wb.SheetNames.unshift(wb.SheetNames.pop());
+    XLSX.writeFile(wb,fn);if(d.settings)S.settings=d.settings;
+    return fn+' · '+toc.length+' '+LX('ແຜ່ນ','sheets');}});
 }
 /* analysis page inside Reports: same design as History, filtered by the Reports filters (activity level) */
 function repAnalysisData(){const f=S.f.rep;
@@ -2091,18 +2213,19 @@ async function impCommit(){
   const errs=R.filter(r=>r.st==='error');
   const msg=`${t('inserted')}: ${inserts.length} · ${t('updated')}: ${updates.length} · ${t('skippedN')}: ${skipped} · ${t('errorsN')}: ${errs.length}`;
   if(!await ask(t('confirmImport')+'? '+msg))return;
-  try{
+  await KFX.job({title:LX('ນຳເຂົ້າພະນັກງານ','Importing employees'),icon:'import',
+   steps:[LX('ກວດຂໍ້ມູນ ແລະ ຊື່ຊ້ຳ','Checking rows and duplicates'),LX('ບັນທຶກລົງລະບົບ','Saving'),LX('ໂຫຼດຂໍ້ມູນໃໝ່','Reloading data')],
+   run:async step=>{step(0);await new Promise(r=>setTimeout(r,250));step(1);
     const res=await call('import.commit',{batch:'IMP-'+todayStr().replace(/-/g,'')+'-'+Date.now().toString().slice(-5),fileName:I.fileName,sheetName:I.sheet,inserts,updates,review,skippedCount:skipped});
     res.errorsTotal=errs.length+res.errors.length;
     I.result=res;I.issues=[...errs.map(r=>({row:r.n,id:r.emp.EmployeeID,issue:r.errors.join('; ')})),...res.errors.map(x=>({row:'',id:x.id,issue:x.msg})),...review.map(x=>({row:JSON.parse(x.raw)._row,id:x.EmployeeID,issue:x.Reason+' — '+x.Resolution})),...R.filter(r=>r.warns.length&&r.st!=='error').map(r=>({row:r.n,id:r.emp.EmployeeID,issue:'Warning: '+r.warns.join('; ')}))];
-    I.step=4;await loadAll();go('import');toast(msg,'ok');
-  }catch(e){fail(e);}
+    step(2);I.step=4;await loadAll();go('import');return msg;}});
 }
 
 /* ================= SETTINGS (personal) ================= */
 function pageSettings(){
   $('#page').innerHTML=`<div class="grid two">
-   <div class="card"><h3>${t('language')}</h3><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">${langSw()}<button class="btn sm" data-act="toggleTheme">${ic(S.theme==='light'?'moon':'sun',15)} ${S.theme==='light'?'Dark':'Light'}</button></div>
+   <div class="card"><h3>${t('language')}</h3><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">${langSw()}<button class="btn sm" data-act="toggleSnd">${ic(KFX.sound().on?'vol':'mute')} ${KFX.sound().on?LX('ສຽງ: ເປີດ','Sound: on'):LX('ສຽງ: ປິດ','Sound: off')}</button><label class="small" style="display:flex;gap:6px;align-items:center">${LX('ລະດັບສຽງ','Volume')} <input type="range" min="0" max="100" value="${Math.round(KFX.sound().vol*100)}" oninput="KFX.sound(undefined,this.value/100)" onchange="KFX.sfx.save()"></label><button class="btn sm" data-act="toggleTheme">${ic(S.theme==='light'?'moon':'sun',15)} ${S.theme==='light'?'Dark':'Light'}</button></div>
    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">${TONES.map(([k,c,l])=>`<button class="btn sm ${S.theme==='light'&&S.tone===k?'pri':''}" data-act="setTone" data-arg="${k}"><span style="width:12px;height:12px;border-radius:50%;background:${c};display:inline-block;border:2px solid #fff"></span>${l}</button>`).join('')}</div>
    <div class="small muted" style="margin-top:16px">${t('kpiDesign')}</div>
    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">${[['k','★'],['e','1'],['f','2'],['g','3'],['h','4'],['i','5'],['j','6']].map(([k,l])=>`<button class="btn sm ${S.kpi===k?'pri':''}" data-act="setKpi" data-arg="${k}">${l} · ${t('kpi_'+k)}</button>`).join('')}</div><p class="small muted" style="margin-top:12px">${t('version')} ${esc(S.version)} · ${esc(S.me.Username)} (${esc(t('r_'+S.me.Role))})</p></div>
@@ -2341,12 +2464,14 @@ async function mirLoad(){const el=$('#mirBody');if(!el)return;
     el.innerHTML=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="badge ${st.on?'b-Present':'b-Cancelled'}">${st.on?'● '+t('mr_on'):t('mr_off')}</span>${st.on&&st.pending?`<span class="warn">${t('mr_pending').replace('{n}',st.pending)}</span>`:''}</div>
      ${st.last?`<div class="muted">${t('mr_last')}: ${esc(fmtDT(st.last))}</div>`:''}${st.error?`<div class="err" style="margin-top:4px">✗ ${esc(st.error)}</div>`:''}
      <div class="fld" style="margin-top:10px"><label>${t('mr_url')}</label><input class="in" style="width:100%" id="mirUrl" value="${esc(st.url||window.KGS_GAS_URL||'')}" spellcheck="false"></div>
-     <div class="fld"><label>${t('mr_secret')}${st.hasSecret?' ✓':''}</label><input class="in" style="width:100%" id="mirSec" type="password" autocomplete="off" placeholder="${esc(st.hasSecret?t('mr_secretKeep'):t('mr_secretHelp'))}"></div>
+     <div class="fld"><label>${t('mr_secret')}${st.hasSecret?' ✓':''}</label><input class="in" style="width:100%" id="mirSec" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore style="width:100%;-webkit-text-security:disc" placeholder="${esc(st.hasSecret?t('mr_secretKeep'):t('mr_secretHelp'))}"></div>
      <div style="display:flex;gap:8px;flex-wrap:wrap">${st.on?`<button class="btn" data-act="mirResync">${t('mr_resync')}</button><button class="btn" data-act="mirLoad">${t('mr_refresh')}</button><button class="btn danger" data-act="mirOff">${t('mr_turnOff')}</button>`:`<button class="btn pri" data-act="mirOn">${t('mr_turnOn')}</button>`}</div>`;}
   catch(e){el.className='small err';el.textContent=errText(e);}}
 async function mirOn(){const sec=$('#mirSec').value.trim(),url=$('#mirUrl').value.trim();
   if(!await ask(t('mr_onQ')))return;
-  try{await call('mirror.config',{url,secret:sec||undefined,on:true});toast(t('mr_started'),'ok');setTimeout(mirLoad,2500);}catch(e){fail(e);}}
+  await KFX.job({title:LX('ເປີດສຳເນົາໄປ Google Sheet','Turning on the Google Sheet copy'),icon:'sync',steps:[LX('ບັນທຶກການຕັ້ງຄ່າ','Saving the settings'),LX('ເລີ່ມສົ່ງຂໍ້ມູນທັງໝົດ','Starting the full copy')],
+   onOk:()=>setTimeout(mirLoad,1500),run:async step=>{step(0);await call('mirror.config',{url,secret:sec||undefined,on:true},{silent:true});step(1);await new Promise(r=>setTimeout(r,500));
+    return LX('ຂໍ້ມູນກຳລັງສົ່ງໄປ Google Sheet ໃນເບື້ອງຫຼັງ — ກົດ "ໂຫຼດສະຖານະຄືນ" ເພື່ອເບິ່ງ','Rows are being sent in the background — press Refresh status to follow');}});}
 
 /* ================= QR CHECK-IN ================= */
 const LIBS={qr:'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js',jsqr:'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js'};
@@ -2702,6 +2827,8 @@ const H={
  toggleSide:()=>$('#side').classList.toggle('open'),
  setKpi:x=>{S.kpi=x;try{localStorage.setItem('kgs_hr_kpi',x);}catch(e){}applyTheme();rerender();},
  setTone:x=>{S.tone=x;S.theme='light';try{localStorage.setItem('kgs_hr_tone',x);localStorage.setItem('kgs_hr_theme','light');}catch(e){}applyTheme();if(S.me)renderShell();else start();},
+ toggleSnd:()=>{const s=KFX.sound(!KFX.sound().on);const b=$('#sndBtn');if(b)b.innerHTML=ic(s.on?'vol':'mute');if(s.on)KFX.sfx.save();if(S.page==='settings')rerender();},
+ sndVol:()=>{},
  toggleTheme:()=>{S.theme=S.theme==='light'?'dark':'light';try{localStorage.setItem('kgs_hr_theme',S.theme);}catch(e){}applyTheme();if(S.me){const pg=S.page;renderShell();}else start();},
  setLang:l=>{S.lang=l;try{localStorage.setItem('kgs_hr_lang',l);}catch(e){}document.documentElement.lang=l;if(S.pub&&S.ci){ciPub();return;}if(S.me){renderShell();}else start();},
  logout:async()=>{try{await call('logout');}catch(e){}doLogoutLocal();},
@@ -2767,7 +2894,8 @@ const H={
  dashYear:d=>{const f=dashFilter();f.year=String(dashYear()+Number(d));dashBody();},
  admTab:k=>{S.adm.tab=k;pageAdmin();},
  admUrlTest:()=>connTest('admUrl',false),
- mirLoad,mirOn,mirResync:async()=>{try{await call('mirror.resync');toast(t('mr_started'),'ok');setTimeout(mirLoad,2500);}catch(e){fail(e);}},
+ mirLoad,mirOn,mirResync:async()=>{await KFX.job({title:LX('ສຳເນົາທັງໝົດໄປ Google Sheet ຄືນໃໝ່','Copying everything to Google Sheet again'),icon:'sync',steps:[LX('ລ້າງ ແລະ ຈັດຄິວຂໍ້ມູນທັງໝົດ','Queueing every row'),LX('ເລີ່ມສົ່ງ','Starting to send')],
+   onOk:()=>setTimeout(mirLoad,1500),run:async step=>{step(0);await call('mirror.resync',null,{silent:true});step(1);await new Promise(r=>setTimeout(r,500));return LX('ກຳລັງສົ່ງໃນເບື້ອງຫຼັງ — ກົດ "ໂຫຼດສະຖານະຄືນ" ເພື່ອເບິ່ງ','Sending in the background — press Refresh status');}});},
  mirOff:async()=>{if(!await ask(t('mr_offQ'),{danger:true}))return;try{await call('mirror.config',{on:false});mirLoad();}catch(e){fail(e);}},
  admUseSB:()=>{$('#admUrl').value=window.KGS_SB_URL;connTest('admUrl',false);},admUseGS:()=>{$('#admUrl').value=window.KGS_GAS_URL;connTest('admUrl',false);},
  admSheetFmt:async()=>{try{const r=await call('sheet.format');toast(t('sf_done').replace('{n}',r.tabs),'ok');}catch(e){fail(e);}},
@@ -2787,13 +2915,12 @@ const H={
  exportUsers:()=>exportXlsx('KGS_Users',[{name:'Users',head:[t('username'),t('fullName'),t('email'),t('role'),fl('Status'),t('ad_mustCh'),t('lastLogin'),t('ad_created')],
    rows:S.users.map(u=>[u.Username,u.FullName,u.Email||'',t('r_'+u.Role),t(uState(u)==='active'?'ad_stActive':uState(u)==='locked'?'ad_stLocked':'ad_stDisabled'),u.MustChange==='Yes'?t('yes'):t('no'),u.LastLogin||'',u.CreatedAt||''])}]),
  bkFull,bkRestore:()=>bkRestoreFlow(false),
- admBackup:async()=>{try{const d=await call('backup.export');
-   const sheets=Object.keys(d.tables).map(n=>{const head=d.heads[n]||(d.tables[n][0]?Object.keys(d.tables[n][0]):[]);
-     return{name:n,head,rows:d.tables[n].map(r=>head.map(k=>{const v=r[k]??'';return typeof v==='string'&&v.length>32000?v.slice(0,32000):v;}))};});
-   exportXlsx('KGS_HR_Backup',sheets);S.settings=d.settings;toast(t('ad_backupDone'),'ok');admData();}catch(e){fail(e);}},
+ admBackup:xlAll,
  loadReview:async()=>{try{const r=await call('dupReview.list',null,{silent:true});const el=$('#review');if(!el)return;el.classList.remove('muted','small');
    el.innerHTML=dataTable('rev',[{k:'Time',l:t('time')},{k:'EmployeeID',l:fl('EmployeeID')},{k:'Reason',l:t('reason')},{k:'Resolution',l:t('resolution')},{k:'ImportBatch',l:'Batch'},{k:'RawData',l:t('rawData'),r:x=>`<span class="small muted">${esc(String(x.RawData).slice(0,160))}</span>`}],r.slice().reverse(),{ps:20});}catch(e){fail(e);}}
 };
+document.addEventListener('click',ev=>{try{if(S.pub||!window.KFX)return;const el=ev.target.closest('[data-act],button,[data-tsort],.chip,select');if(!el||el.disabled)return;const a=(el.dataset&&el.dataset.act)||'';
+  if(a==='go')KFX.sfx.nav();else if(el.classList.contains('danger'))KFX.sfx.danger();else if(/tab|Tab|sort/.test(a)||el.dataset.tsort)KFX.sfx.tab();else KFX.sfx.tap();}catch(e){}},true);
 document.addEventListener('click',ev=>{
   const ts=ev.target.closest('[data-tsort]');if(ts){const[id,k]=ts.dataset.tsort.split('|');const st=S.tbl[id];if(st){st.d=st.k===k?-st.d:1;st.k=k;}tblRefresh(id);return;}
   const tp=ev.target.closest('[data-tpage]');if(tp){const[id,p]=tp.dataset.tpage.split('|');S.tbl[id].p=Number(p);tblRefresh(id);return;}
