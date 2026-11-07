@@ -14,7 +14,7 @@ window.KGS_API_URL='https://hgizlrrqkpzembubtdpj.supabase.co/functions/v1/kgs-ap
 window.KGS_SB_URL='https://hgizlrrqkpzembubtdpj.supabase.co/functions/v1/kgs-api';
 window.KGS_SB_KEY='sb_publishable_cGEByWLvzXYbjVAOv80Opw_Gp8F-YqC';</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
 <style>
 :root{--f:'Inter','Noto Sans Lao',system-ui,sans-serif;--radius:16px;color-scheme:dark;
 --ink:#eaf0fa;--muted:#9aa8c0;--line:rgba(255,255,255,.14);--line2:rgba(255,255,255,.07);
@@ -1159,10 +1159,52 @@ function dataTable(id,cols,rows,opt){
 }
 
 /* ================= excel ================= */
+/* R2.3 Excel look: Phetsarath font, navy header, light banding, meaning colours (green ≥90%, amber 75–89%, red <75%;
+   on time / late / absent / not recorded; training / meeting; employment and activity status). Needs xlsx-js-style. */
+const XS=(()=>{const F='Times New Roman',FL='Phetsarath OT',LAO=/[\u0E80-\u0EFF]/,bd={style:'thin',color:{rgb:'DCE3EE'}},B={top:bd,bottom:bd,left:bd,right:bd};
+  const pal={good:['DCFCE7','166534'],mid:['FEF3C7','92400E'],bad:['FEE2E2','991B1B'],none:['F1F5F9','64748B'],tr:['DBEAFE','1E40AF'],mt:['F3E8FF','6B21A8']};
+  const V={};const put=(arr,p)=>arr.forEach(v=>{V[String(v).toUpperCase()]=p;});
+  put(['Present','ມາ','Completed','ACTIVE','Yes','Approved'],'good');put(['Late','ມາຊ້າ','PROBATION','Planned','Scheduled','In Progress','Ongoing','Pending'],'mid');
+  put(['Absent','ຂາດ','Cancelled','RESIGNED','TERMINATED','CONTRACT END','RETIRED','No'],'bad');put(['Training','ຝຶກອົບຮົມ'],'tr');put(['Meeting','ປະຊຸມ'],'mt');
+  const rateP=v=>v==null||v===''?null:(v>=0.9?'good':v>=0.75?'mid':'bad');
+  const font=o=>Object.assign({name:F,sz:10,color:{rgb:'1F2937'}},o||{});
+  const len=v=>(v==null?'':String(v)).length;
+  /* Lao text in Phetsarath OT, English and numbers in Times New Roman (one font per cell, chosen by its text) */
+  const fonts=ws=>{Object.keys(ws).forEach(k=>{if(k[0]==='!')return;const c=ws[k];if(c&&c.s&&c.s.font)c.s.font=Object.assign({},c.s.font,{name:LAO.test(String(c.v==null?'':c.v))?FL:F});});return ws;};
+  /* o.hr = number of banner rows above the header (row 0 title, row 1 subtitle, row hr-1 spacer) */
+  function table(ws,o){o=o||{};if(!ws['!ref'])return ws;const r=XLSX.utils.decode_range(ws['!ref']),h=o.hr||0,last=r.e.r;const W=[];
+    for(let R0=r.s.r;R0<=last;R0++)for(let C=r.s.c;C<=r.e.c;C++){const a=XLSX.utils.encode_cell({r:R0,c:C});let c=ws[a];if(!c){c=ws[a]={t:'s',v:''};}
+      if(R0<h){c.s={font:font(R0===0?{sz:16,bold:true,color:{rgb:'1E3A8A'}}:{sz:10,color:{rgb:'64748B'}}),alignment:{vertical:'center'}};continue;}
+      W[C]=Math.max(W[C]||0,R0===h?Math.min(len(c.v),16):len(c.z==='0.0%'?'100.0%':c.v));
+      if(R0===h){c.s={font:font({sz:10,bold:true,color:{rgb:'FFFFFF'}}),fill:{patternType:'solid',fgColor:{rgb:'1E3A8A'}},alignment:{vertical:'center',horizontal:'center',wrapText:true},border:{top:{style:'thin',color:{rgb:'1E3A8A'}},bottom:{style:'medium',color:{rgb:'F59E0B'}},left:{style:'thin',color:{rgb:'3B5BA9'}},right:{style:'thin',color:{rgb:'3B5BA9'}}}};continue;}
+      const isTot=o.total&&R0===last,kind=(o.sem||[])[C],num=typeof c.v==='number';
+      const s={font:font(),border:B,fill:{patternType:'solid',fgColor:{rgb:isTot?'E8EEFC':((R0-h)%2?'FFFFFF':'F6F8FC')}},alignment:{vertical:'center',horizontal:num?'center':'left',indent:num?0:1}};
+      let p=null;if(kind==='rate')p=rateP(c.v);else if(c.t==='s'&&c.v!==''&&V[String(c.v).trim().toUpperCase()])p=V[String(c.v).trim().toUpperCase()];
+      if(p){s.fill={patternType:'solid',fgColor:{rgb:pal[p][0]}};s.font=font({bold:true,color:{rgb:pal[p][1]}});s.alignment={vertical:'center',horizontal:'center'};}
+      else if(num&&c.v===0&&kind!=='rate'){s.font=font({color:{rgb:'B6C0CF'}});c.z='#,##0;-#,##0;"–"';}
+      else if(num&&kind){const col={on:'15803D',late:'B45309',ab:'B91C1C',nm:'64748B'}[kind];if(col)s.font=font({bold:true,color:{rgb:col}});}
+      else if(num&&!c.z)c.z=Number.isInteger(c.v)?'#,##0':'#,##0.0';
+      if(C===r.s.c&&!num&&!p)s.font=font({bold:!!o.firstBold,color:{rgb:'0F172A'}});
+      if(isTot){s.font=Object.assign({},s.font,{bold:true,color:{rgb:(s.font.color&&s.font.color.rgb)==='B6C0CF'?'94A3B8':((s.font.color&&s.font.color.rgb)||'1E3A8A')}});s.border=Object.assign({},B,{top:{style:'medium',color:{rgb:'1E3A8A'}},bottom:{style:'medium',color:{rgb:'1E3A8A'}}});}
+      c.s=s;}
+    if(!o.keepCols)ws['!cols']=W.map((w,i)=>({wch:Math.max(i===r.s.c?12:9,Math.min(44,Math.ceil((w||6)*1.15)+3))}));
+    const rows=[];for(let i=0;i<=last;i++)rows[i]={hpt:i<h?(i===0?28:18):(i===h?36:21)};if(h>1)rows[h-1]={hpt:8};ws['!rows']=rows;
+    if(last>h)ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:h,c:r.s.c},e:{r:last-(o.total?1:0),c:r.e.c}})};
+    ws['!kfreeze']=h+1;return fonts(ws);}
+  function kv(ws,rateRows){if(!ws['!ref'])return ws;const r=XLSX.utils.decode_range(ws['!ref']);const rows=[];
+    for(let R0=0;R0<=r.e.r;R0++){rows[R0]={hpt:R0===0?30:22};for(let C=0;C<=r.e.c;C++){const a=XLSX.utils.encode_cell({r:R0,c:C});const c=ws[a];if(!c)continue;
+      if(R0===0){c.s={font:font({sz:16,bold:true,color:{rgb:'1E3A8A'}}),alignment:{vertical:'center'}};continue;}
+      if(c.v===''){continue;}
+      const num=typeof c.v==='number';
+      const s={font:font({sz:10.5,bold:C===0,color:{rgb:C===0?'334155':'0F172A'}}),border:B,fill:{patternType:'solid',fgColor:{rgb:C===0?'EEF2FF':'FFFFFF'}},alignment:{vertical:'center',horizontal:num?'center':'left',indent:num?0:1}};
+      if(C>0&&(rateRows||[]).includes(R0)&&num){const p=c.v>=90?'good':c.v>=75?'mid':'bad';s.fill={patternType:'solid',fgColor:{rgb:pal[p][0]}};s.font=font({sz:11,bold:true,color:{rgb:pal[p][1]}});}
+      else if(C>0&&num)s.font=font({sz:11,bold:true,color:{rgb:'1E3A8A'}});
+      c.s=s;}}ws['!rows']=rows;return fonts(ws);}
+  return{table,kv,F,fonts};})();
 function exportXlsx(name,sheets){
   try{const wb=XLSX.utils.book_new();
-    sheets.forEach(s=>{const ws=XLSX.utils.aoa_to_sheet([s.head,...s.rows]);ws['!cols']=s.head.map(()=>({wch:18}));XLSX.utils.book_append_sheet(wb,ws,s.name.slice(0,31));});
-    XLSX.writeFile(wb,name+'_'+todayStr()+'.xlsx');}catch(e){toast('Export failed: '+e.message,'bad');}
+    sheets.forEach(s=>{const ws=XLSX.utils.aoa_to_sheet([[s.name],[companyName()+' · '+fmtD(todayStr())],[],s.head,...s.rows]);XS.table(ws,{hr:3,firstBold:true,sem:s.head.map(h=>/%|ອັດຕາ|rate/i.test(String(h))?'rate':null)});XLSX.utils.book_append_sheet(wb,ws,s.name.slice(0,31));});
+    xlWriteWithCharts(wb,name+'_'+todayStr()+'.xlsx',null).catch(e=>toast('Export failed: '+e.message,'bad'));}catch(e){toast('Export failed: '+e.message,'bad');}
 }
 /* ===== full backup file (.kgsbak): AES-256-GCM encrypted JSON, password chosen by the admin ===== */
 const u8b64=u=>{let s='';for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s);};
@@ -1313,7 +1355,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-05c${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-07d${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleSnd" id="sndBtn" title="${LX('ສຽງ','Sound')}">${ic(KFX.sound().on?'vol':'mute')}</button><button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -1979,16 +2021,120 @@ function xlAppendSummaries(wb,D){const X=xlSummaries(D);
   const val=(c,r)=>{const v=r[c.k];return c.ty==='p'?(v==null?'':v/100):(c.ty==='n'?(v===''||v==null?'':Number(v)):(v==null?'':String(v)));};
   const sum=[[t('hv_title')],[companyName()],[t('xl_period'),D.period],[t('xl_made'),fmtD(todayStr())+' · '+(S.me?S.me.FullName||S.me.Username:'')],[],
     [t('nav_activities'),D.acts.size],[t('cat_training'),D.tr],[t('cat_meeting'),D.mt],[t('hv_attend'),D.ins],[t('hv_people'),D.people.size],[t('es_hours'),D.hrs],[t('hv_rate')+' %',D.rate],[t('hv_cov')+' %',D.cov],[t('hv_lateRate')+' %',D.lateR],[t('absent'),D.ab],[t('late'),D.late]];
-  const ws0=XLSX.utils.aoa_to_sheet(sum);ws0['!cols']=[{wch:34},{wch:28}];XLSX.utils.book_append_sheet(wb,ws0,t('xl_sum').slice(0,31));
+  const ws0=XLSX.utils.aoa_to_sheet(sum);ws0['!cols']=[{wch:34},{wch:28}];XS.kv(ws0,[11]);XLSX.utils.book_append_sheet(wb,ws0,t('xl_sum').slice(0,31));
   const out=[[t('xl_sum'),sum.length]];
   X.forEach(x=>{const head=x.cols.map(c=>c.l),rows=x.rows.map(r=>x.cols.map(c=>val(c,r)));const tot=x.cols.map((c,i)=>i===0?t('xl_total'):(c.ty==='s'?'':val(c,x.total)));
-    const ws=XLSX.utils.aoa_to_sheet([head,...rows,tot]);ws['!cols']=x.cols.map(c=>({wch:c.ty==='s'?28:12}));ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:0,c:0},e:{r:rows.length,c:head.length-1}})};
-    x.cols.forEach((c,ci)=>{if(c.ty!=='p')return;for(let ri=1;ri<=rows.length+1;ri++){const a=XLSX.utils.encode_cell({r:ri,c:ci});if(ws[a]&&ws[a].v!=='')ws[a].z='0.0%';}});
+    const ws=XLSX.utils.aoa_to_sheet([[x.title],[companyName()+' · '+D.period],[],head,...rows,tot]);
+    x.cols.forEach((c,ci)=>{if(c.ty!=='p')return;for(let ri=4;ri<=rows.length+4;ri++){const a=XLSX.utils.encode_cell({r:ri,c:ci});if(ws[a]&&ws[a].v!=='')ws[a].z='0.0%';}});
+    XS.table(ws,{hr:3,total:true,firstBold:true,sem:x.cols.map(c=>c.ty==='p'?'rate':(['on','late','ab','nm'].includes(c.k)?c.k:null))});
     const nm=x.title.replace(/[\\/?*\[\]:]/g,' ').slice(0,31);XLSX.utils.book_append_sheet(wb,ws,nm);out.push([nm,rows.length]);});
   return out;}
+
+/* R2.3 native Excel charts: a "ກາບ" sheet with KPI tiles + 4 real (editable) Excel charts that read their data from cells on the same sheet.
+   SheetJS cannot write charts, so the .xlsx is post-processed with JSZip (drawing + chart parts). */
+function xlLoadZip(){if(window.JSZip)return Promise.resolve();return new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';s.onload=ok;s.onerror=()=>no(new Error('JSZip load failed'));document.head.appendChild(s);});}
+function xlDash(wb,D,X){
+  const name=LX('ກາບ','Charts'),A=[],set=(r,c,v)=>{(A[r]=A[r]||[])[c]=v;},F=XS.F;
+  set(0,0,LX('ກາບສະຫຼຸບ — ການຝຶກອົບຮົມ ແລະ ປະຊຸມ','Charts — training and meetings'));set(1,0,companyName()+' · '+D.period);
+  const K=[[t('nav_activities'),D.acts.size,null],[t('hv_attend'),D.ins,null],[t('hv_rate'),D.rate,'r'],[t('hv_cov'),D.cov,'p'],[t('hv_lateRate'),D.lateR,'p'],[t('es_hours'),D.hrs,null]];
+  K.forEach((k,i)=>{set(3,i*2,k[0]);set(4,i*2,k[2]?k[1]/100:k[1]);});
+  const c0=14;set(3,c0,LX('ຂໍ້ມູນຂອງກາບ (ແກ້ໄດ້, ກາບປ່ຽນຕາມ)','Chart data (edit it and the charts follow)'));
+  const mR=5,mN=D.mLab.length;[t('xl_monthCol'),t('cat_training'),t('cat_meeting')].forEach((h,j)=>set(mR,c0+j,h));
+  D.mLab.forEach((l,i)=>{set(mR+1+i,c0,l);set(mR+1+i,c0+1,D.mTr[i]||0);set(mR+1+i,c0+2,D.mMt[i]||0);});
+  const aR=mR+mN+3,AT=[[t('ci_onTime'),D.on],[t('late'),D.late],[t('absent'),D.ab],[t('hv_nm'),D.nm]];
+  set(aR,c0,LX('ການເຂົ້າຮ່ວມ','Attendance'));set(aR,c0+1,LX('ຈຳນວນ','Count'));AT.forEach((x,i)=>{set(aR+1+i,c0,x[0]);set(aR+1+i,c0+1,x[1]);});
+  const dRows=((X.find(x=>x.key==='d')||{}).rows||[]).slice().sort((a,b)=>(b.hrs||0)-(a.hrs||0)),dR=aR+7,nd=Math.max(1,dRows.length);
+  [fl('Division'),t('es_hours'),t('hv_rate')+' %'].forEach((h,j)=>set(dR,c0+j,h));
+  dRows.forEach((d,i)=>{set(dR+1+i,c0,d._k);set(dR+1+i,c0+1,d.hrs||0);set(dR+1+i,c0+2,d.rate==null?0:d.rate);});
+  const last=Math.max(dR+nd+1,46);for(let r=0;r<=last;r++){A[r]=A[r]||[];for(let c=0;c<=c0+2;c++)if(A[r][c]===undefined)A[r][c]='';}
+  const ws=XLSX.utils.aoa_to_sheet(A);
+  ws['!cols']=Array.from({length:c0+3},(_,i)=>({wch:i<12?11:i===c0?26:i>c0?12:3}));
+  ws['!merges']=[{s:{r:0,c:0},e:{r:0,c:11}},{s:{r:1,c:0},e:{r:1,c:11}}];K.forEach((k,i)=>{ws['!merges'].push({s:{r:3,c:i*2},e:{r:3,c:i*2+1}},{s:{r:4,c:i*2},e:{r:4,c:i*2+1}});});
+  ws['!rows']=[{hpt:26},{hpt:18},{hpt:8},{hpt:22},{hpt:36}];
+  const cell=(r,c)=>{const a=XLSX.utils.encode_cell({r,c});return ws[a]||(ws[a]={t:'s',v:''});};
+  cell(0,0).s={font:{name:F,sz:16,bold:true,color:{rgb:'1E3A8A'}}};cell(1,0).s={font:{name:F,sz:10,color:{rgb:'64748B'}}};
+  const bd={style:'thin',color:{rgb:'CBD5E1'}},B={top:bd,bottom:bd,left:bd,right:bd},pal={good:['DCFCE7','166534'],mid:['FEF3C7','92400E'],bad:['FEE2E2','991B1B']};
+  K.forEach((k,i)=>{for(let j=0;j<2;j++){cell(3,i*2+j).s={font:{name:F,sz:9.5,bold:true,color:{rgb:'475569'}},fill:{patternType:'solid',fgColor:{rgb:'EEF2FF'}},alignment:{horizontal:'center',vertical:'center',wrapText:true},border:B};
+    const p=k[2]==='r'?(k[1]>=90?'good':k[1]>=75?'mid':'bad'):null;
+    cell(4,i*2+j).s={font:{name:F,sz:18,bold:true,color:{rgb:p?pal[p][1]:'1E3A8A'}},fill:{patternType:'solid',fgColor:{rgb:p?pal[p][0]:'FFFFFF'}},alignment:{horizontal:'center',vertical:'center'},border:B,numFmt:k[2]?'0%':(k[0]===t('es_hours')?'#,##0.0':'#,##0')};}});
+  cell(3,c0).s={font:{name:F,sz:11,bold:true,color:{rgb:'1E3A8A'}}};
+  const blk=(r0,n,w)=>{for(let c=0;c<w;c++){cell(r0,c0+c).s={font:{name:F,sz:10,bold:true,color:{rgb:'FFFFFF'}},fill:{patternType:'solid',fgColor:{rgb:'1E3A8A'}},alignment:{horizontal:'center',vertical:'center',wrapText:true},border:B};
+    for(let r=r0+1;r<=r0+n;r++)cell(r,c0+c).s={font:{name:F,sz:10},fill:{patternType:'solid',fgColor:{rgb:(r-r0)%2?'FFFFFF':'F8FAFC'}},border:B,alignment:{horizontal:c?'right':'left'}};}};
+  blk(mR,mN,3);blk(aR,4,2);blk(dR,dRows.length,3);
+  XS.fonts(ws);XLSX.utils.book_append_sheet(wb,ws,name);
+  const L=XLSX.utils.encode_col,q="'"+name+"'!",rg=(c,r1,r2)=>q+'$'+L(c)+'$'+(r1+1)+(r2==null?'':':$'+L(c)+'$'+(r2+1));
+  const months={cat:rg(c0,mR+1,mR+mN),catV:D.mLab,ser:[{tx:rg(c0+1,mR),txV:t('cat_training'),val:rg(c0+1,mR+1,mR+mN),vals:D.mTr.map(v=>v||0),color:'2563EB'},{tx:rg(c0+2,mR),txV:t('cat_meeting'),val:rg(c0+2,mR+1,mR+mN),vals:D.mMt.map(v=>v||0),color:'38BDF8'}]};
+  const nD=dRows.length||1,dCat=rg(c0,dR+1,dR+nD),dLab=dRows.length?dRows.map(d=>d._k):['—'];
+  const rc=v=>v>=90?'16A34A':v>=75?'F59E0B':'DC2626';
+  return{sheet:name,charts:[
+    {kind:'col',title:LX('ກິດຈະກຳ ແລະ ຄົນເຂົ້າຮ່ວມ ຕາມເດືອນ — ຕັ້ງທີ່ເຂົ້າຮ່ວມ','Attendances by month'),...months,from:[0,6],to:[8,24]},
+    {kind:'donut',title:LX('ສັດສ່ວນການເຂົ້າຮ່ວມ','Attendance mix'),cat:rg(c0,aR+1,aR+4),catV:AT.map(x=>x[0]),ser:[{tx:rg(c0+1,aR),txV:LX('ຈຳນວນ','Count'),val:rg(c0+1,aR+1,aR+4),vals:AT.map(x=>x[1]),pts:['16A34A','F59E0B','DC2626','94A3B8']}],from:[8,6],to:[12,24]},
+    {kind:'bar',title:LX('ຊົ່ວໂມງຝຶກ ຕາມພະແນກ','Training hours by department'),cat:dCat,catV:dLab,ser:[{tx:rg(c0+1,dR),txV:t('es_hours'),val:rg(c0+1,dR+1,dR+nD),vals:dRows.length?dRows.map(d=>d.hrs||0):[0],color:'2563EB'}],from:[0,25],to:[6,Math.max(42,26+Math.round(nD*1.4))]},
+    {kind:'bar',pct:true,title:LX('ອັດຕາເຂົ້າຮ່ວມ ຕາມພະແນກ (%)','Attendance rate by department (%)'),cat:dCat,catV:dLab,ser:[{tx:rg(c0+2,dR),txV:t('hv_rate'),val:rg(c0+2,dR+1,dR+nD),vals:dRows.length?dRows.map(d=>d.rate==null?0:d.rate):[0],color:'16A34A',pts:dRows.map(d=>rc(d.rate==null?0:d.rate))}],from:[6,25],to:[12,Math.max(42,26+Math.round(nD*1.4))]}]};
+}
+function xlChartXml(ch){
+  const x=v=>String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const font=(sz,b,col)=>`<a:defRPr sz="${sz}"${b?' b="1"':''}><a:solidFill><a:srgbClr val="${col}"/></a:solidFill><a:latin typeface="Times New Roman"/><a:cs typeface="Phetsarath OT"/></a:defRPr>`;
+  const txPr=(sz,b,col)=>`<c:txPr><a:bodyPr/><a:lstStyle/><a:p><a:pPr>${font(sz,b,col)}</a:pPr><a:endParaRPr lang="en-US"/></a:p></c:txPr>`;
+  const strC=(f,arr)=>`<c:strRef><c:f>${x(f)}</c:f><c:strCache><c:ptCount val="${arr.length}"/>${arr.map((v,i)=>`<c:pt idx="${i}"><c:v>${x(v)}</c:v></c:pt>`).join('')}</c:strCache></c:strRef>`;
+  const numC=(f,arr)=>`<c:numRef><c:f>${x(f)}</c:f><c:numCache><c:formatCode>General</c:formatCode><c:ptCount val="${arr.length}"/>${arr.map((v,i)=>`<c:pt idx="${i}"><c:v>${Number(v)||0}</c:v></c:pt>`).join('')}</c:numCache></c:numRef>`;
+  const fill=c=>`<c:spPr><a:solidFill><a:srgbClr val="${c}"/></a:solidFill></c:spPr>`;
+  const title=`<c:title><c:tx><c:rich><a:bodyPr/><a:lstStyle/><a:p><a:pPr>${font(1200,1,'1E3A8A')}</a:pPr><a:r><a:rPr lang="lo-LA" sz="1200" b="1"><a:solidFill><a:srgbClr val="1E3A8A"/></a:solidFill><a:latin typeface="Times New Roman"/><a:cs typeface="Phetsarath OT"/></a:rPr><a:t>${x(ch.title)}</a:t></a:r></a:p></c:rich></c:tx><c:overlay val="0"/></c:title><c:autoTitleDeleted val="0"/>`;
+  const dl=(pos,pct)=>`<c:dLbls>${pct?'<c:numFmt formatCode="0%;;;" sourceLinked="0"/>':'<c:numFmt formatCode="#,##0.##;;;" sourceLinked="0"/>'}<c:spPr><a:noFill/><a:ln><a:noFill/></a:ln></c:spPr>${txPr(900,1,'334155')}${pos?`<c:dLblPos val="${pos}"/>`:''}<c:showLegendKey val="0"/><c:showVal val="${pct?0:1}"/><c:showCatName val="0"/><c:showSerName val="0"/><c:showPercent val="${pct?1:0}"/><c:showBubbleSize val="0"/></c:dLbls>`;
+  let plot,legend='';
+  if(ch.kind==='donut'){const s=ch.ser[0];
+    plot=`<c:doughnutChart><c:varyColors val="1"/><c:ser><c:idx val="0"/><c:order val="0"/><c:tx>${strC(s.tx,[s.txV])}</c:tx>${s.pts.map((c,i)=>`<c:dPt><c:idx val="${i}"/><c:bubble3D val="0"/><c:spPr><a:solidFill><a:srgbClr val="${c}"/></a:solidFill><a:ln w="19050"><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill></a:ln></c:spPr></c:dPt>`).join('')}${dl(null,true)}<c:cat>${strC(ch.cat,ch.catV)}</c:cat><c:val>${numC(s.val,s.vals)}</c:val></c:ser><c:firstSliceAng val="0"/><c:holeSize val="58"/></c:doughnutChart>`;
+    legend=`<c:legend><c:legendPos val="r"/><c:overlay val="0"/>${txPr(1000,0,'334155')}</c:legend>`;}
+  else{const dir=ch.kind==='bar'?'bar':'col',ax1=50010,ax2=50020;
+    const sers=ch.ser.map((s,i)=>`<c:ser><c:idx val="${i}"/><c:order val="${i}"/><c:tx>${strC(s.tx,[s.txV])}</c:tx>${fill(s.color)}<c:invertIfNegative val="0"/>${(s.pts||[]).map((c,j)=>`<c:dPt><c:idx val="${j}"/><c:invertIfNegative val="0"/><c:bubble3D val="0"/>${fill(c)}</c:dPt>`).join('')}${dl('outEnd',false)}<c:cat>${strC(ch.cat,ch.catV)}</c:cat><c:val>${numC(s.val,s.vals)}</c:val></c:ser>`).join('');
+    const rev=dir==='bar';
+    plot=`<c:barChart><c:barDir val="${dir}"/><c:grouping val="clustered"/><c:varyColors val="0"/>${sers}<c:gapWidth val="${dir==='bar'?60:90}"/><c:overlap val="-8"/><c:axId val="${ax1}"/><c:axId val="${ax2}"/></c:barChart>`+
+     `<c:catAx><c:axId val="${ax1}"/><c:scaling><c:orientation val="${rev?'maxMin':'minMax'}"/></c:scaling><c:delete val="0"/><c:axPos val="${rev?'l':'b'}"/><c:numFmt formatCode="General" sourceLinked="0"/><c:majorTickMark val="none"/><c:minorTickMark val="none"/><c:tickLblPos val="nextTo"/><c:spPr><a:ln w="9525"><a:solidFill><a:srgbClr val="CBD5E1"/></a:solidFill></a:ln></c:spPr>${txPr(900,0,'475569')}<c:crossAx val="${ax2}"/><c:crosses val="autoZero"/><c:auto val="1"/><c:lblAlgn val="ctr"/><c:lblOffset val="100"/><c:noMultiLvlLbl val="0"/></c:catAx>`+
+     `<c:valAx><c:axId val="${ax2}"/><c:scaling><c:orientation val="minMax"/>${ch.pct?'<c:max val="100"/>':''}<c:min val="0"/></c:scaling><c:delete val="0"/><c:axPos val="${rev?'b':'l'}"/><c:majorGridlines><c:spPr><a:ln w="6350"><a:solidFill><a:srgbClr val="E2E8F0"/></a:solidFill></a:ln></c:spPr></c:majorGridlines><c:numFmt formatCode="0" sourceLinked="0"/><c:majorTickMark val="none"/><c:minorTickMark val="none"/><c:tickLblPos val="nextTo"/><c:spPr><a:ln><a:noFill/></a:ln></c:spPr>${txPr(900,0,'64748B')}<c:crossAx val="${ax1}"/><c:crosses val="${rev?'max':'autoZero'}"/><c:crossBetween val="between"/></c:valAx>`;
+    legend=ch.ser.length>1?`<c:legend><c:legendPos val="t"/><c:overlay val="0"/>${txPr(1000,0,'334155')}</c:legend>`:'';}
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><c:roundedCorners val="0"/><c:chart>${title}<c:plotArea><c:layout/>${plot}<c:spPr><a:noFill/></c:spPr></c:plotArea>${legend}<c:plotVisOnly val="1"/><c:dispBlanksAs val="gap"/></c:chart><c:spPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:ln w="9525"><a:solidFill><a:srgbClr val="E2E8F0"/></a:solidFill></a:ln></c:spPr>${txPr(1000,0,'334155')}</c:chartSpace>`;
+}
+/* write the workbook, then add the drawing + charts to the "ກາບ" sheet and download */
+async function xlWriteWithCharts(wb,fn,dash){
+  let buf;
+  try{await xlLoadZip();buf=XLSX.write(wb,{bookType:'xlsx',type:'array'});}catch(e){XLSX.writeFile(wb,fn);return;}
+  const z=await JSZip.loadAsync(buf);const idx=dash?wb.SheetNames.indexOf(dash.sheet)+1:0;
+  const wbx=await z.file('xl/workbook.xml').async('string'),rels=await z.file('xl/_rels/workbook.xml.rels').async('string');
+  /* find the sheet part through workbook.xml → rels (do not assume the file number) */
+  const esc2=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  /* clean look: no gridlines on every sheet; freeze the header row of every table */
+  for(const nm of wb.SheetNames){const fr=wb.Sheets[nm]['!kfreeze']||0;const tag=[...wbx.matchAll(/<sheet\b[^>]*>/g)].map(m=>m[0]).find(t0=>t0.includes('name="'+esc2(nm)+'"'));
+    const id=tag&&(tag.match(/r:id="([^"]+)"/)||[])[1];const rt=id&&[...rels.matchAll(/<Relationship\b[^>]*>/g)].map(m=>m[0]).find(t0=>t0.includes('Id="'+id+'"'));
+    const tg=rt&&(rt.match(/Target="([^"]+)"/)||[])[1];if(!tg)continue;const p='xl/'+tg.replace(/^\/?xl\//,'');const f=z.file(p);if(!f)continue;let x0=await f.async('string');
+    const pane=fr>0?`<pane ySplit="${fr}" topLeftCell="A${fr+1}" activePane="bottomLeft" state="frozen"/><selection pane="bottomLeft" activeCell="A${fr+1}" sqref="A${fr+1}"/>`:'';
+    x0=x0.replace(/<sheetView\b([^>]*?)\/>/,(m0,at)=>`<sheetView showGridLines="0"${at.replace(/\s*showGridLines="[^"]*"/,'')}>${pane}</sheetView>`);
+    z.file(p,x0);}
+  if(!dash){const blob0=await z.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',compression:'DEFLATE'});
+    const a0=document.createElement('a');a0.href=URL.createObjectURL(blob0);a0.download=fn;document.body.appendChild(a0);a0.click();setTimeout(()=>{URL.revokeObjectURL(a0.href);a0.remove();},1500);return;}
+  let rid=null;const m1=[...wbx.matchAll(/<sheet\b[^>]*>/g)].map(m=>m[0]).find(tag=>tag.includes('name="'+esc2(dash.sheet)+'"'));if(m1){const mm=m1.match(/r:id="([^"]+)"/);rid=mm&&mm[1];}
+  let target='worksheets/sheet'+idx+'.xml';if(rid){const rt=[...rels.matchAll(/<Relationship\b[^>]*>/g)].map(m=>m[0]).find(tag=>tag.includes('Id="'+rid+'"'));const mt=rt&&rt.match(/Target="([^"]+)"/);if(mt)target=mt[1].replace(/^\/?xl\//,'');}
+  const sp='xl/'+target,sf=sp.split('/').pop(),srp='xl/worksheets/_rels/'+sf+'.rels';
+  let sx=await z.file(sp).async('string');
+  if(!/xmlns:r=/.test(sx))sx=sx.replace(/<worksheet\b/,'<worksheet xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"');
+  sx=sx.replace('</worksheet>','<drawing r:id="rIdKgsDraw"/></worksheet>');z.file(sp,sx);
+  let sr=z.file(srp)?await z.file(srp).async('string'):'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"></Relationships>';
+  sr=sr.replace('</Relationships>','<Relationship Id="rIdKgsDraw" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawingKgs1.xml"/></Relationships>');z.file(srp,sr);
+  let dr='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">',drr='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">';
+  let ct=await z.file('[Content_Types].xml').async('string'),ov='<Override PartName="/xl/drawings/drawingKgs1.xml" ContentType="application/vnd.openxmlformats-officedocument.drawing+xml"/>';
+  dash.charts.forEach((ch,i)=>{const n=i+1;z.file('xl/charts/chartKgs'+n+'.xml',xlChartXml(ch));
+    ov+='<Override PartName="/xl/charts/chartKgs'+n+'.xml" ContentType="application/vnd.openxmlformats-officedocument.drawingml.chart+xml"/>';
+    drr+='<Relationship Id="rIdC'+n+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="../charts/chartKgs'+n+'.xml"/>';
+    dr+=`<xdr:twoCellAnchor editAs="oneCell"><xdr:from><xdr:col>${ch.from[0]}</xdr:col><xdr:colOff>76200</xdr:colOff><xdr:row>${ch.from[1]}</xdr:row><xdr:rowOff>76200</xdr:rowOff></xdr:from><xdr:to><xdr:col>${ch.to[0]}</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>${ch.to[1]}</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to><xdr:graphicFrame macro=""><xdr:nvGraphicFramePr><xdr:cNvPr id="${n+1}" name="Chart ${n}"/><xdr:cNvGraphicFramePr/></xdr:nvGraphicFramePr><xdr:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/></xdr:xfrm><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart"><c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rIdC${n}"/></a:graphicData></a:graphic></xdr:graphicFrame><xdr:clientData/></xdr:twoCellAnchor>`;});
+  z.file('xl/drawings/drawingKgs1.xml',dr+'</xdr:wsDr>');z.file('xl/drawings/_rels/drawingKgs1.xml.rels',drr+'</Relationships>');
+  z.file('[Content_Types].xml',ct.replace('</Types>',ov+'</Types>'));
+  const blob=await z.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',compression:'DEFLATE'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);
+}
+
 function xlExport(){
-  try{const wb=XLSX.utils.book_new();xlAppendSummaries(wb,repAnalysisData());
-    XLSX.writeFile(wb,'KGS_Training_Summary_'+todayStr()+'.xlsx');toast(t('xl_done'),'ok');}catch(e){toast('Export failed: '+e.message,'bad');}
+  (async()=>{try{const wb=XLSX.utils.book_new(),D=repAnalysisData();xlAppendSummaries(wb,D);const dash=xlDash(wb,D,xlSummaries(D));
+    wb.SheetNames.splice(1,0,wb.SheetNames.pop());
+    await xlWriteWithCharts(wb,'KGS_Training_Summary_'+todayStr()+'.xlsx',dash);toast(t('xl_done'),'ok');}catch(e){toast('Export failed: '+e.message,'bad');}})();
 }
 /* R2.2: one Excel workbook with EVERYTHING (every table + every summary), readable by people and by other apps.
    Not restorable — the .kgsbak file is the restore file. No passwords, no photos. */
@@ -2000,7 +2146,7 @@ async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
     const wb=XLSX.utils.book_new(),toc=[];
     const cut=v=>{v=v??'';return typeof v==='string'&&v.length>32000?v.slice(0,32000):v;};
     const add=(name,head,rows)=>{const ws=XLSX.utils.aoa_to_sheet([head,...rows]);ws['!cols']=head.map(h=>({wch:Math.min(40,Math.max(10,String(h).length+2))}));
-      if(rows.length)ws['!autofilter']={ref:XLSX.utils.encode_range({s:{r:0,c:0},e:{r:rows.length,c:head.length-1}})};
+      XS.table(ws,{firstBold:true});
       const nm=name.replace(/[\\/?*\[\]:]/g,' ').slice(0,31);XLSX.utils.book_append_sheet(wb,ws,nm);toc.push([nm,rows.length]);};
     const T=d.tables,H=d.heads,raw=(n,skip)=>{const h=(H[n]||[]).filter(c=>(skip||[]).indexOf(c)<0);return{h,rows:(T[n]||[]).map(r=>h.map(c=>cut(r[c])))};};
     const eh=(H.Employees||[]).filter(c=>c!=='RawData'),emps=T.Employees||[];
@@ -2012,16 +2158,16 @@ async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
       add(t('participants'),[...lead,...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID')],(T.Participants||[]).map(p=>{const e=E[p.EmployeeID]||{},a=A[p.ActivityID]||{};
         return[p.EmployeeID,e.NameEN||'',e.NameLA||'',e.Division||'',p.ActivityID,a.Title||'',a.Type||'',a.ActivityID?(actCat(a)==='meeting'?t('cat_meeting'):t('cat_training')):'',a.StartDate||'',a.EndDate||'',a.DurationHours||'',...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID').map(c=>cut(p[c]))];}));}
     const f=S.f.rep||{};const D=hvData({f:{from:'',to:'',div:'',xy:f.xy},rows:historyRows()});
-    xlAppendSummaries(wb,D).forEach(x=>toc.push(x));step(2);
+    xlAppendSummaries(wb,D).forEach(x=>toc.push(x));const dash=xlDash(wb,D,xlSummaries(D));toc.push([dash.sheet,4+' '+LX('ກາບ','charts')]);step(2);
     {const r=raw('Users');add(t('users'),r.h,r.rows);}
     {const r=raw('Settings');add(t('nav_settings'),r.h,r.rows);}
     {const r=raw('AuditLog');add(t('auditLog'),r.h,r.rows);}
     {const r=raw('DuplicateReview',['RawData']);add(t('xa_dup'),r.h,r.rows);}
-    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-05c'],[],
+    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-07d'],[],
       [t('xa_sheet'),t('xa_rows')],...toc,[],[t('xa_note1')],[t('xa_note2')],[t('xa_note3')]];
-    const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
+    const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XS.kv(ws);XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
     wb.SheetNames.unshift(wb.SheetNames.pop());
-    XLSX.writeFile(wb,fn);if(d.settings)S.settings=d.settings;
+    await xlWriteWithCharts(wb,fn,dash);if(d.settings)S.settings=d.settings;
     return fn+' · '+toc.length+' '+LX('ແຜ່ນ','sheets');}});
 }
 /* analysis page inside Reports: same design as History, filtered by the Reports filters (activity level) */
