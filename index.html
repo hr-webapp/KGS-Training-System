@@ -471,6 +471,36 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .ci-cam video{width:100%;height:100%;object-fit:cover;display:block}
 .ci-aim{position:absolute;inset:18%;border:3px solid rgba(255,255,255,.85);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
 #printArea{display:none}
+/* R2.4 dormitory */
+.note.bad{background:rgba(248,113,113,.12);border-color:rgba(248,113,113,.4)}
+.dm-alerts{display:grid;gap:6px;margin-bottom:12px}.dm-alerts .note{margin:0;cursor:pointer}
+.dm-cnt{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#dc2626;color:#fff;font-size:11px}
+.dm-legend{display:flex;gap:10px;flex-wrap:wrap;font-size:12px}.dm-legend span{display:flex;align-items:center;gap:4px}.dm-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.dm-grp{margin:14px 0}.dm-gh{display:flex;gap:8px;align-items:baseline;margin-bottom:8px}.dm-gh .muted{margin-left:auto}
+.dm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.dm-room{background:var(--glass);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:10px 12px;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s}
+.dm-room:hover{transform:translateY(-2px)}
+.dm-fac{display:flex;flex-wrap:wrap;gap:8px}.dm-fchip{padding:6px 10px;border-radius:10px;background:var(--glass);border:1px solid var(--line);font-size:12.5px;cursor:pointer}.dm-fchip.off{opacity:.55}
+.dm-rh{display:flex;justify-content:space-between;align-items:center}.dm-no{font-size:20px;font-weight:800}.dm-g{font-size:16px;opacity:.75}
+.dm-bar{height:6px;border-radius:6px;background:var(--line2);margin:6px 0;overflow:hidden}.dm-bar i{display:block;height:100%;background:var(--c);border-radius:6px}
+.dm-n{font-size:12px}.dm-n b{font-size:15px}.dm-n span{color:var(--c);font-weight:600;margin-left:4px}
+.dm-names{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.35;min-height:16px}
+.dm-rinfo{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:13px}
+.dm-seg{display:flex;gap:14px;flex-wrap:wrap}.dm-seg label{display:flex;gap:6px;align-items:center;font-weight:500}
+.dm-consent{display:flex;gap:8px;align-items:flex-start;line-height:1.4}.dm-consent input{margin-top:3px}
+.dm-pend{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.dm-pch{display:flex;justify-content:space-between;gap:8px}.dm-pcb{display:grid;gap:4px;margin-top:8px}
+.dm-ck{color:#16a34a;font-weight:800}td.ctr{text-align:center}
+.dm-pbar{display:inline-block;width:60px;height:6px;border-radius:6px;background:var(--line2);margin-right:6px;vertical-align:middle;overflow:hidden}.dm-pbar i{display:block;height:100%}
+.dq-sheet{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.dq-card{border:1.5px solid #1e3a8a;border-radius:4mm;padding:5mm;text-align:center;background:#fff;color:#0f172a;break-inside:avoid;font-family:'Phetsarath OT','Noto Sans Lao',sans-serif}
+.dq-h{display:flex;gap:3mm;align-items:center;justify-content:center;margin-bottom:3mm}.dq-h img{width:9mm;height:9mm;object-fit:contain}.dq-h .bl{width:9mm;height:9mm;border-radius:2mm;background:#1d4ed8;color:#fff;font-weight:800;font-size:3mm;display:flex;align-items:center;justify-content:center}
+.dq-h b{display:block;font-size:3.4mm}.dq-h span{font-size:2.8mm;color:#475569}
+.dq-room small{display:block;font-size:3.2mm;color:#475569}.dq-room b{display:block;font-size:9mm;line-height:1.1;color:#1e3a8a}.dq-room span{font-size:3mm;color:#475569}
+.dq-qr{width:48mm;height:48mm;image-rendering:pixelated;margin:3mm auto}.dq-t{font-size:3.4mm;font-weight:600}.dq-t i{font-weight:400;color:#475569;font-family:'Times New Roman',serif}
+.badge-prev .dq-sheet{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.dm-pr .dm-prn{font-size:3.2mm}.dm-pr tr.dm-rt td{border-top:1.5px solid #1e3a8a}
+.pr-sign{width:100%;margin-top:10mm;border-collapse:collapse}.pr-sign td{width:33%;font-size:3.2mm;vertical-align:top;padding:2mm}
+
 .hv-ins ul{margin:6px 0 0;padding-left:20px;line-height:1.9}.hv-ins h3{display:flex;align-items:center;gap:8px}.hv-an{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.hv-an>*{min-width:0}.hv-an .chart-box{height:300px}.hv-k{grid-template-columns:repeat(6,minmax(0,1fr))!important}
 @media(max-width:1200px){.hv-k{grid-template-columns:repeat(3,minmax(0,1fr))!important}}@media(max-width:900px){.hv-an{grid-template-columns:1fr}.hv-k{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 .xl-card{margin-top:12px}.xl-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.xl-tabs button{border:1px solid var(--line2);background:var(--glass2);border-radius:10px;padding:6px 12px;cursor:pointer;font:inherit;font-size:13px;color:var(--ink)}.xl-tabs button small{color:var(--muted);margin-left:4px}.xl-tabs button.on{background:#1d4ed8;border-color:#1d4ed8;color:#fff}.xl-tabs button.on small{color:#dbeafe}
@@ -682,7 +712,7 @@ en:{
  hv_byAct:'By activity',hv_byEmp:'By employee',hv_detail:'Detail (all rows)',hv_attend:'Attendances',hv_people:'people',hv_hoursNote:'training hours attended',hv_rate:'Attendance rate',hv_invited:'Invited',hv_in:'Attended (incl. late)',hv_last:'Last attended',
  st_ACTIVE:'Working',st_PROBATION:'Probation',st_RESIGNED:'Resigned',st_TERMINATED:'Terminated',st_CONTRACT:'Contract ended',st_RETIRED:'Retired',st_INACTIVE:'Inactive',st_needEnd:'Please enter the End Date for an employee who has left.',st_formerHint:'→ moves to Former Employees (history is kept).',st_currentHint:'→ current employee.',
  mr_title:'Real-time copy to Google Sheet',mr_note:'Every change saved in the SQL database is copied to the Google Sheet within seconds. The Google Sheet becomes read-only (a live backup you can open any time).',mr_on:'On',mr_off:'Off',mr_pending:'{n} rows waiting to be sent',mr_last:'Last copied',mr_url:'Google Sheet Web app URL (…/exec)',mr_secret:'Secret key',mr_secretHelp:'From Apps Script: run mirrorSetup and copy the key from the log',mr_secretKeep:'Saved — leave empty to keep',mr_resync:'Copy everything again',mr_refresh:'Refresh status',mr_turnOn:'Turn on',mr_turnOff:'Turn off',mr_onQ:'Turn on the real-time copy? The Google Sheet will be overwritten with the SQL data and become read-only.',mr_offQ:'Turn off the real-time copy? The Google Sheet will stop updating.',mr_started:'Copying started',e_READ_ONLY_MIRROR:'This Google Sheet system is now a read-only copy. Press Ctrl+F5 to load the new system.',
- cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
+ cat_label:'Group',cat_training:'Training',cat_meeting:'Meeting',es_title:'Summary since joining',es_attended:'attended / invited',es_hours:'Training hours',es_done:'Courses completed',es_cert:'Certificates',es_service:'Length of service',es_since:'since',yrs:'yr',mos:'mo',es_print:'Print report (A4)',es_printed:'Printed',es_docTitle:'Individual Training & Meeting Record',es_signHR:'Prepared by (HR)',es_signMgr:'Approved by',es_conf:'CONFIDENTIAL — personal data. For internal HR use only.',nav_former:'Former Employees',nav_external:'External Training',sub_external:'Individual training outside the company, with certificates and expiry dates',sub_former:'Archive of employees who have left, with their training record',fm_note:'Employees who have left (resigned, terminated…). Their records are kept for reference and are not offered when adding participants.',fm_yearLeft:'Year left',
  ad_org:'Organisation & logo',ad_users:'Users & roles',ad_security:'Security',ad_data:'Data & backup',
  ad_logo:'Company logo',ad_upload:'Upload logo',ad_logoRemove:'Remove logo',
  ad_logoHint:'PNG, JPG, WEBP or SVG, up to 5 MB. A square logo on a transparent or white background looks best. It is resized to 256 px automatically.',
@@ -742,7 +772,7 @@ en:{
  // settings
  language:'Language',changePassword:'Change my password',oldPassword:'Current password',newPassword:'New password',
  users:'Users & roles',addUser:'Add user',role:'Role',resetPassword:'Reset password',auditLog:'Audit log',version:'Version',
- r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'Read-only',lastLogin:'Last login',dupReview:'Duplicate review records',
+ r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'Read-only',r_dorm:'Dormitory manager',perm8:'Manage dormitory (rooms, residents, meals, QR approvals). Dormitory manager sees only the dormitory pages.',nav_dorm:'Dormitory',sub_dorm:'Rooms, residents, meal list and QR self-registration',e_DQ_INVALID:'This QR code is not valid. Please contact the dormitory manager.',e_DQ_EXPIRED:'This page has expired. Please scan the QR on the room door again.',e_DQ_CLOSED:'This room is not open for registration. Please contact the dormitory manager.',e_DQ_DEVICE_LIMIT:'This phone already has 3 requests waiting for approval.',lastLogin:'Last login',dupReview:'Duplicate review records',
  pwMismatch:'Passwords do not match',pwShort:'Password must be at least {n} characters',
  time:'Time',user:'User',action:'Action',entity:'Entity',details:'Details',reason:'Reason',resolution:'Resolution',
  count:'Count',hours:'Hours',days:'Days',cost:'Cost',budget:'Budget',variance:'Variance',costPerHead:'Cost / participant',
@@ -804,7 +834,7 @@ lo:{
  hv_byAct:'ຕາມກິດຈະກຳ',hv_byEmp:'ຕາມພະນັກງານ',hv_detail:'ລາຍລະອຽດ (ທຸກແຖວ)',hv_attend:'ຄັ້ງທີ່ເຂົ້າຮ່ວມ',hv_people:'ຄົນ',hv_hoursNote:'ຊົ່ວໂມງຝຶກທີ່ເຂົ້າຮ່ວມ',hv_rate:'ອັດຕາເຂົ້າຮ່ວມ',hv_invited:'ເຊີນ',hv_in:'ເຂົ້າຮ່ວມ (ລວມຊ້າ)',hv_last:'ເຂົ້າຮ່ວມລ່າສຸດ',
  st_ACTIVE:'ກຳລັງເຮັດວຽກ',st_PROBATION:'ທົດລອງງານ',st_RESIGNED:'ລາອອກ',st_TERMINATED:'ເລີກຈ້າງ',st_CONTRACT:'ໝົດສັນຍາ',st_RETIRED:'ບຳນານ',st_INACTIVE:'ຢຸດວຽກ',st_needEnd:'ກະລຸນາໃສ່ ວັນສິ້ນສຸດ ສຳລັບພະນັກງານທີ່ອອກແລ້ວ.',st_formerHint:'→ ຈະຍ້າຍໄປ ພະນັກງານເກົ່າ (ປະຫວັດການຝຶກຍັງຢູ່).',st_currentHint:'→ ພະນັກງານປັດຈຸບັນ.',
  mr_title:'ສຳເນົາໄປ Google Sheet ແບບທັນທີ',mr_note:'ທຸກການບັນທຶກໃນຖານຂໍ້ມູນ SQL ຈະຖືກສຳເນົາໄປ Google Sheet ພາຍໃນບໍ່ເທົ່າໃດວິນາທີ. Google Sheet ຈະເປັນແບບອ່ານຢ່າງດຽວ (ເປັນສຳຮອງສົດ ເປີດເບິ່ງໄດ້ຕະຫຼອດ).',mr_on:'ເປີດຢູ່',mr_off:'ປິດ',mr_pending:'ລໍຖ້າສົ່ງ {n} ແຖວ',mr_last:'ສຳເນົາລ່າສຸດ',mr_url:'Web app URL ຂອງ Google Sheet (…/exec)',mr_secret:'ລະຫັດລັບ (Secret)',mr_secretHelp:'ຈາກ Apps Script: Run mirrorSetup ແລ້ວ copy ລະຫັດຈາກ Execution log',mr_secretKeep:'ບັນທຶກແລ້ວ — ປະວ່າງໄວ້ຖ້າບໍ່ປ່ຽນ',mr_resync:'ສຳເນົາທັງໝົດຄືນໃໝ່',mr_refresh:'ໂຫຼດສະຖານະຄືນ',mr_turnOn:'ເປີດໃຊ້',mr_turnOff:'ປິດ',mr_onQ:'ເປີດການສຳເນົາແບບທັນທີ? ຂໍ້ມູນໃນ Google Sheet ຈະຖືກແທນທີ່ດ້ວຍຂໍ້ມູນ SQL ແລະ ກາຍເປັນແບບອ່ານຢ່າງດຽວ.',mr_offQ:'ປິດການສຳເນົາ? Google Sheet ຈະບໍ່ອັບເດດອີກ.',mr_started:'ເລີ່ມສຳເນົາແລ້ວ',e_READ_ONLY_MIRROR:'ລະບົບ Google Sheet ນີ້ເປັນສຳເນົາແບບອ່ານຢ່າງດຽວແລ້ວ. ກົດ Ctrl+F5 ເພື່ອໂຫຼດລະບົບໃໝ່.',
- cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
+ cat_label:'ກຸ່ມ',cat_training:'ຝຶກອົບຮົມ',cat_meeting:'ປະຊຸມ',es_title:'ສະຫຼຸບຕັ້ງແຕ່ເລີ່ມວຽກ',es_attended:'ເຂົ້າຮ່ວມ / ຖືກເຊີນ',es_hours:'ຊົ່ວໂມງຝຶກ',es_done:'ຫຼັກສູດສຳເລັດ',es_cert:'ໃບຢັ້ງຢືນ',es_service:'ອາຍຸງານ',es_since:'ຕັ້ງແຕ່',yrs:'ປີ',mos:'ເດືອນ',es_print:'ພິມລາຍງານ (A4)',es_printed:'ພິມວັນທີ',es_docTitle:'ລາຍງານການຝຶກອົບຮົມ ແລະ ການປະຊຸມ ລາຍບຸກຄົນ',es_signHR:'ຜູ້ສ້າງ (HR)',es_signMgr:'ຜູ້ອະນຸມັດ',es_conf:'ເອກະສານລັບ — ຂໍ້ມູນສ່ວນບຸກຄົນ. ໃຊ້ພາຍໃນ HR ເທົ່ານັ້ນ.',nav_former:'ພະນັກງານເກົ່າ',nav_external:'ຝຶກພາຍນອກ & ໃບຢັ້ງຢືນ',sub_external:'ການຝຶກອົບຮົມພາຍນອກລາຍບຸກຄົນ ພ້ອມໃບຢັ້ງຢືນ ແລະ ວັນໝົດອາຍຸ',sub_former:'ຂໍ້ມູນພະນັກງານທີ່ອອກແລ້ວ ພ້ອມປະຫວັດການຝຶກ',fm_note:'ພະນັກງານທີ່ອອກແລ້ວ (ລາອອກ, ເລີກຈ້າງ…). ຂໍ້ມູນຖືກເກັບໄວ້ອ້າງອີງ ແລະ ບໍ່ສະແດງເວລາເພີ່ມຜູ້ເຂົ້າຮ່ວມ.',fm_yearLeft:'ປີທີ່ອອກ',
  ad_org:'ອົງກອນ & ໂລໂກ້',ad_users:'ຜູ້ໃຊ້ & ສິດ',ad_security:'ຄວາມປອດໄພ',ad_data:'ຂໍ້ມູນ & ສຳຮອງ',
  ad_logo:'ໂລໂກ້ບໍລິສັດ',ad_upload:'ອັບໂຫຼດໂລໂກ້',ad_logoRemove:'ລຶບໂລໂກ້',
  ad_logoHint:'PNG, JPG, WEBP ຫຼື SVG, ບໍ່ເກີນ 5 MB. ໂລໂກ້ຮູບສີ່ຫຼ່ຽມຈະຕຸລັດ ພື້ນໂປ່ງໃສ ຫຼື ພື້ນຂາວ ຈະງາມທີ່ສຸດ. ລະບົບຫຍໍ້ເປັນ 256 px ໃຫ້ເອງ.',
@@ -863,7 +893,7 @@ lo:{
  scopeCur:'ພະນັກງານປັດຈຸບັນ',kpiDesign:'ຮູບແບບກ່ອງຕົວເລກ (ໜ້າພາບລວມ)',kpi_k:'Glassy (ແກ້ວ)',kpi_e:'ກາງ',kpi_f:'ຫົວສີ',kpi_g:'ສີກົມທ່າເຂັ້ມ',kpi_h:'ຂອບສີ',kpi_i:'ແຖວກະທັດຮັດ',kpi_j:'ມຸມໂບ',ph_upload:'ອັບໂຫຼດຮູບ',ph_change:'ປ່ຽນຮູບ',ph_remove:'ລຶບຮູບ',ph_removeQ:'ລຶບຮູບພະນັກງານຄົນນີ້?',ph_hint:'JPG / PNG / WEBP. ຕັດເປັນຮູບສີ່ຫຼ່ຽມໃຫ້ເອງ.',ph_type:'ກະລຸນາເລືອກຮູບ JPG, PNG ຫຼື WEBP.',ph_big:'ຮູບໃຫຍ່ເກີນໄປ.',joinCol:'ຕໍ່ກັບຖັນ (ເຊັ່ນ ນາມສະກຸນ)',unmappedNote:'ຖັນທີ່ບໍ່ໄດ້ຈັບຄູ່ (ເຊັ່ນ ເງິນເດືອນ, ບັນຊີທະນາຄານ, ທີ່ຢູ່) ຈະບໍ່ຖືກນຳເຂົ້າ ແລະ ບໍ່ຖືກເກັບ.',endDateWarn:'ສະຖານະຍັງເຮັດວຽກ ແຕ່ວັນອອກຜ່ານແລ້ວ — ກວດ',scopeFormer:'ອອກແລ້ວ / ປິດ',empCur:'ປັດຈຸບັນ',empFormer:'ອອກແລ້ວ',sub_dashboard:'ພາບລວມການຝຶກອົບຮົມ ແລະ ການເຂົ້າຮ່ວມ',sub_employees:'ລາຍຊື່ ແລະ ຂໍ້ມູນພະນັກງານ',sub_activities:'ວາງແຜນ ແລະ ຈັດການ ຝຶກອົບຮົມ, ປະຊຸມ, ສຳມະນາ',sub_calendar:'ຝຶກອົບຮົມ ແລະ ປະຊຸມ ຕາມວັນທີ',sub_attendance:'ເພີ່ມຜູ້ເຂົ້າຮ່ວມ ແລະ ບັນທຶກການເຂົ້າຮ່ວມ',sub_history:'ປະຫວັດການຝຶກຂອງພະນັກງານທຸກຄົນ',sub_reports:'ລາຍງານ ສົ່ງອອກ Excel ແລະ ພິມ',sub_import:'ນຳເຂົ້າພະນັກງານ ແລະ ສົ່ງອອກຂໍ້ມູນ',sub_settings:'ຜູ້ໃຊ້, ສິດ, ລະຫັດຜ່ານ ແລະ ບັນທຶກການປ່ຽນແປງ',pickOrType:'ເລືອກ ຫຼື ພິມເອງ',badFormat:'ຮູບແບບບໍ່ຖືກຕ້ອງ',
  language:'ພາສາ',changePassword:'ປ່ຽນລະຫັດຜ່ານຂອງຂ້ອຍ',oldPassword:'ລະຫັດຜ່ານປັດຈຸບັນ',newPassword:'ລະຫັດຜ່ານໃໝ່',
  users:'ຜູ້ໃຊ້ & ສິດ',addUser:'ເພີ່ມຜູ້ໃຊ້',role:'ສິດ',resetPassword:'ຕັ້ງລະຫັດຜ່ານໃໝ່',auditLog:'ບັນທຶກການປ່ຽນແປງ',version:'ເວີຊັນ',
- r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'ເບິ່ງຢ່າງດຽວ',lastLogin:'ເຂົ້າລະບົບຫຼ້າສຸດ',dupReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
+ r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'ເບິ່ງຢ່າງດຽວ',r_dorm:'ຜູ້ຮັບຜິດຊອບຫໍພັກ',perm8:'ຈັດການຫໍພັກ (ຫ້ອງ, ຜູ້ພັກ, ກິນເຂົ້າ, ອະນຸມັດ QR). ຜູ້ຮັບຜິດຊອບຫໍພັກ ເຫັນສະເພາະໜ້າຫໍພັກ.',nav_dorm:'ຫໍພັກ',sub_dorm:'ຫ້ອງພັກ, ຜູ້ພັກ, ລາຍຊື່ກິນເຂົ້າ ແລະ ລົງທະບຽນດ້ວຍ QR',e_DQ_INVALID:'QR ນີ້ໃຊ້ບໍ່ໄດ້. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_EXPIRED:'ໜ້ານີ້ໝົດເວລາແລ້ວ. ກະລຸນາສະແກນ QR ທີ່ປະຕູຫ້ອງອີກຄັ້ງ.',e_DQ_CLOSED:'ຫ້ອງນີ້ບໍ່ເປີດລົງທະບຽນ. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_DEVICE_LIMIT:'ໂທລະສັບນີ້ມີຄຳຂໍລໍຖ້າອະນຸມັດຄົບ 3 ລາຍການແລ້ວ.',lastLogin:'ເຂົ້າລະບົບຫຼ້າສຸດ',dupReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
  pwMismatch:'ລະຫັດຜ່ານບໍ່ກົງກັນ',pwShort:'ລະຫັດຜ່ານຕ້ອງມີ {n} ຕົວຂຶ້ນໄປ',
  time:'ເວລາ',user:'ຜູ້ໃຊ້',action:'ການກະທຳ',entity:'ປະເພດ',details:'ລາຍລະອຽດ',reason:'ເຫດຜົນ',resolution:'ການຕັດສິນ',
  count:'ຈຳນວນ',hours:'ຊົ່ວໂມງ',days:'ມື້',cost:'ຄ່າໃຊ້ຈ່າຍ',budget:'ງົບປະມານ',variance:'ສ່ວນຕ່າງ',costPerHead:'ຄ່າໃຊ້ຈ່າຍ/ຄົນ',
@@ -886,7 +916,7 @@ const FL = { // field labels
   DurationHours:'ໄລຍະ (ຊົ່ວໂມງ)',Location:'ສະຖານທີ່',Department:'ພະແນກ',MaxParticipants:'ຈຳນວນສູງສຸດ',Budget:'ງົບປະມານ',Cost:'ຄ່າໃຊ້ຈ່າຍ',
   LateMin:'ຖືວ່າມາຊ້າຫຼັງ (ນາທີ)',Organizer:'ຜູ້ຈັດ',Remarks:'ໝາຍເຫດ',Status:'ສະຖານະ',Name:'ຊື່ພະນັກງານ',Duration:'ໄລຍະເວລາ'}
 };
-const VL = { lo:{ 'Planning':'ກຳລັງວາງແຜນ','Planned':'ວາງແຜນແລ້ວ','In Progress':'ກຳລັງດຳເນີນ','Completed':'ສຳເລັດ','Not Completed':'ບໍ່ສຳເລັດ',
+const VL = { lo:{ 'Certification':'ໃບຢັ້ງຢືນ / ສອບເສັງ','Licence':'ໃບອະນຸຍາດ','Study tour':'ທັດສະນະສຶກສາ','Passed':'ຜ່ານ','Failed':'ບໍ່ຜ່ານ','Attended':'ເຂົ້າຮ່ວມ','Company':'ບໍລິສັດ','Employee':'ພະນັກງານ','Sponsor':'ຜູ້ສະໜັບສະໜູນ','Training':'ຝຶກອົບຮົມ','Planning':'ກຳລັງວາງແຜນ','Planned':'ວາງແຜນແລ້ວ','In Progress':'ກຳລັງດຳເນີນ','Completed':'ສຳເລັດ','Not Completed':'ບໍ່ສຳເລັດ',
  'Cancelled':'ຍົກເລີກ','Postponed':'ເລື່ອນ','Present':'ມາ','Absent':'ຂາດ','Late':'ມາຊ້າ','Excused':'ລາ','Not Applicable':'ບໍ່ກ່ຽວຂ້ອງ','Pending':'ລໍຖ້າ','Issued':'ອອກແລ້ວ',
  'Internal Training':'ຝຶກອົບຮົມພາຍໃນ','External Training':'ຝຶກອົບຮົມພາຍນອກ','Meeting':'ປະຊຸມ','Workshop':'ກອງປະຊຸມປະຕິບັດ','Seminar':'ສຳມະນາ',
  'Orientation':'ປະຖົມນິເທດ','Safety Training':'ຝຶກຄວາມປອດໄພ','Other':'ອື່ນໆ','Internal Meeting Room':'ຫ້ອງປະຊຸມພາຍໃນ','Training Room':'ຫ້ອງຝຶກອົບຮົມ',
@@ -911,10 +941,10 @@ const SHADES=['var(--brand)','color-mix(in srgb,var(--brand) 78%,#0b1532)','colo
 const PAGE_C={};
 const AVC=SHADES;
 const avc=s=>{let x=7;for(const ch of String(s))x=(x*31+ch.charCodeAt(0))>>>0;return AVC[x%AVC.length];};
-const ROLE_C={admin:SHADES[1],staff:SHADES[0],viewer:SHADES[4]};
+const ROLE_C={admin:SHADES[1],staff:SHADES[0],viewer:SHADES[4],dorm:'#0d9488'};
 const roleTag=r=>`<span class="role" style="--c:${ROLE_C[r]||'#64748b'}">${esc(t('r_'+r))}</span>`;
-const NAV=[['dashboard','grid'],['employees','users'],['former','archive'],['activities','book'],['calendar','cal'],['attendance','check'],['history','history'],['reports','chart'],['import','swap'],['settings','gear']];
-const ICONS={qr:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3M6 6h.01M17 6h.01M6 17h.01"/>',
+const NAV=[['dashboard','grid'],['employees','users'],['former','archive'],['activities','book'],['external','award'],['dorm','bed'],['calendar','cal'],['attendance','check'],['history','history'],['reports','chart'],['import','swap'],['settings','gear']];
+const ICONS={bed:'<path d="M3 6v13M3 14h18v5M21 14v-2.5A2.5 2.5 0 0 0 18.5 9H11v5"/><circle cx="7" cy="11" r="2"/>',award:'<circle cx="12" cy="9" r="6"/><path d="M8.5 13.8 7 22l5-3 5 3-1.5-8.2"/>',plus:'<path d="M12 5v14M5 12h14"/>',qr:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3M6 6h.01M17 6h.01M6 17h.01"/>',
  archive:'<rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8M10 12h4"/>',
  camera:'<path d="M4 8a2 2 0 0 1 2-2h2l2-2h4l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/>',
  expand:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',
@@ -1164,8 +1194,8 @@ function dataTable(id,cols,rows,opt){
 const XS=(()=>{const F='Times New Roman',FL='Phetsarath OT',LAO=/[\u0E80-\u0EFF]/,bd={style:'thin',color:{rgb:'DCE3EE'}},B={top:bd,bottom:bd,left:bd,right:bd};
   const pal={good:['DCFCE7','166534'],mid:['FEF3C7','92400E'],bad:['FEE2E2','991B1B'],none:['F1F5F9','64748B'],tr:['DBEAFE','1E40AF'],mt:['F3E8FF','6B21A8']};
   const V={};const put=(arr,p)=>arr.forEach(v=>{V[String(v).toUpperCase()]=p;});
-  put(['Present','ມາ','Completed','ACTIVE','Yes','Approved'],'good');put(['Late','ມາຊ້າ','PROBATION','Planned','Scheduled','In Progress','Ongoing','Pending'],'mid');
-  put(['Absent','ຂາດ','Cancelled','RESIGNED','TERMINATED','CONTRACT END','RETIRED','No'],'bad');put(['Training','ຝຶກອົບຮົມ'],'tr');put(['Meeting','ປະຊຸມ'],'mt');
+  put(['Present','ມາ','Completed','ACTIVE','Yes','Approved','Passed','ຜ່ານ','Valid','ຍັງໃຊ້ໄດ້'],'good');put(['Late','ມາຊ້າ','PROBATION','Planned','Scheduled','In Progress','Ongoing','Pending'],'mid');
+  put(['Absent','ຂາດ','Cancelled','RESIGNED','TERMINATED','CONTRACT END','RETIRED','No','Failed','ບໍ່ຜ່ານ','Expired','ໝົດອາຍຸແລ້ວ'],'bad');put(['Training','ຝຶກອົບຮົມ'],'tr');put(['Meeting','ປະຊຸມ'],'mt');
   const rateP=v=>v==null||v===''?null:(v>=0.9?'good':v>=0.75?'mid':'bad');
   const font=o=>Object.assign({name:F,sz:10,color:{rgb:'1F2937'}},o||{});
   const len=v=>(v==null?'':String(v)).length;
@@ -1265,8 +1295,8 @@ function tableToSheet(name,cols,rows){return{name,head:cols.map(c=>c.l),rows:row
 /* ================= auth screens ================= */
 async function start(){
   document.documentElement.lang=S.lang==='lo'?'lo':'en';
-  if(S.pub===undefined){const P=await urlParams();S.pub=P.ci?P:null;}
-  if(S.pub){renderCheckinPublic(S.pub);return;}
+  if(S.pub===undefined){const P=await urlParams();S.pub=P.ci||P.dorm?P:null;}
+  if(S.pub){if(S.pub.dorm)renderDormPublic(S.pub);else renderCheckinPublic(S.pub);return;}
   if(S.token){try{await loadAll();return;}catch(e){if(e&&e.error==='MUST_CHANGE')return;S.token=null;}}
   let st;
   if(!hasGas()&&!apiUrl()){renderConnect('');return;}
@@ -1343,7 +1373,7 @@ function renderForceChange(){
 }
 async function loadAll(){
   const d=await call('bootstrap');
-  S.me=d.me;S.emps=d.employees;S.acts=d.activities;S.parts=d.participants;S.users=d.users;S.version=d.version;S.settings=d.settings||{};S.serverTime=d.serverTime;
+  S.me=d.me;S.emps=d.employees;S.acts=d.activities;S.parts=d.participants;S.ext=d.external||[];S.dorm=d.dorm||{rooms:[],stays:[],meals:[]};S.users=d.users;S.version=d.version;S.settings=d.settings||{};S.serverTime=d.serverTime;
   reindex();renderShell();
 }
 function doLogoutLocal(){S.token=null;S.me=null;S.adm=null;try{localStorage.removeItem('kgs_hr_token');}catch(e){}closeModal();start();}
@@ -1355,19 +1385,20 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-07d${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-10${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleSnd" id="sndBtn" title="${LX('ສຽງ','Sound')}">${ic(KFX.sound().on?'vol':'mute')}</button><button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
   const h=(location.hash||'').replace('#','');
   go(navItems().some(n=>n[0]===h)?h:S.page);
 }
-function navItems(){const n=NAV.slice();if(canEdit())n.splice(n.findIndex(x=>x[0]==='attendance')+1,0,['checkin','qr']);return n.concat(isAdmin()?[['admin','shield']]:[]);}
+function navItems(){if(isDormRole())return [['dorm','bed'],['settings','gear']];const n=NAV.slice();if(canEdit())n.splice(n.findIndex(x=>x[0]==='attendance')+1,0,['checkin','qr']);return n.concat(isAdmin()?[['admin','shield']]:[]);}
 function go(p){
   if(S.page==='attendance'&&p!=='attendance'&&Object.keys(S.att.dirty).length&&!window.confirmLeave){
     ask(t('unsaved')+' — '+t('confirm')+'?').then(ok=>{if(ok){S.att.dirty={};go(p);}});return;}
   if(p==='admin'&&!isAdmin())p='dashboard';
   if(p==='checkin'&&!canEdit())p='dashboard';
+  if(isDormRole()&&p!=='dorm'&&p!=='settings')p='dorm';
   if(S.stopTimers){try{S.stopTimers();}catch(e){}S.stopTimers=null;}
   S.page=p;try{history.replaceState(null,'','#'+p);}catch(e){}
   document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('on',a.id==='nav_'+p));
@@ -1408,7 +1439,8 @@ function dashBody(){
   const up=live.filter(a=>a.StartDate>=today).sort((a,b)=>a.StartDate.localeCompare(b.StartDate)).slice(0,8);
   const rc=acts.filter(a=>a.StartDate<today).sort((a,b)=>b.StartDate.localeCompare(a.StartDate)).slice(0,8);
   const mini=list=>dataTable('dash'+Math.random(),[{l:fl('StartDate'),r:a=>fmtD(a.StartDate)},{l:fl('Title'),r:a=>esc(a.Title)},{l:fl('Type'),r:a=>esc(tv(a.Type))},{l:fl('Status'),r:a=>badge(a.Status)}],list,{noPage:true,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});
-  $('#dashBody').innerHTML=`<div class="grid kpis dash">
+  const xS=extRows().filter(r=>isCurrent(empById(r.EmployeeID)||{})),xSoon=xS.filter(r=>r._st==='soon').length,xExp=xS.filter(r=>r._st==='expired').length;
+  $('#dashBody').innerHTML=(xSoon||xExp?`<div class="note warn small click" data-act="go" data-arg="external" style="margin:0 0 12px;cursor:pointer">⚠ ${LX('ໃບຢັ້ງຢືນພະນັກງານ: ໃກ້ໝົດອາຍຸ '+xSoon+' ໃບ · ໝົດອາຍຸແລ້ວ '+xExp+' ໃບ — ກົດເພື່ອເບິ່ງ','Employee certificates: '+xSoon+' expiring soon · '+xExp+' expired — click to view')}</div>`:'')+`<div class="grid kpis dash">
    ${k(t('totalEmployees'),fmtN(emps),t('activeOnly'))}${k(t('totalActivities'),fmtN(acts.length),t('cat_training')+' '+acts.filter(a=>actCat(a)==='training').length+' · '+t('cat_meeting')+' '+acts.filter(a=>actCat(a)==='meeting').length)}${k(t('planned'),cnt(['Planning','Planned']),t('kpiPlannedNote'))}
    ${k(t('inProgress'),cnt(['In Progress']))}${k(t('completed'),cnt(['Completed']))}${k(t('cancelled'),cnt(['Cancelled']))}
    ${k(t('totalParticipants'),fmtN(parts.length))}${k(t('attendanceRate'),pr+ab?Math.round(pr*100/(pr+ab))+'%':'—',t('kpiRateNote'))}
@@ -1488,12 +1520,15 @@ function empSummary(id){
   const from=e.JoiningDate||'',to=isCurrent(e)?todayStr():(e.EndDate||todayStr());
   let yrs='';if(/^\d{4}-\d{2}-\d{2}$/.test(from)){const m=(Number(to.slice(0,4))-Number(from.slice(0,4)))*12+(Number(to.slice(5,7))-Number(from.slice(5,7)));if(m>=0)yrs=Math.floor(m/12)+' '+t('yrs')+' '+(m%12)+' '+t('mos');}
   return{e,h,tr,mt,trIn:tr.filter(went).length,mtIn:mt.filter(went).length,absent:h.filter(r=>r.Attendance==='Absent').length,late:h.filter(r=>r.Attendance==='Late').length,
-    done:tr.filter(r=>r.Completion==='Completed').length,cert:h.filter(r=>r.Certificate==='Issued').length,hrs:Math.round(hrs*10)/10,yrs,from};
+    done:tr.filter(r=>r.Completion==='Completed').length,cert:h.filter(r=>r.Certificate==='Issued').length,yrs,from,
+    /* R2.3: external training counts here too (hours added to training hours; attendance rate is not affected) */
+    ...(()=>{const X=(S.ext||[]).filter(r=>r.EmployeeID===id),xh=X.reduce((a,r)=>a+num(r.Hours),0),xv=X.filter(r=>['valid','noexp','soon'].includes(extSt(r))).length;
+      return{X,ex:X.length,xh:Math.round(xh*10)/10,xValid:xv,hrsIn:Math.round(hrs*10)/10,hrs:Math.round((hrs+xh)*10)/10};})()};
 }
 function empSummaryHTML(S2){
   const box=(l,v,s,c)=>`<div class="es-b" style="--c:${c}"><span>${esc(l)}</span><b>${v}</b>${s?`<small>${esc(s)}</small>`:''}</div>`;
-  return `<div class="es-grid">${box(t('cat_training'),S2.trIn+' / '+S2.tr.length,t('es_attended'),'#0891b2')}${box(t('cat_meeting'),S2.mtIn+' / '+S2.mt.length,t('es_attended'),'#7c3aed')}
-   ${box(t('es_hours'),fmtN(S2.hrs),t('cat_training'),'#ea580c')}${box(t('es_done'),S2.done,t('es_cert')+' '+S2.cert,'#059669')}${box(t('absent'),S2.absent,t('late')+' '+S2.late,'#dc2626')}${box(t('es_service'),esc(S2.yrs||'—'),S2.from?t('es_since')+' '+fmtD(S2.from):'','#2563eb')}</div>`;
+  return `<div class="es-grid">${box(t('cat_training'),S2.trIn+' / '+S2.tr.length,t('es_attended'),'#0891b2')}${box(t('cat_meeting'),S2.mtIn+' / '+S2.mt.length,t('es_attended'),'#7c3aed')}${box(LX('ຝຶກພາຍນອກ','External training'),S2.ex,LX('ໃບຢັ້ງຢືນໃຊ້ໄດ້ ','valid certificates ')+S2.xValid,'#d97706')}
+   ${box(t('es_hours'),fmtN(S2.hrs),S2.xh?LX('ພາຍໃນ '+fmtN(S2.hrsIn)+' · ພາຍນອກ '+fmtN(S2.xh),'internal '+fmtN(S2.hrsIn)+' · external '+fmtN(S2.xh)):t('cat_training'),'#ea580c')}${box(t('es_done'),S2.done,t('es_cert')+' '+S2.cert,'#059669')}${box(t('absent'),S2.absent,t('late')+' '+S2.late,'#dc2626')}${box(t('es_service'),esc(S2.yrs||'—'),S2.from?t('es_since')+' '+fmtD(S2.from):'','#2563eb')}</div>`;
 }
 function viewEmp(id){
   const e=empById(id);if(!e)return;
@@ -1505,6 +1540,7 @@ function viewEmp(id){
     ${hidden?`<p class="small muted">${t('sensitiveHidden')}</p>`:''}
     <h3 style="font-size:14px">${t('es_title')}</h3>${empSummaryHTML(empSummary(id))}
     <h3 style="font-size:14px">${t('history')} (${hist.length})</h3>${dataTable('ehist',histCols(false),hist,{sortK:'StartDate',sortD:-1,ps:10})}
+    ${extEmpHTML(id)}
     <div id="rawBox"></div>`,
    `${canEdit()?`<button class="btn sm" data-act="showRaw" data-arg="${esc(id)}">${t('rawData')}</button>
     <button class="btn" data-act="printEmpReport" data-arg="${esc(id)}">${ic('download',15)} ${t('es_print')}</button>
@@ -1831,7 +1867,11 @@ function hvData(src){
   if(ins)insKind.push('late')&&insights.push(t('hv_i_late').replace('{n}',lateR));
   if(curN&&cov<100)insKind.push('cov')&&insights.push(t('hv_i_cov').replace('{n}',cov).replace('{m}',curN-trainedCur));
   const period=!ranged?t('hv_year')+' '+Y:f.from||f.to?(f.from?fmtD(f.from):'…')+' – '+(f.to?fmtD(f.to):'…'):(months.length?mLab[0]+' – '+mLab[mLab.length-1]:'');
-  return{f,R,W,acts,ins,ab,late,on,nm,hrs:Math.round(hrs*10)/10,tr,mt,people,trained,curN,cov,rate,lateR,A,byDiv,months,mLab,mTr,mMt,insights,insKind,period,ranged,Y,avg:trained.size?Math.round(hrs/trained.size*10)/10:0};
+  const xq=src?'':String(f.q||'').toLowerCase().trim();
+  const X=(f.cat==='meeting'||f.type)?[]:(S.ext||[]).filter(r=>{const e=empById(r.EmployeeID)||{};return (ranged?((!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to)):String(r.StartDate).slice(0,4)===String(Y))
+    &&(!f.div||nk(e.Division)===f.div)&&(!xq||[r.EmployeeID,e.NameLA,e.NameEN,r.Course].some(v=>String(v||'').toLowerCase().includes(xq)));});
+  const xHrs=Math.round(X.reduce((a,r)=>a+num(r.Hours),0)*10)/10;
+  return{X,xN:X.length,xHrs,xPeople:new Set(X.map(r=>r.EmployeeID)).size,f,R,W,acts,ins,ab,late,on,nm,hrs:Math.round(hrs*10)/10,tr,mt,people,trained,curN,cov,rate,lateR,A,byDiv,months,mLab,mTr,mMt,insights,insKind,period,ranged,Y,avg:trained.size?Math.round(hrs/trained.size*10)/10:0};
 }
 /* chart builders (Chart.js) */
 const HVC={on:'#10b981',late:'#f59e0b',ab:'#ef4444',nm:'#cbd5e1',tr:'#0891b2',mt:'#7c3aed',hrs:'#ea580c',navy:'#1e3a8a'};
@@ -1890,7 +1930,7 @@ function hvRender(D){
   return `<div class="hz hzt${th}">
    <div class="hz-hero"><div class="hz-hl">
      <div class="hz-tt"><span class="hz-pill">${ic('chart',14)} ${t('hv_exec')}</span><h2>${t('hv_title')}</h2><small>${esc(companyName())} · ${esc(D.period)}</small>${th===5?`<div class="hz-orn">${ornDivider('hzOrn')}</div>`:''}</div>
-     <div class="hz-m">${[[t('nav_activities'),fmtN(D.acts.size),t('cat_training')+' '+D.tr+' · '+t('cat_meeting')+' '+D.mt],[t('hv_attend'),fmtN(D.ins),D.people.size+' '+t('hv_people')],[t('es_hours'),fmtN(D.hrs),t('hv_avg')+' '+fmtN(D.avg)+' '+t('hours')+'/'+t('hv_person')]].map(([l,v,s])=>`<div><span>${esc(l)}</span><b>${v}</b><small>${esc(s)}</small></div>`).join('')}</div></div>
+     <div class="hz-m">${[[t('nav_activities'),fmtN(D.acts.size),t('cat_training')+' '+D.tr+' · '+t('cat_meeting')+' '+D.mt],[t('hv_attend'),fmtN(D.ins),D.people.size+' '+t('hv_people')],[t('es_hours'),fmtN(D.hrs),t('hv_avg')+' '+fmtN(D.avg)+' '+t('hours')+'/'+t('hv_person')],...(D.xN?[[LX('ຝຶກພາຍນອກ','External training'),fmtN(D.xN),D.xPeople+' '+t('hv_people')+' · '+fmtN(D.xHrs)+' '+t('hours')]]:[])].map(([l,v,s])=>`<div><span>${esc(l)}</span><b>${v}</b><small>${esc(s)}</small></div>`).join('')}</div></div>
      <div class="hz-rings">${ring('hzr1',t('hv_rate'),t('absent')+' '+D.ab)}${ring('hzr2',t('hv_cov'),D.trained.size+' / '+D.curN)}${ring('hzr3',t('ci_onTime'),t('late')+' '+D.late)}</div></div>
    <div class="hz-row hz-r1">
      <div class="hz-card"><div class="hz-ch"><h3>${t('hv_c2')}</h3>${D.ranged?'':`<div class="yrsel hz-yr"><button class="iconbtn sm" data-act="hvYear" data-arg="-1">‹</button><b>${D.Y}</b><button class="iconbtn sm" data-act="hvYear" data-arg="1">›</button></div>`}<span class="hz-lg"><i style="background:${HVP[th].c1}"></i>${t('cat_training')}<i style="background:${HVP[th].c2}"></i>${t('cat_meeting')}</span></div><div class="chart-box" style="height:280px"><canvas id="hz1"></canvas></div></div>
@@ -1936,7 +1976,7 @@ function histBody(){
   $('#hKpi').innerHTML=hvRender(D);
   if(v==='det')$('#hList').innerHTML=dataTable('hist',histCols(true),histFiltered(),{sortK:'StartDate',sortD:-1});
   else if(v==='act')$('#hList').innerHTML=dataTable('hact',histActCols(),histByAct(D.R),{sortK:'StartDate',sortD:-1,rowAttr:a=>`class="click" data-act="viewAct" data-arg="${esc(a.ActivityID)}"`});
-  else $('#hList').innerHTML=dataTable('hemp',histEmpCols(),histByEmp(D.R),{sortK:'_in',sortD:-1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});
+  else $('#hList').innerHTML=dataTable('hemp',histEmpCols(),histByEmp(D.R,D.X),{sortK:'_rk',sortD:1,rowAttr:e=>`class="click" data-act="viewEmp" data-arg="${esc(e.EmployeeID)}"`});
   hvCharts(D);
 }
 function histByAct(R){const m={};R.forEach(r=>{const a=m[r.ActivityID]||(m[r.ActivityID]={ActivityID:r.ActivityID,Title:r.Title,Cat:r.Cat,Type:r.Type,StartDate:r.StartDate,DurationHours:r.DurationHours,inv:0,inn:0,ab:0,late:0,done:0});
@@ -1947,12 +1987,16 @@ function histActCols(){const pct=a=>a.rate==null?'—':`<div class="hv-bar"><i s
   {k:'Type',l:fl('Type'),r:a=>esc(tv(a.Type)),x:a=>a.Type},{k:'inv',l:t('hv_invited'),sv:a=>a.inv,r:a=>a.inv,x:a=>a.inv},{k:'inn',l:t('hv_in'),sv:a=>a.inn,r:a=>`<b class="ok-t">${a.inn}</b>`,x:a=>a.inn},
   {k:'late',l:t('late'),sv:a=>a.late,r:a=>a.late,x:a=>a.late},{k:'ab',l:t('absent'),sv:a=>a.ab,r:a=>a.ab?`<b class="err">${a.ab}</b>`:'0',x:a=>a.ab},{k:'done',l:t('es_done'),sv:a=>a.done,r:a=>a.done,x:a=>a.done},
   {k:'rate',l:t('hv_rate'),sv:a=>a.rate??-1,r:pct,x:a=>a.rate==null?'':a.rate+'%'}];}
-function histByEmp(R){const m={};R.forEach(r=>{const e=m[r.EmployeeID]||(m[r.EmployeeID]={EmployeeID:r.EmployeeID,Name:r.Name,NameLA:r.NameLA,Division:r.Division,tr:0,mt:0,hrs:0,ab:0,last:''});
+function histByEmp(R,X){const m={};const mk=(id,r)=>m[id]||(m[id]={EmployeeID:id,Name:r.Name,NameLA:r.NameLA,Division:r.Division,tr:0,mt:0,ex:0,hrs:0,xh:0,ab:0,last:''});
+  (X||[]).forEach(x=>{const em=empById(x.EmployeeID)||{};const e=mk(x.EmployeeID,{Name:em.NameEN||'',NameLA:em.NameLA||'',Division:em.Division||''});e.ex++;e.xh+=num(x.Hours);e.hrs+=num(x.Hours);if(String(x.EndDate||x.StartDate)>e.last)e.last=x.EndDate||x.StartDate;});
+  R.forEach(r=>{const e=mk(r.EmployeeID,r);if(!e.Name&&r.Name){e.Name=r.Name;e.NameLA=r.NameLA;e.Division=r.Division;}
   const w=r.Attendance==='Present'||r.Attendance==='Late';if(w){r.Cat==='meeting'?e.mt++:e.tr++;if(r.Cat==='training')e.hrs+=num(r.DurationHours);if(String(r.StartDate)>e.last)e.last=r.StartDate;}if(r.Attendance==='Absent')e.ab++;});
-  return Object.values(m).map(e=>({...e,hrs:Math.round(e.hrs*10)/10,_in:e.tr+e.mt}));}
-function histEmpCols(){return[{k:'EmployeeID',l:fl('EmployeeID'),r:e=>`<b>${esc(e.EmployeeID)}</b>`,x:e=>e.EmployeeID},{k:'Name',l:fl('Name'),r:e=>esc(e.NameLA||e.Name)+(e.NameLA&&e.Name?`<div class="small muted">${esc(e.Name)}</div>`:''),x:e=>e.Name},
-  {k:'Division',l:fl('Division')},{k:'tr',l:t('cat_training'),sv:e=>e.tr,r:e=>`<b style="color:#0e7490">${e.tr}</b>`,x:e=>e.tr},{k:'mt',l:t('cat_meeting'),sv:e=>e.mt,r:e=>`<b style="color:#7c3aed">${e.mt}</b>`,x:e=>e.mt},
-  {k:'hrs',l:t('es_hours'),sv:e=>e.hrs,r:e=>fmtN(e.hrs),x:e=>e.hrs},{k:'ab',l:t('absent'),sv:e=>e.ab,r:e=>e.ab?`<b class="err">${e.ab}</b>`:'0',x:e=>e.ab},{k:'last',l:t('hv_last'),r:e=>fmtD(e.last),x:e=>e.last}];}
+  /* rank: most attended first (ties share a rank), then more training hours */
+  const L=Object.values(m).map(e=>({...e,hrs:Math.round(e.hrs*10)/10,xh:Math.round(e.xh*10)/10,_in:e.tr+e.mt+e.ex})).sort((a,b)=>b._in-a._in||b.hrs-a.hrs);
+  L.forEach((e,i)=>{const p=L[i-1];e._rk=p&&p._in===e._in&&p.hrs===e.hrs?p._rk:i+1;});return L;}
+function histEmpCols(){return[{k:'_rk',l:LX('ອັນດັບ','Rank'),sv:e=>e._rk,r:e=>e._in&&e._rk<=3?`<span style="font-size:20px" title="${e._rk}">${['🥇','🥈','🥉'][e._rk-1]}</span>`:`<b class="muted">${e._rk}</b>`,x:e=>e._rk},{k:'EmployeeID',l:fl('EmployeeID'),r:e=>`<b>${esc(e.EmployeeID)}</b>`,x:e=>e.EmployeeID},{k:'Name',l:fl('Name'),r:e=>esc(e.NameLA||e.Name)+(e.NameLA&&e.Name?`<div class="small muted">${esc(e.Name)}</div>`:''),x:e=>e.Name},
+  {k:'Division',l:fl('Division')},{k:'_in',l:LX('ເຂົ້າຮ່ວມທັງໝົດ','Total attended'),sv:e=>e._in,r:e=>`<b style="font-size:15px">${e._in}</b>`,x:e=>e._in},{k:'tr',l:t('cat_training'),sv:e=>e.tr,r:e=>`<b style="color:#0e7490">${e.tr}</b>`,x:e=>e.tr},{k:'mt',l:t('cat_meeting'),sv:e=>e.mt,r:e=>`<b style="color:#7c3aed">${e.mt}</b>`,x:e=>e.mt},{k:'ex',l:LX('ຝຶກພາຍນອກ','External'),sv:e=>e.ex||0,r:e=>`<b style="color:#ea580c">${e.ex||0}</b>`,x:e=>e.ex||0},
+  {k:'hrs',l:LX('ຊົ່ວໂມງຝຶກ (ລວມພາຍນອກ)','Training hours (incl. external)'),sv:e=>e.hrs,r:e=>fmtN(e.hrs),x:e=>e.hrs},{k:'ab',l:t('absent'),sv:e=>e.ab,r:e=>e.ab?`<b class="err">${e.ab}</b>`:'0',x:e=>e.ab},{k:'last',l:t('hv_last'),r:e=>fmtD(e.last),x:e=>e.last}];}
 function histFiltered(noAtt){const f=S.f.hist,q=(f.q||'').toLowerCase();
   return historyRows().filter(r=>(!q||[r.EmployeeID,r.Name,r.NameLA,r.Title,r.Topic].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.type||r.Type===f.type)&&(!f.cat||r.Cat===f.cat)&&(noAtt||!f.att||r.Attendance===f.att)&&(noAtt||!f.comp||r.Completion===f.comp)&&(!f.div||nk(r.Division)===f.div)&&(!f.from||(r.EndDate||r.StartDate)>=f.from)&&(!f.to||r.StartDate<=f.to));}
 
@@ -1994,18 +2038,18 @@ function xlSummaries(D){
   const gd=by(r=>r.Division);const dRows=Object.keys(gd).sort().map(d=>({_k:d,...agg(gd[d])}));
   const gt=by(r=>r.Type);const tRows=Object.keys(gt).sort().map(k=>({_k:tv(k)+' ('+t('cat_'+(k==='Meeting'?'meeting':'training'))+')',...agg(gt[k])}));
   const A=histByAct(D.R).sort((a,b)=>String(a.StartDate).localeCompare(String(b.StartDate))).map(a=>{const rr=D.R.filter(r=>r.ActivityID===a.ActivityID);return{_k:a.Title,_d:fmtD(a.StartDate),_c:t('cat_'+a.Cat),...agg(rr)};});
-  const E=histByEmp(D.R).sort((a,b)=>String(a.EmployeeID).localeCompare(String(b.EmployeeID))).map(e=>{const rr=D.R.filter(r=>r.EmployeeID===e.EmployeeID);return{_k:e.EmployeeID,_n:e.NameLA||e.Name,_dv:e.Division,...agg(rr),last:fmtD(e.last)};});
+  const E=histByEmp(D.R,D.X).sort((a,b)=>String(a.EmployeeID).localeCompare(String(b.EmployeeID))).map(e=>{const rr=D.R.filter(r=>r.EmployeeID===e.EmployeeID);return{_k:e.EmployeeID,_n:e.NameLA||e.Name,_dv:e.Division,...agg(rr),ex:e.ex||0,xh:e.xh||0,last:fmtD(e.last)};});
   const tot=agg(D.R);
   return [
    {key:'m',title:t('xl_month'),cols:[C('_k',t('xl_monthCol'),'s'),...base],rows:mRows,total:mTot},
    {key:'d',title:t('xl_dept'),cols:[C('_k',fl('Division'),'s'),C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),...base.slice(2)],rows:dRows,total:tot},
    {key:'t',title:t('xl_type'),cols:[C('_k',fl('Type'),'s'),...base],rows:tRows,total:tot},
    {key:'a',title:t('hv_byAct'),cols:[C('_d',fl('StartDate'),'s'),C('_k',fl('Title'),'s'),C('_c',t('cat_label'),'s'),...base.slice(2)],rows:A,total:tot},
-   {key:'e',title:t('hv_byEmp'),cols:[C('_k',fl('EmployeeID'),'s'),C('_n',fl('Name'),'s'),C('_dv',fl('Division'),'s'),C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),C('inv',t('hv_invited'),'n'),C('on',t('ci_onTime'),'n'),C('late',t('late'),'n'),C('ab',t('absent'),'n'),C('rate',t('hv_rate'),'p'),C('hrs',t('es_hours'),'n'),C('last',t('hv_last'),'s')],rows:E,total:tot}];
+   {key:'e',title:t('hv_byEmp'),cols:[C('_k',fl('EmployeeID'),'s'),C('_n',fl('Name'),'s'),C('_dv',fl('Division'),'s'),C('tr',t('cat_training'),'n'),C('mt',t('cat_meeting'),'n'),C('ex',LX('ຝຶກພາຍນອກ','External'),'n'),C('inv',t('hv_invited'),'n'),C('on',t('ci_onTime'),'n'),C('late',t('late'),'n'),C('ab',t('absent'),'n'),C('rate',t('hv_rate'),'p'),C('hrs',t('es_hours'),'n'),C('xh',LX('ຊົ່ວໂມງຝຶກພາຍນອກ','External hours'),'n'),C('last',t('hv_last'),'s')],rows:E,total:{...tot,ex:D.xN||0,xh:D.xHrs||0}}];
 }
 function xlYear(){const f=S.f.rep||{};if(f.xy)return Number(f.xy);return new Date().getFullYear();}
 function xlYears(){const ys=new Set([new Date().getFullYear()]);S.acts.forEach(a=>{const y=Number(String(a.StartDate).slice(0,4));if(y)ys.add(y);});return [...ys].sort();}
-function xlCell(c,r,isTot){const v=r[c.k];if(c.ty==='p')return v==null?'—':`<span style="color:${semRate(v)};font-weight:700">${fmtN(v,1)}%</span>`;if(c.ty==='n')return v==null||v===''?'':(v===0?'<span class="z">0</span>':fmtN(v,c.k==='hrs'?1:0));return esc(v==null?'':v);}
+function xlCell(c,r,isTot){const v=r[c.k];if(c.ty==='p')return v==null?'—':`<span style="color:${semRate(v)};font-weight:700">${fmtN(v,1)}%</span>`;if(c.ty==='n')return v==null||v===''?'':(v===0?'<span class="z">0</span>':fmtN(v,(c.k==='hrs'||c.k==='xh')?1:0));return esc(v==null?'':v);}
 function xlHTML(D){
   const X=xlSummaries(D),f=S.f.rep;const cur=X.find(x=>x.key===(f.xt||'m'))||X[0];
   const totRow=cur.cols.map((c,i)=>i===0?`<td><b>${t('xl_total')}</b></td>`:(c.ty==='s'?'<td></td>':`<td class="n"><b>${xlCell(c,cur.total,true)}</b></td>`)).join('');
@@ -2020,7 +2064,7 @@ function xlRedraw(){const D=repAnalysisData();const el=document.querySelector('.
 function xlAppendSummaries(wb,D){const X=xlSummaries(D);
   const val=(c,r)=>{const v=r[c.k];return c.ty==='p'?(v==null?'':v/100):(c.ty==='n'?(v===''||v==null?'':Number(v)):(v==null?'':String(v)));};
   const sum=[[t('hv_title')],[companyName()],[t('xl_period'),D.period],[t('xl_made'),fmtD(todayStr())+' · '+(S.me?S.me.FullName||S.me.Username:'')],[],
-    [t('nav_activities'),D.acts.size],[t('cat_training'),D.tr],[t('cat_meeting'),D.mt],[t('hv_attend'),D.ins],[t('hv_people'),D.people.size],[t('es_hours'),D.hrs],[t('hv_rate')+' %',D.rate],[t('hv_cov')+' %',D.cov],[t('hv_lateRate')+' %',D.lateR],[t('absent'),D.ab],[t('late'),D.late]];
+    [t('nav_activities'),D.acts.size],[t('cat_training'),D.tr],[t('cat_meeting'),D.mt],[t('hv_attend'),D.ins],[t('hv_people'),D.people.size],[t('es_hours'),D.hrs],[t('hv_rate')+' %',D.rate],[t('hv_cov')+' %',D.cov],[t('hv_lateRate')+' %',D.lateR],[t('absent'),D.ab],[t('late'),D.late],[LX('ຝຶກພາຍນອກ','External training'),D.xN||0],[LX('ຊົ່ວໂມງຝຶກພາຍນອກ','External training hours'),D.xHrs||0]];
   const ws0=XLSX.utils.aoa_to_sheet(sum);ws0['!cols']=[{wch:34},{wch:28}];XS.kv(ws0,[11]);XLSX.utils.book_append_sheet(wb,ws0,t('xl_sum').slice(0,31));
   const out=[[t('xl_sum'),sum.length]];
   X.forEach(x=>{const head=x.cols.map(c=>c.l),rows=x.rows.map(r=>x.cols.map(c=>val(c,r)));const tot=x.cols.map((c,i)=>i===0?t('xl_total'):(c.ty==='s'?'':val(c,x.total)));
@@ -2157,13 +2201,14 @@ async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
       const lead=['EmployeeID','NameEN','NameLA','Division','ActivityID','Title','Type',t('xa_cat'),'StartDate','EndDate','DurationHours'];
       add(t('participants'),[...lead,...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID')],(T.Participants||[]).map(p=>{const e=E[p.EmployeeID]||{},a=A[p.ActivityID]||{};
         return[p.EmployeeID,e.NameEN||'',e.NameLA||'',e.Division||'',p.ActivityID,a.Title||'',a.Type||'',a.ActivityID?(actCat(a)==='meeting'?t('cat_meeting'):t('cat_training')):'',a.StartDate||'',a.EndDate||'',a.DurationHours||'',...ph.filter(c=>c!=='EmployeeID'&&c!=='ActivityID').map(c=>cut(p[c]))];}));}
+    {const E={};emps.forEach(e=>E[e.EmployeeID]=e);const xh=H.ExtTraining||[];if(xh.length)add(LX('ຝຶກພາຍນອກ & ໃບຢັ້ງຢືນ','External training'),['EmployeeID','NameLA','NameEN','Division',...xh.filter(c=>c!=='EmployeeID')],(T.ExtTraining||[]).map(r=>{const e=E[r.EmployeeID]||{};return[r.EmployeeID,e.NameLA||'',e.NameEN||'',e.Division||'',...xh.filter(c=>c!=='EmployeeID').map(c=>cut(r[c]))];}));}
     const f=S.f.rep||{};const D=hvData({f:{from:'',to:'',div:'',xy:f.xy},rows:historyRows()});
     xlAppendSummaries(wb,D).forEach(x=>toc.push(x));const dash=xlDash(wb,D,xlSummaries(D));toc.push([dash.sheet,4+' '+LX('ກາບ','charts')]);step(2);
     {const r=raw('Users');add(t('users'),r.h,r.rows);}
     {const r=raw('Settings');add(t('nav_settings'),r.h,r.rows);}
     {const r=raw('AuditLog');add(t('auditLog'),r.h,r.rows);}
     {const r=raw('DuplicateReview',['RawData']);add(t('xa_dup'),r.h,r.rows);}
-    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-07d'],[],
+    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-10'],[],
       [t('xa_sheet'),t('xa_rows')],...toc,[],[t('xa_note1')],[t('xa_note2')],[t('xa_note3')]];
     const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XS.kv(ws);XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
     wb.SheetNames.unshift(wb.SheetNames.pop());
@@ -2445,19 +2490,19 @@ function admUsers(){
   const n=fn=>S.users.filter(fn).length;
   const stBadge=u=>{const s=uState(u);return `<span class="badge ${s==='active'?'b-Yes':s==='locked'?'b-Late':'b-No'}">${t(s==='active'?'ad_stActive':s==='locked'?'ad_stLocked':'ad_stDisabled')}</span>${u.MustChange==='Yes'&&u.Active==='Yes'?` <span class="badge b-Planned">${t('ad_mustCh')}</span>`:''}`;};
   const Y='<span class="y">✓</span>',N='<span class="n">—</span>';
-  const perms=[['perm1',1,1,1],['perm2',1,1,0],['perm3',1,1,0],['perm4',1,1,0],['perm5',1,1,1],['perm6',1,0,0],['perm7',1,0,0]];
+  const perms=[['perm1',1,1,1,0],['perm2',1,1,0,0],['perm3',1,1,0,0],['perm4',1,1,0,0],['perm5',1,1,1,0],['perm6',1,0,0,0],['perm7',1,0,0,0],['perm8',1,1,0,1]];
   $('#admBody').innerHTML=`<div class="minikpi">
     <div><span>${t('ad_totalUsers')}</span><b>${S.users.length}</b></div>
     <div><span>${t('ad_admins')}</span><b>${n(u=>u.Role==='admin'&&u.Active==='Yes')}</b></div>
     <div><span>${t('ad_locked')}</span><b>${n(u=>u.Locked==='Yes')}</b></div>
     <div><span>${t('ad_mustCh')}</span><b>${n(u=>u.MustChange==='Yes'&&u.Active==='Yes')}</b></div></div>
    <div class="bar"><input class="in search" id="auQ" placeholder="${t('search')}: ${t('username')} / ${t('fullName')} / ${t('email')}" value="${esc(f.q)}">
-    <select class="in" id="auRole">${opts(['admin','staff','viewer'].map(r=>[r,t('r_'+r)]),f.role,t('role')+': '+t('all'))}</select>
+    <select class="in" id="auRole">${opts(['admin','staff','viewer','dorm'].map(r=>[r,t('r_'+r)]),f.role,t('role')+': '+t('all'))}</select>
     <select class="in" id="auSt">${opts([['active',t('ad_stActive')],['locked',t('ad_stLocked')],['disabled',t('ad_stDisabled')]],f.st,fl('Status')+': '+t('all'))}</select>
     <span class="grow"></span><button class="btn" data-act="exportUsers">${ic('download',16)} ${t('export')}</button><button class="btn pri" data-act="userForm">+ ${t('addUser')}</button></div>
    <div id="auList"></div>
-   <div class="card" style="margin-top:16px"><h3>${t('ad_matrix')}</h3><div class="tbl-wrap"><table class="tbl mx"><thead><tr><th></th><th>${t('r_admin')}</th><th>${t('r_staff')}</th><th>${t('r_viewer')}</th></tr></thead>
-    <tbody>${perms.map(([k,a,s,v])=>`<tr><td>${t(k)}</td><td>${a?Y:N}</td><td>${s?Y:N}</td><td>${v?Y:N}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:10px 0 0">${t('ad_permNote')}</p></div>`;
+   <div class="card" style="margin-top:16px"><h3>${t('ad_matrix')}</h3><div class="tbl-wrap"><table class="tbl mx"><thead><tr><th></th><th>${t('r_admin')}</th><th>${t('r_staff')}</th><th>${t('r_viewer')}</th><th>${t('r_dorm')}</th></tr></thead>
+    <tbody>${perms.map(([k,a,s,v,d])=>`<tr><td>${t(k)}</td><td>${a?Y:N}</td><td>${s?Y:N}</td><td>${v?Y:N}</td><td>${d?Y:N}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:10px 0 0">${t('ad_permNote')}</p></div>`;
   const list=()=>{const q2=f.q.toLowerCase().trim();const r2=S.users.filter(u=>(!q2||[u.Username,u.FullName,u.Email].some(v=>String(v||'').toLowerCase().includes(q2)))&&(!f.role||u.Role===f.role)&&(!f.st||uState(u)===f.st));
     $('#auList').innerHTML=dataTable('users',[
      {k:'Username',l:t('username'),r:u=>`<div class="idcell"><span class="av" style="--c:${ROLE_C[u.Role]||avc(u.Username)}">${esc((u.FullName||u.Username||'?').trim().charAt(0).toUpperCase())}</span><div><b>${esc(u.Username)}</b>${u.UserID===S.me.UserID?` <span class="small muted">(${t('ad_you')})</span>`:''}${u.Email?`<div class="small muted">${esc(u.Email)}</div>`:''}</div></div>`},
@@ -2479,7 +2524,7 @@ function userForm(id){
    <div class="fld"><label class="req">${t('username')}</label><input class="in" id="uf_u" value="${esc(u.Username||'')}" ${id?'readonly':''} autocomplete="off" placeholder="name.surname"></div>
    <div class="fld"><label>${t('fullName')}</label><input class="in" id="uf_n" maxlength="80" value="${esc(u.FullName||'')}"></div>
    <div class="fld"><label>${t('email')}</label><input class="in" id="uf_e" type="email" value="${esc(u.Email||'')}" placeholder="name@kgs-lao.com"></div>
-   <div class="fld"><label>${t('role')}</label><select class="in" id="uf_r" ${self?'disabled':''}>${opts(['admin','staff','viewer'].map(r=>[r,t('r_'+r)]),u.Role)}</select></div>
+   <div class="fld"><label>${t('role')}</label><select class="in" id="uf_r" ${self?'disabled':''}>${opts(['admin','staff','viewer','dorm'].map(r=>[r,t('r_'+r)]),u.Role)}</select></div>
    ${id?`<div class="fld"><label>${fl('Status')}</label><select class="in" id="uf_a" ${self?'disabled':''}>${opts([['Yes',t('ad_stActive')],['No',t('ad_stDisabled')]],u.Active)}</select></div>`:''}
    ${id?'':`<div class="fld wide"><label class="req">${t('ad_tempPw')}</label><div style="display:flex;gap:6px"><input class="in" id="uf_p" style="flex:1" autocomplete="off" spellcheck="false"><button type="button" class="btn sm" id="uf_gen">${ic('key',14)} ${t('ad_gen')}</button></div><div class="small muted" style="margin-top:4px">${esc(pwHint())}</div></div>
    <div class="fld wide"><label class="chk"><input type="checkbox" id="uf_mc" checked> ${t('ad_mustChange')}</label></div>`}
@@ -2932,14 +2977,696 @@ function printEmpReport(id){
   pa.innerHTML=`<div class="pr-page"><div class="pr-head">${logo}<div><b>${esc(companyName())}</b><span>${esc(cfg('sysName'))}</span></div><div class="pr-date">${t('es_printed')}: ${fmtD(todayStr())}<br>${esc(S.me?S.me.FullName||S.me.Username:'')}</div></div>
    <h1>${t('es_docTitle')}</h1>
    <div class="pr-top">${S.photos&&S.photos[id]?`<img class="pr-ph" src="${esc(S.photos[id])}" alt="">`:''}<table class="pr-info">${row(fl('EmployeeID'),'<b>'+esc(e.EmployeeID)+'</b>')}${row(fl('NameLA'),esc(e.NameLA))}${row(fl('NameEN'),esc(e.NameEN))}${row(fl('Position'),esc(e.Position))}${row(fl('Division'),esc(e.Division))}${row(fl('JobSite'),esc(e.JobSite))}${row(fl('JoiningDate'),fmtD(e.JoiningDate))}${!isCurrent(e)?row(fl('EndDate'),fmtD(e.EndDate)):''}${row(fl('EmploymentStatus'),esc(e.EmploymentStatus))}${row(t('es_service'),esc(X.yrs))}</table></div>
-   <h2>${t('es_title')}</h2><table class="pr-sum"><tr><th>${t('cat_training')} (${t('es_attended')})</th><th>${t('cat_meeting')} (${t('es_attended')})</th><th>${t('es_hours')}</th><th>${t('es_done')}</th><th>${t('es_cert')}</th><th>${t('absent')}</th><th>${t('late')}</th></tr>
-    <tr><td>${X.trIn} / ${X.tr.length}</td><td>${X.mtIn} / ${X.mt.length}</td><td>${fmtN(X.hrs)}</td><td>${X.done}</td><td>${X.cert}</td><td>${X.absent}</td><td>${X.late}</td></tr></table>
+   <h2>${t('es_title')}</h2><table class="pr-sum"><tr><th>${t('cat_training')} (${t('es_attended')})</th><th>${t('cat_meeting')} (${t('es_attended')})</th><th>${LX('ຝຶກພາຍນອກ','External')}</th><th>${t('es_hours')}</th><th>${t('es_done')}</th><th>${t('es_cert')}</th><th>${t('absent')}</th><th>${t('late')}</th></tr>
+    <tr><td>${X.trIn} / ${X.tr.length}</td><td>${X.mtIn} / ${X.mt.length}</td><td>${X.ex}</td><td>${fmtN(X.hrs)}${X.xh?`<br><small>${LX('ພາຍນອກ ','ext. ')}${fmtN(X.xh)}</small>`:''}</td><td>${X.done}</td><td>${X.cert}</td><td>${X.absent}</td><td>${X.late}</td></tr></table>
    <h2>1. ${t('cat_training')} (${X.tr.length})</h2>${list(X.tr)}
    <h2>2. ${t('cat_meeting')} (${X.mt.length})</h2>${list(X.mt)}
+   ${(()=>{const XR=extRows().filter(r=>r.EmployeeID===id).sort((a,b)=>String(a.StartDate).localeCompare(String(b.StartDate)));return `<h2>3. ${LX('ຝຶກອົບຮົມພາຍນອກ & ໃບຢັ້ງຢືນ','External training & certificates')} (${XR.length})</h2>`+(XR.length?`<table class="pr-t"><thead><tr><th>#</th><th>${LX('ວັນທີ','Date')}</th><th>${LX('ຫຼັກສູດ','Course')}</th><th>${LX('ສະຖາບັນ','Provider')}</th><th>${LX('ຊົ່ວໂມງ','Hours')}</th><th>${LX('ຜົນ','Result')}</th><th>${LX('ເລກທີໃບຢັ້ງຢືນ','Cert. no.')}</th><th>${LX('ໝົດອາຍຸ','Expiry')}</th></tr></thead><tbody>${XR.map((r,i)=>`<tr><td>${i+1}</td><td>${fmtD(r.StartDate)}</td><td>${esc(r.Course)}</td><td>${esc(r.Provider||'')}</td><td>${r.Hours?fmtN(r.Hours,1):'—'}</td><td>${esc(tv(r.Result))}</td><td>${esc(r.CertNo||'—')}</td><td>${r.CertExpiry?fmtD(r.CertExpiry)+' · '+esc(EXT_ST[r._st][1](r)):esc(EXT_ST[r._st][1](r))}</td></tr>`).join('')}</tbody></table>`:`<p class="pr-none">—</p>`);})()}
    <div class="pr-sign"><div>${t('es_signHR')}<br><br><br>.............................................</div><div>${t('es_signMgr')}<br><br><br>.............................................</div></div>
    <p class="pr-foot">${t('es_conf')}</p></div>`;
   document.body.classList.add('printing-badges');const done=()=>{document.body.classList.remove('printing-badges');window.removeEventListener('afterprint',done);};window.addEventListener('afterprint',done);window.print();setTimeout(done,60000);
 }
+
+/* ================= R2.3 EXTERNAL TRAINING & CERTIFICATES (one employee per record; the certificate file stays in Google Drive) ================= */
+const EXT_KIND=['Training','Certification','Licence','Seminar','Study tour'],EXT_RESULT=['Pending','Passed','Failed','Attended'],EXT_PAID=['Company','Employee','Sponsor'];
+const extDays=r=>r.CertExpiry?Math.round((new Date(r.CertExpiry+'T00:00:00')-new Date(todayStr()+'T00:00:00'))/864e5):null;
+function extSt(r){if(!r.CertNo&&!r.CertLink&&!r.CertExpiry)return 'nocert';if(!r.CertExpiry)return 'noexp';const d=extDays(r);return d<0?'expired':d<=60?'soon':'valid';}
+const EXT_ST={nocert:['b-same',()=>LX('ບໍ່ມີໃບຢັ້ງຢືນ','No certificate')],noexp:['b-Excused',()=>LX('ບໍ່ມີວັນໝົດອາຍຸ','No expiry')],valid:['b-Completed',()=>LX('ຍັງໃຊ້ໄດ້','Valid')],
+  soon:['b-Late',r=>LX('ໃກ້ໝົດ · ອີກ '+extDays(r)+' ມື້','Expires in '+extDays(r)+' days')],expired:['b-Absent',()=>LX('ໝົດອາຍຸແລ້ວ','Expired')]};
+const extBadge=r=>{const s=extSt(r),[c,l]=EXT_ST[s];return `<span class="badge ${c}">${esc(l(r))}</span>`;};
+const EXT_RB={Pending:'b-Planned',Passed:'b-Completed',Failed:'b-Absent',Attended:'b-Excused'};
+function extRows(){return (S.ext||[]).map(r=>{const e=empById(r.EmployeeID)||{};return{...r,_n:e.NameLA||e.NameEN||'',_ne:e.NameEN||'',_d:e.Division||'',_st:extSt(r)};});}
+function extFiltered(){const f=S.f.ext,q=(f.q||'').toLowerCase().trim();
+  return extRows().filter(r=>(!q||[r.EmployeeID,r._n,r._ne,r.Course,r.Provider,r.CertNo].some(v=>String(v||'').toLowerCase().includes(q)))&&(!f.year||String(r.StartDate||'').slice(0,4)===f.year)
+    &&(!f.div||nk(r._d)===f.div)&&(!f.kind||r.Kind===f.kind)&&(!f.st||r._st===f.st));}
+function extCols(){return[
+  {k:'EmployeeID',l:fl('EmployeeID'),r:r=>`<b>${esc(r.EmployeeID)}</b>`,x:r=>r.EmployeeID},
+  {k:'_n',l:LX('ຊື່ພະນັກງານ','Employee'),x:r=>r._n},{k:'_d',l:fl('Division'),x:r=>r._d},
+  {k:'Course',l:LX('ຫຼັກສູດ','Course'),r:r=>`<b>${esc(r.Course)}</b>${r.Provider?`<div class="small muted">${esc(r.Provider)}${r.Location?' · '+esc(r.Location):''}</div>`:''}`,x:r=>r.Course},
+  {k:'Provider',l:LX('ສະຖາບັນ / ຜູ້ຈັດ','Provider'),hide:true,x:r=>r.Provider},{k:'Location',l:LX('ສະຖານທີ່','Location'),hide:true,x:r=>r.Location},
+  {k:'Kind',l:LX('ປະເພດ','Kind'),r:r=>esc(tv(r.Kind)),x:r=>tv(r.Kind)},
+  {k:'StartDate',l:LX('ວັນທີ','Dates'),r:r=>fmtD(r.StartDate)+(r.EndDate&&r.EndDate!==r.StartDate?' – '+fmtD(r.EndDate):''),x:r=>r.StartDate},
+  {k:'EndDate',l:fl('EndDate'),hide:true,x:r=>r.EndDate},
+  {k:'Hours',l:LX('ຊົ່ວໂມງ','Hours'),sv:r=>Number(r.Hours||0),r:r=>r.Hours?fmtN(r.Hours,1):'—',x:r=>r.Hours===''?'':Number(r.Hours)},
+  {k:'Cost',l:LX('ຄ່າໃຊ້ຈ່າຍ (ກີບ)','Cost (LAK)'),sv:r=>Number(r.Cost||0),r:r=>r.Cost?fmtN(r.Cost):'—',x:r=>r.Cost===''?'':Number(r.Cost)},
+  {k:'PaidBy',l:LX('ຜູ້ຈ່າຍ','Paid by'),hide:true,x:r=>tv(r.PaidBy)},
+  {k:'Result',l:LX('ຜົນ','Result'),r:r=>`<span class="badge ${EXT_RB[r.Result]||'b-same'}">${esc(tv(r.Result))}</span>`,x:r=>tv(r.Result)},
+  {k:'CertNo',l:LX('ເລກທີໃບຢັ້ງຢືນ','Certificate no.'),x:r=>r.CertNo},
+  {k:'CertIssue',l:LX('ວັນອອກ','Issued'),hide:true,x:r=>r.CertIssue},
+  {k:'CertExpiry',l:LX('ວັນໝົດອາຍຸ','Expiry'),r:r=>(r.CertExpiry?fmtD(r.CertExpiry)+'<br>':'')+extBadge(r),x:r=>r.CertExpiry},
+  {k:'_st',l:LX('ສະຖານະໃບຢັ້ງຢືນ','Certificate status'),hide:true,x:r=>EXT_ST[r._st][1](r)},
+  {k:'CertLink',l:LX('ໄຟລ໌','File'),sv:r=>r.CertLink?1:0,r:r=>r.CertLink?`<a class="btn sm" href="${esc(r.CertLink)}" target="_blank" rel="noopener noreferrer" data-stop="1">${ic('link',14)} ${LX('ເປີດ','Open')}</a>`:'<span class="muted">—</span>',x:r=>r.CertLink},
+  {k:'Bond',l:LX('ສັນຍາຜູກມັດ','Service bond'),hide:true,x:r=>r.Bond},{k:'Remarks',l:LX('ໝາຍເຫດ','Remarks'),hide:true,x:r=>r.Remarks}];}
+function pageExternal(){
+  const f=S.f.ext||(S.f.ext={q:'',year:'',div:'',kind:'',st:''});
+  const all=extRows(),years=uniq(all.map(r=>String(r.StartDate||'').slice(0,4)).filter(y=>/^\d{4}$/.test(y))).sort().reverse();
+  const stOpts=['valid','soon','expired','noexp','nocert'].map(k=>[k,EXT_ST[k][1]({CertExpiry:todayStr()}).replace(/ · .*/,'')]);
+  $('#page').innerHTML=`<div class="bar no-print">
+   <input class="in search" id="xQ" placeholder="${t('search')}: ${fl('EmployeeID')} / ${LX('ຊື່','name')} / ${LX('ຫຼັກສູດ','course')}" value="${esc(f.q)}">
+   <select class="in" id="xYr">${opts(years,f.year,LX('ປີ','Year')+': '+t('all'))}</select>
+   <select class="in" id="xDiv">${opts(facet(all.map(r=>r._d)),f.div,fl('Division')+': '+t('all'))}</select>
+   <select class="in" id="xKind">${opts(EXT_KIND,f.kind,LX('ປະເພດ','Kind')+': '+t('all'))}</select>
+   <select class="in" id="xSt">${opts(stOpts,f.st,LX('ໃບຢັ້ງຢືນ','Certificate')+': '+t('all'))}</select>
+   <span class="grow"></span><button class="btn" data-act="extExport">${t('export')}</button>${canEdit()?`<button class="btn pri" data-act="extForm">${ic('plus',15)} ${LX('ເພີ່ມການຝຶກພາຍນອກ','Add external training')}</button>`:''}</div>
+   <div id="xKpi"></div><div id="xList"></div>`;
+  const upd=()=>{f.q=$('#xQ').value;f.year=$('#xYr').value;f.div=$('#xDiv').value;f.kind=$('#xKind').value;f.st=$('#xSt').value;S.tbl.ext&&(S.tbl.ext.p=1);S.refresh();};
+  $('#xQ').oninput=upd;['xYr','xDiv','xKind','xSt'].forEach(i=>$('#'+i).onchange=upd);
+  S.refresh=()=>{const R=extFiltered(),KI=[['book','#2563eb'],['users','#7c3aed'],['history','#ea580c'],['chart','#0891b2'],['check','#16a34a'],['cal','#d97706'],['shield','#dc2626']];let ki=0;
+    const k=(l,v,s)=>{const[i,c]=KI[ki++%KI.length];return `<div class="kpi" style="--c:${c}"><span class="kbg">${ic(i)}</span><div class="kh"><span class="kic" style="--c:${c}">${ic(i)}</span><span class="l">${esc(l)}</span></div><div class="v">${v}</div>${s?`<div class="s">${esc(s)}</div>`:''}</div>`;};
+    const cnt=s=>R.filter(r=>r._st===s).length,soon=cnt('soon'),exp=cnt('expired');
+    $('#xKpi').innerHTML=(soon||exp?`<div class="note warn small" style="margin:0 0 12px">⚠ ${LX('ໃບຢັ້ງຢືນໃກ້ໝົດອາຍຸ (60 ມື້) '+soon+' ໃບ · ໝົດອາຍຸແລ້ວ '+exp+' ໃບ — ກະລຸນາວາງແຜນຕໍ່ອາຍຸ','Certificates expiring within 60 days: '+soon+' · expired: '+exp+' — plan renewals')}</div>`:'')+
+     `<div class="grid kpis" style="margin-bottom:14px">${k(LX('ການຝຶກພາຍນອກ','External trainings'),R.length,LX('ລາຍການ','records'))}${k(LX('ພະນັກງານ','Employees'),uniq(R.map(r=>r.EmployeeID)).length,LX('ຄົນ','people'))}
+      ${k(LX('ຊົ່ວໂມງຝຶກ','Training hours'),fmtN(R.reduce((a,r)=>a+Number(r.Hours||0),0),1))}${k(LX('ຄ່າໃຊ້ຈ່າຍ','Cost'),fmtN(R.reduce((a,r)=>a+Number(r.Cost||0),0)),LX('ກີບ','LAK'))}
+      ${k(LX('ໃບຢັ້ງຢືນໃຊ້ໄດ້','Valid certificates'),cnt('valid')+cnt('noexp'))}${k(LX('ໃກ້ໝົດອາຍຸ','Expiring ≤60 days'),soon)}${k(LX('ໝົດອາຍຸແລ້ວ','Expired'),exp)}</div>`;
+    $('#xList').innerHTML=dataTable('ext',extCols().filter(c=>!c.hide),R,{sortK:'StartDate',sortD:-1,rowAttr:r=>canEdit()?`class="click" data-act="extForm" data-arg="${esc(r.RecordID)}"`:''});};
+  S.refresh();
+}
+function extForm(id,empId){
+  if(!canEdit())return;
+  const r=id?{...(S.ext||[]).find(x=>x.RecordID===id)}:{Kind:'Training',Result:'Pending',PaidBy:'Company',EmployeeID:empId||''};if(id&&!r.RecordID)return;
+  const e=r.EmployeeID?empById(r.EmployeeID):null,label=x=>x.EmployeeID+' · '+(x.NameLA||x.NameEN||'');
+  const I=(k,type,extra)=>`<input class="in" id="xf_${k}" type="${type||'text'}" value="${esc(r[k]||'')}" ${extra||''}>`;
+  const F=(lab,html,cls,req)=>`<div class="fld ${cls||''}"><label class="${req?'req':''}">${esc(lab)}</label>${html}</div>`;
+  modal(id?LX('ແກ້ໄຂການຝຶກພາຍນອກ','Edit external training')+' · '+id:LX('ເພີ່ມການຝຶກພາຍນອກ','Add external training'),`<div class="form">
+   ${F(LX('ພະນັກງານ','Employee'),`<input class="in" id="xf_emp" list="xfEmpList" value="${e?esc(label(e)):''}" placeholder="${LX('ພິມລະຫັດ ຫຼື ຊື່ ແລ້ວເລືອກ','Type an ID or name and pick')}" autocomplete="off"><datalist id="xfEmpList">${(id?S.emps:curEmps()).map(x=>`<option value="${esc(label(x))}">`).join('')}</datalist>`,'wide',1)}
+   ${F(LX('ຫຼັກສູດ','Course'),I('Course'),'wide',1)}
+   ${F(LX('ປະເພດ','Kind'),`<select class="in" id="xf_Kind">${opts(EXT_KIND,r.Kind)}</select>`)}
+   ${F(LX('ສະຖາບັນ / ຜູ້ຈັດ','Provider'),I('Provider'))}
+   ${F(LX('ສະຖານທີ່','Location'),I('Location','text','placeholder="'+LX('ເຊັ່ນ ວຽງຈັນ / ໄທ','e.g. Vientiane / Thailand')+'"'))}
+   ${F(LX('ວັນເລີ່ມ','Start date'),I('StartDate','date'),'',1)}${F(LX('ວັນສິ້ນສຸດ','End date'),I('EndDate','date'))}
+   ${F(LX('ຊົ່ວໂມງ','Hours'),I('Hours','number','min="0" step="0.5"'))}${F(LX('ຄ່າໃຊ້ຈ່າຍ (ກີບ)','Cost (LAK)'),I('Cost','number','min="0" step="1000"'))}
+   ${F(LX('ຜູ້ຈ່າຍ','Paid by'),`<select class="in" id="xf_PaidBy">${opts(EXT_PAID,r.PaidBy)}</select>`)}
+   ${F(LX('ຜົນ','Result'),`<select class="in" id="xf_Result">${opts(EXT_RESULT,r.Result)}</select>`)}
+   <div class="fld wide" style="border-top:1px solid var(--line);padding-top:10px;margin-top:4px"><b style="display:flex;align-items:center;gap:6px">${ic('shield',15)} ${LX('ໃບຢັ້ງຢືນ','Certificate')}</b></div>
+   ${F(LX('ເລກທີໃບຢັ້ງຢືນ','Certificate no.'),I('CertNo'))}${F(LX('ວັນອອກ','Issue date'),I('CertIssue','date'))}
+   ${F(LX('ວັນໝົດອາຍຸ (ຖ້າມີ)','Expiry date (if any)'),I('CertExpiry','date'))}
+   ${F(LX('ລິ້ງໄຟລ໌ໃບຢັ້ງຢືນ (Google Drive)','Certificate file link (Google Drive)'),I('CertLink','url','placeholder="https://drive.google.com/…"')+`<div class="small muted" style="margin-top:4px">${LX('Drive → ກົດຂວາໃສ່ໄຟລ໌ → Share → Copy link. ຕັ້ງສິດເປັນ Restricted (ສະເພາະຄົນທີ່ເພີ່ມຊື່).','Drive → right-click the file → Share → Copy link. Keep access Restricted.')}</div>`,'wide')}
+   ${F(LX('ສັນຍາຜູກມັດ (ຖ້າມີ)','Service bond (if any)'),I('Bond','text','placeholder="'+LX('ເຊັ່ນ ເຮັດວຽກຕໍ່ 12 ເດືອນ','e.g. stay 12 months')+'"'),'wide')}
+   ${F(LX('ໝາຍເຫດ','Remarks'),`<textarea class="in" id="xf_Remarks" rows="2">${esc(r.Remarks||'')}</textarea>`,'wide')}</div>`,
+   `${id?`<button class="btn danger" data-act="extDel" data-arg="${esc(id)}">${LX('ລຶບ','Delete')}</button><span class="grow"></span>`:''}<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="extSave" data-arg="${esc(id||'')}">${t('save')}</button>`,'lg');
+}
+async function extSave(id){
+  const v=k=>{const el=$('#xf_'+k);return el?el.value.trim():'';};
+  const raw=v('emp'),eid=(raw.split(' · ')[0]||'').trim();
+  if(!eid||!empById(eid)){toast(LX('ກະລຸນາເລືອກພະນັກງານຈາກລາຍຊື່','Please pick an employee from the list'),'bad');$('#xf_emp').focus();return;}
+  const rec={RecordID:id||'',EmployeeID:eid};['Course','Kind','Provider','Location','StartDate','EndDate','Hours','Cost','PaidBy','Result','CertNo','CertIssue','CertExpiry','CertLink','Bond','Remarks'].forEach(k=>rec[k]=v(k));
+  if(!rec.Course){toast(LX('ກະລຸນາໃສ່ຊື່ຫຼັກສູດ','Course name is required'),'bad');return;}
+  if(!rec.StartDate){toast(LX('ກະລຸນາໃສ່ວັນເລີ່ມ','Start date is required'),'bad');return;}
+  try{const r=await call('ext.save',{record:rec});S.ext=(S.ext||[]).filter(x=>x.RecordID!==r.RecordID).concat([r]);closeModal();toast(t('saved'),'ok');
+    if(S.modalBack){const b=S.modalBack;S.modalBack=null;b();}else S.refresh&&S.refresh();}catch(e){fail(e);}
+}
+async function extDel(id){if(!(await ask(LX('ລຶບລາຍການນີ້? (ໄຟລ໌ໃນ Google Drive ບໍ່ຖືກລຶບ)','Delete this record? (the Drive file is not deleted)'))))return;
+  try{await call('ext.delete',{id});S.ext=(S.ext||[]).filter(x=>x.RecordID!==id);closeModal();toast(LX('ລຶບແລ້ວ','Deleted'),'ok');if(S.modalBack){const b=S.modalBack;S.modalBack=null;b();}else S.refresh&&S.refresh();}catch(e){fail(e);}}
+function extEmpHTML(id){const R=extRows().filter(r=>r.EmployeeID===id).sort((a,b)=>String(b.StartDate).localeCompare(String(a.StartDate)));
+  return `<h3 style="font-size:14px;display:flex;align-items:center;gap:8px">${LX('ຝຶກອົບຮົມພາຍນອກ & ໃບຢັ້ງຢືນ','External training & certificates')} (${R.length})${canEdit()?`<span class="grow"></span><button class="btn sm" data-act="extFormFor" data-arg="${esc(id)}">${ic('plus',14)} ${LX('ເພີ່ມ','Add')}</button>`:''}</h3>`+
+   (R.length?dataTable('extEmp',extCols().filter(c=>!c.hide&&!['EmployeeID','_n','_d'].includes(c.k)),R,{sortK:'StartDate',sortD:-1,ps:10,rowAttr:r=>canEdit()?`class="click" data-act="extFormFor" data-arg="${esc(id)}|${esc(r.RecordID)}"`:''}):`<p class="small muted">${LX('ຍັງບໍ່ມີ','None yet')}</p>`);}
+
+/* ================= DORMITORY (R2.4) ================= */
+const DM=()=>S.dorm||(S.dorm={rooms:[],stays:[],meals:[]});
+const canDorm=()=>['admin','staff','dorm'].includes(role());
+const isDormRole=()=>role()==='dorm';
+const DORM_ST_B={Active:['Yes','ພັກຢູ່','Living'],Pending:['Late','ລໍຖ້າອະນຸມັດ','Pending'],Moved:['Planned','ຍ້າຍຫ້ອງ','Moved'],Left:['Cancelled','ອອກແລ້ວ','Left'],Rejected:['No','ບໍ່ອະນຸມັດ','Rejected'],Maintenance:['Late','ສ້ອມແປງ','Maintenance'],Closed:['Cancelled','ປິດ','Closed']};
+const dBadge=s=>{const b=DORM_ST_B[s];return b?`<span class="badge b-${b[0]}">${esc(LX(b[1],b[2]))}</span>`:badge(s);};
+const DG={Male:['ຊາຍໂສດ','Single men','♂'],Female:['ຍິງໂສດ','Single women','♀'],Family:['ຄອບຄົວ / ຜົວເມຍ','Family / couple','⚭'],Mixed:['ບໍ່ກຳນົດ / ລວມ','Not set / mixed','⚥']};
+const RT={Bedroom:['ຫ້ອງນອນ','Bedroom'],Office:['ຫ້ອງການ','Office'],Bathroom:['ຫ້ອງນ້ຳ','Bathroom'],Store:['ສາງ','Store'],Kitchen:['ຫ້ອງຄົວ / ກິນເຂົ້າ','Kitchen / dining'],Guard:['ປ້ອມຍາມ','Guard post'],Waste:['ບ່ອນຖິ້ມຂີ້ເຫຍື້ອ','Waste store'],Other:['ອື່ນໆ','Other']};
+const isBed=r=>(r.RoomType||'Bedroom')==='Bedroom';const dRT=k=>LX((RT[k]||RT.Bedroom)[0],(RT[k]||RT.Bedroom)[1]);
+const dBedRooms=()=>DM().rooms.filter(isBed);
+const dGender=g=>LX((DG[g]||DG.Mixed)[0],(DG[g]||DG.Mixed)[1]);
+const dGIcon=g=>(DG[g]||DG.Mixed)[2];
+const DRS={empty:['#16a34a','ຫວ່າງ','Empty'],free:['#2563eb','ມີຕຽງຫວ່າງ','Beds free'],full:['#d97706','ເຕັມ','Full'],over:['#dc2626','ເກີນ','Over capacity'],maint:['#7c3aed','ສ້ອມແປງ','Maintenance'],closed:['#64748b','ປິດ','Closed']};
+const dRoom=id=>DM().rooms.find(r=>r.RoomID===id);
+const dRoomLabel=r=>r?(r.Building+' · '+LX('ຫ້ອງ ','Room ')+r.RoomNo):'—';
+const dLive=roomId=>DM().stays.filter(s=>s.Status==='Active'&&(!roomId||s.RoomID===roomId));
+const dMealOn=(m,d)=>{d=d||todayStr();return m.StartDate<=d&&(!m.EndDate||m.EndDate>=d);};
+const dSortRooms=L=>L.slice().sort((a,b)=>String(a.Building).localeCompare(String(b.Building),undefined,{numeric:true})||String(a.Floor).localeCompare(String(b.Floor),undefined,{numeric:true})||String(a.RoomNo).localeCompare(String(b.RoomNo),undefined,{numeric:true}));
+function dPerson(s){
+  if(s.PersonType==='Employee'){const e=empById(s.EmployeeID);return{name:e?(e.NameLA||e.NameEN):s.EmployeeID,sub:s.EmployeeID+(e&&e.Position?' · '+e.Position:''),div:e?e.Division||'':'',gender:e?e.Gender||'':'',e,cur:!!(e&&isCurrent(e))};}
+  return{name:s.Name||'',sub:LX('ຄົນນອກ','Outsider')+(s.Relation?' · '+s.Relation:''),div:LX('ຄົນນອກ','Outsider'),gender:'',e:null,cur:true};}
+function dMealPerson(m){
+  if(m.PersonType==='Employee'){const e=empById(m.EmployeeID);return{name:e?(e.NameLA||e.NameEN):m.EmployeeID,sub:m.EmployeeID,div:e?e.Division||'':'',cur:!!(e&&isCurrent(e))};}
+  return{name:m.Name,sub:LX('ຄົນນອກ','Outsider'),div:LX('ຄົນນອກ','Outsider'),cur:true};}
+function dRoomState(r){const n=dLive(r.RoomID).length,c=Number(r.Capacity)||0;
+  if(r.Status==='Closed')return 'closed';if(r.Status==='Maintenance')return 'maint';if(n>c)return 'over';if(!n)return 'empty';return n>=c?'full':'free';}
+const dGenderKey=g=>{const s=nk(g);return /^(M|MALE|ຊາຍ|ທ້າວ)/.test(s)?'Male':/^(F|FEMALE|ຍິງ|ນາງ)/.test(s)?'Female':'';};
+function dResidentOf(m){ // the room where a meal-list person lives (if any)
+  const s=DM().stays.find(x=>x.Status==='Active'&&(m.PersonType==='Employee'?x.EmployeeID===m.EmployeeID:(m.StayID&&x.StayID===m.StayID)));return s?dRoom(s.RoomID):null;}
+
+/* automatic checks (shown on top of the page) */
+function dAlerts(){
+  const D=DM(),td=todayStr(),A=[],m1=td.slice(0,8)+'01';
+  const live=dLive();
+  const former=live.filter(s=>s.PersonType==='Employee'&&!dPerson(s).cur);
+  if(former.length)A.push(['bad',LX('ພະນັກງານອອກແລ້ວ ແຕ່ຍັງພັກຢູ່ຫໍ: ','Former employees still in a room: ')+former.length,'res:former']);
+  const fm=D.meals.filter(m=>dMealOn(m)&&!dMealPerson(m).cur);
+  if(fm.length)A.push(['bad',LX('ພະນັກງານອອກແລ້ວ ແຕ່ຍັງຢູ່ໃນລາຍຊື່ກິນເຂົ້າ: ','Former employees still on the meal list: ')+fm.length,'meal:former']);
+  const over=D.rooms.filter(r=>isBed(r)&&dRoomState(r)==='over');
+  if(over.length)A.push(['bad',LX('ຫ້ອງເກີນຈຳນວນຕຽງ: ','Rooms over capacity: ')+over.map(r=>r.Building+' '+r.RoomNo).join(', '),'board:']);
+  const late=live.filter(s=>s.PersonType==='Outsider'&&s.EndDate&&s.EndDate<td);
+  if(late.length)A.push(['bad',LX('ຄົນນອກ ກາຍກຳນົດພັກແລ້ວ: ','Outsiders past their end date: ')+late.length,'res:late']);
+  const soon=live.filter(s=>s.PersonType==='Outsider'&&s.EndDate&&s.EndDate>=td&&s.EndDate<=addDays(td,7));
+  if(soon.length)A.push(['warn',LX('ຄົນນອກ ຈະຄົບກຳນົດພາຍໃນ 7 ມື້: ','Outsiders ending within 7 days: ')+soon.length,'res:soon']);
+  const pend=D.stays.filter(s=>s.Status==='Pending');
+  if(pend.length)A.push(['warn',LX('ລໍຖ້າອະນຸມັດ (QR): ','Waiting for approval (QR): ')+pend.length,'pend:']);
+  const mis=live.filter(s=>{const r=dRoom(s.RoomID),g=dGenderKey(dPerson(s).gender);return r&&g&&(r.Gender==='Male'||r.Gender==='Female')&&r.Gender!==g;});
+  if(mis.length)A.push(['warn',LX('ເພດບໍ່ກົງກັບຫ້ອງ: ','Gender does not match the room: ')+mis.length,'res:gender']);
+  const unc=live.filter(s=>(s.LastConfirmed||'')<m1);
+  if(unc.length)A.push(['info',LX('ຍັງບໍ່ໄດ້ກວດນັບເດືອນນີ້: ','Not yet confirmed this month: ')+unc.length+' '+LX('ຄົນ','people'),'res:unconf']);
+  return A;
+}
+const dFlagOf=(s,flag)=>{const td=todayStr();switch(flag){
+  case 'former':return s.Status==='Active'&&s.PersonType==='Employee'&&!dPerson(s).cur;
+  case 'late':return s.Status==='Active'&&s.PersonType==='Outsider'&&s.EndDate&&s.EndDate<td;
+  case 'soon':return s.Status==='Active'&&s.PersonType==='Outsider'&&s.EndDate&&s.EndDate>=td&&s.EndDate<=addDays(td,7);
+  case 'gender':{const r=dRoom(s.RoomID),g=dGenderKey(dPerson(s).gender);return s.Status==='Active'&&r&&g&&(r.Gender==='Male'||r.Gender==='Female')&&r.Gender!==g;}
+  case 'unconf':return s.Status==='Active'&&(s.LastConfirmed||'')<td.slice(0,8)+'01';
+  default:return true;}};
+
+function pageDorm(){
+  const f=S.f.dorm||(S.f.dorm={tab:'board',bld:'',q:'',type:'',st:'Active',flag:'',mq:'',meal:'',mst:'cur'});
+  const D=DM(),pend=D.stays.filter(s=>s.Status==='Pending').length;
+  const tabs=[['board','grid',LX('ຜັງຫ້ອງ','Room board')],['res','users',LX('ຜູ້ພັກ','Residents')],['pend','clock',LX('ລໍຖ້າອະນຸມັດ','Approvals')+(pend?` <b class="dm-cnt">${pend}</b>`:'')],['meal','sun',LX('ກິນເຂົ້າ','Meals')],['sum','chart',LX('ສະຫຼຸບ','Summary')],['rooms','building',LX('ຕັ້ງຄ່າຫ້ອງ','Room setup')]];
+  const A=dAlerts();
+  $('#page').innerHTML=(A.length?`<div class="dm-alerts no-print">${A.map(([lv,tx,go])=>`<div class="note ${lv==='bad'?'bad':lv==='warn'?'warn':'info'} small click" data-act="dmGo" data-arg="${esc(go)}">${lv==='info'?'ℹ':'⚠'} ${esc(tx)} <span class="muted">›</span></div>`).join('')}</div>`:'')+
+   `<div class="tabs no-print">${tabs.map(([k,i,l])=>`<button class="${f.tab===k?'on':''}" data-act="dmTab" data-arg="${k}">${ic(i,15)} ${l}</button>`).join('')}</div><div id="dmBody"></div>`;
+  S.refresh=dmBody;dmBody();
+}
+function dmBody(){const f=S.f.dorm;({board:dmBoard,res:dmResidents,pend:dmPending,meal:dmMeals,sum:dmSummary,rooms:dmRooms}[f.tab]||dmBoard)();}
+const dmKpi=(l,v,s,i,c)=>`<div class="kpi" style="--c:${c}"><span class="kbg">${ic(i)}</span><div class="kh"><span class="kic" style="--c:${c}">${ic(i)}</span><span class="l">${esc(l)}</span></div><div class="v">${v}</div>${s?`<div class="s">${esc(s)}</div>`:''}</div>`;
+function dmNoRooms(){return `<div class="card" style="text-align:center;padding:30px"><div style="opacity:.6">${ic('building',40)}</div><p>${LX('ຍັງບໍ່ມີຫ້ອງໃນລະບົບ. ເລີ່ມຈາກເພີ່ມຕຶກ ແລະ ຫ້ອງ.','No rooms yet. Start by adding buildings and rooms.')}</p>${canDorm()?`<button class="btn pri" data-act="dmRoomForm">${ic('plus',15)} ${LX('ເພີ່ມຫ້ອງ','Add room')}</button>`:''}</div>`;}
+
+/* ----- room board ----- */
+function dmBoard(){
+  const f=S.f.dorm,D=DM(),el=$('#dmBody');
+  if(!dBedRooms().length){el.innerHTML=dmNoRooms();return;}
+  const blds=uniq(D.rooms.map(r=>r.Building));
+  const rooms=dSortRooms(D.rooms.filter(r=>isBed(r)&&(!f.bld||r.Building===f.bld)));const fac=dSortRooms(D.rooms.filter(r=>!isBed(r)&&(!f.bld||r.Building===f.bld)));
+  const cnt={};rooms.forEach(r=>{const k=dRoomState(r);cnt[k]=(cnt[k]||0)+1;});
+  const groups={};rooms.forEach(r=>{const g=r.Building+'|'+(r.Floor||'');(groups[g]=groups[g]||[]).push(r);});
+  el.innerHTML=`<div class="bar no-print"><select class="in" id="dmBld">${opts(blds,f.bld,LX('ຕຶກ','Building')+': '+t('all'))}</select>
+    <span class="dm-legend">${Object.entries(DRS).map(([k,[c,lo,en]])=>`<span><i style="background:${c}"></i>${esc(LX(lo,en))} ${cnt[k]||0}</span>`).join('')}</span><span class="grow"></span>
+    ${canDorm()?`<button class="btn" data-act="dmHeadcount">${ic('check',15)} ${LX('ກວດນັບປະຈຳເດືອນ','Monthly headcount')}</button><button class="btn pri" data-act="dmStayForm">${ic('plus',15)} ${LX('ເພີ່ມຜູ້ພັກ','Add resident')}</button>`:''}</div>
+   ${Object.entries(groups).map(([g,L])=>{const[b,fl2]=g.split('|');const live=L.reduce((a,r)=>a+dLive(r.RoomID).length,0),cap=L.reduce((a,r)=>a+(r.Status==='Active'?Number(r.Capacity)||0:0),0);
+     return `<div class="dm-grp"><div class="dm-gh"><b>${esc(b)}</b>${fl2?` · ${LX('ຊັ້ນ','Floor')} ${esc(fl2)}`:''}<span class="muted small">${live}/${cap} ${LX('ຕຽງ','beds')}</span></div><div class="dm-grid">${L.map(dmTile).join('')}</div></div>`;}).join('')}
+   ${fac.length?`<div class="dm-grp"><div class="dm-gh"><b>${LX('ພື້ນທີ່ອື່ນ','Other areas')}</b><span class="muted small">${fac.length} ${LX('ຈຸດ','areas')}</span></div><div class="dm-fac">${fac.map(r=>`<span class="dm-fchip${r.Status!=='Active'?' off':''}" ${canDorm()?`data-act="dmRoomForm" data-arg="${esc(r.RoomID)}"`:''}><b>${esc(r.RoomNo)}</b> ${esc(dRT(r.RoomType))}${r.Floor?' · '+LX('ຊັ້ນ ','F')+esc(r.Floor):''}${r.Status!=='Active'?' · '+esc(LX((DORM_ST_B[r.Status]||[0,r.Status])[1],r.Status)):''}</span>`).join('')}</div></div>`:''}`;
+  $('#dmBld').onchange=()=>{f.bld=$('#dmBld').value;dmBoard();};
+}
+function dmTile(r){
+  const st=dRoomState(r),[c,lo,en]=DRS[st],L=dLive(r.RoomID),cap=Number(r.Capacity)||0,pct=cap?Math.min(100,Math.round(L.length/cap*100)):0;
+  return `<div class="dm-room" style="--c:${c}" data-act="dmRoom" data-arg="${esc(r.RoomID)}" title="${esc(LX(lo,en))}">
+    <div class="dm-rh"><span class="dm-no">${esc(r.RoomNo)}</span><span class="dm-g" title="${esc(dGender(r.Gender))}">${dGIcon(r.Gender)}</span></div>
+    <div class="dm-bar"><i style="width:${st==='over'?100:pct}%"></i></div>
+    <div class="dm-n"><b>${L.length}</b>/${cap} <span>${esc(LX(lo,en))}</span></div>
+    <div class="dm-names">${L.slice(0,4).map(s=>esc(dPerson(s).name.split(' ').slice(0,2).join(' '))).join('<br>')}${L.length>4?'<br>…':''}</div></div>`;
+}
+
+/* ----- room detail ----- */
+function dmRoom(id){
+  const r=dRoom(id);if(!r)return;if(!isBed(r)){dmRoomForm(id);return;}S.dmRoomId=id;
+  const L=dLive(id).sort((a,b)=>String(a.Bed).localeCompare(String(b.Bed),undefined,{numeric:true})),st=dRoomState(r),m1=todayStr().slice(0,8)+'01';
+  const hist=DM().stays.filter(s=>s.RoomID===id&&s.Status!=='Active'&&s.Status!=='Pending').sort((a,b)=>String(b.CheckOut||b.UpdatedAt).localeCompare(String(a.CheckOut||a.UpdatedAt))).slice(0,15);
+  const ed=canDorm();
+  modal(dRoomLabel(r),`<div class="dm-rinfo"><span class="badge" style="background:${DRS[st][0]}22;color:${DRS[st][0]};border-color:${DRS[st][0]}55">${esc(LX(DRS[st][1],DRS[st][2]))}</span>
+     <span>${LX('ຊັ້ນ','Floor')} ${esc(r.Floor||'—')}</span><span>${dGIcon(r.Gender)} ${esc(dGender(r.Gender))}</span><span><b>${L.length}</b>/${esc(r.Capacity)} ${LX('ຕຽງ','beds')}</span>${r.Notes?`<span class="muted">${esc(r.Notes)}</span>`:''}</div>
+   <h3 style="font-size:14px;margin:14px 0 6px">${LX('ຜູ້ພັກປັດຈຸບັນ','Current residents')}</h3>
+   ${L.length?`<div class="tbl-wrap"><table class="tbl"><thead><tr><th>${LX('ຕຽງ','Bed')}</th><th>${LX('ຊື່','Name')}</th><th>${LX('ເຂົ້າພັກ','Check-in')}</th><th>${LX('ກວດນັບລ່າສຸດ','Last confirmed')}</th>${ed?'<th></th>':''}</tr></thead><tbody>${L.map(s=>{const p=dPerson(s);
+     return `<tr><td>${esc(s.Bed||'—')}</td><td><b>${esc(p.name)}</b>${!p.cur?` <span class="badge b-No">${LX('ອອກແລ້ວ','Former')}</span>`:''}<div class="small muted">${esc(p.sub)}${s.PersonType==='Outsider'&&s.EndDate?' · '+LX('ຮອດ ','until ')+fmtD(s.EndDate):''}</div></td><td>${fmtD(s.CheckIn)}</td>
+      <td>${s.LastConfirmed&&s.LastConfirmed>=m1?`<span class="badge b-Yes">${fmtD(s.LastConfirmed)}</span>`:`<span class="badge b-Late">${s.LastConfirmed?fmtD(s.LastConfirmed):'—'}</span>`}</td>
+      ${ed?`<td style="white-space:nowrap;text-align:right"><button class="btn sm" data-act="dmStayEdit" data-arg="${esc(s.StayID)}">${ic('edit',13)}</button> <button class="btn sm" data-act="dmMove" data-arg="${esc(s.StayID)}">${ic('swap',13)} ${LX('ຍ້າຍ','Move')}</button> <button class="btn sm danger" data-act="dmOut" data-arg="${esc(s.StayID)}">${ic('out',13)} ${LX('ອອກ','Check out')}</button></td>`:''}</tr>`;}).join('')}</tbody></table></div>`:`<p class="muted small">${LX('ຫ້ອງຫວ່າງ','Room is empty')}</p>`}
+   ${hist.length?`<details style="margin-top:12px"><summary class="small">${LX('ປະຫວັດຫ້ອງນີ້','Room history')} (${hist.length})</summary><div class="tbl-wrap"><table class="tbl"><tbody>${hist.map(s=>`<tr><td>${esc(dPerson(s).name)}</td><td class="small">${fmtD(s.CheckIn)} – ${fmtD(s.CheckOut)}</td><td>${dBadge(s.Status)}</td></tr>`).join('')}</tbody></table></div></details>`:''}`,
+   `${ed?`<button class="btn" data-act="dmRoomForm" data-arg="${esc(id)}">${ic('edit',14)} ${LX('ແກ້ໄຂຫ້ອງ','Edit room')}</button><button class="btn" data-act="dmQr" data-arg="${esc(id)}">${ic('qr',14)} QR</button>${L.length?`<button class="btn" data-act="dmConfirmRoom" data-arg="${esc(id)}">${ic('check',14)} ${LX('ຢືນຢັນທຸກຄົນຍັງພັກຢູ່','Confirm all still living here')}</button>`:''}<span class="grow"></span>${r.Status==='Active'?`<button class="btn pri" data-act="dmStayForm" data-arg="${esc(id)}">${ic('plus',14)} ${LX('ເພີ່ມຜູ້ພັກ','Add resident')}</button>`:''}`:'<span class="grow"></span>'}<button class="btn" data-act="closeModal">${t('close')}</button>`,'lg');
+}
+function dmReopen(){if(S.dmRoomId&&dRoom(S.dmRoomId)&&S.dmBackRoom){dmRoom(S.dmRoomId);}else closeModal();S.dmBackRoom=false;S.refresh&&S.refresh();dmTabCount();}
+function dmTabCount(){if(S.page==='dorm'){const b=document.querySelector('[data-act="dmTab"][data-arg="pend"]');const n=DM().stays.filter(s=>s.Status==='Pending').length;if(b)b.innerHTML=ic('clock',15)+' '+LX('ລໍຖ້າອະນຸມັດ','Approvals')+(n?` <b class="dm-cnt">${n}</b>`:'');}}
+function dmPut(list){const D=DM();(Array.isArray(list)?list:[list]).forEach(s=>{if(!s)return;D.stays=D.stays.filter(x=>x.StayID!==s.StayID).concat([s]);});}
+
+/* ----- add / edit resident ----- */
+function dmRoomOpts(sel,onlyOpen){return dSortRooms(DM().rooms.filter(r=>isBed(r)&&(!onlyOpen||r.Status==='Active'||r.RoomID===sel))).map(r=>{const n=dLive(r.RoomID).length;return[r.RoomID,r.Building+' · '+r.RoomNo+' ('+dGender(r.Gender)+', '+n+'/'+r.Capacity+')'];});}
+function dmStayForm(roomId,stayId){
+  if(!canDorm())return;
+  if(!dBedRooms().some(r=>r.Status==='Active')){toast(LX('ກະລຸນາເພີ່ມຫ້ອງກ່ອນ','Please add a room first'),'bad');return;}
+  const s=stayId?{...DM().stays.find(x=>x.StayID===stayId)}:{PersonType:'Employee',RoomID:roomId||'',CheckIn:todayStr()};if(stayId&&!s.StayID)return;
+  S.dmBackRoom=!!(roomId||stayId)&&!!$('#ov');
+  const e=s.EmployeeID?empById(s.EmployeeID):null,label=x=>x.EmployeeID+' · '+(x.NameLA||x.NameEN||'');
+  const I=(k,type,extra)=>`<input class="in" id="ds_${k}" type="${type||'text'}" value="${esc(s[k]||'')}" ${extra||''}>`;
+  const F=(lab,html,cls,req)=>`<div class="fld ${cls||''}"><label class="${req?'req':''}">${esc(lab)}</label>${html}</div>`;
+  const sp=s.SponsorID?empById(s.SponsorID):null;
+  modal(stayId?LX('ແກ້ໄຂຂໍ້ມູນຜູ້ພັກ','Edit resident')+' · '+stayId:LX('ເພີ່ມຜູ້ພັກ','Add resident'),`<div class="form">
+   ${stayId?'':F(LX('ປະເພດ','Type'),`<div class="dm-seg"><label><input type="radio" name="ds_type" value="Employee" ${s.PersonType==='Employee'?'checked':''}> ${LX('ພະນັກງານ','Employee')}</label><label><input type="radio" name="ds_type" value="Outsider" ${s.PersonType==='Outsider'?'checked':''}> ${LX('ຄົນນອກ','Outsider')}</label></div>`,'wide')}
+   ${stayId?'':F(LX('ຫ້ອງ','Room'),`<select class="in" id="ds_RoomID">${opts(dmRoomOpts(s.RoomID,true),s.RoomID,'— '+LX('ເລືອກຫ້ອງ','Choose a room')+' —')}</select>`,'',1)}
+   ${F(LX('ເລກຕຽງ (ຖ້າມີ)','Bed no. (optional)'),I('Bed','text','maxlength="10" placeholder="A / 1"'))}
+   <div class="fld wide ds-emp"><label class="req">${LX('ພະນັກງານ','Employee')}</label>${stayId?`<div><b>${esc(e?label(e):s.EmployeeID)}</b></div>`:`<input class="in" id="ds_emp" list="dsEmpList" value="${e?esc(label(e)):''}" placeholder="${LX('ພິມລະຫັດ ຫຼື ຊື່ ແລ້ວເລືອກ','Type an ID or name and pick')}" autocomplete="off"><datalist id="dsEmpList">${curEmps().map(x=>`<option value="${esc(label(x))}">`).join('')}</datalist>`}</div>
+   <div class="ds-out wide form" style="padding:0">
+    ${F(LX('ຊື່ ແລະ ນາມສະກຸນ','Full name'),I('Name','text','maxlength="80"'),'wide',1)}
+    ${F(LX('ເບີໂທ','Phone'),I('Phone','tel','maxlength="30"'),'',1)}${F(LX('ເລກບັດປະຈຳຕົວ / Passport','ID card / passport no.'),I('IDCardNo','text','maxlength="40"'),'',1)}
+    ${F(LX('ກ່ຽວຂ້ອງກັບໃຜ / ແນວໃດ','Relation (to whom / how)'),I('Relation','text','maxlength="100" placeholder="'+LX('ເຊັ່ນ ເມຍຂອງ KGS0012 / ຜູ້ຮັບເໝົາ','e.g. wife of KGS0012 / contractor')+'"'),'wide',1)}
+    ${F(LX('ພະນັກງານຜູ້ຮັບຮອງ','Sponsor employee'),`<input class="in" id="ds_sp" list="dsEmpList2" value="${sp?esc(label(sp)):esc(s.SponsorID||'')}" autocomplete="off"><datalist id="dsEmpList2">${curEmps().map(x=>`<option value="${esc(label(x))}">`).join('')}</datalist>`,'',1)}
+    ${F(LX('ພັກຮອດວັນທີ','Stay until'),I('EndDate','date'),'',1)}
+    <div class="fld wide"><label class="dm-consent"><input type="checkbox" id="ds_Consent" ${s.Consent==='Yes'?'checked':''}> ${LX('ຜູ້ພັກຍິນຍອມໃຫ້ບໍລິສັດເກັບຂໍ້ມູນນີ້ ເພື່ອຄວາມປອດໄພ ແລະ ການຄຸ້ມຄອງຫໍພັກເທົ່ານັ້ນ','The resident agrees that the company keeps this data for safety and dormitory management only')}</label></div></div>
+   ${F(LX('ວັນເຂົ້າພັກ','Check-in date'),I('CheckIn','date'),'',1)}
+   ${F(LX('ໝາຍເຫດ','Remarks'),`<textarea class="in" id="ds_Remarks" rows="2">${esc(s.Remarks||'')}</textarea>`,'wide')}</div>`,
+   `<button class="btn" data-act="${S.dmBackRoom?'dmBack':'closeModal'}">${t('cancel')}</button><button class="btn pri" data-act="dmStaySave" data-arg="${esc(stayId||'')}">${t('save')}</button>`,'lg');
+  const sync=()=>{const ty=stayId?s.PersonType:(document.querySelector('[name=ds_type]:checked')||{}).value;document.querySelectorAll('.ds-emp').forEach(x=>x.style.display=ty==='Employee'?'':'none');document.querySelectorAll('.ds-out').forEach(x=>x.style.display=ty==='Outsider'?'':'none');};
+  document.querySelectorAll('[name=ds_type]').forEach(x=>x.onchange=sync);sync();
+}
+const dsVal=k=>{const el=$('#ds_'+k);return el?(el.type==='checkbox'?el.checked:el.value.trim()):'';};
+const dsEmpId=id=>{const v=dsVal(id);const x=(v.split(' · ')[0]||'').trim();return empById(x)?x:'';};
+async function dmStaySave(id){
+  const cur=id?DM().stays.find(x=>x.StayID===id):null;
+  const ty=cur?cur.PersonType:(document.querySelector('[name=ds_type]:checked')||{}).value;
+  const st={StayID:id||'',PersonType:ty,Bed:dsVal('Bed'),CheckIn:dsVal('CheckIn'),Remarks:dsVal('Remarks')};
+  if(!cur){st.RoomID=dsVal('RoomID');if(!st.RoomID){toast(LX('ກະລຸນາເລືອກຫ້ອງ','Please choose a room'),'bad');return;}}
+  if(ty==='Employee'&&!cur){st.EmployeeID=dsEmpId('emp');if(!st.EmployeeID){toast(LX('ກະລຸນາເລືອກພະນັກງານຈາກລາຍຊື່','Please pick an employee from the list'),'bad');return;}
+    const r=dRoom(st.RoomID),g=dGenderKey((empById(st.EmployeeID)||{}).Gender);
+    if(r&&g&&(r.Gender==='Male'||r.Gender==='Female')&&r.Gender!==g&&!await ask(LX('ເພດຂອງພະນັກງານບໍ່ກົງກັບຫ້ອງ ('+dGender(r.Gender)+'). ບັນທຶກຕໍ່ບໍ?','The employee\'s gender does not match the room ('+dGender(r.Gender)+'). Save anyway?')))return;}
+  if(ty==='Outsider'){Object.assign(st,{Name:dsVal('Name'),Phone:dsVal('Phone'),IDCardNo:dsVal('IDCardNo'),Relation:dsVal('Relation'),SponsorID:dsEmpId('sp')||(dsVal('sp').split(' · ')[0]||'').trim(),EndDate:dsVal('EndDate'),Consent:dsVal('Consent')?'Yes':''});
+    const miss=[['Name',LX('ຊື່','name')],['Phone',LX('ເບີໂທ','phone')],['IDCardNo',LX('ເລກບັດ','ID card')],['Relation',LX('ກ່ຽວຂ້ອງກັບໃຜ','relation')],['SponsorID',LX('ຜູ້ຮັບຮອງ','sponsor')],['EndDate',LX('ພັກຮອດວັນທີ','stay until')]].filter(([k])=>!st[k]).map(x=>x[1]);
+    if(miss.length){toast(LX('ກະລຸນາໃສ່: ','Please fill in: ')+miss.join(', '),'bad');return;}
+    if(st.Consent!=='Yes'){toast(LX('ຕ້ອງມີການຍິນຍອມກ່ອນ','Consent is required'),'bad');return;}}
+  const send=async force=>{try{const r=await call('dorm.staySave',{stay:st,force:!!force});dmPut(r);toast(t('saved'),'ok');S.dmRoomId=r.RoomID;dmReopen();}
+    catch(e){if(e.error==='DORM_FULL'){if(await ask(LX('ຫ້ອງນີ້ເຕັມແລ້ວ. ຍັງຈະເພີ່ມອີກບໍ? (ຈະຂຶ້ນແຈ້ງເຕືອນ "ເກີນ")','This room is full. Add anyway? (it will show as "over capacity")')))send(true);}else fail(e);}};
+  send(false);
+}
+
+/* ----- move / check out / headcount ----- */
+function dmMove(id){const s=DM().stays.find(x=>x.StayID===id);if(!s)return;S.dmBackRoom=true;
+  modal(LX('ຍ້າຍຫ້ອງ','Move to another room')+' · '+dPerson(s).name,`<div class="form">
+   <div class="fld wide"><label class="req">${LX('ຫ້ອງໃໝ່','New room')}</label><select class="in" id="mv_room">${opts(dmRoomOpts('',true).filter(o=>o[0]!==s.RoomID),'','— '+LX('ເລືອກຫ້ອງ','Choose a room')+' —')}</select></div>
+   <div class="fld"><label>${LX('ເລກຕຽງ','Bed no.')}</label><input class="in" id="mv_bed" maxlength="10"></div><div class="fld"><label class="req">${LX('ວັນທີຍ້າຍ','Move date')}</label><input class="in" type="date" id="mv_date" value="${todayStr()}"></div>
+   <div class="fld wide"><label>${LX('ເຫດຜົນ','Reason')}</label><input class="in" id="mv_reason" maxlength="200"></div></div>`,
+   `<button class="btn" data-act="dmBack">${t('cancel')}</button><button class="btn pri" data-act="dmMoveGo" data-arg="${esc(id)}">${LX('ຍ້າຍ','Move')}</button>`);}
+async function dmMoveGo(id){const p={id,RoomID:$('#mv_room').value,Bed:$('#mv_bed').value.trim(),date:$('#mv_date').value,reason:$('#mv_reason').value.trim()};
+  if(!p.RoomID){toast(LX('ກະລຸນາເລືອກຫ້ອງ','Please choose a room'),'bad');return;}
+  const send=async force=>{try{const r=await call('dorm.stayMove',Object.assign({force:!!force},p));dmPut([r.old,r.stay]);toast(LX('ຍ້າຍແລ້ວ','Moved'),'ok');dmReopen();}
+    catch(e){if(e.error==='DORM_FULL'){if(await ask(LX('ຫ້ອງໃໝ່ເຕັມແລ້ວ. ຍ້າຍເຂົ້າຕໍ່ບໍ?','The new room is full. Move anyway?')))send(true);}else fail(e);}};send(false);}
+function dmOut(id){const s=DM().stays.find(x=>x.StayID===id);if(!s)return;S.dmBackRoom=true;
+  const hasMeal=DM().meals.some(m=>dMealOn(m)&&(s.PersonType==='Employee'?m.EmployeeID===s.EmployeeID:m.StayID===s.StayID));
+  modal(LX('ອອກຈາກຫໍພັກ','Check out')+' · '+dPerson(s).name,`<div class="form">
+   <div class="fld"><label class="req">${LX('ວັນທີອອກ','Check-out date')}</label><input class="in" type="date" id="co_date" value="${todayStr()}"></div>
+   <div class="fld wide"><label>${LX('ເຫດຜົນ','Reason')}</label><input class="in" id="co_reason" maxlength="200" placeholder="${LX('ເຊັ່ນ ລາອອກ / ຍ້າຍໄປພັກນອກ','e.g. resigned / moved out')}"></div>
+   ${hasMeal?`<div class="fld wide"><label class="dm-consent"><input type="checkbox" id="co_meal" checked> ${LX('ຢຸດລາຍຊື່ກິນເຂົ້າ ນຳ','Also end the meal list entry')}</label></div>`:''}</div>`,
+   `<button class="btn" data-act="dmBack">${t('cancel')}</button><button class="btn danger" data-act="dmOutGo" data-arg="${esc(id)}">${LX('ຢືນຢັນອອກ','Confirm check-out')}</button>`);}
+async function dmOutGo(id){try{const r=await call('dorm.stayCheckout',{id,date:$('#co_date').value,reason:$('#co_reason').value.trim(),endMeals:!!($('#co_meal')&&$('#co_meal').checked)});
+  dmPut(r.stay);(r.meals||[]).forEach(m=>{DM().meals=DM().meals.filter(x=>x.MealID!==m.MealID).concat([m]);});toast(LX('ບັນທຶກອອກແລ້ວ','Checked out'),'ok');dmReopen();}catch(e){fail(e);}}
+async function dmConfirm(ids,label){if(!ids.length){toast(LX('ບໍ່ມີຜູ້ພັກ','No residents'));return;}
+  if(!await ask(LX('ຢືນຢັນວ່າ '+ids.length+' ຄົນ'+(label||'')+' ຍັງພັກຢູ່ແທ້ (ກວດນັບເດືອນນີ້)?','Confirm that '+ids.length+' people'+(label||'')+' still live here (this month\'s headcount)?')))return;
+  try{const r=await call('dorm.confirm',{ids});DM().stays.forEach(s=>{if(r.ids.includes(s.StayID))s.LastConfirmed=r.date;});toast(LX('ກວດນັບແລ້ວ ','Confirmed ')+r.ids.length,'ok');}catch(e){fail(e);}}
+function dmHeadcount(){const m1=todayStr().slice(0,8)+'01';const R=dSortRooms(DM().rooms.filter(r=>dLive(r.RoomID).length));
+  modal(LX('ກວດນັບປະຈຳເດືອນ','Monthly headcount')+' · '+todayStr().slice(0,7),`<p class="small muted" style="margin-top:0">${LX('ໄປກວດແຕ່ລະຫ້ອງ ແລ້ວກົດຢືນຢັນຫ້ອງທີ່ທຸກຄົນຍັງພັກຢູ່ແທ້. ຄົນທີ່ບໍ່ຢູ່ແລ້ວ ໃຫ້ກົດ "ອອກ" ໃນຫ້ອງນັ້ນ.','Visit each room and confirm the rooms where everyone still lives. Check out anyone who has left.')}</p>
+   <div class="tbl-wrap"><table class="tbl"><thead><tr><th>${LX('ຫ້ອງ','Room')}</th><th>${LX('ຜູ້ພັກ','Residents')}</th><th>${LX('ກວດແລ້ວ','Confirmed')}</th><th></th></tr></thead><tbody>${R.map(r=>{const L=dLive(r.RoomID),ok=L.filter(s=>(s.LastConfirmed||'')>=m1).length;
+    return `<tr><td><b>${esc(r.Building+' · '+r.RoomNo)}</b></td><td class="small">${L.map(s=>esc(dPerson(s).name)).join(', ')}</td><td>${ok===L.length?`<span class="badge b-Yes">${ok}/${L.length}</span>`:`<span class="badge b-Late">${ok}/${L.length}</span>`}</td><td style="text-align:right;white-space:nowrap"><button class="btn sm" data-act="dmRoom" data-arg="${esc(r.RoomID)}">${LX('ເປີດ','Open')}</button> ${ok<L.length?`<button class="btn sm pri" data-act="dmConfirmRoom" data-arg="${esc(r.RoomID)}|hc">${ic('check',13)} ${LX('ຢືນຢັນ','Confirm')}</button>`:''}</td></tr>`;}).join('')||`<tr><td colspan="4" class="empty">${t('noData')}</td></tr>`}</tbody></table></div>`,null,'lg');}
+
+/* ----- residents list ----- */
+function dmResRows(){const f=S.f.dorm,q=f.q.toLowerCase().trim();
+  return DM().stays.filter(s=>s.Status!=='Pending'&&s.Status!=='Rejected').map(s=>{const p=dPerson(s),r=dRoom(s.RoomID);return Object.assign({},s,{_n:p.name,_sub:p.sub,_d:p.div,_b:r?r.Building:'',_r:r?r.RoomNo:'',_cur:p.cur,_days:Math.max(0,Math.round(((parseD(s.CheckOut||todayStr())||new Date())-(parseD(s.CheckIn)||new Date()))/864e5))});})
+   .filter(s=>(!f.bld||s._b===f.bld)&&(!f.type||s.PersonType===f.type)&&(!f.st||s.Status===f.st)&&(!f.flag||dFlagOf(s,f.flag))&&(!q||[s._n,s.EmployeeID,s.Name,s._r,s._d].some(v=>String(v||'').toLowerCase().includes(q))));}
+function dmResCols(){const m1=todayStr().slice(0,8)+'01';return[
+  {k:'_r',l:LX('ຫ້ອງ','Room'),sv:s=>s._b+'|'+String(s._r).padStart(6,'0'),r:s=>`<b>${esc(s._r)}</b><div class="small muted">${esc(s._b)}</div>`,x:s=>s._b+' · '+s._r},
+  {k:'Bed',l:LX('ຕຽງ','Bed')},
+  {k:'_n',l:LX('ຊື່','Name'),r:s=>`<b>${esc(s._n)}</b>${!s._cur&&s.Status==='Active'?` <span class="badge b-No">${LX('ອອກວຽກແລ້ວ','Former')}</span>`:''}<div class="small muted">${esc(s._sub)}</div>`,x:s=>s._n},
+  {k:'EmployeeID',l:fl('EmployeeID'),hide:1},
+  {k:'PersonType',l:LX('ປະເພດ','Type'),r:s=>esc(s.PersonType==='Employee'?LX('ພະນັກງານ','Employee'):LX('ຄົນນອກ','Outsider')),x:s=>s.PersonType==='Employee'?LX('ພະນັກງານ','Employee'):LX('ຄົນນອກ','Outsider')},
+  {k:'_d',l:fl('Division')},
+  {k:'CheckIn',l:LX('ເຂົ້າພັກ','Check-in'),r:s=>fmtD(s.CheckIn)},
+  {k:'CheckOut',l:LX('ອອກ','Check-out'),r:s=>s.CheckOut?fmtD(s.CheckOut):(s.PersonType==='Outsider'&&s.EndDate?`<span class="small muted">${LX('ຮອດ ','until ')}${fmtD(s.EndDate)}</span>`:'—'),x:s=>s.CheckOut||''},
+  {k:'_days',l:LX('ມື້','Days'),cls:'num'},
+  {k:'LastConfirmed',l:LX('ກວດນັບ','Confirmed'),r:s=>s.Status!=='Active'?'':(s.LastConfirmed>=m1?`<span class="badge b-Yes">${fmtD(s.LastConfirmed)}</span>`:`<span class="badge b-Late">${s.LastConfirmed?fmtD(s.LastConfirmed):'—'}</span>`),x:s=>s.LastConfirmed||''},
+  {k:'Status',l:fl('Status'),r:s=>dBadge(s.Status),x:s=>LX((DORM_ST_B[s.Status]||[0,s.Status])[1],s.Status)},
+  {k:'Source',l:LX('ທີ່ມາ','Source'),hide:1,x:s=>s.Source}];}
+function dmResidents(){
+  const f=S.f.dorm,D=DM();
+  const flags=[['former',LX('ອອກວຽກແລ້ວ ແຕ່ຍັງພັກ','Former employees still here')],['late',LX('ຄົນນອກກາຍກຳນົດ','Outsiders past end date')],['soon',LX('ຄົນນອກໃກ້ຄົບກຳນົດ','Outsiders ending soon')],['gender',LX('ເພດບໍ່ກົງຫ້ອງ','Gender mismatch')],['unconf',LX('ຍັງບໍ່ກວດນັບເດືອນນີ້','Not confirmed this month')]];
+  $('#dmBody').innerHTML=`<div class="bar no-print"><input class="in search" id="drQ" placeholder="${t('search')}: ${LX('ຊື່ / ລະຫັດ / ຫ້ອງ','name / ID / room')}" value="${esc(f.q)}">
+   <select class="in" id="drB">${opts(uniq(D.rooms.map(r=>r.Building)),f.bld,LX('ຕຶກ','Building')+': '+t('all'))}</select>
+   <select class="in" id="drT">${opts([['Employee',LX('ພະນັກງານ','Employee')],['Outsider',LX('ຄົນນອກ','Outsider')]],f.type,LX('ປະເພດ','Type')+': '+t('all'))}</select>
+   <select class="in" id="drS">${opts([['Active',LX('ພັກຢູ່','Living')],['Moved',LX('ຍ້າຍຫ້ອງ','Moved')],['Left',LX('ອອກແລ້ວ','Left')]],f.st,fl('Status')+': '+t('all'))}</select>
+   <select class="in" id="drF">${opts(flags,f.flag,LX('ກວດ','Check')+': '+t('all'))}</select>
+   <span class="grow"></span><button class="btn" data-act="dmExport">${t('export')}</button>${canDorm()?`<button class="btn pri" data-act="dmStayForm">${ic('plus',15)} ${LX('ເພີ່ມຜູ້ພັກ','Add resident')}</button>`:''}</div><div id="drList"></div>`;
+  const upd=()=>{f.q=$('#drQ').value;f.bld=$('#drB').value;f.type=$('#drT').value;f.st=$('#drS').value;f.flag=$('#drF').value;S.tbl.dres&&(S.tbl.dres.p=1);list();};
+  $('#drQ').oninput=upd;['drB','drT','drS','drF'].forEach(i=>$('#'+i).onchange=upd);
+  const list=()=>{$('#drList').innerHTML=dataTable('dres',dmResCols().filter(c=>!c.hide),dmResRows(),{sortK:'_r',rowAttr:s=>s.Status==='Active'?`class="click" data-act="dmRoom" data-arg="${esc(s.RoomID)}"`:''});};list();
+}
+
+/* ----- approvals (QR) ----- */
+function dmPending(){
+  const L=DM().stays.filter(s=>s.Status==='Pending').sort((a,b)=>String(a.CreatedAt).localeCompare(String(b.CreatedAt)));
+  const rej=DM().stays.filter(s=>s.Status==='Rejected').sort((a,b)=>String(b.UpdatedAt).localeCompare(String(a.UpdatedAt))).slice(0,20);
+  $('#dmBody').innerHTML=`<div class="note info small" style="margin:0 0 12px">${LX('ຄຳຂໍທີ່ສົ່ງມາຈາກການສະແກນ QR ທີ່ປະຕູຫ້ອງ. ກວດໃຫ້ແນ່ໃຈວ່າແມ່ນຄົນນັ້ນແທ້ ແລະ ພັກຫ້ອງນັ້ນແທ້ ກ່ອນອະນຸມັດ.','Requests sent by scanning the QR on a room door. Make sure the person really lives in that room before approving.')}</div>
+   ${L.length?`<div class="dm-pend">${L.map(s=>{const p=dPerson(s),r=dRoom(s.RoomID),mv=s.PersonType==='Employee'&&dLive().find(x=>x.EmployeeID===s.EmployeeID);
+     return `<div class="card dm-pc"><div class="dm-pch"><div><b>${esc(p.name)}</b><div class="small muted">${esc(p.sub)}</div></div>${dBadge('Pending')}</div>
+      <div class="dm-pcb small"><div>${LX('ຂໍພັກ','Requested')}: <b>${esc(dRoomLabel(r))}</b> (${r?dLive(r.RoomID).length+'/'+r.Capacity:''})</div>
+       ${mv?`<div class="warn">⚠ ${LX('ປັດຈຸບັນພັກຢູ່ ','Now living in ')}${esc(dRoomLabel(dRoom(mv.RoomID)))} — ${LX('ອະນຸມັດ = ຍ້າຍຫ້ອງ','approve = move')}</div>`:''}
+       ${s.PersonType==='Outsider'?`<div>${LX('ເບີໂທ','Phone')}: ${esc(s.Phone)} · ${LX('ບັດ','ID')}: ${esc(s.IDCardNo)}</div><div>${LX('ຜູ້ຮັບຮອງ','Sponsor')}: ${esc(s.SponsorID)} ${esc(empName(empById(s.SponsorID))||'')} · ${LX('ຮອດ','until')} ${fmtD(s.EndDate)}</div><div>${s.Consent==='Yes'?'✓ '+LX('ຍິນຍອມແລ້ວ','Consent given'):'✗ '+LX('ບໍ່ມີການຍິນຍອມ','No consent')}</div>`:''}
+       ${p.e&&!p.cur?`<div class="err">✗ ${LX('ບໍ່ແມ່ນພະນັກງານປັດຈຸບັນ','Not a current employee')}</div>`:''}
+       <div class="muted">${LX('ສົ່ງເມື່ອ','Sent')} ${esc(String(s.CreatedAt).slice(0,16))}</div></div>
+      ${canDorm()?`<div class="bar" style="margin:10px 0 0"><button class="btn sm danger" data-act="dmReject" data-arg="${esc(s.StayID)}">${LX('ບໍ່ອະນຸມັດ','Reject')}</button><span class="grow"></span><button class="btn sm pri" data-act="dmApprove" data-arg="${esc(s.StayID)}">${ic('check',13)} ${LX('ອະນຸມັດ','Approve')}</button></div>`:''}</div>`;}).join('')}</div>`
+   :`<div class="card muted" style="text-align:center;padding:24px">${LX('ບໍ່ມີຄຳຂໍລໍຖ້າອະນຸມັດ','No requests waiting')}</div>`}
+   ${rej.length?`<details style="margin-top:14px"><summary class="small">${LX('ບໍ່ອະນຸມັດລ່າສຸດ','Recently rejected')} (${rej.length})</summary><div class="tbl-wrap"><table class="tbl"><tbody>${rej.map(s=>`<tr><td>${esc(dPerson(s).name)}</td><td class="small">${esc(dRoomLabel(dRoom(s.RoomID)))}</td><td class="small muted">${esc(s.Remarks||'')}</td><td class="small">${esc(s.ApprovedBy||'')}</td></tr>`).join('')}</tbody></table></div></details>`:''}`;
+}
+function dmApprove(id){const s=DM().stays.find(x=>x.StayID===id);if(!s)return;S.dmBackRoom=false;
+  modal(LX('ອະນຸມັດ','Approve')+' · '+dPerson(s).name,`<div class="form"><div class="fld wide"><label class="req">${LX('ຫ້ອງ','Room')}</label><select class="in" id="ap_room">${opts(dmRoomOpts(s.RoomID,true),s.RoomID)}</select></div>
+   <div class="fld"><label>${LX('ເລກຕຽງ','Bed no.')}</label><input class="in" id="ap_bed" maxlength="10"></div></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="dmApproveGo" data-arg="${esc(id)}">${ic('check',14)} ${LX('ອະນຸມັດ','Approve')}</button>`);}
+async function dmApproveGo(id){const p={id,approve:true,RoomID:$('#ap_room').value,Bed:$('#ap_bed').value.trim()};
+  const send=async force=>{try{const r=await call('dorm.stayApprove',Object.assign({force:!!force},p));dmPut([r.stay,r.old]);closeModal();toast(LX('ອະນຸມັດແລ້ວ','Approved'),'ok');S.refresh&&S.refresh();dmTabCount();}
+    catch(e){if(e.error==='DORM_FULL'){if(await ask(LX('ຫ້ອງນີ້ເຕັມແລ້ວ. ອະນຸມັດຕໍ່ບໍ?','This room is full. Approve anyway?')))send(true);}else fail(e);}};send(false);}
+async function dmReject(id){const s=DM().stays.find(x=>x.StayID===id);if(!s)return;
+  modal(LX('ບໍ່ອະນຸມັດ','Reject')+' · '+dPerson(s).name,`<div class="fld"><label>${LX('ເຫດຜົນ','Reason')}</label><input class="in" id="rj_reason" maxlength="200" style="width:100%" placeholder="${LX('ເຊັ່ນ ບໍ່ໄດ້ພັກຫ້ອງນີ້ແທ້','e.g. does not live in this room')}"></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn danger" data-act="dmRejectGo" data-arg="${esc(id)}">${LX('ບໍ່ອະນຸມັດ','Reject')}</button>`,'sm');}
+async function dmRejectGo(id){try{const r=await call('dorm.stayApprove',{id,approve:false,reason:$('#rj_reason').value.trim()});dmPut(r.stay);closeModal();toast(LX('ບັນທຶກແລ້ວ','Saved'),'ok');S.refresh&&S.refresh();dmTabCount();}catch(e){fail(e);}}
+
+/* ----- meal list ----- */
+const MEALS=[['Breakfast','ເຊົ້າ','Breakfast'],['Lunch','ທ່ຽງ','Lunch'],['Dinner','ແລງ','Dinner']];
+function dmMealRows(){const f=S.f.dorm,q=f.mq.toLowerCase().trim(),td=todayStr();
+  return DM().meals.map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:dMealOn(m),_room:r?r.Building+' · '+r.RoomNo:''});})
+   .filter(m=>(!f.meal||m[f.meal]==='Yes')&&(f.mst==='all'||(f.mst==='cur'?m._on:f.mst==='former'?(m._on&&!m._cur):(!m._on&&(m.EndDate&&m.EndDate<td))))&&(!q||[m._n,m.EmployeeID,m.Name,m._d].some(v=>String(v||'').toLowerCase().includes(q))));}
+function dmMealCols(){const ck=v=>v==='Yes'?'<span class="dm-ck">✓</span>':'<span class="muted">·</span>';return[
+  {k:'_n',l:LX('ຊື່','Name'),r:m=>`<b>${esc(m._n)}</b>${!m._cur&&m._on?` <span class="badge b-No">${LX('ອອກວຽກແລ້ວ','Former')}</span>`:''}<div class="small muted">${esc(m._sub)}</div>`,x:m=>m._n},
+  {k:'EmployeeID',l:fl('EmployeeID'),hide:1},
+  {k:'_d',l:fl('Division')},
+  {k:'_room',l:LX('ພັກຫໍ','Lives in dorm'),r:m=>m._room?esc(m._room):`<span class="muted small">${LX('ບໍ່ໄດ້ພັກ','No')}</span>`,x:m=>m._room||'-'},
+  ...MEALS.map(([k,lo,en])=>({k,l:LX(lo,en),cls:'ctr',r:m=>ck(m[k]),x:m=>m[k]==='Yes'?'✓':''})),
+  {k:'StartDate',l:LX('ແຕ່ວັນທີ','From'),r:m=>fmtD(m.StartDate)},{k:'EndDate',l:LX('ຮອດວັນທີ','To'),r:m=>m.EndDate?fmtD(m.EndDate):`<span class="muted small">${LX('ບໍ່ກຳນົດ','open')}</span>`},
+  {k:'_on',l:fl('Status'),sv:m=>m._on?1:0,r:m=>m._on?`<span class="badge b-Yes">${LX('ກິນຢູ່','Current')}</span>`:`<span class="badge b-Cancelled">${m.StartDate>todayStr()?LX('ຍັງບໍ່ເລີ່ມ','Not started'):LX('ສິ້ນສຸດ','Ended')}</span>`,x:m=>m._on?'Current':'Ended'},
+  {k:'Remarks',l:LX('ໝາຍເຫດ','Remarks')}];}
+function dmMeals(){
+  const f=S.f.dorm,on=DM().meals.filter(m=>dMealOn(m));
+  const c=k=>on.filter(m=>m[k]==='Yes').length;
+  $('#dmBody').innerHTML=`<div class="grid kpis" style="margin-bottom:14px">${dmKpi(LX('ຄົນກິນເຂົ້າ (ມື້ນີ້)','People on the list (today)'),on.length,LX('ຄົນ','people'),'users','#2563eb')}${MEALS.map(([k,lo,en],i)=>dmKpi(LX('ຄາບ'+lo,en),c(k),LX('ຄົນ','people'),'sun',['#d97706','#16a34a','#7c3aed'][i])).join('')}</div>
+   <div class="bar no-print"><input class="in search" id="dmQ" placeholder="${t('search')}: ${LX('ຊື່ / ລະຫັດ','name / ID')}" value="${esc(f.mq)}">
+   <select class="in" id="dmM">${opts(MEALS.map(([k,lo,en])=>[k,LX(lo,en)]),f.meal,LX('ຄາບ','Meal')+': '+t('all'))}</select>
+   <select class="in" id="dmS">${opts([['cur',LX('ກິນຢູ່ປັດຈຸບັນ','Current')],['ended',LX('ສິ້ນສຸດແລ້ວ','Ended')],['former',LX('ອອກວຽກແລ້ວ ແຕ່ຍັງຢູ່ລາຍຊື່','Former employees still listed')],['all',t('all')]],f.mst)}</select>
+   <span class="grow"></span><button class="btn" data-act="dmMealPrint">${ic('download',15)} ${LX('ພິມໃຫ້ຄົວ','Print for kitchen')}</button><button class="btn" data-act="dmMealExport">${t('export')}</button>${canDorm()?`<button class="btn pri" data-act="dmMealForm">${ic('plus',15)} ${LX('ເພີ່ມຄົນກິນເຂົ້າ','Add to meal list')}</button>`:''}</div><div id="dmList"></div>`;
+  const upd=()=>{f.mq=$('#dmQ').value;f.meal=$('#dmM').value;f.mst=$('#dmS').value;S.tbl.dmeal&&(S.tbl.dmeal.p=1);list();};
+  $('#dmQ').oninput=upd;['dmM','dmS'].forEach(i=>$('#'+i).onchange=upd);
+  const list=()=>{$('#dmList').innerHTML=dataTable('dmeal',dmMealCols().filter(c=>!c.hide),dmMealRows(),{sortK:'_n',rowAttr:m=>canDorm()?`class="click" data-act="dmMealForm" data-arg="${esc(m.MealID)}"`:''});};list();
+}
+function dmMealForm(id){
+  if(!canDorm())return;
+  const m=id?{...DM().meals.find(x=>x.MealID===id)}:{PersonType:'Employee',Breakfast:'',Lunch:'Yes',Dinner:'',StartDate:todayStr()};if(id&&!m.MealID)return;
+  const e=m.EmployeeID?empById(m.EmployeeID):null,label=x=>x.EmployeeID+' · '+(x.NameLA||x.NameEN||'');
+  const outs=dLive().filter(s=>s.PersonType==='Outsider');
+  modal(id?LX('ແກ້ໄຂລາຍຊື່ກິນເຂົ້າ','Edit meal entry'):LX('ເພີ່ມຄົນກິນເຂົ້າ','Add to meal list'),`<div class="form">
+   <div class="fld wide"><label>${LX('ປະເພດ','Type')}</label><div class="dm-seg"><label><input type="radio" name="ml_type" value="Employee" ${m.PersonType==='Employee'?'checked':''}> ${LX('ພະນັກງານ','Employee')}</label><label><input type="radio" name="ml_type" value="Outsider" ${m.PersonType==='Outsider'?'checked':''}> ${LX('ຄົນນອກ','Outsider')}</label></div></div>
+   <div class="fld wide ml-emp"><label class="req">${LX('ພະນັກງານ','Employee')}</label><input class="in" id="ml_emp" list="mlEmpList" value="${e?esc(label(e)):''}" placeholder="${LX('ພິມລະຫັດ ຫຼື ຊື່ ແລ້ວເລືອກ','Type an ID or name and pick')}" autocomplete="off"><datalist id="mlEmpList">${curEmps().map(x=>`<option value="${esc(label(x))}">`).join('')}</datalist></div>
+   <div class="fld wide ml-out"><label class="req">${LX('ຄົນນອກທີ່ພັກຫໍ ຫຼື ພິມຊື່','Outsider living in the dorm, or type a name')}</label><select class="in" id="ml_stay">${opts(outs.map(s=>[s.StayID,s.Name+' · '+dRoomLabel(dRoom(s.RoomID))]),m.StayID,'— '+LX('ບໍ່ໄດ້ພັກຫໍ (ພິມຊື່ລຸ່ມນີ້)','Not living in the dorm (type the name below)')+' —')}</select><input class="in" id="ml_name" style="margin-top:6px" maxlength="80" value="${esc(m.StayID?'':m.Name||'')}" placeholder="${LX('ຊື່','Name')}"></div>
+   <div class="fld wide"><label class="req">${LX('ຄາບເຂົ້າ','Meals')}</label><div class="dm-seg">${MEALS.map(([k,lo,en])=>`<label><input type="checkbox" id="ml_${k}" ${m[k]==='Yes'?'checked':''}> ${LX(lo,en)}</label>`).join('')}</div></div>
+   <div class="fld"><label class="req">${LX('ແຕ່ວັນທີ','From')}</label><input class="in" type="date" id="ml_start" value="${esc(m.StartDate||'')}"></div>
+   <div class="fld"><label>${LX('ຮອດວັນທີ (ຫວ່າງ = ບໍ່ກຳນົດ)','To (empty = open)')}</label><input class="in" type="date" id="ml_end" value="${esc(m.EndDate||'')}"></div>
+   <div class="fld wide"><label>${LX('ໝາຍເຫດ','Remarks')}</label><input class="in" id="ml_rem" maxlength="300" value="${esc(m.Remarks||'')}" placeholder="${LX('ເຊັ່ນ ບໍ່ກິນຊີ້ນໝູ','e.g. no pork')}"></div></div>`,
+   `${id?`<button class="btn danger" data-act="dmMealDel" data-arg="${esc(id)}">${LX('ລຶບ','Delete')}</button><span class="grow"></span>`:''}<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="dmMealSave" data-arg="${esc(id||'')}">${t('save')}</button>`);
+  const sync=()=>{const ty=(document.querySelector('[name=ml_type]:checked')||{}).value;$('.ml-emp').style.display=ty==='Employee'?'':'none';$('.ml-out').style.display=ty==='Outsider'?'':'none';const sel=$('#ml_stay');$('#ml_name').style.display=sel.value?'none':'';};
+  document.querySelectorAll('[name=ml_type]').forEach(x=>x.onchange=sync);$('#ml_stay').onchange=sync;sync();
+}
+async function dmMealSave(id){
+  const ty=(document.querySelector('[name=ml_type]:checked')||{}).value;
+  const m={MealID:id||'',PersonType:ty,StartDate:$('#ml_start').value,EndDate:$('#ml_end').value,Remarks:$('#ml_rem').value.trim()};MEALS.forEach(([k])=>m[k]=$('#ml_'+k).checked?'Yes':'');
+  if(ty==='Employee'){const v=$('#ml_emp').value,x=(v.split(' · ')[0]||'').trim();if(!empById(x)){toast(LX('ກະລຸນາເລືອກພະນັກງານຈາກລາຍຊື່','Please pick an employee from the list'),'bad');return;}m.EmployeeID=x;}
+  else{m.StayID=$('#ml_stay').value;m.Name=m.StayID?'':$('#ml_name').value.trim();if(!m.StayID&&!m.Name){toast(LX('ກະລຸນາໃສ່ຊື່','Please enter a name'),'bad');return;}}
+  if(!m.Breakfast&&!m.Lunch&&!m.Dinner){toast(LX('ກະລຸນາເລືອກຢ່າງໜ້ອຍ 1 ຄາບ','Choose at least one meal'),'bad');return;}
+  if(!m.StartDate){toast(LX('ກະລຸນາໃສ່ວັນເລີ່ມ','Start date is required'),'bad');return;}
+  try{const r=await call('dorm.mealSave',{meal:m});DM().meals=DM().meals.filter(x=>x.MealID!==r.MealID).concat([r]);closeModal();toast(t('saved'),'ok');S.refresh&&S.refresh();}catch(e){fail(e);}
+}
+async function dmMealDel(id){if(!await ask(LX('ລຶບລາຍການນີ້? (ຖ້າຄົນນີ້ເຊົາກິນ ແນະນຳໃຫ້ໃສ່ "ຮອດວັນທີ" ແທນ ເພື່ອເກັບປະຫວັດ)','Delete this entry? (if the person stopped eating, set the "To" date instead to keep history)'),{danger:true}))return;
+  try{await call('dorm.mealDelete',{id});DM().meals=DM().meals.filter(x=>x.MealID!==id);closeModal();toast(LX('ລຶບແລ້ວ','Deleted'),'ok');S.refresh&&S.refresh();}catch(e){fail(e);}}
+
+/* ----- summary ----- */
+function dmSummaryData(){
+  const D=DM(),BR=dBedRooms(),td=todayStr(),m0=td.slice(0,8)+'01',act=BR.filter(r=>r.Status==='Active'),live=dLive();
+  const beds=act.reduce((a,r)=>a+(Number(r.Capacity)||0),0),used=live.filter(s=>{const r=dRoom(s.RoomID);return r&&r.Status==='Active';}).length;
+  const by=(keyF,list)=>{const o={};list.forEach(x=>{const k=keyF(x)||'—';o[k]=(o[k]||0)+1;});return o;};
+  const bld=uniq(BR.map(r=>r.Building)).map(b=>{const R=BR.filter(r=>r.Building===b),A=R.filter(r=>r.Status==='Active'),cap=A.reduce((a,r)=>a+(Number(r.Capacity)||0),0),n=live.filter(s=>R.some(r=>r.RoomID===s.RoomID)).length;
+    return{b,rooms:R.length,act:A.length,cap,n,free:Math.max(0,cap-n),pct:cap?Math.round(n/cap*100):0,out:live.filter(s=>s.PersonType==='Outsider'&&R.some(r=>r.RoomID===s.RoomID)).length};});
+  const gender=by(s=>s.PersonType==='Outsider'?LX('ຄົນນອກ','Outsider'):(dGenderKey(dPerson(s).gender)?dGender(dGenderKey(dPerson(s).gender)):LX('ບໍ່ລະບຸ','Not set')),live);
+  const meals=D.meals.filter(m=>dMealOn(m));
+  const divs=uniq([...live.map(s=>dPerson(s).div),...meals.map(m=>dMealPerson(m).div)]).map(d=>({d,n:live.filter(s=>dPerson(s).div===d).length,m:meals.filter(m=>dMealPerson(m).div===d).length})).sort((a,b)=>b.n-a.n||b.m-a.m);
+  const inM=D.stays.filter(s=>['Active','Moved','Left'].includes(s.Status)&&s.CheckIn>=m0&&s.Source!=='Move').length;
+  const outM=D.stays.filter(s=>s.Status==='Left'&&s.CheckOut>=m0).length,mvM=D.stays.filter(s=>s.Status==='Moved'&&s.CheckOut>=m0).length;
+  const grp=Object.keys(DG).map(g=>{const R=BR.filter(r=>(r.Gender||'Mixed')===g),A=R.filter(r=>r.Status==='Active'),cap=A.reduce((a,r)=>a+(Number(r.Capacity)||0),0),n=live.filter(s=>R.some(r=>r.RoomID===s.RoomID)).length;return{g,rooms:R.length,used:R.filter(r=>dLive(r.RoomID).length).length,empty:A.filter(r=>!dLive(r.RoomID).length).length,cap,n,free:Math.max(0,cap-n)};}).filter(x=>x.rooms);
+  return{grp,fac:D.rooms.length-BR.length,rooms:BR.length,act:act.length,beds,used,free:Math.max(0,beds-used),pct:beds?Math.round(used/beds*100):0,live:live.length,emp:live.filter(s=>s.PersonType==='Employee').length,out:live.filter(s=>s.PersonType==='Outsider').length,
+    pend:D.stays.filter(s=>s.Status==='Pending').length,maint:BR.filter(r=>r.Status==='Maintenance').length,bld,gender,divs,meals,inM,outM,mvM,
+    mc:MEALS.map(([k])=>meals.filter(m=>m[k]==='Yes').length),mealRes:meals.filter(m=>dResidentOf(m)).length};
+}
+function dmSummary(){
+  const X=dmSummaryData();
+  if(!dBedRooms().length){$('#dmBody').innerHTML=dmNoRooms();return;}
+  const T=(head,rows)=>`<div class="tbl-wrap"><table class="tbl"><thead><tr>${head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.join('')||`<tr><td colspan="${head.length}" class="empty">${t('noData')}</td></tr>`}</tbody></table></div>`;
+  $('#dmBody').innerHTML=`<div class="bar no-print"><span class="small muted">${LX('ຂໍ້ມູນ ณ ','As of ')}${fmtD(todayStr())}</span><span class="grow"></span><button class="btn" data-act="dmRoll">${ic('download',15)} ${LX('ລາຍຊື່ນັບຄົນ (ອົບພະຍົບ)','Roll-call list (evacuation)')}</button><button class="btn pri" data-act="dmSumExport">${ic('download',15)} Excel</button></div>
+   <div class="grid kpis" style="margin-bottom:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">${dmKpi(LX('ອັດຕາເຂົ້າພັກ','Occupancy'),X.pct+'%',X.used+' / '+X.beds+' '+LX('ຕຽງ','beds'),'pct','#2563eb')}${dmKpi(LX('ຜູ້ພັກທັງໝົດ','Residents'),X.live,LX('ພະນັກງານ ','Employees ')+X.emp+' · '+LX('ຄົນນອກ ','outsiders ')+X.out,'users','#7c3aed')}
+    ${dmKpi(LX('ຕຽງຫວ່າງ','Free beds'),X.free,LX('ຫ້ອງນອນໃຊ້ໄດ້ ','Open bedrooms ')+X.act+' / '+X.rooms+' · '+LX('ຫ້ອງຫວ່າງ ','empty ')+X.grp.reduce((a,x)=>a+x.empty,0),'building','#16a34a')}${dmKpi(LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend,LX('ສ້ອມແປງ ','Maintenance ')+X.maint+' '+LX('ຫ້ອງ','rooms'),'clock','#d97706')}
+    ${dmKpi(LX('ກິນເຂົ້າ (ມື້ນີ້)','Meals (today)'),X.meals.length,MEALS.map(([k,lo,en],i)=>LX(lo,en)+' '+X.mc[i]).join(' · '),'sun','#ea580c')}${dmKpi(LX('ເດືອນນີ້','This month'),'+'+X.inM+' / −'+X.outM,LX('ເຂົ້າ / ອອກ · ຍ້າຍ ','in / out · moved ')+X.mvM,'swap','#0891b2')}</div>
+   <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:14px">
+    <div class="card"><h3>${LX('ຕາມຕຶກ','By building')}</h3>${T([LX('ຕຶກ','Building'),LX('ຫ້ອງ','Rooms'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຫວ່າງ','Free'),'%',LX('ຄົນນອກ','Outsiders')],X.bld.map(b=>`<tr><td><b>${esc(b.b)}</b></td><td>${b.act}/${b.rooms}</td><td>${b.cap}</td><td>${b.n}</td><td>${b.free}</td><td><div class="dm-pbar"><i style="width:${Math.min(100,b.pct)}%;background:${b.pct>100?'#dc2626':b.pct>=90?'#d97706':'#2563eb'}"></i></div>${b.pct}%</td><td>${b.out}</td></tr>`))}</div>
+    <div class="card"><h3>${LX('ຕາມປະເພດຫ້ອງ','By room group')}</h3>${T([LX('ກຸ່ມຫ້ອງ','Room group'),LX('ຫ້ອງ','Rooms'),LX('ມີຄົນພັກ','In use'),LX('ຫ້ອງຫວ່າງ','Empty'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຕຽງຫວ່າງ','Free beds')],X.grp.map(x=>`<tr><td>${dGIcon(x.g)} <b>${esc(dGender(x.g))}</b></td><td>${x.rooms}</td><td>${x.used}</td><td>${x.empty}</td><td>${x.cap}</td><td>${x.n}</td><td>${x.free}</td></tr>`))}</div>
+    <div class="card"><h3>${LX('ຜູ້ພັກຕາມເພດ','Residents by gender')}</h3>${T([LX('ກຸ່ມ','Group'),LX('ຜູ້ພັກ','Residents')],Object.entries(X.gender).map(([k,v])=>`<tr><td>${esc(k)}</td><td><b>${v}</b></td></tr>`))}</div>
+    <div class="card" style="grid-column:1/-1"><h3>${LX('ຕາມພະແນກ','By division')}</h3>${T([fl('Division'),LX('ຜູ້ພັກ','Residents'),LX('ກິນເຂົ້າ','On meal list')],X.divs.map(d=>`<tr><td>${esc(d.d)}</td><td>${d.n}</td><td>${d.m}</td></tr>`))}</div></div>`;
+}
+function dmSumExport(){const X=dmSummaryData();
+  const resCols=dmResCols(),mealCols=dmMealCols();
+  const live=DM().stays.filter(s=>s.Status==='Active').map(s=>{const p=dPerson(s),r=dRoom(s.RoomID);return Object.assign({},s,{_n:p.name,_sub:p.sub,_d:p.div,_b:r?r.Building:'',_r:r?r.RoomNo:'',_cur:p.cur,_days:Math.max(0,Math.round((new Date()-(parseD(s.CheckIn)||new Date()))/864e5))});});
+  const meals=DM().meals.filter(m=>dMealOn(m)).map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:true,_room:r?r.Building+' · '+r.RoomNo:''});});
+  exportXlsx('KGS_Dormitory',[
+   {name:LX('ສະຫຼຸບຫໍພັກ','Dorm summary'),head:[LX('ລາຍການ','Item'),LX('ຈຳນວນ','Value')],rows:[[LX('ຫ້ອງນອນທັງໝົດ / ໃຊ້ໄດ້','Bedrooms total / open'),X.rooms+' / '+X.act],[LX('ພື້ນທີ່ອື່ນ (ຫ້ອງການ, ສາງ...)','Other areas (office, store...)'),X.fac],[LX('ຕຽງ (ຫ້ອງໃຊ້ໄດ້)','Beds (open rooms)'),X.beds],[LX('ຜູ້ພັກ','Residents'),X.live],[LX('ພະນັກງານ','Employees'),X.emp],[LX('ຄົນນອກ','Outsiders'),X.out],[LX('ຕຽງຫວ່າງ','Free beds'),X.free],[LX('ອັດຕາເຂົ້າພັກ %','Occupancy %'),X.pct],[LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend],[LX('ກິນເຂົ້າມື້ນີ້ (ຄົນ)','On meal list today'),X.meals.length],...MEALS.map(([k,lo,en],i)=>[LX('ຄາບ'+lo,en),X.mc[i]]),[LX('ເຂົ້າເດືອນນີ້','Checked in this month'),X.inM],[LX('ອອກເດືອນນີ້','Left this month'),X.outM],[LX('ຍ້າຍເດືອນນີ້','Moved this month'),X.mvM]]},
+   {name:LX('ຕາມປະເພດຫ້ອງ','By room group'),head:[LX('ກຸ່ມຫ້ອງ','Room group'),LX('ຫ້ອງ','Rooms'),LX('ມີຄົນພັກ','In use'),LX('ຫ້ອງຫວ່າງ','Empty'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຕຽງຫວ່າງ','Free beds')],rows:X.grp.map(x=>[dGender(x.g),x.rooms,x.used,x.empty,x.cap,x.n,x.free])},
+   {name:LX('ຕາມຕຶກ','By building'),head:[LX('ຕຶກ','Building'),LX('ຫ້ອງ','Rooms'),LX('ຫ້ອງໃຊ້ໄດ້','Open'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຫວ່າງ','Free'),LX('ອັດຕາ %','Rate %'),LX('ຄົນນອກ','Outsiders')],rows:X.bld.map(b=>[b.b,b.rooms,b.act,b.cap,b.n,b.free,b.pct,b.out])},
+   tableToSheet(LX('ຜູ້ພັກປັດຈຸບັນ','Current residents'),resCols.filter(c=>!['CheckOut','Status'].includes(c.k)),live.sort((a,b)=>(a._b+a._r).localeCompare(b._b+b._r,undefined,{numeric:true}))),
+   tableToSheet(LX('ລາຍຊື່ກິນເຂົ້າ','Meal list'),mealCols,meals),
+   {name:LX('ຕາມພະແນກ','By division'),head:[LX('ພະແນກ','Division'),LX('ຜູ້ພັກ','Residents'),LX('ກິນເຂົ້າ','On meal list')],rows:X.divs.map(d=>[d.d,d.n,d.m])}]);}
+
+/* ----- room setup ----- */
+function dmRooms(){
+  const D=DM();
+  $('#dmBody').innerHTML=`<div class="bar no-print"><span class="small muted">${LX('ເພີ່ມ / ແກ້ໄຂ ຕຶກ, ຊັ້ນ, ຫ້ອງ ແລະ ຈຳນວນຕຽງ. ພິມ QR ໄປຕິດປະຕູຫ້ອງ ເພື່ອໃຫ້ຜູ້ພັກລົງທະບຽນເອງ.','Add / edit buildings, floors, rooms and beds. Print the QR and stick it on the room door for self-registration.')}</span><span class="grow"></span>
+   ${canDorm()&&D.rooms.length?`<button class="btn" data-act="dmQr">${ic('qr',15)} ${LX('ພິມ QR ທຸກຫ້ອງ','Print QR for all rooms')}</button>`:''}${canDorm()?`<button class="btn" data-act="dmImport">${ic('upload',15)} ${LX('ນຳເຂົ້າຈາກ Excel','Import from Excel')}</button><button class="btn" data-act="dmRoomBulk">${ic('layers',15)} ${LX('ເພີ່ມຫຼາຍຫ້ອງ','Add many rooms')}</button><button class="btn pri" data-act="dmRoomForm">${ic('plus',15)} ${LX('ເພີ່ມຫ້ອງ','Add room')}</button>`:''}</div><div id="dmRl"></div>`;
+  $('#dmRl').innerHTML=D.rooms.length?dataTable('drooms',[
+    {k:'Building',l:LX('ຕຶກ','Building')},{k:'Floor',l:LX('ຊັ້ນ','Floor')},{k:'RoomNo',l:LX('ເບີຫ້ອງ','Room no.'),r:r=>`<b>${esc(r.RoomNo)}</b>`},
+    {k:'RoomType',l:LX('ປະເພດ','Type'),r:r=>esc(dRT(r.RoomType))},{k:'Gender',l:LX('ກຸ່ມຫ້ອງ','Group'),r:r=>isBed(r)?dGIcon(r.Gender)+' '+esc(dGender(r.Gender)):''},{k:'Capacity',l:LX('ຕຽງ','Beds'),cls:'num',r:r=>isBed(r)?esc(r.Capacity):''},
+    {k:'_n',l:LX('ຜູ້ພັກ','Residents'),sv:r=>dLive(r.RoomID).length,r:r=>isBed(r)?String(dLive(r.RoomID).length):''},
+    {k:'Status',l:fl('Status'),r:r=>dBadge(r.Status)},{k:'Notes',l:LX('ໝາຍເຫດ','Notes')},{k:'RoomID',l:'ID',r:r=>`<span class="small muted">${esc(r.RoomID)}</span>`}],
+    dSortRooms(D.rooms).sort((a,b)=>(isBed(a)?0:1)-(isBed(b)?0:1)),{sortK:null,ps:50,rowAttr:r=>canDorm()?`class="click" data-act="dmRoomForm" data-arg="${esc(r.RoomID)}"`:''}):dmNoRooms();
+}
+function dmRoomForm(id){
+  if(!canDorm())return;
+  const D=DM(),r=id?{...dRoom(id)}:{RoomType:'Bedroom',Gender:'Mixed',Capacity:'4',Status:'Active',Building:(D.rooms[D.rooms.length-1]||{}).Building||''};if(id&&!r.RoomID)return;
+  S.dmBackRoom=!!id&&!!$('#ov')&&S.dmRoomId===id;
+  const I=(k,type,extra)=>`<input class="in" id="rf_${k}" type="${type||'text'}" value="${esc(r[k]||'')}" ${extra||''}>`;
+  modal(id?LX('ແກ້ໄຂຫ້ອງ','Edit room')+' · '+r.RoomNo:LX('ເພີ່ມຫ້ອງ','Add room'),`<div class="form">
+   <div class="fld"><label class="req">${LX('ຕຶກ / ອາຄານ','Building')}</label>${I('Building','text','list="rfBld" maxlength="60" placeholder="'+LX('ເຊັ່ນ ຕຶກ A','e.g. Block A')+'"')}<datalist id="rfBld">${uniq(D.rooms.map(x=>x.Building)).map(b=>`<option value="${esc(b)}">`).join('')}</datalist></div>
+   <div class="fld"><label>${LX('ຊັ້ນ','Floor')}</label>${I('Floor','text','maxlength="20"')}</div>
+   <div class="fld"><label class="req">${LX('ເບີຫ້ອງ','Room no.')}</label>${I('RoomNo','text','maxlength="20"')}</div>
+   <div class="fld"><label>${LX('ປະເພດຫ້ອງ','Room type')}</label><select class="in" id="rf_RoomType">${opts(Object.keys(RT).map(k=>[k,dRT(k)]),r.RoomType||'Bedroom')}</select></div>
+   <div class="fld rf-bed"><label class="req">${LX('ຈຳນວນຕຽງ','Beds')}</label>${I('Capacity','number','min="1" max="50" step="1"')}</div>
+   <div class="fld rf-bed"><label>${LX('ກຸ່ມຫ້ອງ','Room group')}</label><select class="in" id="rf_Gender">${opts(Object.keys(DG).map(k=>[k,dGender(k)]),r.Gender)}</select></div>
+   <div class="fld"><label>${fl('Status')}</label><select class="in" id="rf_Status">${opts([['Active',LX('ໃຊ້ໄດ້','Active')],['Maintenance',LX('ສ້ອມແປງ','Maintenance')],['Closed',LX('ປິດ','Closed')]],r.Status)}</select></div>
+   <div class="fld wide"><label>${LX('ໝາຍເຫດ','Notes')}</label>${I('Notes','text','maxlength="300" placeholder="'+LX('ເຊັ່ນ ມີແອ / ພັດລົມ, ຫ້ອງນ້ຳໃນ','e.g. air-con, own bathroom')+'"')}</div></div>`,
+   `${id?`<button class="btn danger" data-act="dmRoomDel" data-arg="${esc(id)}">${LX('ລຶບ','Delete')}</button><span class="grow"></span>`:''}<button class="btn" data-act="${S.dmBackRoom?'dmBack':'closeModal'}">${t('cancel')}</button><button class="btn pri" data-act="dmRoomSave" data-arg="${esc(id||'')}">${t('save')}</button>`);
+  const sy=()=>{const b=$('#rf_RoomType').value==='Bedroom';document.querySelectorAll('.rf-bed').forEach(x=>x.style.display=b?'':'none');};$('#rf_RoomType').onchange=sy;sy();
+}
+async function dmRoomSave(id){const v=k=>$('#rf_'+k).value.trim();
+  const room={RoomID:id||'',Building:v('Building'),Floor:v('Floor'),RoomNo:v('RoomNo'),RoomType:v('RoomType'),Capacity:v('Capacity'),Gender:v('Gender'),Status:v('Status'),Notes:v('Notes')};
+  if(!room.Building||!room.RoomNo){toast(LX('ກະລຸນາໃສ່ຕຶກ ແລະ ເບີຫ້ອງ','Building and room number are required'),'bad');return;}
+  try{const r=await call('dorm.roomSave',{room});DM().rooms=DM().rooms.filter(x=>x.RoomID!==r.RoomID).concat([r]);toast(t('saved'),'ok');S.dmRoomId=r.RoomID;dmReopen();}catch(e){fail(e);}}
+async function dmRoomDel(id){if(!await ask(LX('ລຶບຫ້ອງນີ້?','Delete this room?'),{danger:true}))return;
+  try{await call('dorm.roomDelete',{id});DM().rooms=DM().rooms.filter(x=>x.RoomID!==id);closeModal();toast(LX('ລຶບແລ້ວ','Deleted'),'ok');S.refresh&&S.refresh();}catch(e){fail(e);}}
+function dmRoomBulk(){
+  modal(LX('ເພີ່ມຫຼາຍຫ້ອງພ້ອມກັນ','Add many rooms at once'),`<div class="form">
+   <div class="fld"><label class="req">${LX('ຕຶກ','Building')}</label><input class="in" id="rb_b" maxlength="60" list="rbBld"><datalist id="rbBld">${uniq(DM().rooms.map(x=>x.Building)).map(b=>`<option value="${esc(b)}">`).join('')}</datalist></div>
+   <div class="fld"><label>${LX('ຊັ້ນ','Floor')}</label><input class="in" id="rb_f" maxlength="20"></div>
+   <div class="fld"><label class="req">${LX('ເບີຫ້ອງ ແຕ່','Room no. from')}</label><input class="in" id="rb_from" type="number" min="1" value="101"></div>
+   <div class="fld"><label class="req">${LX('ຮອດ','to')}</label><input class="in" id="rb_to" type="number" min="1" value="110"></div>
+   <div class="fld"><label class="req">${LX('ຕຽງ / ຫ້ອງ','Beds per room')}</label><input class="in" id="rb_c" type="number" min="1" max="50" value="4"></div>
+   <div class="fld"><label>${LX('ກຸ່ມຫ້ອງ','Room group')}</label><select class="in" id="rb_g">${opts(Object.keys(DG).map(k=>[k,dGender(k)]),'Mixed')}</select></div></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="dmRoomBulkGo">${t('save')}</button>`);}
+async function dmRoomBulkGo(){const b=$('#rb_b').value.trim(),fl2=$('#rb_f').value.trim(),a=parseInt($('#rb_from').value,10),z=parseInt($('#rb_to').value,10),c=$('#rb_c').value,g=$('#rb_g').value;
+  if(!b||!(a>0)||!(z>=a)){toast(LX('ກະລຸນາໃສ່ຕຶກ ແລະ ເບີຫ້ອງໃຫ້ຖືກ','Please enter the building and a valid room range'),'bad');return;}
+  if(z-a>99){toast(LX('ສູງສຸດ 100 ຫ້ອງຕໍ່ຄັ້ງ','Max 100 rooms at a time'),'bad');return;}
+  closeModal();let ok=0,skip=0;
+  await KFX.job({title:LX('ເພີ່ມຫ້ອງ','Adding rooms'),icon:'import',steps:[LX('ບັນທຶກຫ້ອງ','Saving rooms')],run:async()=>{for(let n=a;n<=z;n++){try{const r=await call('dorm.roomSave',{room:{Building:b,Floor:fl2,RoomNo:String(n),RoomType:'Bedroom',Capacity:c,Gender:g,Status:'Active'}},{silent:true});DM().rooms.push(r);ok++;}catch(e){skip++;}}},
+   onOk:()=>{toast(LX('ເພີ່ມ ','Added ')+ok+(skip?LX(' · ຂ້າມ (ມີແລ້ວ) ',' · skipped (exists) ')+skip:''),'ok');S.refresh&&S.refresh();}});
+}
+
+/* ----- QR for room doors ----- */
+async function dmQr(id){
+  try{await needLib('qr');}catch(e){toast(e.message,'bad');return;}
+  let r;try{r=await call('dorm.qrTokens');}catch(e){fail(e);return;}
+  const base=(apiMode()||!r.url)?location.href.split('#')[0].split('?')[0]:r.url;
+  const list=dSortRooms(DM().rooms.filter(x=>isBed(x)&&(id?x.RoomID===id:true)&&x.Status!=='Closed'));
+  const tk={};r.rooms.forEach(x=>tk[x.RoomID]=x.k);
+  const logo=hasLogo()?`<img src="${esc(cfg('logo'))}" alt="">`:`<span class="bl">KGS</span>`;
+  const cards=list.map(x=>{const link=base+'?dorm='+encodeURIComponent(x.RoomID)+'&k='+tk[x.RoomID];return `<div class="dq-card"><div class="dq-h">${logo}<div><b>${esc(companyName())}</b><span>${LX('ຫໍພັກພະນັກງານ','Staff dormitory')}</span></div></div>
+    <div class="dq-room"><small>${esc(x.Building)}${x.Floor?' · '+LX('ຊັ້ນ ','Floor ')+esc(x.Floor):''}</small><b>${LX('ຫ້ອງ','Room')} ${esc(x.RoomNo)}</b><span>${dGIcon(x.Gender)} ${esc(dGender(x.Gender))} · ${esc(x.Capacity)} ${LX('ຕຽງ','beds')}</span></div>
+    <img class="dq-qr" src="${qrImg(link,6)}" alt="QR"><div class="dq-t">ສະແກນ QR ເພື່ອລົງທະບຽນເຂົ້າພັກຫ້ອງນີ້<br><i>Scan to register in this room</i></div></div>`;}).join('');
+  let pa=$('#printArea');if(!pa){pa=document.createElement('div');pa.id='printArea';document.body.appendChild(pa);}
+  pa.innerHTML=`<div class="dq-sheet">${cards}</div>`;
+  S.dmQrLink=list.length===1?base+'?dorm='+encodeURIComponent(list[0].RoomID)+'&k='+tk[list[0].RoomID]:'';
+  modal('QR '+LX('ຫ້ອງ','rooms')+' ('+list.length+')',`<p class="small muted" style="margin-top:0">${LX('ພິມແລ້ວຕິດທີ່ປະຕູຫ້ອງ. QR ຂອງແຕ່ລະຫ້ອງບໍ່ປ່ຽນ. ການລົງທະບຽນຜ່ານ QR ຈະລໍຖ້າຜູ້ຮັບຜິດຊອບອະນຸມັດກ່ອນສະເໝີ. ຖ້າຕັ້ງຫ້ອງເປັນ "ປິດ" ຫຼື "ສ້ອມແປງ" QR ນັ້ນຈະໃຊ້ບໍ່ໄດ້.','Print and stick on the room door. Each room QR is fixed. QR registrations always wait for approval. Setting a room to Closed or Maintenance stops its QR.')}</p><div class="badge-prev"><div class="dq-sheet">${cards}</div></div>`,
+   `${S.dmQrLink?`<button class="btn" data-act="dmQrTry">${ic('link',15)} ${LX('ລອງເປີດ','Try it')}</button>`:''}<span class="grow"></span><button class="btn" data-act="closeModal">${t('close')}</button><button class="btn pri" data-act="printBadgesGo">${ic('download',15)} ${t('print')}</button>`,'lg');
+}
+
+/* ----- prints: roll-call + kitchen list ----- */
+function dmPrintPage(title,body){
+  const logo=hasLogo()?`<img src="${esc(cfg('logo'))}" alt="">`:`<span class="bl">KGS</span>`;
+  let pa=$('#printArea');if(!pa){pa=document.createElement('div');pa.id='printArea';document.body.appendChild(pa);}
+  pa.innerHTML=`<div class="pr-page dm-pr"><div class="pr-head">${logo}<div><b>${esc(companyName())}</b><span>${esc(cfg('sysName'))}</span></div><div class="pr-date">${t('es_printed')}: ${fmtD(todayStr())} ${new Date().toTimeString().slice(0,5)}<br>${esc(S.me?S.me.FullName||S.me.Username:'')}</div></div><h1>${title}</h1>${body}</div>`;
+  H.printBadgesGo();
+}
+function dmRoll(){
+  const R=dSortRooms(DM().rooms.filter(r=>dLive(r.RoomID).length));let n=0;
+  const body=`<p class="dm-prn">${LX('ໃຊ້ສຳລັບນັບຄົນເວລາອົບພະຍົບ / ໄຟໄໝ້ / ເຫດສຸກເສີນ (ISO 45001). ໝາຍ ✓ ເມື່ອພົບຕົວ.','For headcount during evacuation / fire / emergency (ISO 45001). Tick ✓ when the person is found.')} · ${LX('ທັງໝົດ','Total')} <b>${dLive().length}</b> ${LX('ຄົນ','people')}</p>
+   <table class="pr-t"><thead><tr><th>#</th><th>${LX('ຕຶກ / ຫ້ອງ','Building / room')}</th><th>${LX('ຕຽງ','Bed')}</th><th>${LX('ຊື່','Name')}</th><th>${LX('ລະຫັດ / ປະເພດ','ID / type')}</th><th style="width:16mm">✓</th></tr></thead><tbody>${R.map(r=>dLive(r.RoomID).map((s,i)=>{const p=dPerson(s);n++;
+     return `<tr${i===0?' class="dm-rt"':''}><td>${n}</td><td>${i===0?`<b>${esc(r.Building+' · '+r.RoomNo)}</b>`:''}</td><td>${esc(s.Bed||'')}</td><td>${esc(p.name)}</td><td>${esc(s.PersonType==='Employee'?s.EmployeeID:LX('ຄົນນອກ','Outsider'))}</td><td></td></tr>`;}).join('')).join('')}</tbody></table>
+   <table class="pr-sign"><tr><td>${LX('ຜູ້ນັບ','Counted by')}<br><br>.........................</td><td>${LX('ເວລາ','Time')}<br><br>.........................</td><td>${LX('ພົບ / ທັງໝົດ','Found / total')}<br><br>......... / ${dLive().length}</td></tr></table>`;
+  dmPrintPage(LX('ລາຍຊື່ຜູ້ພັກ — ນັບຄົນສຸກເສີນ','Dormitory roll-call — emergency headcount'),body);
+}
+function dmMealPrint(){
+  const on=DM().meals.filter(m=>dMealOn(m)).map(m=>Object.assign({},m,{_p:dMealPerson(m),_r:dResidentOf(m)})).sort((a,b)=>a._p.name.localeCompare(b._p.name));
+  const c=k=>on.filter(m=>m[k]==='Yes').length;
+  const body=`<table class="pr-sum"><tr>${MEALS.map(([k,lo,en])=>`<th>${LX('ຄາບ'+lo,en)}</th>`).join('')}<th>${LX('ລວມຄົນ','People')}</th></tr><tr>${MEALS.map(([k])=>`<td><b>${c(k)}</b></td>`).join('')}<td><b>${on.length}</b></td></tr></table>
+   <table class="pr-t"><thead><tr><th>#</th><th>${LX('ຊື່','Name')}</th><th>${LX('ລະຫັດ / ປະເພດ','ID / type')}</th><th>${LX('ພັກຫໍ','Room')}</th>${MEALS.map(([k,lo,en])=>`<th>${LX(lo,en)}</th>`).join('')}<th>${LX('ໝາຍເຫດ','Remarks')}</th></tr></thead><tbody>${on.map((m,i)=>`<tr><td>${i+1}</td><td>${esc(m._p.name)}</td><td>${esc(m._p.sub)}</td><td>${m._r?esc(m._r.Building+' · '+m._r.RoomNo):''}</td>${MEALS.map(([k])=>`<td style="text-align:center">${m[k]==='Yes'?'✓':''}</td>`).join('')}<td>${esc(m.Remarks||'')}</td></tr>`).join('')}</tbody></table>`;
+  dmPrintPage(LX('ລາຍຊື່ກິນເຂົ້າ','Meal list'),body);
+}
+
+
+/* ----- import rooms + residents from Excel (one row per person; empty room = row without a name) ----- */
+const DMI_H=['ຕຶກ / ຫໍພັກ','ຊັ້ນ','ເລກຫ້ອງ','ກຸ່ມຫ້ອງ','ຈຳນວນຕຽງ','ຊື່ຜູ້ພັກ','ລະຫັດພະນັກງານ','ປະເພດ','ໝາຍເຫດ'];
+const dmGroupKey=v=>{const s=nk(v);if(!s)return 'Mixed';if(/ຄອບຄົວ|ຜົວ|FAMIL|COUPLE/.test(s))return 'Family';if(/ຍິງ|ສາວ|FEMALE|WOMEN/.test(s))return 'Female';if(/ຊາຍ|MALE|MEN/.test(s))return 'Male';return 'Mixed';};
+const dmNameKey=v=>nk(String(v||'').replace(/^\s*(ທ້າວ|ທ\.?|ນາງ|ນ\.?|ທ່ານ)\s+/,'')).replace(/\s+/g,' ');
+function dmMatchEmp(name){const k=dmNameKey(name);if(!k)return[];
+  return curEmps().filter(e=>[e.Nickname,e.NameLA,e.NameEN].some(v=>{const x=dmNameKey(v);return x&&(x===k||x.split(' ')[0]===k);}));}
+function dmImport(){S.dmi=null;
+  modal(LX('ນຳເຂົ້າຫ້ອງ ແລະ ຜູ້ພັກ ຈາກ Excel','Import rooms and residents from Excel'),`<p class="small" style="margin-top:0">${LX('1 ແຖວ = 1 ຄົນ. ຫ້ອງຫວ່າງ = 1 ແຖວບໍ່ມີຊື່. ຖ້າບໍ່ມີລະຫັດພະນັກງານ ລະບົບຈະລອງຈັບຄູ່ຈາກຊື່ຫຼິ້ນ / ຊື່ ໃຫ້ ແລ້ວໃຫ້ກວດກ່ອນບັນທຶກ.','1 row = 1 person. Empty room = 1 row without a name. Without an Employee ID the system tries to match the nickname / name; check before saving.')}</p>
+   <div class="bar"><button class="btn" data-act="dmImpTpl">${ic('download',14)} ${LX('ດາວໂຫຼດແບບຟອມ','Download template')}</button><label class="btn pri" style="cursor:pointer">${ic('upload',14)} ${LX('ເລືອກໄຟລ໌ Excel','Choose Excel file')}<input type="file" id="dmiFile" accept=".xlsx,.xls" style="display:none"></label>
+   <span class="grow"></span><label class="small">${LX('ວັນເຂົ້າພັກ','Check-in date')} <input class="in" type="date" id="dmiDate" value="${todayStr()}"></label></div><div id="dmiBody"></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" id="dmiGo" data-act="dmImpGo" disabled>${LX('ບັນທຶກເຂົ້າລະບົບ','Save to system')}</button>`,'lg');
+  $('#dmiFile').onchange=ev=>{const file=ev.target.files[0];if(!file)return;const fr=new FileReader();
+    fr.onload=()=>{try{const wb=XLSX.read(new Uint8Array(fr.result),{type:'array'});const ws=wb.Sheets[wb.SheetNames[0]];dmImpParse(XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false}));}catch(e){toast(e.message,'bad');}};fr.readAsArrayBuffer(file);};
+}
+function dmImpParse(A){
+  const hi=A.findIndex(r=>r.some(c=>/ເລກຫ້ອງ|ROOM/i.test(String(c))));if(hi<0){toast(LX('ບໍ່ພົບຖັນ "ເລກຫ້ອງ"','Column "ເລກຫ້ອງ" not found'),'bad');return;}
+  const H=A[hi].map(x=>String(x).trim()),col=(...k)=>H.findIndex(h=>k.some(x=>h.toUpperCase().includes(x.toUpperCase())));
+  const c={b:col('ຕຶກ','ຫໍພັກ','BUILDING'),f:col('ຊັ້ນ','FLOOR'),r:col('ເລກຫ້ອງ','ROOM'),g:col('ກຸ່ມ','GROUP'),cap:col('ຕຽງ','BED'),n:col('ຊື່','NAME'),id:col('ລະຫັດ','EMPLOYEE ID','ID'),ty:col('ປະເພດ','TYPE'),rm:col('ໝາຍເຫດ','REMARK')};
+  const v=(r,k)=>c[k]>=0?String(r[c[k]]||'').trim():'';
+  const rooms={},people=[];
+  A.slice(hi+1).forEach(r=>{const no=v(r,'r');if(!no)return;const b=v(r,'b')||LX('ຫໍພັກ','Dormitory'),key=(b+'|'+no).toUpperCase();
+    if(!rooms[key])rooms[key]={Building:b,Floor:v(r,'f')||(no.match(/^(\d+)\//)||[])[1]||'',RoomNo:no,Gender:dmGroupKey(v(r,'g')),Capacity:v(r,'cap')||'4'};
+    const name=v(r,'n');if(!name||name==='-')return;
+    const out=/ນອກ|OUTSIDER/i.test(v(r,'ty'));let id=v(r,'id').toUpperCase(),how='';
+    if(!out){if(id&&empById(id)){how='id';}else{const m=dmMatchEmp(name);if(m.length===1){id=m[0].EmployeeID;how='auto';}else{id='';how=m.length>1?'many':'none';}}}
+    people.push({key,name,id,how:out?'out':how,cands:out||how==='id'?[]:dmMatchEmp(name),rem:v(r,'rm')});});
+  const ex=new Set(DM().rooms.map(r=>(r.Building+'|'+r.RoomNo).toUpperCase()));
+  const dupIds={};people.forEach(p=>{if(p.id)dupIds[p.id]=(dupIds[p.id]||0)+1;});
+  S.dmi={rooms,people,ex,dupIds};dmImpRender();
+}
+function dmImpRender(){
+  const I=S.dmi,R=Object.values(I.rooms),newR=R.filter(r=>!I.ex.has((r.Building+'|'+r.RoomNo).toUpperCase()));
+  const cnt=k=>I.people.filter(p=>p.how===k).length,ready=I.people.filter(p=>p.id&&I.dupIds[p.id]===1).length;
+  const per={};I.people.forEach(p=>per[p.key]=(per[p.key]||0)+1);const over=R.filter(r=>(per[(r.Building+'|'+r.RoomNo).toUpperCase()]||0)>Number(r.Capacity||0));
+  const st=p=>p.how==='out'?`<span class="badge b-Planned">${LX('ຄົນນອກ — ເພີ່ມເອງພາຍຫຼັງ','Outsider — add by hand')}</span>`:!p.id?`<span class="badge b-No">${p.how==='many'?LX('ຊື່ຊ້ຳຫຼາຍຄົນ — ເລືອກ','Several matches — choose'):LX('ບໍ່ພົບ — ເລືອກ','Not found — choose')}</span>`:I.dupIds[p.id]>1?`<span class="badge b-No">${LX('ລະຫັດຊ້ຳ','Duplicate ID')}</span>`:p.how==='auto'?`<span class="badge b-Late">${LX('ຈັບຄູ່ອັດຕະໂນມັດ — ກວດ','Auto-matched — check')}</span>`:`<span class="badge b-Yes">${LX('ພ້ອມ','Ready')}</span>`;
+  const label=e=>e.EmployeeID+' · '+(e.NameLA||e.NameEN||'')+(e.Nickname?' ('+e.Nickname+')':'');
+  $('#dmiBody').innerHTML=`<div class="grid kpis" style="margin:12px 0;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${dmKpi(LX('ຫ້ອງໃນໄຟລ໌','Rooms in file'),R.length,LX('ໃໝ່ ','new ')+newR.length,'building','#2563eb')}${dmKpi(LX('ຜູ້ພັກໃນໄຟລ໌','People in file'),I.people.length,'','users','#7c3aed')}${dmKpi(LX('ພ້ອມບັນທຶກ','Ready'),ready,LX('ອັດຕະໂນມັດ ','auto ')+cnt('auto'),'check','#16a34a')}${dmKpi(LX('ຕ້ອງເລືອກ','Need a choice'),I.people.filter(p=>!p.id&&p.how!=='out').length,LX('ຄົນນອກ ','outsiders ')+cnt('out'),'shield','#dc2626')}</div>
+   ${over.length?`<div class="note warn small">⚠ ${LX('ຫ້ອງຄົນເກີນຕຽງ: ','Rooms with more people than beds: ')}${over.map(r=>esc(r.RoomNo)).join(', ')}</div>`:''}
+   <div class="tbl-wrap" style="max-height:46vh;overflow:auto"><table class="tbl"><thead><tr><th>${LX('ຫ້ອງ','Room')}</th><th>${LX('ຊື່ໃນໄຟລ໌','Name in file')}</th><th>${LX('ພະນັກງານໃນລະບົບ','Employee in system')}</th><th>${fl('Status')}</th></tr></thead><tbody>${I.people.map((p,i)=>`<tr><td>${esc(I.rooms[p.key].RoomNo)}</td><td><b>${esc(p.name)}</b></td>
+     <td>${p.how==='out'?'—':`<input class="in" list="dmiList" data-i="${i}" value="${p.id&&empById(p.id)?esc(label(empById(p.id))):''}" placeholder="${LX('ພິມລະຫັດ / ຊື່','type ID / name')}" style="min-width:240px">${p.cands.length>1&&!p.id?`<div class="small muted">${p.cands.map(e=>esc(e.EmployeeID)).join(', ')}</div>`:''}`}</td><td>${st(p)}</td></tr>`).join('')||`<tr><td colspan="4" class="empty">${LX('ບໍ່ມີຊື່ຜູ້ພັກ (ຈະສ້າງແຕ່ຫ້ອງ)','No names (rooms only)')}</td></tr>`}</tbody></table></div>
+   <datalist id="dmiList">${curEmps().map(e=>`<option value="${esc(label(e))}">`).join('')}</datalist>
+   <p class="small muted">${LX('ແຖວທີ່ຍັງບໍ່ມີພະນັກງານ ຈະຖືກຂ້າມ (ບໍ່ບັນທຶກ). ຫ້ອງທີ່ມີຢູ່ແລ້ວ ຈະບໍ່ສ້າງຊ້ຳ.','Rows without an employee are skipped. Rooms that already exist are not created again.')}</p>`;
+  document.querySelectorAll('#dmiBody input[data-i]').forEach(inp=>inp.onchange=()=>{const p=I.people[+inp.dataset.i],x=(inp.value.split(' · ')[0]||'').trim().toUpperCase();
+    if(p.id)I.dupIds[p.id]--;p.id=empById(x)?x:'';p.how=p.id?'id':'none';if(p.id)I.dupIds[p.id]=(I.dupIds[p.id]||0)+1;dmImpRender();});
+  $('#dmiGo').disabled=!(newR.length||ready);
+}
+async function dmImpGo(){
+  const I=S.dmi;if(!I)return;const date=$('#dmiDate').value||todayStr();
+  const todo=I.people.filter(p=>p.id&&I.dupIds[p.id]===1),R=Object.values(I.rooms);
+  if(!await ask(LX(`ບັນທຶກ ${R.filter(r=>!I.ex.has((r.Building+'|'+r.RoomNo).toUpperCase())).length} ຫ້ອງໃໝ່ ແລະ ${todo.length} ຜູ້ພັກ (ວັນເຂົ້າພັກ ${fmtD(date)})?`,`Save ${R.filter(r=>!I.ex.has((r.Building+'|'+r.RoomNo).toUpperCase())).length} new rooms and ${todo.length} residents (check-in ${fmtD(date)})?`)))return;
+  closeModal();const res={rooms:0,stays:0,err:[]};
+  await KFX.job({title:LX('ນຳເຂົ້າຫໍພັກ','Importing dormitory'),icon:'import',steps:[LX('ສ້າງຫ້ອງ','Creating rooms'),LX('ບັນທຶກຜູ້ພັກ','Saving residents')],run:async()=>{
+    const idOf={};DM().rooms.forEach(r=>idOf[(r.Building+'|'+r.RoomNo).toUpperCase()]=r.RoomID);
+    for(const r of R){const k=(r.Building+'|'+r.RoomNo).toUpperCase();if(idOf[k])continue;
+      try{const x=await call('dorm.roomSave',{room:Object.assign({RoomType:'Bedroom',Status:'Active'},r)},{silent:true});DM().rooms.push(x);idOf[k]=x.RoomID;res.rooms++;}catch(e){res.err.push(r.RoomNo+': '+e.message);}}
+    for(const p of todo){try{const s=await call('dorm.staySave',{stay:{PersonType:'Employee',EmployeeID:p.id,RoomID:idOf[p.key],CheckIn:date,Remarks:p.rem},force:true},{silent:true});dmPut(s);res.stays++;}catch(e){res.err.push(p.name+' ('+p.id+'): '+e.message);}}
+  },onOk:()=>{toast(LX('ສ້າງຫ້ອງ ','Rooms ')+res.rooms+' · '+LX('ຜູ້ພັກ ','residents ')+res.stays,'ok');S.refresh&&S.refresh();
+    if(res.err.length)modal(LX('ບາງແຖວບໍ່ໄດ້ບັນທຶກ','Some rows were not saved'),`<ul class="small">${res.err.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`,null);}});
+}
+function dmImpTpl(){
+  const rows=[[LX('ຫໍພັກບ້ານດຸງ','Ban Dung dormitory'),'1','1/001',LX('ຍິງໂສດ','Single women'),'4',LX('ນ ຕົວຢ່າງ','Sample name'),'KGS0000',LX('ພະນັກງານ','Employee'),''],[LX('ຫໍພັກບ້ານດຸງ','Ban Dung dormitory'),'1','1/014',LX('ບໍ່ກຳນົດ','Not set'),'4','','','','']];
+  exportXlsx('KGS_Dorm_Import_Template',[{name:LX('ນຳເຂົ້າຫໍພັກ','Dorm import'),head:DMI_H,rows}]);
+}
+function dormActions(){return{
+  dmTab:k=>{S.f.dorm.tab=k;pageDorm();},
+  dmGo:a=>{const[tab,flag]=String(a).split(':');const f=S.f.dorm;f.tab=tab;if(tab==='res'){f.flag=flag||'';f.st='Active';f.q='';f.type='';f.bld='';}if(tab==='meal'){f.mst=flag==='former'?'former':'cur';}pageDorm();},
+  dmRoom:a=>dmRoom(a),dmBack:()=>{if(S.dmRoomId&&dRoom(S.dmRoomId))dmRoom(S.dmRoomId);else closeModal();},
+  dmStayForm:a=>dmStayForm(a||'',null),dmStayEdit:a=>{const s=DM().stays.find(x=>x.StayID===a);dmStayForm(s?s.RoomID:'',a);},dmStaySave,
+  dmMove,dmMoveGo,dmOut,dmOutGo,dmHeadcount,
+  dmConfirmRoom:async a=>{const[id,hc]=String(a).split('|');const r=dRoom(id);await dmConfirm(dLive(id).map(s=>s.StayID),' '+LX('ໃນຫ້ອງ ','in room ')+(r?r.RoomNo:''));if(hc)dmHeadcount();else dmRoom(id);S.refresh&&S.refresh();},
+  dmApprove,dmApproveGo,dmReject,dmRejectGo,
+  dmMealForm:a=>dmMealForm(a||null),dmMealSave,dmMealDel,dmMealPrint,
+  dmMealExport:()=>exportXlsx('KGS_Dorm_Meals',[tableToSheet(LX('ລາຍຊື່ກິນເຂົ້າ','Meal list'),dmMealCols(),dmMealRows())]),
+  dmExport:()=>exportXlsx('KGS_Dorm_Residents',[tableToSheet(LX('ຜູ້ພັກ','Residents'),dmResCols(),dmResRows())]),
+  dmSumExport,dmRoll,
+  dmRoomForm:a=>dmRoomForm(a||null),dmRoomSave,dmRoomDel,dmRoomBulk,dmRoomBulkGo,
+  dmImport,dmImpGo,dmImpTpl,
+  dmQr:a=>dmQr(a||null),dmQrTry:()=>{if(S.dmQrLink)window.open(S.dmQrLink,'_blank');}
+};}
+
+/* ----- public page: opened by scanning the QR on a room door (no sign-in) ----- */
+async function renderDormPublic(P){
+  S.dq={room:P.dorm,k:P.k,step:'load',dev:deviceId(),err:'',type:'',emp:null,form:{}};
+  dqPub();
+  try{const r=await call('dorm.qrOpen',{room:P.dorm,k:P.k});Object.assign(S.dq,{ticket:r.ticket,rm:r.room,org:r.org,step:'type'});}
+  catch(e){S.dq.step='err';S.dq.err=errText(e);}
+  dqPub();
+}
+function dqPub(){
+  const C=S.dq,o=C.org||{},rm=C.rm,F=C.form;
+  const logo=o.logo?`<img class="logoimg" src="${esc(o.logo)}" style="width:44px;height:44px" alt="">`:`<div class="logo" style="width:44px;height:44px">KGS</div>`;
+  const I=(k,lab,type,extra)=>`<div class="fld"><label class="req">${lab}</label><input class="in ci-in" style="font-size:16px" id="dq_${k}" type="${type||'text'}" value="${esc(F[k]||'')}" ${extra||''}></div>`;
+  let body='';
+  if(C.step==='load')body=`<div style="padding:30px;display:flex;justify-content:center"><div class="spin"></div></div>`;
+  else if(C.step==='err')body=`<div class="ci-res bad"><div class="ci-big">!</div><b>${esc(C.err)}</b><p>${LX('ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ','Please contact the dormitory manager')}</p></div>`;
+  else if(C.step==='type')body=`<p style="margin:14px 0 10px;font-weight:600">${LX('ທ່ານແມ່ນ:','You are:')}</p>
+    <button class="btn pri ci-btn" id="dqEmp">${ic('users',18)} ${LX('ພະນັກງານ KGS','KGS employee')}</button>
+    <button class="btn ci-btn" id="dqOut" style="margin-top:10px">${ic('users',18)} ${LX('ບໍ່ແມ່ນພະນັກງານ (ຄົນນອກ)','Not an employee (outsider)')}</button>`;
+  else if(C.step==='id')body=`<div class="fld"><label>${t('ci_enterId')}</label><input class="in ci-in" id="dqId" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="KGS0000" value="${esc(C.typed||'')}"></div>
+    <div id="ciErr" class="err small" style="min-height:18px;margin:6px 0">${esc(C.err||'')}</div>
+    <button class="btn pri ci-btn" id="dqNext">${t('next')}</button><button class="btn ci-btn" id="dqBack" style="margin-top:8px">${t('back')}</button>`;
+  else if(C.step==='confirm'){const e=C.emp;
+    body=`<div class="ci-who"><div class="ini">${esc(initials(e))}</div><div><div class="ci-name">${esc(e.NameLA||e.NameEN)}</div>${e.NameLA&&e.NameEN?`<div class="muted">${esc(e.NameEN)}</div>`:''}<div class="small muted">${esc(e.EmployeeID)}${e.Position?' · '+esc(e.Position):''}</div></div></div>
+     ${e.here?`<div class="note info" style="margin-top:14px">${LX('ທ່ານລົງທະບຽນຢູ່ຫ້ອງນີ້ແລ້ວ','You are already registered in this room')}</div><button class="btn ci-btn" id="dqBack">${t('back')}</button>`
+     :e.pending?`<div class="note warn" style="margin-top:14px">${LX('ທ່ານມີຄຳຂໍລໍຖ້າອະນຸມັດແລ້ວ','You already have a request waiting for approval')}</div><button class="btn ci-btn" id="dqBack">${t('back')}</button>`
+     :`${e.elsewhere?`<div class="note warn small" style="margin-top:14px">${LX('ທ່ານລົງທະບຽນຢູ່ຫ້ອງອື່ນ. ສົ່ງຄຳຂໍນີ້ = ຂໍຍ້າຍມາຫ້ອງນີ້.','You are registered in another room. Sending = request to move here.')}</div>`:''}
+      <p style="text-align:center;margin:16px 0 12px;font-weight:600">${LX('ແມ່ນທ່ານບໍ? ຢືນຢັນວ່າພັກຢູ່ຫ້ອງນີ້','Is this you? Confirm you live in this room')}</p>
+      <div id="ciErr" class="err small" style="min-height:18px;margin-bottom:6px;text-align:center">${esc(C.err||'')}</div>
+      <button class="btn pri ci-btn" id="dqSend">${ic('check',18)} ${LX('ແມ່ນ, ສົ່ງຄຳຂໍ','Yes, send request')}</button><button class="btn ci-btn" id="dqBack" style="margin-top:8px">${t('ci_no')}</button>`}`;}
+  else if(C.step==='out')body=`<div class="form" style="padding:0;grid-template-columns:1fr">${I('Name',LX('ຊື່ ແລະ ນາມສະກຸນ','Full name'),'text','maxlength="80"')}${I('Phone',LX('ເບີໂທ','Phone'),'tel','maxlength="30"')}${I('IDCardNo',LX('ເລກບັດປະຈຳຕົວ / Passport','ID card / passport no.'),'text','maxlength="40"')}
+     ${I('Relation',LX('ກ່ຽວຂ້ອງກັບໃຜ / ແນວໃດ','Relation (to whom / how)'),'text','maxlength="100" placeholder="'+LX('ເຊັ່ນ ເມຍຂອງພະນັກງານ','e.g. wife of an employee')+'"')}
+     ${I('SponsorID',LX('ລະຫັດພະນັກງານຜູ້ຮັບຮອງ','Sponsor Employee ID'),'text','autocapitalize="characters" placeholder="KGS0000"')}${I('EndDate',LX('ພັກຮອດວັນທີ','Stay until'),'date')}
+     <label class="dm-consent small"><input type="checkbox" id="dq_Consent" ${F.Consent?'checked':''}> ${LX('ຂ້ອຍຍິນຍອມໃຫ້ບໍລິສັດເກັບຂໍ້ມູນນີ້ ເພື່ອຄວາມປອດໄພ ແລະ ການຄຸ້ມຄອງຫໍພັກເທົ່ານັ້ນ','I agree that the company keeps this data for safety and dormitory management only')}</label></div>
+     <div id="ciErr" class="err small" style="min-height:18px;margin:8px 0">${esc(C.err||'')}</div>
+     <button class="btn pri ci-btn" id="dqSendOut">${LX('ສົ່ງຄຳຂໍ','Send request')}</button><button class="btn ci-btn" id="dqBack" style="margin-top:8px">${t('back')}</button>`;
+  else if(C.step==='done')body=`<div class="ci-res ok"><div class="ci-big">✓</div><div class="ci-name">${LX('ສົ່ງຄຳຂໍແລ້ວ','Request sent')}</div><p>${LX('ລໍຖ້າຜູ້ຮັບຜິດຊອບຫໍພັກອະນຸມັດ. ທ່ານສາມາດປິດໜ້ານີ້ໄດ້.','Waiting for the dormitory manager to approve. You can close this page.')}</p><div class="small muted">${esc(C.res||'')}</div></div>`;
+  $('#root').innerHTML=`<div class="login ci-pub"><div class="box ci-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="display:flex;gap:10px;align-items:center;min-width:0">${logo}<div style="min-width:0"><b>${esc(o.sysName||'KGS')}</b><div class="small muted">${esc((S.lang==='lo'?o.companyLA:o.companyEN)||'')}</div></div></div>${langSw()}</div>
+    <h2 style="margin:18px 0 4px">${LX('ລົງທະບຽນເຂົ້າພັກຫໍພັກ','Dormitory registration')}</h2>
+    ${rm?`<div class="ci-act"><b>${esc(rm.Building)} · ${LX('ຫ້ອງ','Room')} ${esc(rm.RoomNo)}</b><div class="small">${rm.Floor?LX('ຊັ້ນ ','Floor ')+esc(rm.Floor)+' · ':''}${dGIcon(rm.Gender)} ${esc(dGender(rm.Gender))}</div></div>`:''}
+    ${body}</div></div>`;
+  const b=id=>$(id),go=st=>{C.step=st;C.err='';dqPub();};
+  if(b('#dqEmp'))b('#dqEmp').onclick=()=>{C.type='Employee';go('id');};
+  if(b('#dqOut'))b('#dqOut').onclick=()=>{C.type='Outsider';go('out');};
+  if(b('#dqBack'))b('#dqBack').onclick=()=>go(C.step==='confirm'?'id':'type');
+  const inp=b('#dqId');if(inp){inp.focus();inp.addEventListener('keydown',ev=>{if(ev.key==='Enter'){ev.preventDefault();dqLookup();}});}
+  if(b('#dqNext'))b('#dqNext').onclick=dqLookup;
+  if(b('#dqSend'))b('#dqSend').onclick=()=>dqSubmit({PersonType:'Employee',EmployeeID:C.emp.EmployeeID});
+  if(b('#dqSendOut'))b('#dqSendOut').onclick=()=>{['Name','Phone','IDCardNo','Relation','SponsorID','EndDate'].forEach(k=>F[k]=$('#dq_'+k).value.trim());F.Consent=$('#dq_Consent').checked;
+    const miss=['Name','Phone','IDCardNo','Relation','SponsorID','EndDate'].filter(k=>!F[k]);if(miss.length){C.err=LX('ກະລຸນາໃສ່ຂໍ້ມູນໃຫ້ຄົບ','Please fill in every field');dqPub();return;}
+    if(!F.Consent){C.err=LX('ກະລຸນາໝາຍຍິນຍອມ','Please tick the consent box');dqPub();return;}
+    dqSubmit(Object.assign({PersonType:'Outsider'},F,{Consent:'Yes'}));};
+}
+async function dqLookup(){const C=S.dq,v=($('#dqId').value||'').trim();C.typed=v;if(!v)return;C.err='';
+  try{C.emp=await call('dorm.qrLookup',{ticket:C.ticket,emp:v});C.step='confirm';}
+  catch(e){if(e.error==='DQ_EXPIRED'){C.step='err';}C.err=errText(e);}
+  dqPub();}
+async function dqSubmit(person){const C=S.dq;C.err='';
+  try{const r=await call('dorm.qrSubmit',{ticket:C.ticket,person,device:C.dev});C.res=r.StayID;C.step='done';}
+  catch(e){if(e.error==='DQ_EXPIRED'||e.error==='DQ_CLOSED'||e.error==='DQ_INVALID')C.step='err';C.err=errText(e);}
+  dqPub();}
 
 /* ================= FORMER EMPLOYEES (archive) ================= */
 function pageFormer(){
@@ -3007,7 +3734,8 @@ const H={
  exportHist:()=>{const v=S.page==='history'&&S.f.hist?S.f.hist.view||'act':'det';
    if(v!=='det'){const R=histFiltered(true).filter(r=>r.ActStatus!=='Cancelled');
      exportXlsx(v==='act'?'KGS_History_by_Activity':'KGS_History_by_Employee',[v==='act'?tableToSheet('By activity',histActCols(),histByAct(R)):tableToSheet('By employee',histEmpCols(),histByEmp(R))]);return;}const rows=S.page==='history'?histFiltered():historyRows();exportXlsx('KGS_Training_History',[tableToSheet('History',histCols(true).concat([{k:'ActivityID',l:fl('ActivityID')},{k:'Division',l:fl('Division')}]),rows)]);},
- printEmpReport,exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
+ printEmpReport,extForm:a=>extForm(a||null),extFormFor:a=>{const[e,r]=String(a||'').split('|');S.modalBack=()=>viewEmp(e);extForm(r||null,e);},extSave,extDel,
+ extExport:()=>exportXlsx('KGS_External_Training',[tableToSheet(LX('ຝຶກພາຍນອກ','External training'),extCols(),extFiltered())]),exportFormer:()=>exportXlsx('KGS_Former_Employees',[tableToSheet('Former',formerCols(),formerFiltered())]),
  exportOneHist:id=>exportXlsx('KGS_History_'+id,[tableToSheet('History',histCols(true),historyRows(p=>p.EmployeeID===id))]),
  exportReview:async()=>{try{const r=await call('dupReview.list');exportXlsx('KGS_Duplicate_Review',[{name:'Review',head:['Time','ImportBatch','EmployeeID','Reason','Resolution','User','RawData'],rows:r.map(x=>[x.Time,x.ImportBatch,x.EmployeeID,x.Reason,x.Resolution,x.User,x.RawData])}]);}catch(e){fail(e);}},
  xlTab:k=>{S.f.rep.xt=k;xlRedraw();},xlExport,
@@ -3067,6 +3795,7 @@ const H={
 };
 document.addEventListener('click',ev=>{try{if(S.pub||!window.KFX)return;const el=ev.target.closest('[data-act],button,[data-tsort],.chip,select');if(!el||el.disabled)return;const a=(el.dataset&&el.dataset.act)||'';
   if(a==='go')KFX.sfx.nav();else if(el.classList.contains('danger'))KFX.sfx.danger();else if(/tab|Tab|sort/.test(a)||el.dataset.tsort)KFX.sfx.tab();else KFX.sfx.tap();}catch(e){}},true);
+document.addEventListener('click',ev=>{if(ev.target.closest('a[data-stop]'))ev.stopPropagation();},true);
 document.addEventListener('click',ev=>{
   const ts=ev.target.closest('[data-tsort]');if(ts){const[id,k]=ts.dataset.tsort.split('|');const st=S.tbl[id];if(st){st.d=st.k===k?-st.d:1;st.k=k;}tblRefresh(id);return;}
   const tp=ev.target.closest('[data-tpage]');if(tp){const[id,p]=tp.dataset.tpage.split('|');S.tbl[id].p=Number(p);tblRefresh(id);return;}
@@ -3079,7 +3808,8 @@ function tblRefresh(id){
   if(id==='rev'){H.loadReview();return;}
   S.refresh&&S.refresh();
 }
-const PAGES={checkin:pageCheckin,dashboard:pageDashboard,employees:pageEmployees,former:pageFormer,activities:pageActivities,calendar:pageCalendar,attendance:pageAttendance,history:pageHistory,reports:pageReports,import:pageImport,settings:pageSettings,admin:pageAdmin};
+Object.assign(H,dormActions());
+const PAGES={dorm:pageDorm,checkin:pageCheckin,dashboard:pageDashboard,employees:pageEmployees,former:pageFormer,external:pageExternal,activities:pageActivities,calendar:pageCalendar,attendance:pageAttendance,history:pageHistory,reports:pageReports,import:pageImport,settings:pageSettings,admin:pageAdmin};
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modalRoot').innerHTML)closeModal();});
 applyTheme();
 start();
