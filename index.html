@@ -513,6 +513,12 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .sv-hb{display:grid;grid-template-columns:minmax(90px,140px) 1fr 40px;gap:10px;align-items:center;font-size:13px;margin:9px 0}.sv-hb .svt{height:12px;border-radius:12px;background:rgba(148,163,184,.22);overflow:hidden}.sv-hb .svt i{display:block;height:100%;border-radius:12px}.sv-hb b{text-align:right}
 :root[data-theme=dark] .sv-svg text{fill:#cbd5e1}
 
+.dp-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px;padding:8px 10px;background:var(--glass);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.dp-seg{display:flex;background:rgba(148,163,184,.18);border-radius:10px;padding:3px}.dp-seg button{border:0;background:transparent;font:600 13px var(--f);color:inherit;padding:6px 14px;border-radius:8px;cursor:pointer}
+.dp-seg button.on{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;box-shadow:0 4px 10px rgba(37,99,235,.3)}
+.dp-bar .in{width:auto}.dp-lbl{font-size:13px;color:var(--muted)}.dp-lbl b{color:inherit}
+.dm-c4.past{cursor:default}.dm-c4.past:hover{transform:none}
+
 .dm-fac{display:flex;flex-wrap:wrap;gap:8px}.dm-fchip{padding:6px 10px;border-radius:10px;background:var(--glass);border:1px solid var(--line);font-size:12.5px;cursor:pointer}.dm-fchip.off{opacity:.55}
 .dm-rh{display:flex;justify-content:space-between;align-items:center}.dm-no{font-size:20px;font-weight:800}.dm-g{font-size:16px;opacity:.75}
 .dm-bar{height:6px;border-radius:6px;background:var(--line2);margin:6px 0;overflow:hidden}.dm-bar i{display:block;height:100%;background:var(--c);border-radius:6px}
@@ -1418,7 +1424,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-10d${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-11${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleSnd" id="sndBtn" title="${LX('ສຽງ','Sound')}">${ic(KFX.sound().on?'vol':'mute')}</button><button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -2241,7 +2247,7 @@ async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
     {const r=raw('Settings');add(t('nav_settings'),r.h,r.rows);}
     {const r=raw('AuditLog');add(t('auditLog'),r.h,r.rows);}
     {const r=raw('DuplicateReview',['RawData']);add(t('xa_dup'),r.h,r.rows);}
-    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-10d'],[],
+    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-11'],[],
       [t('xa_sheet'),t('xa_rows')],...toc,[],[t('xa_note1')],[t('xa_note2')],[t('xa_note3')]];
     const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XS.kv(ws);XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
     wb.SheetNames.unshift(wb.SheetNames.pop());
@@ -3134,7 +3140,26 @@ const dGIcon=(g,s)=>{g=DGP[g]?g:'Mixed';s=s||16;const c=DGC0[g];return `<span cl
 const DRS={empty:['#16a34a','ຫວ່າງ','Empty'],free:['#2563eb','ມີຕຽງຫວ່າງ','Beds free'],full:['#d97706','ເຕັມ','Full'],over:['#dc2626','ເກີນ','Over capacity'],maint:['#7c3aed','ສ້ອມແປງ','Maintenance'],closed:['#64748b','ປິດ','Closed']};
 const dRoom=id=>DM().rooms.find(r=>r.RoomID===id);
 const dRoomLabel=r=>r?(r.Building+' · '+LX('ຫ້ອງ ','Room ')+r.RoomNo):'—';
-const dLive=roomId=>DM().stays.filter(s=>s.Status==='Active'&&(!roomId||s.RoomID===roomId));
+let DM_AT=null;   // view date while rendering the board / summary for a past date (null = now)
+const dLiveAt=(roomId,X)=>DM().stays.filter(s=>['Active','Moved','Left'].includes(s.Status)&&s.CheckIn&&s.CheckIn<=X&&(!s.CheckOut||s.CheckOut>X)&&(!roomId||s.RoomID===roomId));
+const dLive=roomId=>DM_AT?dLiveAt(roomId,DM_AT):DM().stays.filter(s=>s.Status==='Active'&&(!roomId||s.RoomID===roomId));
+const DMON_LO=['ມ.ກ','ກ.ພ','ມ.ນ','ມ.ສ','ພ.ພ','ມິ.ຖ','ກ.ລ','ສ.ຫ','ກ.ຍ','ຕ.ລ','ພ.ຈ','ທ.ວ'],DMON_EN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const dMon=m=>(S.lang==='lo'?DMON_LO:DMON_EN)[m-1];
+/** the selected period: {mode, start, end, asOf, now(=showing today), label} */
+function dPer(){const f=S.f.dorm,td=todayStr(),P=f.per||(f.per={mode:'day',d:td});let s,e;
+  if(P.mode==='year'){const y=String(P.d).slice(0,4);s=y+'-01-01';e=y+'-12-31';}
+  else if(P.mode==='month'){const ym=String(P.d).slice(0,7),[y,m]=ym.split('-').map(Number);s=ym+'-01';e=ym+'-'+String(new Date(y,m,0).getDate()).padStart(2,'0');}
+  else{s=e=String(P.d).slice(0,10)||td;}
+  const asOf=e>td?td:e,now=asOf===td&&P.mode==='day';
+  const label=P.mode==='year'?LX('ປີ ','Year ')+s.slice(0,4):P.mode==='month'?dMon(+s.slice(5,7))+' '+s.slice(0,4):fmtD(s);
+  return{mode:P.mode,start:s,end:e,asOf,now,label,future:s>td};}
+function dmPerBar(){const f=S.f.dorm,P=dPer(),v=f.per.d;
+  const inp=P.mode==='year'?`<select class="in" id="dpV">${(()=>{const y0=+todayStr().slice(0,4),Y=[];for(let y=y0;y>=y0-5;y--)Y.push(String(y));return opts(Y,v.slice(0,4));})()}</select>`
+   :P.mode==='month'?`<input class="in" type="month" id="dpV" value="${esc(v.slice(0,7))}">`:`<input class="in" type="date" id="dpV" value="${esc(v.slice(0,10))}">`;
+  return `<div class="dp-bar no-print"><div class="dp-seg">${[['day',LX('ມື້','Day')],['month',LX('ເດືອນ','Month')],['year',LX('ປີ','Year')]].map(([k,l])=>`<button class="${P.mode===k?'on':''}" data-act="dmPerMode" data-arg="${k}">${l}</button>`).join('')}</div>${inp}
+   ${P.now?'':`<button class="btn sm" data-act="dmPerToday">${LX('ມື້ນີ້','Today')}</button>`}<span class="dp-lbl">${P.now?LX('ສະແດງຂໍ້ມູນ ມື້ນີ້','Showing today'):LX('ສະແດງຂໍ້ມູນ: ','Showing: ')+'<b>'+esc(P.label)+'</b>'+(P.mode!=='day'?' · '+LX('ຜູ້ພັກ ນັບ ณ ','residents as of ')+fmtD(P.asOf):'')}</span></div>`;}
+function dmPerWire(){const el=$('#dpV');if(!el)return;el.onchange=()=>{const f=S.f.dorm,v=el.value;if(!v)return;f.per.d=f.per.mode==='year'?v+'-12-31':f.per.mode==='month'?v+'-01':v;dmPerChanged();};}
+function dmPerChanged(){const f=S.f.dorm;if(!dPer().now&&f.st==='Active')f.st='';S.tbl&&S.tbl.dres&&(S.tbl.dres.p=1);dmBody();}
 const dMealOn=(m,d)=>{d=d||todayStr();return m.StartDate<=d&&(!m.EndDate||m.EndDate>=d);};
 const dSortRooms=L=>L.slice().sort((a,b)=>String(a.Building).localeCompare(String(b.Building),undefined,{numeric:true})||String(a.Floor).localeCompare(String(b.Floor),undefined,{numeric:true})||String(a.RoomNo).localeCompare(String(b.RoomNo),undefined,{numeric:true}));
 function dPerson(s){
@@ -3188,7 +3213,8 @@ function pageDorm(){
    `<div class="tabs no-print">${tabs.map(([k,i,l])=>`<button class="${f.tab===k?'on':''}" data-act="dmTab" data-arg="${k}">${ic(i,15)} ${l}</button>`).join('')}</div><div id="dmBody"></div>`;
   S.refresh=dmBody;dmBody();
 }
-function dmBody(){const f=S.f.dorm;({board:dmBoard,res:dmResidents,pend:dmPending,meal:dmMeals,sum:dmSummary,rooms:dmRooms}[f.tab]||dmBoard)();}
+function dmBody(){const f=S.f.dorm;({board:dmBoard,res:dmResidents,pend:dmPending,meal:dmMeals,sum:dmSummary,rooms:dmRooms}[f.tab]||dmBoard)();
+  if(['board','res','meal','sum'].includes(f.tab)){$('#dmBody').insertAdjacentHTML('afterbegin',dmPerBar());dmPerWire();}}
 const dmKpi=(l,v,s,i,c)=>`<div class="kpi" style="--c:${c}"><span class="kbg">${ic(i)}</span><div class="kh"><span class="kic" style="--c:${c}">${ic(i)}</span><span class="l">${esc(l)}</span></div><div class="v">${v}</div>${s?`<div class="s">${esc(s)}</div>`:''}</div>`;
 function dmNoRooms(){return `<div class="card" style="text-align:center;padding:30px"><div style="opacity:.6">${ic('building',40)}</div><p>${LX('ຍັງບໍ່ມີຫ້ອງໃນລະບົບ. ເລີ່ມຈາກເພີ່ມຕຶກ ແລະ ຫ້ອງ.','No rooms yet. Start by adding buildings and rooms.')}</p>${canDorm()?`<button class="btn pri" data-act="dmRoomForm">${ic('plus',15)} ${LX('ເພີ່ມຫ້ອງ','Add room')}</button>`:''}</div>`;}
 
@@ -3198,7 +3224,7 @@ function dmDash(rooms){
   const A=rooms.filter(r=>r.Status==='Active'),cap=A.reduce((a,r)=>a+(Number(r.Capacity)||0),0),n=rooms.reduce((a,r)=>a+dLive(r.RoomID).length,0);
   const p=cap?Math.round(n/cap*100):0,empty=A.filter(r=>!dLive(r.RoomID).length).length,over=rooms.filter(r=>dRoomState(r)==='over').length;
   const pend=DM().stays.filter(s=>s.Status==='Pending').length,out=dLive().filter(s=>s.PersonType==='Outsider'&&rooms.some(r=>r.RoomID===s.RoomID)).length;
-  const meals=DM().meals.filter(m=>dMealOn(m)).length;
+  const meals=DM().meals.filter(m=>dMealOn(m,DM_AT||undefined)).length;
   const grp=Object.keys(DG).map(g=>{const R=rooms.filter(r=>(r.Gender||'Mixed')===g);return{g,r:R.length,n:R.reduce((a,x)=>a+dLive(x.RoomID).length,0),c:R.filter(x=>x.Status==='Active').reduce((a,x)=>a+(Number(x.Capacity)||0),0)};}).filter(x=>x.r);
   const st=(l,v,c,act)=>`<div class="dd-st${act?' click':''}" ${act?`data-act="dmGo" data-arg="${act}"`:''}><span>${esc(l)}</span><b style="color:${c||'inherit'}">${v}</b></div>`;
   return `<div class="dd card">
@@ -3207,7 +3233,8 @@ function dmDash(rooms){
     ${st(LX('ຫ້ອງເກີນ','Over capacity'),over,over?'#dc2626':'')}${st(LX('ລໍຖ້າອະນຸມັດ','Pending'),pend,pend?'#d97706':'',pend?'pend:':'')}${st(LX('ກິນເຂົ້າມື້ນີ້','Meals today'),meals,'',meals?'meal:':'')}</div>
    <div class="dd-grp">${grp.map(x=>`<div class="dd-g" style="--c:${DGC[x.g]}"><div style="display:flex;align-items:center;gap:6px">${dGIcon(x.g,13)}${esc(dGender(x.g))}</div><div class="dd-gb"><span style="width:${x.c?Math.min(100,x.n/x.c*100):0}%"></span></div><small>${x.r} ${LX('ຫ້ອງ','rooms')} · ${x.n}/${x.c} ${LX('ຕຽງ','beds')}</small></div>`).join('')}</div></div>`;
 }
-function dmBoard(){
+function dmBoard(){const P=dPer();DM_AT=P.now?null:P.asOf;try{dmBoard0(P);}finally{DM_AT=null;}}
+function dmBoard0(P){
   const f=S.f.dorm,D=DM(),el=$('#dmBody');
   if(!dBedRooms().length){el.innerHTML=dmNoRooms();return;}
   const blds=uniq(dBedRooms().map(r=>r.Building));
@@ -3215,7 +3242,8 @@ function dmBoard(){
   const groups={};rooms.forEach(r=>{const g=r.Building+'|'+(r.Floor||'');(groups[g]=groups[g]||[]).push(r);});
   el.innerHTML=dmDash(rooms)+`<div class="bar no-print">${blds.length>1?`<select class="in" id="dmBld">${opts(blds,f.bld,LX('ຕຶກ','Building')+': '+t('all'))}</select>`:''}
     <span class="dm-legend">${Object.keys(DG).map(g=>`<span>${dGIcon(g,12)}${esc(dGender(g))}</span>`).join('')}<span><i style="background:#fff;border:2px solid #dc2626"></i>${LX('ເກີນ','Over')}</span></span><span class="grow"></span>
-    ${canDorm()?`<button class="btn" data-act="dmHeadcount">${ic('check',15)} ${LX('ກວດນັບປະຈຳເດືອນ','Monthly headcount')}</button><button class="btn pri" data-act="dmStayForm">${ic('plus',15)} ${LX('ເພີ່ມຜູ້ພັກ','Add resident')}</button>`:''}</div>
+    ${canDorm()&&!DM_AT?`<button class="btn" data-act="dmHeadcount">${ic('check',15)} ${LX('ກວດນັບປະຈຳເດືອນ','Monthly headcount')}</button><button class="btn pri" data-act="dmStayForm">${ic('plus',15)} ${LX('ເພີ່ມຜູ້ພັກ','Add resident')}</button>`:''}</div>
+   ${DM_AT?`<div class="note info small" style="margin:0 0 10px">${LX('ກຳລັງເບິ່ງຂໍ້ມູນຍ້ອນຫຼັງ ('+fmtD(DM_AT)+'). ຈະແກ້ໄຂ ໃຫ້ກົດ "ມື້ນີ້".','Viewing a past date ('+fmtD(DM_AT)+'). Press "Today" to make changes.')}</div>`:''}
    ${Object.entries(groups).map(([g,L])=>{const[b,fl2]=g.split('|');const live=L.reduce((a,r)=>a+dLive(r.RoomID).length,0),cap=L.reduce((a,r)=>a+(r.Status==='Active'?Number(r.Capacity)||0:0),0);
      return `<div class="dm-grp"><div class="dm-gh"><b>${esc(b)}</b>${fl2?` · ${LX('ຊັ້ນ','Floor')} ${esc(fl2)}`:''}<span class="muted small">${live}/${cap} ${LX('ຕຽງ','beds')}</span></div><div class="dm-grid4">${L.map(dmTile).join('')}</div></div>`;}).join('')}
    ${fac.length?`<div class="dm-grp"><div class="dm-gh"><b>${LX('ພື້ນທີ່ອື່ນ','Other areas')}</b><span class="muted small">${fac.length} ${LX('ຈຸດ','areas')}</span></div><div class="dm-fac">${fac.map(r=>`<span class="dm-fchip${r.Status!=='Active'?' off':''}" ${canDorm()?`data-act="dmRoomForm" data-arg="${esc(r.RoomID)}"`:''}><b>${esc(r.RoomNo)}</b> ${esc(dRT(r.RoomType))}${r.Floor?' · '+LX('ຊັ້ນ ','F')+esc(r.Floor):''}${r.Status!=='Active'?' · '+esc(LX((DORM_ST_B[r.Status]||[0,r.Status])[1],r.Status)):''}</span>`).join('')}</div></div>`:''}`;
@@ -3226,7 +3254,7 @@ function dmTile(r){
   const off=st==='maint'||st==='closed',c=off?'#94a3b8':DGC[r.Gender||'Mixed']||DGC.Mixed;
   const seats=Array.from({length:Math.max(cap,L.length)},(_,k)=>{const s=L[k];if(!s)return `<div class="ds e"><span class="dn">${k+1}</span>${LX('ຕຽງຫວ່າງ','free')}</div>`;
     const p=dPerson(s),bad=!p.cur||k>=cap;return `<div class="ds${bad?' bad':''}"><span class="dn">${esc(s.Bed||String(k+1))}</span><span class="dt">${esc(p.name)}</span>${s.PersonType==='Outsider'?`<em>${LX('ນອກ','ext')}</em>`:''}</div>`;}).join('');
-  return `<div class="dm-c4${st==='over'?' over':''}${off?' off':''}" style="--c:${c}" data-act="dmRoom" data-arg="${esc(r.RoomID)}">
+  return `<div class="dm-c4${st==='over'?' over':''}${off?' off':''}${DM_AT?' past':''}" style="--c:${c}" ${DM_AT?'':`data-act="dmRoom" data-arg="${esc(r.RoomID)}"`}>
     <div class="dm-band"><b>${esc(r.RoomNo)}</b><span class="dm-bi">${off?'':dGIcon(r.Gender||'Mixed',11)}${off?esc(LX(DRS[st][1],DRS[st][2])):esc(LX(({Male:'ຊາຍ',Female:'ຍິງ',Family:'ຄອບຄົວ',Mixed:'ບໍ່ກຳນົດ'})[r.Gender||'Mixed'],({Male:'Men',Female:'Women',Family:'Family',Mixed:'Not set'})[r.Gender||'Mixed']))} · ${L.length}/${cap}</span></div><div class="dm-seats">${seats}</div></div>`;
 }
 /* ----- room detail ----- */
@@ -3328,6 +3356,7 @@ function dmHeadcount(){const m1=todayStr().slice(0,8)+'01';const R=dSortRooms(DM
 /* ----- residents list ----- */
 function dmResRows(){const f=S.f.dorm,q=f.q.toLowerCase().trim();
   return DM().stays.filter(s=>s.Status!=='Pending'&&s.Status!=='Rejected').map(s=>{const p=dPerson(s),r=dRoom(s.RoomID);return Object.assign({},s,{_n:p.name,_sub:p.sub,_d:p.div,_b:r?r.Building:'',_r:r?r.RoomNo:'',_cur:p.cur,_days:Math.max(0,Math.round(((parseD(s.CheckOut||todayStr())||new Date())-(parseD(s.CheckIn)||new Date()))/864e5))});})
+   .filter(s=>{const P=dPer();return P.now||(s.CheckIn<=P.end&&(!s.CheckOut||s.CheckOut>=P.start));})
    .filter(s=>(!f.bld||s._b===f.bld)&&(!f.type||s.PersonType===f.type)&&(!f.st||s.Status===f.st)&&(!f.flag||dFlagOf(s,f.flag))&&(!q||[s._n,s.EmployeeID,s.Name,s._r,s._d].some(v=>String(v||'').toLowerCase().includes(q))));}
 function dmResCols(){const m1=todayStr().slice(0,8)+'01';return[
   {k:'_r',l:LX('ຫ້ອງ','Room'),sv:s=>s._b+'|'+String(s._r).padStart(6,'0'),r:s=>`<b>${esc(s._r)}</b><div class="small muted">${esc(s._b)}</div>`,x:s=>s._b+' · '+s._r},
@@ -3386,8 +3415,9 @@ async function dmRejectGo(id){try{const r=await call('dorm.stayApprove',{id,appr
 
 /* ----- meal list ----- */
 const MEALS=[['Breakfast','ເຊົ້າ','Breakfast'],['Lunch','ທ່ຽງ','Lunch'],['Dinner','ແລງ','Dinner']];
-function dmMealRows(){const f=S.f.dorm,q=f.mq.toLowerCase().trim(),td=todayStr();
-  return DM().meals.map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:dMealOn(m),_room:r?r.Building+' · '+r.RoomNo:''});})
+const dMealIn=(m,P)=>P.mode==='day'?dMealOn(m,P.start):(m.StartDate<=P.end&&(!m.EndDate||m.EndDate>=P.start));
+function dmMealRows(){const f=S.f.dorm,q=f.mq.toLowerCase().trim(),P=dPer(),td=P.now?todayStr():P.start;
+  return DM().meals.map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:dMealIn(m,P),_room:r?r.Building+' · '+r.RoomNo:''});})
    .filter(m=>(!f.meal||m[f.meal]==='Yes')&&(f.mst==='all'||(f.mst==='cur'?m._on:f.mst==='former'?(m._on&&!m._cur):(!m._on&&(m.EndDate&&m.EndDate<td))))&&(!q||[m._n,m.EmployeeID,m.Name,m._d].some(v=>String(v||'').toLowerCase().includes(q))));}
 function dmMealCols(){const ck=v=>v==='Yes'?'<span class="dm-ck">✓</span>':'<span class="muted">·</span>';return[
   {k:'_n',l:LX('ຊື່','Name'),r:m=>`<b>${esc(m._n)}</b>${!m._cur&&m._on?` <span class="badge b-No">${LX('ອອກວຽກແລ້ວ','Former')}</span>`:''}<div class="small muted">${esc(m._sub)}</div>`,x:m=>m._n},
@@ -3399,9 +3429,9 @@ function dmMealCols(){const ck=v=>v==='Yes'?'<span class="dm-ck">✓</span>':'<s
   {k:'_on',l:fl('Status'),sv:m=>m._on?1:0,r:m=>m._on?`<span class="badge b-Yes">${LX('ກິນຢູ່','Current')}</span>`:`<span class="badge b-Cancelled">${m.StartDate>todayStr()?LX('ຍັງບໍ່ເລີ່ມ','Not started'):LX('ສິ້ນສຸດ','Ended')}</span>`,x:m=>m._on?'Current':'Ended'},
   {k:'Remarks',l:LX('ໝາຍເຫດ','Remarks')}];}
 function dmMeals(){
-  const f=S.f.dorm,on=DM().meals.filter(m=>dMealOn(m));
+  const f=S.f.dorm,P=dPer(),on=DM().meals.filter(m=>dMealIn(m,P));
   const c=k=>on.filter(m=>m[k]==='Yes').length;
-  $('#dmBody').innerHTML=`<div class="grid kpis" style="margin-bottom:14px">${dmKpi(LX('ຄົນກິນເຂົ້າ (ມື້ນີ້)','People on the list (today)'),on.length,LX('ຄົນ','people'),'users','#2563eb')}${MEALS.map(([k,lo,en],i)=>dmKpi(LX('ຄາບ'+lo,en),c(k),LX('ຄົນ','people'),'sun',['#d97706','#16a34a','#7c3aed'][i])).join('')}</div>
+  $('#dmBody').innerHTML=`<div class="grid kpis" style="margin-bottom:14px">${dmKpi(P.now?LX('ຄົນກິນເຂົ້າ (ມື້ນີ້)','People on the list (today)'):LX('ຄົນກິນເຂົ້າ ('+P.label+')','On the list ('+P.label+')'),on.length,LX('ຄົນ','people'),'users','#2563eb')}${MEALS.map(([k,lo,en],i)=>dmKpi(LX('ຄາບ'+lo,en),c(k),LX('ຄົນ','people'),'sun',['#d97706','#16a34a','#7c3aed'][i])).join('')}</div>
    <div class="bar no-print"><input class="in search" id="dmQ" placeholder="${t('search')}: ${LX('ຊື່ / ລະຫັດ','name / ID')}" value="${esc(f.mq)}">
    <select class="in" id="dmM">${opts(MEALS.map(([k,lo,en])=>[k,LX(lo,en)]),f.meal,LX('ຄາບ','Meal')+': '+t('all'))}</select>
    <select class="in" id="dmS">${opts([['cur',LX('ກິນຢູ່ປັດຈຸບັນ','Current')],['ended',LX('ສິ້ນສຸດແລ້ວ','Ended')],['former',LX('ອອກວຽກແລ້ວ ແຕ່ຍັງຢູ່ລາຍຊື່','Former employees still listed')],['all',t('all')]],f.mst)}</select>
@@ -3440,28 +3470,31 @@ async function dmMealDel(id){if(!await ask(LX('ລຶບລາຍການນີ
   try{await call('dorm.mealDelete',{id});DM().meals=DM().meals.filter(x=>x.MealID!==id);closeModal();toast(LX('ລຶບແລ້ວ','Deleted'),'ok');S.refresh&&S.refresh();}catch(e){fail(e);}}
 
 /* ----- summary ----- */
-function dmSummaryData(){
-  const D=DM(),BR=dBedRooms(),td=todayStr(),m0=td.slice(0,8)+'01',act=BR.filter(r=>r.Status==='Active'),live=dLive();
+function dmSummaryData(){const P=dPer();DM_AT=P.now?null:P.asOf;try{return dmSummaryData0(P);}finally{DM_AT=null;}}
+function dmSummaryData0(P){
+  const D=DM(),BR=dBedRooms(),td=P.asOf,m0=P.mode==='day'?P.start.slice(0,8)+'01':P.start,m9=P.end,act=BR.filter(r=>r.Status==='Active'),live=dLive();
   const beds=act.reduce((a,r)=>a+(Number(r.Capacity)||0),0),used=live.filter(s=>{const r=dRoom(s.RoomID);return r&&r.Status==='Active';}).length;
   const by=(keyF,list)=>{const o={};list.forEach(x=>{const k=keyF(x)||'—';o[k]=(o[k]||0)+1;});return o;};
   const bld=uniq(BR.map(r=>r.Building)).map(b=>{const R=BR.filter(r=>r.Building===b),A=R.filter(r=>r.Status==='Active'),cap=A.reduce((a,r)=>a+(Number(r.Capacity)||0),0),n=live.filter(s=>R.some(r=>r.RoomID===s.RoomID)).length;
     return{b,rooms:R.length,act:A.length,cap,n,free:Math.max(0,cap-n),pct:cap?Math.round(n/cap*100):0,out:live.filter(s=>s.PersonType==='Outsider'&&R.some(r=>r.RoomID===s.RoomID)).length};});
   const gender=by(s=>s.PersonType==='Outsider'?LX('ຄົນນອກ','Outsider'):(dGenderKey(dPerson(s).gender)?dGender(dGenderKey(dPerson(s).gender)):LX('ບໍ່ລະບຸ','Not set')),live);
-  const meals=D.meals.filter(m=>dMealOn(m));
+  const meals=D.meals.filter(m=>dMealOn(m,P.asOf));
   const divs=uniq([...live.map(s=>dPerson(s).div),...meals.map(m=>dMealPerson(m).div)]).map(d=>({d,n:live.filter(s=>dPerson(s).div===d).length,m:meals.filter(m=>dMealPerson(m).div===d).length})).sort((a,b)=>b.n-a.n||b.m-a.m);
-  const inM=D.stays.filter(s=>['Active','Moved','Left'].includes(s.Status)&&s.CheckIn>=m0&&s.Source!=='Move').length;
-  const outM=D.stays.filter(s=>s.Status==='Left'&&s.CheckOut>=m0).length,mvM=D.stays.filter(s=>s.Status==='Moved'&&s.CheckOut>=m0).length;
+  const inR=d=>d&&d>=m0&&d<=m9;
+  const inM=D.stays.filter(s=>['Active','Moved','Left'].includes(s.Status)&&inR(s.CheckIn)&&s.Source!=='Move').length;
+  const outM=D.stays.filter(s=>s.Status==='Left'&&inR(s.CheckOut)).length,mvM=D.stays.filter(s=>s.Status==='Moved'&&inR(s.CheckOut)).length;
   const grp=Object.keys(DG).map(g=>{const R=BR.filter(r=>(r.Gender||'Mixed')===g),A=R.filter(r=>r.Status==='Active'),cap=A.reduce((a,r)=>a+(Number(r.Capacity)||0),0),n=live.filter(s=>R.some(r=>r.RoomID===s.RoomID)).length;return{g,rooms:R.length,used:R.filter(r=>dLive(r.RoomID).length).length,empty:A.filter(r=>!dLive(r.RoomID).length).length,cap,n,free:Math.max(0,cap-n)};}).filter(x=>x.rooms);
   return{grp,fac:D.rooms.length-BR.length,rooms:BR.length,act:act.length,beds,used,free:Math.max(0,beds-used),pct:beds?Math.round(used/beds*100):0,live:live.length,emp:live.filter(s=>s.PersonType==='Employee').length,out:live.filter(s=>s.PersonType==='Outsider').length,
     pend:D.stays.filter(s=>s.Status==='Pending').length,maint:BR.filter(r=>r.Status==='Maintenance').length,bld,gender,divs,meals,inM,outM,mvM,
+    over:BR.filter(r=>dRoomState(r)==='over').length,
     mc:MEALS.map(([k])=>meals.filter(m=>m[k]==='Yes').length),mealRes:meals.filter(m=>dResidentOf(m)).length};
 }
 const SV={
  donut(parts,size,th,center){const r=(size-th)/2,cx=size/2,L=2*Math.PI*r,tot=parts.reduce((a,p)=>a+p[0],0)||1;let off=0;
   return `<div class="sv-d" style="width:${size}px;height:${size}px"><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><circle cx="${cx}" cy="${cx}" r="${r}" fill="none" stroke="rgba(148,163,184,.22)" stroke-width="${th}"/>${parts.map(([v,c])=>{const d=v/tot*L,x=`<circle cx="${cx}" cy="${cx}" r="${r}" fill="none" stroke="${c}" stroke-width="${th}" stroke-dasharray="${d} ${L-d}" stroke-dashoffset="${-off}" transform="rotate(-90 ${cx} ${cx})"/>`;off+=d;return v?x:'';}).join('')}</svg><div class="sv-c">${center}</div></div>`;},
- cols(labels,series,h){const W=520,pad=30,bw=(W-pad*2)/labels.length,mx=Math.max(1,...labels.map((_,i)=>Math.max(...series.map(s=>s.v[i]))));const max=mx*1.18,y=v=>h-24-(v/max)*(h-44);let g='';
+ cols(labels,series,h){const W=Math.max(520,labels.length*26),pad=30,bw=(W-pad*2)/labels.length,mx=Math.max(1,...labels.map((_,i)=>Math.max(...series.map(s=>s.v[i]))));const max=mx*1.18,y=v=>h-24-(v/max)*(h-44);let g='';
   for(let k=0;k<=4;k++){const val=Math.round(mx*k/4),yy=y(val);g+=`<line x1="${pad}" x2="${W-8}" y1="${yy}" y2="${yy}" stroke="rgba(148,163,184,.25)"/><text x="${pad-6}" y="${yy+4}" font-size="10" text-anchor="end" fill="#64748b">${val}</text>`;}
-  labels.forEach((l,i)=>{const x0=pad+i*bw,w=bw*.7/series.length;series.forEach((s,j)=>{const v=s.v[i];g+=`<rect x="${x0+bw*.15+j*w}" y="${y(v)}" width="${Math.max(2,w-3)}" height="${y(0)-y(v)}" rx="4" fill="${s.c}"/>${v?`<text x="${x0+bw*.15+j*w+(w-3)/2}" y="${y(v)-4}" font-size="10" text-anchor="middle" fill="#334155">${v}</text>`:''}`;});
+  labels.forEach((l,i)=>{const x0=pad+i*bw,w=bw*.7/series.length;series.forEach((s,j)=>{const v=s.v[i];g+=`<rect x="${x0+bw*.15+j*w}" y="${y(v)}" width="${Math.max(2,w-3)}" height="${y(0)-y(v)}" rx="4" fill="${s.c}"/>${v&&labels.length<=16?`<text x="${x0+bw*.15+j*w+(w-3)/2}" y="${y(v)-4}" font-size="10" text-anchor="middle" fill="#334155">${v}</text>`:''}`;});
    g+=`<text x="${x0+bw/2}" y="${h-6}" font-size="11" text-anchor="middle" fill="#64748b">${esc(l)}</text>`;});
   return `<svg class="sv-svg" viewBox="0 0 ${W} ${h}" width="100%">${g}</svg>`+(series.length>1?`<div class="dm-legend" style="margin-top:6px">${series.map(s=>`<span><i style="background:${s.c}"></i>${esc(s.n)}</span>`).join('')}</div>`:'');},
  hbars(rows,max){return rows.map(([l,v,c])=>`<div class="sv-hb"><span>${esc(l)}</span><div class="svt"><i style="width:${max?v/max*100:0}%;background:${c||'#2563eb'}"></i></div><b>${v}</b></div>`).join('')||`<p class="muted small">${t('noData')}</p>`;}
@@ -3469,36 +3502,39 @@ const SV={
 function dmSummary(){
   const X=dmSummaryData();
   if(!dBedRooms().length){$('#dmBody').innerHTML=dmNoRooms();return;}
-  const td=todayStr(),M=[];for(let k=5;k>=0;k--){const d=new Date(+td.slice(0,4),+td.slice(5,7)-1-k,1);M.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));}
-  const ML=S.lang==='lo'?['ມ.ກ','ກ.ພ','ມ.ນ','ມ.ສ','ພ.ພ','ມິ.ຖ','ກ.ລ','ສ.ຫ','ກ.ຍ','ຕ.ລ','ພ.ຈ','ທ.ວ']:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const st=DM().stays,inM=M.map(m=>st.filter(s=>['Active','Moved','Left'].includes(s.Status)&&s.Source!=='Move'&&String(s.CheckIn).slice(0,7)===m).length),outM=M.map(m=>st.filter(s=>s.Status==='Left'&&String(s.CheckOut).slice(0,7)===m).length);
+  const P=dPer(),td=P.asOf;let B=[],BL=[],key,ttl;
+  if(P.mode==='year'){for(let m=1;m<=12;m++){B.push(P.start.slice(0,4)+'-'+String(m).padStart(2,'0'));BL.push(dMon(m));}key=d=>String(d).slice(0,7);ttl=LX('ເຂົ້າ / ອອກ ລາຍເດືອນ · ','In / out by month · ')+P.label;}
+  else if(P.mode==='month'){const n=+P.end.slice(8);for(let d=1;d<=n;d++){B.push(P.start.slice(0,8)+String(d).padStart(2,'0'));BL.push(String(d));}key=d=>String(d).slice(0,10);ttl=LX('ເຂົ້າ / ອອກ ລາຍມື້ · ','In / out by day · ')+P.label;}
+  else{for(let k=5;k>=0;k--){const d=new Date(+P.start.slice(0,4),+P.start.slice(5,7)-1-k,1);B.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));BL.push(dMon(d.getMonth()+1));}key=d=>String(d).slice(0,7);ttl=LX('ເຂົ້າ / ອອກ 6 ເດືອນ','In / out, last 6 months');}
+  const st=DM().stays,inM=B.map(b=>st.filter(s=>['Active','Moved','Left'].includes(s.Status)&&s.Source!=='Move'&&s.CheckIn&&key(s.CheckIn)===b).length),outM=B.map(b=>st.filter(s=>s.Status==='Left'&&s.CheckOut&&key(s.CheckOut)===b).length);
   const KI={pct:'<path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14h1a4 4 0 0 1 4 4v1"/>',
    bed:'<path d="M3 7v12M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-8v6"/><circle cx="6.5" cy="11.5" r="1.8"/>',alert:'<path d="M12 3l9.5 17H2.5z"/><path d="M12 10v4M12 17.5h.01"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',meal:'<path d="M3 13h18a9 9 0 0 1-18 0z"/><path d="M8 9c0-2 2-2 2-4M13 9c0-2 2-2 2-4"/>'};
   let ki=0;const KN=['pct','users','bed','alert','clock','meal'];
   const K=(l,v,s,c)=>`<div class="dsk" style="--c:${c}"><span class="dsk-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${KI[KN[ki++]]}</svg></span><div><div class="l">${esc(l)}</div><div class="v">${v}</div><div class="s">${s}</div></div></div>`;
   const grp=X.grp.filter(g=>g.n||g.rooms);
-  $('#dmBody').innerHTML=`<div class="bar no-print"><span class="small muted">${LX('ຂໍ້ມູນ ณ ','As of ')}${fmtD(td)}</span><span class="grow"></span><button class="btn" data-act="dmRoll">${ic('download',15)} ${LX('ລາຍຊື່ນັບຄົນ (ອົບພະຍົບ)','Roll-call list (evacuation)')}</button><button class="btn pri" data-act="dmSumExport">${ic('download',15)} Excel</button></div>
+  $('#dmBody').innerHTML=`<div class="bar no-print"><span class="small muted">${LX('ຜູ້ພັກ ນັບ ณ ','Residents as of ')}${fmtD(td)}${P.mode!=='day'?' · '+LX('ເຂົ້າ ','in ')+X.inM+' · '+LX('ອອກ ','out ')+X.outM+' · '+LX('ຍ້າຍ ','moved ')+X.mvM:''}</span><span class="grow"></span><button class="btn" data-act="dmRoll">${ic('download',15)} ${LX('ລາຍຊື່ນັບຄົນ (ອົບພະຍົບ)','Roll-call list (evacuation)')}</button><button class="btn pri" data-act="dmSumExport">${ic('download',15)} Excel</button></div>
    <div class="dsk-row">${K(LX('ອັດຕາເຂົ້າພັກ','Occupancy'),X.pct+'%',X.used+'/'+X.beds+' '+LX('ຕຽງ','beds'),'#2563eb')}${K(LX('ຜູ້ພັກ','Residents'),X.live,LX('ພະນັກງານ ','Employees ')+X.emp+' · '+LX('ຄົນນອກ ','outsiders ')+X.out,'#7c3aed')}
-    ${K(LX('ຕຽງຫວ່າງ','Free beds'),X.free,LX('ຫ້ອງຫວ່າງ ','Empty rooms ')+X.grp.reduce((a,x)=>a+x.empty,0),'#16a34a')}${K(LX('ຫ້ອງເກີນ','Over capacity'),DM().rooms.filter(r=>isBed(r)&&dRoomState(r)==='over').length,LX('ຕ້ອງແກ້ໄຂ','to fix'),'#dc2626')}
-    ${K(LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend,LX('ຈາກ QR','from QR'),'#d97706')}${K(LX('ກິນເຂົ້າມື້ນີ້','Meals today'),X.meals.length,LX('ຄົນ','people'),'#ea580c')}</div>
+    ${K(LX('ຕຽງຫວ່າງ','Free beds'),X.free,LX('ຫ້ອງຫວ່າງ ','Empty rooms ')+X.grp.reduce((a,x)=>a+x.empty,0),'#16a34a')}${K(LX('ຫ້ອງເກີນ','Over capacity'),X.over,LX('ຕ້ອງແກ້ໄຂ','to fix'),'#dc2626')}
+    ${K(LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend,LX('ຈາກ QR','from QR'),'#d97706')}${K(P.now?LX('ກິນເຂົ້າມື້ນີ້','Meals today'):LX('ກິນເຂົ້າ ','Meals ')+fmtD(td),X.meals.length,LX('ຄົນ','people'),'#ea580c')}</div>
    <div class="dsg3">
     <div class="card"><h3>${LX('ອັດຕາເຂົ້າພັກ','Occupancy')}</h3><div class="sv-mid">${SV.donut([[X.used,X.pct>100?'#dc2626':'#2563eb'],[Math.max(0,X.beds-X.used),'transparent']],190,28,`<b>${X.pct}%</b><small>${X.used}/${X.beds} ${LX('ຕຽງ','beds')}</small>`)}</div></div>
     <div class="card"><h3>${LX('ຜູ້ພັກຕາມກຸ່ມຫ້ອງ','Residents by room group')}</h3><div class="sv-mid">${SV.donut(grp.map(g=>[g.n,DGC[g.g]]),190,28,`<b>${X.live}</b><small>${LX('ຄົນ','people')}</small>`)}</div>
      <div class="dm-legend" style="justify-content:center;margin-top:8px">${grp.map(g=>`<span>${dGIcon(g.g,12)}${esc(dGender(g.g))} ${g.n}</span>`).join('')}</div></div>
     <div class="card"><h3>${LX('ຕາມພະແນກ','By division')}</h3>${SV.hbars(X.divs.filter(d=>d.n).map(d=>[d.d,d.n,'#2563eb']),Math.max(1,...X.divs.map(d=>d.n)))}</div></div>
    <div class="dsg2">
-    <div class="card"><h3>${LX('ເຂົ້າ / ອອກ 6 ເດືອນ','In / out, last 6 months')}</h3>${SV.cols(M.map(m=>ML[+m.slice(5)-1]),[{n:LX('ເຂົ້າພັກ','Checked in'),c:'#16a34a',v:inM},{n:LX('ອອກ','Left'),c:'#dc2626',v:outM}],210)}</div>
-    <div class="card"><h3>${LX('ກິນເຂົ້າຕາມຄາບ (ມື້ນີ້)','Meals by meal (today)')}</h3>${SV.cols(MEALS.map(([k,lo,en])=>LX(lo,en)),[{n:'',c:'#ea580c',v:X.mc}],210)}</div></div>`;
+    <div class="card"><h3>${esc(ttl)}</h3>${SV.cols(BL,[{n:LX('ເຂົ້າພັກ','Checked in'),c:'#16a34a',v:inM},{n:LX('ອອກ','Left'),c:'#dc2626',v:outM}],210)}</div>
+    <div class="card"><h3>${P.now?LX('ກິນເຂົ້າຕາມຄາບ (ມື້ນີ້)','Meals by meal (today)'):LX('ກິນເຂົ້າຕາມຄາບ · ','Meals by meal · ')+fmtD(td)}</h3>${SV.cols(MEALS.map(([k,lo,en])=>LX(lo,en)),[{n:'',c:'#ea580c',v:X.mc}],210)}</div></div>`;
 }
-function dmSumExport(){const X=dmSummaryData();
+function dmSumExport(){const X=dmSummaryData(),Pq=dPer();
   const resCols=dmResCols(),mealCols=dmMealCols();
-  const live=DM().stays.filter(s=>s.Status==='Active').map(s=>{const p=dPerson(s),r=dRoom(s.RoomID);return Object.assign({},s,{_n:p.name,_sub:p.sub,_d:p.div,_b:r?r.Building:'',_r:r?r.RoomNo:'',_cur:p.cur,_days:Math.max(0,Math.round((new Date()-(parseD(s.CheckIn)||new Date()))/864e5))});});
-  const meals=DM().meals.filter(m=>dMealOn(m)).map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:true,_room:r?r.Building+' · '+r.RoomNo:''});});
-  exportXlsx('KGS_Dormitory',[
-   {name:LX('ສະຫຼຸບຫໍພັກ','Dorm summary'),head:[LX('ລາຍການ','Item'),LX('ຈຳນວນ','Value')],rows:[[LX('ຫ້ອງນອນທັງໝົດ / ໃຊ້ໄດ້','Bedrooms total / open'),X.rooms+' / '+X.act],[LX('ພື້ນທີ່ອື່ນ (ຫ້ອງການ, ສາງ...)','Other areas (office, store...)'),X.fac],[LX('ຕຽງ (ຫ້ອງໃຊ້ໄດ້)','Beds (open rooms)'),X.beds],[LX('ຜູ້ພັກ','Residents'),X.live],[LX('ພະນັກງານ','Employees'),X.emp],[LX('ຄົນນອກ','Outsiders'),X.out],[LX('ຕຽງຫວ່າງ','Free beds'),X.free],[LX('ອັດຕາເຂົ້າພັກ %','Occupancy %'),X.pct],[LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend],[LX('ກິນເຂົ້າມື້ນີ້ (ຄົນ)','On meal list today'),X.meals.length],...MEALS.map(([k,lo,en],i)=>[LX('ຄາບ'+lo,en),X.mc[i]]),[LX('ເຂົ້າເດືອນນີ້','Checked in this month'),X.inM],[LX('ອອກເດືອນນີ້','Left this month'),X.outM],[LX('ຍ້າຍເດືອນນີ້','Moved this month'),X.mvM]]},
+  DM_AT=Pq.now?null:Pq.asOf;const live0=dLive();DM_AT=null;
+  const live=live0.map(s=>{const p=dPerson(s),r=dRoom(s.RoomID);return Object.assign({},s,{_n:p.name,_sub:p.sub,_d:p.div,_b:r?r.Building:'',_r:r?r.RoomNo:'',_cur:p.cur,_days:Math.max(0,Math.round((new Date()-(parseD(s.CheckIn)||new Date()))/864e5))});});
+  const meals=DM().meals.filter(m=>dMealOn(m,Pq.asOf)).map(m=>{const p=dMealPerson(m),r=dResidentOf(m);return Object.assign({},m,{_n:p.name,_sub:p.sub,_d:p.div,_cur:p.cur,_on:true,_room:r?r.Building+' · '+r.RoomNo:''});});
+  exportXlsx('KGS_Dormitory_'+Pq.start+(Pq.end!==Pq.start?'_'+Pq.end:''),[
+   {name:LX('ສະຫຼຸບຫໍພັກ','Dorm summary'),head:[LX('ລາຍການ','Item'),LX('ຈຳນວນ','Value')],rows:[[LX('ຊ່ວງເວລາ','Period'),Pq.label],[LX('ຜູ້ພັກ ນັບ ณ ວັນທີ','Residents as of'),fmtD(Pq.asOf)],[LX('ຫ້ອງນອນທັງໝົດ / ໃຊ້ໄດ້','Bedrooms total / open'),X.rooms+' / '+X.act],[LX('ພື້ນທີ່ອື່ນ (ຫ້ອງການ, ສາງ...)','Other areas (office, store...)'),X.fac],[LX('ຕຽງ (ຫ້ອງໃຊ້ໄດ້)','Beds (open rooms)'),X.beds],[LX('ຜູ້ພັກ','Residents'),X.live],[LX('ພະນັກງານ','Employees'),X.emp],[LX('ຄົນນອກ','Outsiders'),X.out],[LX('ຕຽງຫວ່າງ','Free beds'),X.free],[LX('ອັດຕາເຂົ້າພັກ %','Occupancy %'),X.pct],[LX('ລໍຖ້າອະນຸມັດ','Pending'),X.pend],[LX('ກິນເຂົ້າມື້ນີ້ (ຄົນ)','On meal list today'),X.meals.length],...MEALS.map(([k,lo,en],i)=>[LX('ຄາບ'+lo,en),X.mc[i]]),[LX('ເຂົ້າພັກໃນຊ່ວງ','Checked in (period)'),X.inM],[LX('ອອກໃນຊ່ວງ','Left (period)'),X.outM],[LX('ຍ້າຍໃນຊ່ວງ','Moved (period)'),X.mvM]]},
    {name:LX('ຕາມປະເພດຫ້ອງ','By room group'),head:[LX('ກຸ່ມຫ້ອງ','Room group'),LX('ຫ້ອງ','Rooms'),LX('ມີຄົນພັກ','In use'),LX('ຫ້ອງຫວ່າງ','Empty'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຕຽງຫວ່າງ','Free beds')],rows:X.grp.map(x=>[dGender(x.g),x.rooms,x.used,x.empty,x.cap,x.n,x.free])},
    {name:LX('ຕາມຕຶກ','By building'),head:[LX('ຕຶກ','Building'),LX('ຫ້ອງ','Rooms'),LX('ຫ້ອງໃຊ້ໄດ້','Open'),LX('ຕຽງ','Beds'),LX('ຜູ້ພັກ','Residents'),LX('ຫວ່າງ','Free'),LX('ອັດຕາ %','Rate %'),LX('ຄົນນອກ','Outsiders')],rows:X.bld.map(b=>[b.b,b.rooms,b.act,b.cap,b.n,b.free,b.pct,b.out])},
-   tableToSheet(LX('ຜູ້ພັກປັດຈຸບັນ','Current residents'),resCols.filter(c=>!['CheckOut','Status'].includes(c.k)),live.sort((a,b)=>(a._b+a._r).localeCompare(b._b+b._r,undefined,{numeric:true}))),
+   tableToSheet(Pq.now?LX('ຜູ້ພັກປັດຈຸບັນ','Current residents'):LX('ຜູ້ພັກ ','Residents ')+Pq.asOf,resCols.filter(c=>!['CheckOut','Status'].includes(c.k)),live.sort((a,b)=>(a._b+a._r).localeCompare(b._b+b._r,undefined,{numeric:true}))),
    tableToSheet(LX('ລາຍຊື່ກິນເຂົ້າ','Meal list'),mealCols,meals),
    {name:LX('ຕາມພະແນກ','By division'),head:[LX('ພະແນກ','Division'),LX('ຜູ້ພັກ','Residents'),LX('ກິນເຂົ້າ','On meal list')],rows:X.divs.map(d=>[d.d,d.n,d.m])}]);}
 
@@ -3661,6 +3697,8 @@ function dmImpTpl(){
 }
 function dormActions(){return{
   dmTab:k=>{S.f.dorm.tab=k;pageDorm();},
+  dmPerMode:k=>{const f=S.f.dorm;dPer();const d=f.per.d||todayStr();f.per.mode=k;f.per.d=k==='day'?(d.slice(0,7)===todayStr().slice(0,7)?todayStr():d.slice(0,8)+'01'):d;dmPerChanged();},
+  dmPerToday:()=>{const f=S.f.dorm;f.per={mode:'day',d:todayStr()};if(f.st==='')f.st='Active';dmBody();},
   dmGo:a=>{const[tab,flag]=String(a).split(':');const f=S.f.dorm;f.tab=tab;if(tab==='res'){f.flag=flag||'';f.st='Active';f.q='';f.type='';f.bld='';}if(tab==='meal'){f.mst=flag==='former'?'former':'cur';}pageDorm();},
   dmRoom:a=>dmRoom(a),dmBack:()=>{if(S.dmRoomId&&dRoom(S.dmRoomId))dmRoom(S.dmRoomId);else closeModal();},
   dmStayForm:a=>dmStayForm(a||'',null),dmStayEdit:a=>{const s=DM().stays.find(x=>x.StayID===a);dmStayForm(s?s.RoomID:'',a);},dmStaySave,
