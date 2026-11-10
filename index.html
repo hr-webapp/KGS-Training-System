@@ -519,6 +519,12 @@ select option{background:var(--opt-bg);color:var(--ink)}
 .dp-bar .in{width:auto}.dp-lbl{font-size:13px;color:var(--muted)}.dp-lbl b{color:inherit}
 .dm-c4.past{cursor:default}.dm-c4.past:hover{transform:none}
 
+.modal.xl{max-width:1280px}
+.dp-inline{display:flex;gap:6px}.dp-inline .in{min-width:0}
+.bp-page{font-family:'Times New Roman','Phetsarath OT',serif}.bp-page *{font-family:inherit}
+.bp-kv{width:100%;border-collapse:collapse;margin:3mm 0 4mm;font-size:3.4mm}.bp-kv td{padding:1.4mm 2mm;border-bottom:.3mm solid #cbd5e1}.bp-kv td:nth-child(odd){color:#475569;width:22%}
+.bp-tot td{font-weight:700;border-top:.4mm solid #1e3a8a}
+
 .dm-fac{display:flex;flex-wrap:wrap;gap:8px}.dm-fchip{padding:6px 10px;border-radius:10px;background:var(--glass);border:1px solid var(--line);font-size:12.5px;cursor:pointer}.dm-fchip.off{opacity:.55}
 .dm-rh{display:flex;justify-content:space-between;align-items:center}.dm-no{font-size:20px;font-weight:800}.dm-g{font-size:16px;opacity:.75}
 .dm-bar{height:6px;border-radius:6px;background:var(--line2);margin:6px 0;overflow:hidden}.dm-bar i{display:block;height:100%;background:var(--c);border-radius:6px}
@@ -811,7 +817,7 @@ en:{
  // settings
  language:'Language',changePassword:'Change my password',oldPassword:'Current password',newPassword:'New password',
  users:'Users & roles',addUser:'Add user',role:'Role',resetPassword:'Reset password',auditLog:'Audit log',version:'Version',
- r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'Read-only',r_dorm:'Dormitory manager',perm8:'Manage dormitory (rooms, residents, meals, QR approvals). Dormitory manager sees only the dormitory pages.',nav_dorm:'Dormitory',sub_dorm:'Rooms, residents, meal list and QR self-registration',e_DQ_INVALID:'This QR code is not valid. Please contact the dormitory manager.',e_DQ_EXPIRED:'This page has expired. Please scan the QR on the room door again.',e_DQ_CLOSED:'This room is not open for registration. Please contact the dormitory manager.',e_DQ_DEVICE_LIMIT:'This phone already has 3 requests waiting for approval.',lastLogin:'Last login',dupReview:'Duplicate review records',
+ r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'Read-only',r_dorm:'Dormitory manager',r_finance:'Finance',perm9:'Dormitory billing (invoices, payments, deposits). Confirming payments: roles chosen in the billing settings; settings: admin only.',e_BILL_OFF:'Dormitory billing is not switched on for this month.',e_BILL_EXISTS:'Invoices for this month already exist.',perm8:'Manage dormitory (rooms, residents, meals, QR approvals). Dormitory manager sees only the dormitory pages.',nav_dorm:'Dormitory',sub_dorm:'Rooms, residents, meal list and QR self-registration',e_DQ_INVALID:'This QR code is not valid. Please contact the dormitory manager.',e_DQ_EXPIRED:'This page has expired. Please scan the QR on the room door again.',e_DQ_CLOSED:'This room is not open for registration. Please contact the dormitory manager.',e_DQ_DEVICE_LIMIT:'This phone already has 3 requests waiting for approval.',lastLogin:'Last login',dupReview:'Duplicate review records',
  pwMismatch:'Passwords do not match',pwShort:'Password must be at least {n} characters',
  time:'Time',user:'User',action:'Action',entity:'Entity',details:'Details',reason:'Reason',resolution:'Resolution',
  count:'Count',hours:'Hours',days:'Days',cost:'Cost',budget:'Budget',variance:'Variance',costPerHead:'Cost / participant',
@@ -932,7 +938,7 @@ lo:{
  scopeCur:'ພະນັກງານປັດຈຸບັນ',kpiDesign:'ຮູບແບບກ່ອງຕົວເລກ (ໜ້າພາບລວມ)',kpi_k:'Glassy (ແກ້ວ)',kpi_e:'ກາງ',kpi_f:'ຫົວສີ',kpi_g:'ສີກົມທ່າເຂັ້ມ',kpi_h:'ຂອບສີ',kpi_i:'ແຖວກະທັດຮັດ',kpi_j:'ມຸມໂບ',ph_upload:'ອັບໂຫຼດຮູບ',ph_change:'ປ່ຽນຮູບ',ph_remove:'ລຶບຮູບ',ph_removeQ:'ລຶບຮູບພະນັກງານຄົນນີ້?',ph_hint:'JPG / PNG / WEBP. ຕັດເປັນຮູບສີ່ຫຼ່ຽມໃຫ້ເອງ.',ph_type:'ກະລຸນາເລືອກຮູບ JPG, PNG ຫຼື WEBP.',ph_big:'ຮູບໃຫຍ່ເກີນໄປ.',joinCol:'ຕໍ່ກັບຖັນ (ເຊັ່ນ ນາມສະກຸນ)',unmappedNote:'ຖັນທີ່ບໍ່ໄດ້ຈັບຄູ່ (ເຊັ່ນ ເງິນເດືອນ, ບັນຊີທະນາຄານ, ທີ່ຢູ່) ຈະບໍ່ຖືກນຳເຂົ້າ ແລະ ບໍ່ຖືກເກັບ.',endDateWarn:'ສະຖານະຍັງເຮັດວຽກ ແຕ່ວັນອອກຜ່ານແລ້ວ — ກວດ',scopeFormer:'ອອກແລ້ວ / ປິດ',empCur:'ປັດຈຸບັນ',empFormer:'ອອກແລ້ວ',sub_dashboard:'ພາບລວມການຝຶກອົບຮົມ ແລະ ການເຂົ້າຮ່ວມ',sub_employees:'ລາຍຊື່ ແລະ ຂໍ້ມູນພະນັກງານ',sub_activities:'ວາງແຜນ ແລະ ຈັດການ ຝຶກອົບຮົມ, ປະຊຸມ, ສຳມະນາ',sub_calendar:'ຝຶກອົບຮົມ ແລະ ປະຊຸມ ຕາມວັນທີ',sub_attendance:'ເພີ່ມຜູ້ເຂົ້າຮ່ວມ ແລະ ບັນທຶກການເຂົ້າຮ່ວມ',sub_history:'ປະຫວັດການຝຶກຂອງພະນັກງານທຸກຄົນ',sub_reports:'ລາຍງານ ສົ່ງອອກ Excel ແລະ ພິມ',sub_import:'ນຳເຂົ້າພະນັກງານ ແລະ ສົ່ງອອກຂໍ້ມູນ',sub_settings:'ຜູ້ໃຊ້, ສິດ, ລະຫັດຜ່ານ ແລະ ບັນທຶກການປ່ຽນແປງ',pickOrType:'ເລືອກ ຫຼື ພິມເອງ',badFormat:'ຮູບແບບບໍ່ຖືກຕ້ອງ',
  language:'ພາສາ',changePassword:'ປ່ຽນລະຫັດຜ່ານຂອງຂ້ອຍ',oldPassword:'ລະຫັດຜ່ານປັດຈຸບັນ',newPassword:'ລະຫັດຜ່ານໃໝ່',
  users:'ຜູ້ໃຊ້ & ສິດ',addUser:'ເພີ່ມຜູ້ໃຊ້',role:'ສິດ',resetPassword:'ຕັ້ງລະຫັດຜ່ານໃໝ່',auditLog:'ບັນທຶກການປ່ຽນແປງ',version:'ເວີຊັນ',
- r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'ເບິ່ງຢ່າງດຽວ',r_dorm:'ຜູ້ຮັບຜິດຊອບຫໍພັກ',perm8:'ຈັດການຫໍພັກ (ຫ້ອງ, ຜູ້ພັກ, ກິນເຂົ້າ, ອະນຸມັດ QR). ຜູ້ຮັບຜິດຊອບຫໍພັກ ເຫັນສະເພາະໜ້າຫໍພັກ.',nav_dorm:'ຫໍພັກ',sub_dorm:'ຫ້ອງພັກ, ຜູ້ພັກ, ລາຍຊື່ກິນເຂົ້າ ແລະ ລົງທະບຽນດ້ວຍ QR',e_DQ_INVALID:'QR ນີ້ໃຊ້ບໍ່ໄດ້. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_EXPIRED:'ໜ້ານີ້ໝົດເວລາແລ້ວ. ກະລຸນາສະແກນ QR ທີ່ປະຕູຫ້ອງອີກຄັ້ງ.',e_DQ_CLOSED:'ຫ້ອງນີ້ບໍ່ເປີດລົງທະບຽນ. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_DEVICE_LIMIT:'ໂທລະສັບນີ້ມີຄຳຂໍລໍຖ້າອະນຸມັດຄົບ 3 ລາຍການແລ້ວ.',lastLogin:'ເຂົ້າລະບົບຫຼ້າສຸດ',dupReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
+ r_admin:'HR Administrator',r_staff:'HR Staff',r_viewer:'ເບິ່ງຢ່າງດຽວ',r_dorm:'ຜູ້ຮັບຜິດຊອບຫໍພັກ',r_finance:'ການເງິນ',perm9:'ການເງິນຫໍພັກ (ໃບແຈ້ງໜີ້, ຮັບເງິນ, ມັດຈຳ). ຜູ້ຢືນຢັນການຮັບເງິນ: ຕາມທີ່ຕັ້ງໃນການເງິນ; ການຕັ້ງຄ່າ: admin ເທົ່ານັ້ນ.',e_BILL_OFF:'ເດືອນນີ້ຍັງບໍ່ໄດ້ເປີດເກັບເງິນຫໍພັກ.',e_BILL_EXISTS:'ໃບແຈ້ງໜີ້ຂອງເດືອນນີ້ມີແລ້ວ.',perm8:'ຈັດການຫໍພັກ (ຫ້ອງ, ຜູ້ພັກ, ກິນເຂົ້າ, ອະນຸມັດ QR). ຜູ້ຮັບຜິດຊອບຫໍພັກ ເຫັນສະເພາະໜ້າຫໍພັກ.',nav_dorm:'ຫໍພັກ',sub_dorm:'ຫ້ອງພັກ, ຜູ້ພັກ, ລາຍຊື່ກິນເຂົ້າ ແລະ ລົງທະບຽນດ້ວຍ QR',e_DQ_INVALID:'QR ນີ້ໃຊ້ບໍ່ໄດ້. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_EXPIRED:'ໜ້ານີ້ໝົດເວລາແລ້ວ. ກະລຸນາສະແກນ QR ທີ່ປະຕູຫ້ອງອີກຄັ້ງ.',e_DQ_CLOSED:'ຫ້ອງນີ້ບໍ່ເປີດລົງທະບຽນ. ກະລຸນາຕິດຕໍ່ຜູ້ຮັບຜິດຊອບຫໍພັກ.',e_DQ_DEVICE_LIMIT:'ໂທລະສັບນີ້ມີຄຳຂໍລໍຖ້າອະນຸມັດຄົບ 3 ລາຍການແລ້ວ.',lastLogin:'ເຂົ້າລະບົບຫຼ້າສຸດ',dupReview:'ບັນທຶກກວດຂໍ້ມູນຊ້ຳ',
  pwMismatch:'ລະຫັດຜ່ານບໍ່ກົງກັນ',pwShort:'ລະຫັດຜ່ານຕ້ອງມີ {n} ຕົວຂຶ້ນໄປ',
  time:'ເວລາ',user:'ຜູ້ໃຊ້',action:'ການກະທຳ',entity:'ປະເພດ',details:'ລາຍລະອຽດ',reason:'ເຫດຜົນ',resolution:'ການຕັດສິນ',
  count:'ຈຳນວນ',hours:'ຊົ່ວໂມງ',days:'ມື້',cost:'ຄ່າໃຊ້ຈ່າຍ',budget:'ງົບປະມານ',variance:'ສ່ວນຕ່າງ',costPerHead:'ຄ່າໃຊ້ຈ່າຍ/ຄົນ',
@@ -1424,7 +1430,7 @@ function renderShell(){
    <div class="navlbl">Menu</div>
    <nav class="nav">${navItems().map(([k,i])=>`<a data-act="go" data-arg="${k}" id="nav_${k}">${ic(i)}<span>${esc(t('nav_'+k))}</span></a>`).join('')}</nav>
    <div class="side-foot"><div class="me"><div class="avatar">${esc((S.me.FullName||S.me.Username||'?').trim().charAt(0).toUpperCase())}</div><div style="min-width:0"><b>${esc(S.me.FullName)}</b><small>${esc(t('r_'+S.me.Role))}</small></div></div>
-   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-11b${sbMode()?' · SQL':''}</span></div></div></aside>
+   <div class="footrow">${langSw()}<span title="UI 2026-11-04b">${t('version')} ${esc(S.version)} · UI 11-12b${sbMode()?' · SQL':''}</span></div></div></aside>
    <div class="main"><div class="top"><button class="burger" data-act="toggleSide">${ic('menu',24)}</button><span class="pgic" id="pageIc"></span><div class="ttl"><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
    <button class="iconbtn" data-act="toggleSnd" id="sndBtn" title="${LX('ສຽງ','Sound')}">${ic(KFX.sound().on?'vol':'mute')}</button><button class="iconbtn" data-act="toggleTheme" title="Theme">${ic(S.theme==='light'?'moon':'sun')}</button><button class="btn" data-act="logout">${ic('out',16)}<span>${t('signOut')}</span></button></div>
    <div class="content" id="page"></div></div></div>`;
@@ -1579,7 +1585,7 @@ function viewEmp(id){
     ${hidden?`<p class="small muted">${t('sensitiveHidden')}</p>`:''}
     <h3 style="font-size:14px">${t('es_title')}</h3>${empSummaryHTML(empSummary(id))}
     <h3 style="font-size:14px">${t('history')} (${hist.length})</h3>${dataTable('ehist',histCols(false),hist,{sortK:'StartDate',sortD:-1,ps:10})}
-    ${extEmpHTML(id)}
+    ${extEmpHTML(id)}${dmEmpHTML(id)}
     <div id="rawBox"></div>`,
    `${canEdit()?`<button class="btn sm" data-act="showRaw" data-arg="${esc(id)}">${t('rawData')}</button>
     <button class="btn" data-act="printEmpReport" data-arg="${esc(id)}">${ic('download',15)} ${t('es_print')}</button>
@@ -2247,7 +2253,7 @@ async function xlAll(){const fn='KGS_HR_All_Data_'+todayStr()+'.xlsx';
     {const r=raw('Settings');add(t('nav_settings'),r.h,r.rows);}
     {const r=raw('AuditLog');add(t('auditLog'),r.h,r.rows);}
     {const r=raw('DuplicateReview',['RawData']);add(t('xa_dup'),r.h,r.rows);}
-    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-11b'],[],
+    const head=[[t('xa_title')],[companyName()],[t('xl_made'),fmtD(todayStr())+' '+new Date().toTimeString().slice(0,5)+' · '+(S.me?S.me.FullName||S.me.Username:'')],[t('version'),(S.version||'')+' · UI 11-12b'],[],
       [t('xa_sheet'),t('xa_rows')],...toc,[],[t('xa_note1')],[t('xa_note2')],[t('xa_note3')]];
     const ws=XLSX.utils.aoa_to_sheet(head);ws['!cols']=[{wch:44},{wch:30}];XS.kv(ws);XLSX.utils.book_append_sheet(wb,ws,t('xa_toc').slice(0,31));
     wb.SheetNames.unshift(wb.SheetNames.pop());
@@ -2529,19 +2535,19 @@ function admUsers(){
   const n=fn=>S.users.filter(fn).length;
   const stBadge=u=>{const s=uState(u);return `<span class="badge ${s==='active'?'b-Yes':s==='locked'?'b-Late':'b-No'}">${t(s==='active'?'ad_stActive':s==='locked'?'ad_stLocked':'ad_stDisabled')}</span>${u.MustChange==='Yes'&&u.Active==='Yes'?` <span class="badge b-Planned">${t('ad_mustCh')}</span>`:''}`;};
   const Y='<span class="y">✓</span>',N='<span class="n">—</span>';
-  const perms=[['perm1',1,1,1,0],['perm2',1,1,0,0],['perm3',1,1,0,0],['perm4',1,1,0,0],['perm5',1,1,1,0],['perm6',1,0,0,0],['perm7',1,0,0,0],['perm8',1,1,0,1]];
+  const perms=[['perm1',1,1,1,0,0],['perm2',1,1,0,0,0],['perm3',1,1,0,0,0],['perm4',1,1,0,0,0],['perm5',1,1,1,0,0],['perm6',1,0,0,0,0],['perm7',1,0,0,0,0],['perm8',1,1,0,1,0],['perm9',1,1,0,1,1]];
   $('#admBody').innerHTML=`<div class="minikpi">
     <div><span>${t('ad_totalUsers')}</span><b>${S.users.length}</b></div>
     <div><span>${t('ad_admins')}</span><b>${n(u=>u.Role==='admin'&&u.Active==='Yes')}</b></div>
     <div><span>${t('ad_locked')}</span><b>${n(u=>u.Locked==='Yes')}</b></div>
     <div><span>${t('ad_mustCh')}</span><b>${n(u=>u.MustChange==='Yes'&&u.Active==='Yes')}</b></div></div>
    <div class="bar"><input class="in search" id="auQ" placeholder="${t('search')}: ${t('username')} / ${t('fullName')} / ${t('email')}" value="${esc(f.q)}">
-    <select class="in" id="auRole">${opts(['admin','staff','viewer','dorm'].map(r=>[r,t('r_'+r)]),f.role,t('role')+': '+t('all'))}</select>
+    <select class="in" id="auRole">${opts(['admin','staff','viewer','dorm','finance'].map(r=>[r,t('r_'+r)]),f.role,t('role')+': '+t('all'))}</select>
     <select class="in" id="auSt">${opts([['active',t('ad_stActive')],['locked',t('ad_stLocked')],['disabled',t('ad_stDisabled')]],f.st,fl('Status')+': '+t('all'))}</select>
     <span class="grow"></span><button class="btn" data-act="exportUsers">${ic('download',16)} ${t('export')}</button><button class="btn pri" data-act="userForm">+ ${t('addUser')}</button></div>
    <div id="auList"></div>
-   <div class="card" style="margin-top:16px"><h3>${t('ad_matrix')}</h3><div class="tbl-wrap"><table class="tbl mx"><thead><tr><th></th><th>${t('r_admin')}</th><th>${t('r_staff')}</th><th>${t('r_viewer')}</th><th>${t('r_dorm')}</th></tr></thead>
-    <tbody>${perms.map(([k,a,s,v,d])=>`<tr><td>${t(k)}</td><td>${a?Y:N}</td><td>${s?Y:N}</td><td>${v?Y:N}</td><td>${d?Y:N}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:10px 0 0">${t('ad_permNote')}</p></div>`;
+   <div class="card" style="margin-top:16px"><h3>${t('ad_matrix')}</h3><div class="tbl-wrap"><table class="tbl mx"><thead><tr><th></th><th>${t('r_admin')}</th><th>${t('r_staff')}</th><th>${t('r_viewer')}</th><th>${t('r_dorm')}</th><th>${t('r_finance')}</th></tr></thead>
+    <tbody>${perms.map(([k,a,s,v,d,fi])=>`<tr><td>${t(k)}</td><td>${a?Y:N}</td><td>${s?Y:N}</td><td>${v?Y:N}</td><td>${d?Y:N}</td><td>${fi?Y:N}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:10px 0 0">${t('ad_permNote')}</p></div>`;
   const list=()=>{const q2=f.q.toLowerCase().trim();const r2=S.users.filter(u=>(!q2||[u.Username,u.FullName,u.Email].some(v=>String(v||'').toLowerCase().includes(q2)))&&(!f.role||u.Role===f.role)&&(!f.st||uState(u)===f.st));
     $('#auList').innerHTML=dataTable('users',[
      {k:'Username',l:t('username'),r:u=>`<div class="idcell"><span class="av" style="--c:${ROLE_C[u.Role]||avc(u.Username)}">${esc((u.FullName||u.Username||'?').trim().charAt(0).toUpperCase())}</span><div><b>${esc(u.Username)}</b>${u.UserID===S.me.UserID?` <span class="small muted">(${t('ad_you')})</span>`:''}${u.Email?`<div class="small muted">${esc(u.Email)}</div>`:''}</div></div>`},
@@ -2563,7 +2569,7 @@ function userForm(id){
    <div class="fld"><label class="req">${t('username')}</label><input class="in" id="uf_u" value="${esc(u.Username||'')}" ${id?'readonly':''} autocomplete="off" placeholder="name.surname"></div>
    <div class="fld"><label>${t('fullName')}</label><input class="in" id="uf_n" maxlength="80" value="${esc(u.FullName||'')}"></div>
    <div class="fld"><label>${t('email')}</label><input class="in" id="uf_e" type="email" value="${esc(u.Email||'')}" placeholder="name@kgs-lao.com"></div>
-   <div class="fld"><label>${t('role')}</label><select class="in" id="uf_r" ${self?'disabled':''}>${opts(['admin','staff','viewer','dorm'].map(r=>[r,t('r_'+r)]),u.Role)}</select></div>
+   <div class="fld"><label>${t('role')}</label><select class="in" id="uf_r" ${self?'disabled':''}>${opts(['admin','staff','viewer','dorm','finance'].map(r=>[r,t('r_'+r)]),u.Role)}</select></div>
    ${id?`<div class="fld"><label>${fl('Status')}</label><select class="in" id="uf_a" ${self?'disabled':''}>${opts([['Yes',t('ad_stActive')],['No',t('ad_stDisabled')]],u.Active)}</select></div>`:''}
    ${id?'':`<div class="fld wide"><label class="req">${t('ad_tempPw')}</label><div style="display:flex;gap:6px"><input class="in" id="uf_p" style="flex:1" autocomplete="off" spellcheck="false"><button type="button" class="btn sm" id="uf_gen">${ic('key',14)} ${t('ad_gen')}</button></div><div class="small muted" style="margin-top:4px">${esc(pwHint())}</div></div>
    <div class="fld wide"><label class="chk"><input type="checkbox" id="uf_mc" checked> ${t('ad_mustChange')}</label></div>`}
@@ -3123,7 +3129,7 @@ function extEmpHTML(id){const R=extRows().filter(r=>r.EmployeeID===id).sort((a,b
 /* ================= DORMITORY (R2.4) ================= */
 const DM=()=>S.dorm||(S.dorm={rooms:[],stays:[],meals:[]});
 const canDorm=()=>['admin','staff','dorm'].includes(role());
-const isDormRole=()=>role()==='dorm';
+const isDormRole=()=>role()==='dorm'||role()==='finance';
 const DORM_ST_B={Active:['Yes','ພັກຢູ່','Living'],Pending:['Late','ລໍຖ້າອະນຸມັດ','Pending'],Moved:['Planned','ຍ້າຍຫ້ອງ','Moved'],Left:['Cancelled','ອອກແລ້ວ','Left'],Rejected:['No','ບໍ່ອະນຸມັດ','Rejected'],Maintenance:['Late','ສ້ອມແປງ','Maintenance'],Closed:['Cancelled','ປິດ','Closed']};
 const dBadge=s=>{const b=DORM_ST_B[s];return b?`<span class="badge b-${b[0]}">${esc(LX(b[1],b[2]))}</span>`:badge(s);};
 const DG={Male:['ຊາຍໂສດ','Single men','♂'],Female:['ຍິງໂສດ','Single women','♀'],Family:['ຄອບຄົວ / ຜົວເມຍ','Family / couple','⚭'],Mixed:['ບໍ່ກຳນົດ / ລວມ','Not set / mixed','⚥']};
@@ -3194,6 +3200,8 @@ function dAlerts(){
   if(mis.length)A.push(['warn',LX('ເພດບໍ່ກົງກັບຫ້ອງ: ','Gender does not match the room: ')+mis.length,'res:gender']);
   const unc=live.filter(s=>(s.LastConfirmed||'')<m1);
   if(unc.length)A.push(['info',LX('ຍັງບໍ່ໄດ້ກວດນັບເດືອນນີ້: ','Not yet confirmed this month: ')+unc.length+' '+LX('ຄົນ','people'),'res:unconf']);
+  if(canBill()&&billOn()){const od=BL().invoices.filter(bOverdue);if(od.length)A.push(['warn',LX('ໃບແຈ້ງໜີ້ກາຍກຳນົດຈ່າຍ: ','Overdue invoices: ')+od.length+' · '+KIP(od.reduce((a,i)=>a+bBal(i),0)),'bill:due']);
+    const pp=BL().payments.filter(p=>p.Status==='Pending').length;if(pp&&canConfirm())A.push(['warn',LX('ການຈ່າຍເງິນ ລໍຖ້າຢືນຢັນ: ','Payments waiting to confirm: ')+pp,'bill:pay']);}
   return A;
 }
 const dFlagOf=(s,flag)=>{const td=todayStr();switch(flag){
@@ -3205,15 +3213,16 @@ const dFlagOf=(s,flag)=>{const td=todayStr();switch(flag){
   default:return true;}};
 
 function pageDorm(){
-  const f=S.f.dorm||(S.f.dorm={tab:'board',bld:'',q:'',type:'',st:'Active',flag:'',mq:'',meal:'',mst:'cur'});
+  const f=S.f.dorm||(S.f.dorm={tab:role()==='finance'?'bill':'board',bld:'',q:'',type:'',st:'Active',flag:'',mq:'',meal:'',mst:'cur'});
   const D=DM(),pend=D.stays.filter(s=>s.Status==='Pending').length;
   const tabs=[['board','grid',LX('ຜັງຫ້ອງ','Room board')],['res','users',LX('ຜູ້ພັກ','Residents')],['pend','clock',LX('ລໍຖ້າອະນຸມັດ','Approvals')+(pend?` <b class="dm-cnt">${pend}</b>`:'')],['meal','sun',LX('ກິນເຂົ້າ','Meals')],['sum','chart',LX('ສະຫຼຸບ','Summary')],['rooms','building',LX('ຕັ້ງຄ່າຫ້ອງ','Room setup')]];
+  if(canBill()){const od=BL().invoices.filter(bOverdue).length;tabs.push(['bill','pct',LX('ການເງິນ','Billing')+(billOn()?(od?` <b class="dm-cnt">${od}</b>`:''):' 🔒')]);}
   const A=dAlerts();
   $('#page').innerHTML=(A.length?`<div class="dm-alerts no-print">${A.map(([lv,tx,go])=>`<div class="note ${lv==='bad'?'bad':lv==='warn'?'warn':'info'} small click" data-act="dmGo" data-arg="${esc(go)}">${lv==='info'?'ℹ':'⚠'} ${esc(tx)} <span class="muted">›</span></div>`).join('')}</div>`:'')+
    `<div class="tabs no-print">${tabs.map(([k,i,l])=>`<button class="${f.tab===k?'on':''}" data-act="dmTab" data-arg="${k}">${ic(i,15)} ${l}</button>`).join('')}</div><div id="dmBody"></div>`;
   S.refresh=dmBody;dmBody();
 }
-function dmBody(){const f=S.f.dorm;({board:dmBoard,res:dmResidents,pend:dmPending,meal:dmMeals,sum:dmSummary,rooms:dmRooms}[f.tab]||dmBoard)();
+function dmBody(){const f=S.f.dorm;({board:dmBoard,res:dmResidents,pend:dmPending,meal:dmMeals,sum:dmSummary,rooms:dmRooms,bill:dmBill}[f.tab]||dmBoard)();
   if(['board','res','meal','sum'].includes(f.tab)){$('#dmBody').insertAdjacentHTML('afterbegin',dmPerBar());dmPerWire();}}
 const dmKpi=(l,v,s,i,c)=>`<div class="kpi" style="--c:${c}"><span class="kbg">${ic(i)}</span><div class="kh"><span class="kic" style="--c:${c}">${ic(i)}</span><span class="l">${esc(l)}</span></div><div class="v">${v}</div>${s?`<div class="s">${esc(s)}</div>`:''}</div>`;
 function dmNoRooms(){return `<div class="card" style="text-align:center;padding:30px"><div style="opacity:.6">${ic('building',40)}</div><p>${LX('ຍັງບໍ່ມີຫ້ອງໃນລະບົບ. ເລີ່ມຈາກເພີ່ມຕຶກ ແລະ ຫ້ອງ.','No rooms yet. Start by adding buildings and rooms.')}</p>${canDorm()?`<button class="btn pri" data-act="dmRoomForm">${ic('plus',15)} ${LX('ເພີ່ມຫ້ອງ','Add room')}</button>`:''}</div>`;}
@@ -3301,6 +3310,7 @@ function dmStayForm(roomId,stayId){
     ${F(LX('ພັກຮອດວັນທີ','Stay until'),I('EndDate','date'),'',1)}
     <div class="fld wide"><label class="dm-consent"><input type="checkbox" id="ds_Consent" ${s.Consent==='Yes'?'checked':''}> ${LX('ຜູ້ພັກຍິນຍອມໃຫ້ບໍລິສັດເກັບຂໍ້ມູນນີ້ ເພື່ອຄວາມປອດໄພ ແລະ ການຄຸ້ມຄອງຫໍພັກເທົ່ານັ້ນ','The resident agrees that the company keeps this data for safety and dormitory management only')}</label></div></div>
    ${F(LX('ວັນເຂົ້າພັກ','Check-in date'),I('CheckIn','date'),'',1)}
+   ${billOn()?F(LX('ວິທີຈ່າຍຄ່າຫໍພັກ','How this person pays'),`<select class="in" id="ds_PayMethod">${opts([['Payroll',bPM('Payroll')],['Cash',bPM('Cash')]],s.PayMethod||(s.PersonType==='Outsider'?'Cash':'Payroll'))}</select>`):''}
    ${F(LX('ໝາຍເຫດ','Remarks'),`<textarea class="in" id="ds_Remarks" rows="2">${esc(s.Remarks||'')}</textarea>`,'wide')}</div>`,
    `<button class="btn" data-act="${S.dmBackRoom?'dmBack':'closeModal'}">${t('cancel')}</button><button class="btn pri" data-act="dmStaySave" data-arg="${esc(stayId||'')}">${t('save')}</button>`,'lg');
   const sync=()=>{const ty=stayId?s.PersonType:(document.querySelector('[name=ds_type]:checked')||{}).value;document.querySelectorAll('.ds-emp').forEach(x=>x.style.display=ty==='Employee'?'':'none');document.querySelectorAll('.ds-out').forEach(x=>x.style.display=ty==='Outsider'?'':'none');};
@@ -3311,7 +3321,7 @@ const dsEmpId=id=>{const v=dsVal(id);const x=(v.split(' · ')[0]||'').trim();ret
 async function dmStaySave(id){
   const cur=id?DM().stays.find(x=>x.StayID===id):null;
   const ty=cur?cur.PersonType:(document.querySelector('[name=ds_type]:checked')||{}).value;
-  const st={StayID:id||'',PersonType:ty,Bed:dsVal('Bed'),CheckIn:dsVal('CheckIn'),Remarks:dsVal('Remarks')};
+  const st={StayID:id||'',PersonType:ty,Bed:dsVal('Bed'),CheckIn:dsVal('CheckIn'),Remarks:dsVal('Remarks')};if($('#ds_PayMethod'))st.PayMethod=dsVal('PayMethod');
   if(!cur){st.RoomID=dsVal('RoomID');if(!st.RoomID){toast(LX('ກະລຸນາເລືອກຫ້ອງ','Please choose a room'),'bad');return;}}
   if(ty==='Employee'&&!cur){st.EmployeeID=dsEmpId('emp');if(!st.EmployeeID){toast(LX('ກະລຸນາເລືອກພະນັກງານຈາກລາຍຊື່','Please pick an employee from the list'),'bad');return;}
     const r=dRoom(st.RoomID),g=dGenderKey((empById(st.EmployeeID)||{}).Gender);
@@ -3699,7 +3709,7 @@ function dormActions(){return{
   dmTab:k=>{S.f.dorm.tab=k;pageDorm();},
   dmPerMode:k=>{const f=S.f.dorm;dPer();const d=f.per.d||todayStr();f.per.mode=k;f.per.d=k==='day'?(d.slice(0,7)===todayStr().slice(0,7)?todayStr():d.slice(0,8)+'01'):d;dmPerChanged();},
   dmPerToday:()=>{const f=S.f.dorm;f.per={mode:'day',d:todayStr()};if(f.st==='')f.st='Active';dmBody();},
-  dmGo:a=>{const[tab,flag]=String(a).split(':');const f=S.f.dorm;f.tab=tab;if(tab==='res'){f.flag=flag||'';f.st='Active';f.q='';f.type='';f.bld='';}if(tab==='meal'){f.mst=flag==='former'?'former':'cur';}pageDorm();},
+  dmGo:a=>{const[tab,flag]=String(a).split(':');const f=S.f.dorm;f.tab=tab;if(tab==='bill')f.btab=flag||'inv';if(tab==='res'){f.flag=flag||'';f.st='Active';f.q='';f.type='';f.bld='';}if(tab==='meal'){f.mst=flag==='former'?'former':'cur';}pageDorm();},
   dmRoom:a=>dmRoom(a),dmBack:()=>{if(S.dmRoomId&&dRoom(S.dmRoomId))dmRoom(S.dmRoomId);else closeModal();},
   dmStayForm:a=>dmStayForm(a||'',null),dmStayEdit:a=>{const s=DM().stays.find(x=>x.StayID===a);dmStayForm(s?s.RoomID:'',a);},dmStaySave,
   dmMove,dmMoveGo,dmOut,dmOutGo,dmHeadcount,
@@ -3775,6 +3785,277 @@ async function dqSubmit(person){const C=S.dq;C.err='';
   try{const r=await call('dorm.qrSubmit',{ticket:C.ticket,person,device:C.dev});C.res=r.StayID;C.step='done';}
   catch(e){if(e.error==='DQ_EXPIRED'||e.error==='DQ_CLOSED'||e.error==='DQ_INVALID')C.step='err';C.err=errText(e);}
   dqPub();}
+
+/* ================= DORMITORY BILLING (R2.5) — built in, OFF until admin switches it on ================= */
+const BL=()=>{const D=DM();return D.bill||(D.bill={cfg:[],util:[],invoices:[],payments:[],deposits:[]});};
+const canBill=()=>['admin','staff','dorm','finance'].includes(role());
+const kip=n=>Math.round(Number(n)||0).toLocaleString('en-US');
+const KIP=n=>kip(n)+' '+LX('ກີບ','LAK');
+function bCfgFor(m){const L=BL().cfg.filter(c=>!m||c.EffectiveFrom<=m).sort((a,b)=>a.EffectiveFrom<b.EffectiveFrom?-1:a.EffectiveFrom>b.EffectiveFrom?1:(a.CfgID<b.CfgID?-1:1));
+  const c=L[L.length-1];if(!c)return null;let j={};try{j=JSON.parse(c.Json||'{}');}catch(e){}return Object.assign(j,{Enabled:c.Enabled==='Yes',CfgID:c.CfgID,EffectiveFrom:c.EffectiveFrom});}
+const billOn=()=>{const c=bCfgFor(null);return !!(c&&c.Enabled);};
+const canConfirm=()=>{if(role()==='admin')return true;const c=bCfgFor(null);return ((c&&c.confirmRoles)||['admin','finance']).includes(role());};
+const B_LINE={RENT:['ຄ່າຫ້ອງ','Room rent'],GARBAGE:['ຄ່າຂີ້ເຫຍື້ອ','Garbage'],ELEC:['ຄ່າໄຟ','Electricity'],WATER:['ຄ່ານ້ຳ','Water'],MEAL_B:['ອາຫານເຊົ້າ','Breakfast'],MEAL_L:['ອາຫານທ່ຽງ','Lunch'],MEAL_D:['ອາຫານແລງ','Dinner'],MEAL_M:['ຄ່າອາຫານ (ເໝົາເດືອນ)','Meals (monthly)']};
+const bLine=l=>B_LINE[l.code]?LX(B_LINE[l.code][0],B_LINE[l.code][1]):l.label;
+const B_ST={Open:['Late','ຍັງບໍ່ຈ່າຍ','Unpaid'],Partial:['Planned','ຈ່າຍບາງສ່ວນ','Partly paid'],Paid:['Yes','ຈ່າຍແລ້ວ','Paid'],Void:['Cancelled','ຍົກເລີກ','Void'],
+  Pending:['Late','ລໍຖ້າຢືນຢັນ','Waiting to confirm'],Confirmed:['Yes','ຢືນຢັນແລ້ວ','Confirmed'],Held:['Planned','ຖືໄວ້','Held'],Refunded:['Cancelled','ຄືນແລ້ວ','Refunded']};
+const bBadge=s=>{const b=B_ST[s];return b?`<span class="badge b-${b[0]}">${esc(LX(b[1],b[2]))}</span>`:esc(s);};
+const B_PM={Payroll:['ຫັກເງິນເດືອນ','Payroll deduction'],Cash:['ເງິນສົດ / ໂອນ','Cash / transfer'],Transfer:['ໂອນ','Transfer'],Deposit:['ຫັກຈາກມັດຈຳ','From deposit']};
+const bPM=k=>LX((B_PM[k]||[k,k])[0],(B_PM[k]||[k,k])[1]);
+const B_PAYM={Cash:['ເງິນສົດ','Cash'],Transfer:['ໂອນ','Transfer'],Payroll:['ຫັກເງິນເດືອນ','Payroll'],Deposit:['ຫັກຈາກມັດຈຳ','From deposit']};
+const bPMp=k=>LX((B_PAYM[k]||[k,k])[0],(B_PAYM[k]||[k,k])[1]);
+const bLines=i=>{try{return JSON.parse(i.Lines||'[]');}catch(e){return[];}};
+const bBal=i=>i.Status==='Void'?0:Math.max(0,Number(i.Net||0)-Number(i.Paid||0));
+const bMonthNow=()=>todayStr().slice(0,7);
+const bMonLbl=m=>dMon(+String(m).slice(5,7))+' '+String(m).slice(0,4);
+const bOverdue=i=>i.Status!=='Void'&&bBal(i)>0&&i.DueDate&&i.DueDate<todayStr();
+function bPut(key,list){const B=BL();(Array.isArray(list)?list:[list]).forEach(x=>{if(!x)return;const id=x[key];B[key==='InvoiceID'?'invoices':key==='PaymentID'?'payments':key==='DepositID'?'deposits':key==='UtilID'?'util':'cfg']=
+  B[key==='InvoiceID'?'invoices':key==='PaymentID'?'payments':key==='DepositID'?'deposits':key==='UtilID'?'util':'cfg'].filter(y=>y[key]!==id).concat([x]);});}
+const bPutInv=x=>bPut('InvoiceID',x),bPutPay=x=>bPut('PaymentID',x);
+
+function dmBill(){
+  const f=S.f.dorm;f.btab=f.btab||(billOn()?'inv':'cfg');f.bm=f.bm||bMonthNow();
+  if(!billOn()&&f.btab!=='cfg')f.btab='cfg';
+  const pend=BL().payments.filter(p=>p.Status==='Pending').length,od=BL().invoices.filter(bOverdue).length;
+  const tabs=[['inv',LX('ໃບແຈ້ງໜີ້','Invoices')],['pay',LX('ການຮັບເງິນ','Payments')+(pend&&canConfirm()?` <b class="dm-cnt">${pend}</b>`:'')],['due',LX('ໜີ້ຄ້າງ','Outstanding')+(od?` <b class="dm-cnt">${od}</b>`:'')],
+    ['util',LX('ບິນໄຟ / ນ້ຳ','Utility bills')],['dep',LX('ເງິນມັດຈຳ','Deposits')],['cfg',LX('ຕັ້ງຄ່າການເງິນ','Billing settings')]];
+  $('#dmBody').innerHTML=(billOn()?'':`<div class="note warn" style="margin:0 0 12px">🔒 ${LX('ລະບົບເກັບເງິນຫໍພັກ <b>ປິດຢູ່</b>. ຫໍພັກໃຊ້ງານໄດ້ຕາມປົກກະຕິ. ເມື່ອຕ້ອງການເລີ່ມເກັບເງິນ, admin ຕັ້ງລາຄາ ແລ້ວກົດ "ເປີດໃຊ້" ພ້ອມເລືອກເດືອນທີ່ເລີ່ມ.','Dormitory billing is <b>OFF</b>. The dormitory works as usual. To start charging, an admin sets the prices and switches it on from a chosen month.')}</div>`)+
+   `<div class="dp-seg no-print" style="display:inline-flex;margin:0 0 12px;flex-wrap:wrap">${tabs.filter(t=>billOn()||t[0]==='cfg').map(([k,l])=>`<button class="${f.btab===k?'on':''}" data-act="bTab" data-arg="${k}">${l}</button>`).join('')}</div><div id="bBody"></div>`;
+  ({inv:bInvoices,pay:bPayments,due:bDue,util:bUtil,dep:bDeposits,cfg:bSettings}[f.btab]||bInvoices)();
+}
+const bMonthPick=(id,v)=>`<input class="in" type="month" id="${id}" value="${esc(v)}">`;
+
+/* ----- invoices ----- */
+function bInvoices(){
+  const f=S.f.dorm,B=BL();
+  if(B.since&&f.bm<B.since&&!(B.hist=B.hist||{})[f.bm]){B.hist[f.bm]=1;$('#bBody').innerHTML=`<div class="muted small" style="padding:20px">${LX('ກຳລັງໂຫຼດຂໍ້ມູນເກົ່າ…','Loading older data…')}</div>`;
+    call('dorm.billHistory',{month:f.bm}).then(r=>{bPutInv(r.invoices);bPutPay(r.payments);bInvoices();}).catch(e=>{B.hist[f.bm]=0;fail(e);});return;}
+  const m=f.bm,L=BL().invoices.filter(i=>i.Month===m&&(f.bvoid||i.Status!=='Void')),act=L.filter(i=>i.Status!=='Void');
+  const cfg=bCfgFor(m),on=!!(cfg&&cfg.Enabled),tot=act.reduce((a,i)=>a+Number(i.Net||0),0),paid=act.reduce((a,i)=>a+Number(i.Paid||0),0);
+  const pr=act.filter(i=>i.PayMethod==='Payroll'&&bBal(i)>0).length;
+  $('#bBody').innerHTML=`<div class="bar no-print">${bMonthPick('bM',m)}<span class="grow"></span>
+   ${on&&canBill()?`<button class="btn ${act.length?'':'pri'}" data-act="bPreview">${ic('pct',15)} ${act.length?LX('ຄິດໄລ່ໃໝ່','Re-calculate'):LX('ຄິດໄລ່ ແລະ ອອກໃບແຈ້ງໜີ້','Calculate & issue invoices')}</button>`:''}
+   ${act.length?`<button class="btn" data-act="bPrintAll">${ic('download',15)} ${LX('ພິມທັງໝົດ','Print all')}</button><button class="btn" data-act="bInvXls">Excel</button>
+   ${pr?`<button class="btn" data-act="bPayrollXls">${ic('download',15)} ${LX('ລາຍການຫັກເງິນເດືອນ','Payroll deduction list')}</button>`:''}
+   ${pr&&canConfirm()?`<button class="btn pri" data-act="bPayrollPost">${ic('check',15)} ${LX('ບັນທຶກວ່າຫັກເງິນເດືອນແລ້ວ','Record payroll deducted')}</button>`:''}`:''}</div>
+   ${on?'':`<div class="note info small">${LX('ເດືອນ '+bMonLbl(m)+' ຍັງບໍ່ໄດ້ເປີດເກັບເງິນ.','Billing is not on for '+bMonLbl(m)+'.')}</div>`}
+   <div class="dsk-row" style="grid-template-columns:repeat(4,1fr)">${[[LX('ໃບແຈ້ງໜີ້','Invoices'),act.length,'#2563eb'],[LX('ຍອດລວມ','Total'),kip(tot),'#7c3aed'],[LX('ຮັບແລ້ວ','Received'),kip(paid),'#16a34a'],[LX('ຄ້າງຈ່າຍ','Balance'),kip(tot-paid),'#dc2626']].map(([l,v,c])=>`<div class="dsk" style="--c:${c}"><div><div class="l">${l}</div><div class="v">${v}</div><div class="s">${bMonLbl(m)}</div></div></div>`).join('')}</div>
+   <div id="bList"></div><label class="small muted no-print"><input type="checkbox" id="bVoid" ${f.bvoid?'checked':''}> ${LX('ສະແດງໃບທີ່ຍົກເລີກ','Show void invoices')}</label>
+   ${BL().since?`<p class="small muted">${LX('ເພື່ອໃຫ້ລະບົບໄວ: ຕອນເຂົ້າລະບົບ ໂຫຼດສະເພາະ 24 ເດືອນຫຼ້າສຸດ (ແລະ ໜີ້ທີ່ຍັງຄ້າງ). ເລືອກເດືອນເກົ່າກວ່ານັ້ນ ລະບົບຈະດຶງມາໃຫ້ເອງ.','To keep the app fast, sign-in loads only the last 24 months (plus unpaid invoices). Older months are fetched when you pick them.')}</p>`:''}`;
+  $('#bM').onchange=()=>{if($('#bM').value){f.bm=$('#bM').value;bInvoices();}};$('#bVoid').onchange=()=>{f.bvoid=$('#bVoid').checked;bInvoices();};
+  $('#bList').innerHTML=dataTable('binv',bInvCols(),L.map(bInvRow),{sortK:'_room',rowAttr:i=>`class="click" data-act="bInv" data-arg="${esc(i.InvoiceID)}"`});
+}
+function bInvRow(i){const r=dRoom(i.RoomID);return Object.assign({},i,{_room:r?r.RoomNo:'',_bal:bBal(i),_net:Number(i.Net||0),_paid:Number(i.Paid||0)});}
+function bInvCols(){return[{k:'InvoiceID',l:LX('ເລກທີ','No.')},{k:'Name',l:LX('ຊື່','Name'),r:i=>`<b>${esc(i.Name)}</b><div class="small muted">${esc(i.PersonType==='Employee'?i.EmployeeID:LX('ຄົນນອກ','Outsider'))}</div>`,x:i=>i.Name},
+  {k:'PersonType',l:LX('ປະເພດ','Type'),hide:1,x:i=>i.PersonType==='Employee'?LX('ພະນັກງານ','Employee'):LX('ຄົນນອກ','Outsider')},
+  {k:'_room',l:LX('ຫ້ອງ','Room'),r:i=>i._room?esc(i._room):'–'},{k:'Days',l:LX('ມື້','Days'),cls:'num',r:i=>Number(i.Days)?esc(i.Days):'–'},{k:'_net',l:LX('ຕ້ອງຈ່າຍ','Amount'),cls:'num',r:i=>kip(i._net)},{k:'_paid',l:LX('ຈ່າຍແລ້ວ','Paid'),cls:'num',r:i=>kip(i._paid)},
+  {k:'_bal',l:LX('ຄ້າງ','Balance'),cls:'num',r:i=>i._bal?`<b style="color:#dc2626">${kip(i._bal)}</b>`:'–'},{k:'PayMethod',l:LX('ວິທີຈ່າຍ','Method'),r:i=>esc(bPM(i.PayMethod)),x:i=>bPM(i.PayMethod)},
+  {k:'Status',l:fl('Status'),r:i=>bBadge(i.Status)+(bOverdue(i)?` <span class="badge b-No">${LX('ກາຍກຳນົດ','Overdue')}</span>`:''),x:i=>LX((B_ST[i.Status]||[0,i.Status])[1],i.Status)}].filter(c=>!c.hide);}
+async function bPreview(){
+  const f=S.f.dorm,m=f.bm;let r;try{r=await call('dorm.billPreview',{month:m});}catch(e){fail(e);return;}
+  const R=r.rows,tot=R.reduce((a,x)=>a+x.net,0),ex=BL().invoices.some(i=>i.Month===m&&i.Status!=='Void');
+  modal(LX('ຄິດໄລ່ເງິນ ','Charges for ')+bMonLbl(m),`<p class="small muted" style="margin-top:0">${LX('ກວດຕົວເລກກ່ອນ. ກົດ "ອອກໃບແຈ້ງໜີ້" ຈຶ່ງບັນທຶກ.','Check the figures first. Nothing is saved until you press "Issue invoices".')}${ex?' <b style="color:#d97706">'+LX('ໃບແຈ້ງໜີ້ເກົ່າຂອງເດືອນນີ້ທີ່ຍັງບໍ່ໄດ້ຈ່າຍ ຈະຖືກຍົກເລີກ ແລະ ອອກໃໝ່.','Unpaid invoices of this month will be voided and re-issued.')+'</b>':''}</p>
+   <div class="tbl-wrap" style="max-height:52vh;overflow:auto"><table class="tbl"><thead><tr><th>${LX('ຊື່','Name')}</th><th>${LX('ຫ້ອງ','Room')}</th><th class="num">${LX('ມື້','Days')}</th>${['RENT','GARBAGE','ELEC','WATER'].map(c=>`<th class="num">${esc(LX(B_LINE[c][0],B_LINE[c][1]))}</th>`).join('')}<th class="num">${LX('ອາຫານ','Meals')}</th><th class="num">${LX('ອື່ນໆ','Other')}</th><th class="num">${LX('ຊ່ວຍຈ່າຍ','Subsidy')}</th><th class="num">${LX('ຕ້ອງຈ່າຍ','Net')}</th></tr></thead>
+   <tbody>${R.map(x=>{const g=c=>x.lines.filter(l=>c(l.code)).reduce((a,l)=>a+l.amount,0);const room=dRoom(x.room);
+     return `<tr><td><b>${esc(x.name)}</b><div class="small muted">${x.type==='Employee'?esc(x.emp):LX('ຄົນນອກ','Outsider')} · ${esc(bPM(x.pay))}</div></td><td>${room?esc(room.RoomNo):'–'}</td><td class="num">${x.days}</td>${['RENT','GARBAGE','ELEC','WATER'].map(c=>`<td class="num">${kip(g(k=>k===c))}</td>`).join('')}<td class="num">${kip(g(k=>k.indexOf('MEAL')===0))}</td><td class="num">${kip(g(k=>k[0]==='X'))}</td><td class="num">${x.subsidy?'−'+kip(x.subsidy):'–'}</td><td class="num"><b>${kip(x.net)}</b></td></tr>`;}).join('')||`<tr><td colspan="11" class="empty">${LX('ບໍ່ມີຜູ້ພັກ ຫຼື ຄ່າໃຊ້ຈ່າຍໃນເດືອນນີ້','No residents or charges this month')}</td></tr>`}</tbody>
+   <tfoot><tr><td colspan="10"><b>${LX('ລວມ','Total')} (${R.length} ${LX('ຄົນ','people')})</b></td><td class="num"><b>${kip(tot)}</b></td></tr></tfoot></table></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button>${R.length?`<button class="btn pri" data-act="bRun">${ic('check',14)} ${LX('ອອກໃບແຈ້ງໜີ້','Issue invoices')}</button>`:''}`,'xl');
+}
+async function bRun(){const m=S.f.dorm.bm,ex=BL().invoices.some(i=>i.Month===m&&i.Status!=='Void');
+  try{const r=await call('dorm.billRun',{month:m,replace:ex});BL().invoices.forEach(i=>{if(r.voided.includes(i.InvoiceID)){i.Status='Void';i.VoidReason='Re-run';}});bPutInv(r.invoices);closeModal();toast(LX('ອອກໃບແຈ້ງໜີ້ ','Issued ')+r.invoices.length,'ok');bInvoices();}
+  catch(e){fail(e);}}
+function bInv(id){
+  const i=BL().invoices.find(x=>x.InvoiceID===id);if(!i)return;const P=BL().payments.filter(p=>p.InvoiceID===id).sort((a,b)=>String(a.CreatedAt).localeCompare(String(b.CreatedAt)));
+  const bal=bBal(i),room=dRoom(i.RoomID);
+  modal(LX('ໃບແຈ້ງໜີ້ ','Invoice ')+i.InvoiceID,`<div class="dm-rinfo"><span><b>${esc(i.Name)}</b> · ${esc(i.PersonType==='Employee'?i.EmployeeID:LX('ຄົນນອກ','Outsider'))}</span><span>${LX('ເດືອນ','Month')} ${esc(bMonLbl(i.Month))}</span><span>${LX('ຫ້ອງ','Room')} ${room?esc(room.RoomNo):'–'} · ${esc(i.Days)} ${LX('ມື້','days')}</span>${bBadge(i.Status)}</div>
+   <table class="tbl" style="margin-top:12px"><thead><tr><th>${LX('ລາຍການ','Item')}</th><th class="num">${LX('ຈຳນວນ','Qty')}</th><th class="num">${LX('ເງິນ','Amount')}</th></tr></thead><tbody>
+   ${bLines(i).map(l=>`<tr><td>${esc(bLine(l))}</td><td class="num">${l.qty?esc(l.qty):''}</td><td class="num">${kip(l.amount)}</td></tr>`).join('')}
+   <tr><td colspan="2">${LX('ລວມ','Gross')}</td><td class="num">${kip(i.Gross)}</td></tr>${Number(i.Subsidy)?`<tr><td colspan="2">${LX('ບໍລິສັດຊ່ວຍຈ່າຍ','Company subsidy')}</td><td class="num">−${kip(i.Subsidy)}</td></tr>`:''}
+   <tr><td colspan="2"><b>${LX('ຕ້ອງຈ່າຍ','Amount due')}</b></td><td class="num"><b>${kip(i.Net)}</b></td></tr><tr><td colspan="2">${LX('ຈ່າຍແລ້ວ','Paid')}</td><td class="num">${kip(i.Paid)}</td></tr>
+   <tr><td colspan="2"><b>${LX('ຄ້າງ','Balance')}</b></td><td class="num"><b style="color:${bal?'#dc2626':'#16a34a'}">${kip(bal)}</b></td></tr></tbody></table>
+   <p class="small muted">${LX('ວິທີຈ່າຍ','Payment method')}: <b>${esc(bPM(i.PayMethod))}</b> · ${LX('ກຳນົດຈ່າຍ','Due')} ${fmtD(i.DueDate)}${i.VoidReason?' · '+LX('ເຫດຜົນຍົກເລີກ: ','Void reason: ')+esc(i.VoidReason):''}</p>
+   ${P.length?`<h3 style="font-size:14px;margin:12px 0 6px">${LX('ການຈ່າຍ','Payments')}</h3><table class="tbl"><tbody>${P.map(p=>`<tr><td>${esc(p.ReceiptNo||p.PaymentID)}</td><td>${fmtD(p.Date)}</td><td>${esc(bPMp(p.Method))}</td><td class="num">${kip(p.Amount)}</td><td>${bBadge(p.Status)}</td>
+     <td style="white-space:nowrap;text-align:right">${p.Status==='Pending'&&canConfirm()?`<button class="btn sm pri" data-act="bPayConfirm" data-arg="${esc(p.PaymentID)}|${esc(id)}">${LX('ຢືນຢັນ','Confirm')}</button> `:''}${p.Status==='Confirmed'?`<button class="btn sm" data-act="bReceipt" data-arg="${esc(p.PaymentID)}">${LX('ໃບຮັບເງິນ','Receipt')}</button> `:''}${p.Status!=='Void'&&(p.Status==='Pending'||canConfirm())?`<button class="btn sm danger" data-act="bPayVoid" data-arg="${esc(p.PaymentID)}|${esc(id)}">${LX('ຍົກເລີກ','Void')}</button>`:''}</td></tr>`).join('')}</tbody></table>`:''}
+   ${bal&&i.Status!=='Void'&&canBill()?`<h3 style="font-size:14px;margin:14px 0 6px">${LX('ຮັບເງິນ','Receive payment')}</h3><div class="form" style="padding:0">
+     <div class="fld"><label class="req">${LX('ຈຳນວນເງິນ','Amount')}</label><input class="in" type="number" id="bpA" min="1" value="${bal}"></div>
+     <div class="fld"><label>${LX('ວັນທີ','Date')}</label><input class="in" type="date" id="bpD" value="${todayStr()}"></div>
+     <div class="fld"><label>${LX('ວິທີ','Method')}</label><select class="in" id="bpM">${opts(['Cash','Transfer','Payroll','Deposit'].map(k=>[k,bPMp(k)]),i.PayMethod==='Payroll'?'Payroll':'Cash')}</select></div>
+     <div class="fld"><label>${LX('ເລກອ້າງອີງ (ໂອນ)','Reference (transfer)')}</label><input class="in" id="bpR" maxlength="60"></div></div>
+     <p class="small muted">${canConfirm()?LX('ເຈົ້າມີສິດຢືນຢັນ: ບັນທຶກແລ້ວ ຈະຢືນຢັນ ແລະ ອອກເລກໃບຮັບເງິນທັນທີ.','You can confirm: saving confirms it and issues a receipt number.'):LX('ບັນທຶກແລ້ວ ຈະລໍຖ້າຝ່າຍການເງິນຢືນຢັນ.','Saved payments wait for Finance to confirm.')}</p>`:''}`,
+   `${i.Status!=='Void'&&canBill()&&!P.some(p=>p.Status!=='Void')?`<button class="btn danger" data-act="bInvVoid" data-arg="${esc(id)}">${LX('ຍົກເລີກໃບແຈ້ງໜີ້','Void invoice')}</button>`:''}<span class="grow"></span>
+    <button class="btn" data-act="bPrintOne" data-arg="${esc(id)}">${ic('download',14)} ${LX('ພິມ','Print')}</button>${bal&&i.Status!=='Void'&&canBill()?`<button class="btn pri" data-act="bPaySave" data-arg="${esc(id)}">${LX('ບັນທຶກການຈ່າຍ','Save payment')}</button>`:''}<button class="btn" data-act="closeModal">${t('close')}</button>`,'lg');
+}
+async function bPaySave(id){const p={invoiceId:id,amount:$('#bpA').value,date:$('#bpD').value,method:$('#bpM').value,ref:$('#bpR').value.trim()};
+  try{const r=await call('dorm.payAdd',p);bPutPay(r.payment);bPutInv(r.invoice);toast(r.payment.Status==='Confirmed'?LX('ຮັບເງິນແລ້ວ · ','Received · ')+r.payment.ReceiptNo:LX('ບັນທຶກແລ້ວ ລໍຖ້າຢືນຢັນ','Saved, waiting for confirmation'),'ok');bInv(id);dmBillRefresh();}catch(e){fail(e);}}
+async function bPayConfirm(a){const[pid,iid]=String(a).split('|');try{const r=await call('dorm.payConfirm',{id:pid});bPutPay(r.payment);bPutInv(r.invoice);toast(LX('ຢືນຢັນແລ້ວ · ','Confirmed · ')+r.payment.ReceiptNo,'ok');if(iid&&$('#ov'))bInv(iid);dmBillRefresh();}catch(e){fail(e);}}
+function bReason(title,act,arg){modal(title,`<div class="fld"><label class="req">${LX('ເຫດຜົນ','Reason')}</label><input class="in" id="bVr" maxlength="200" style="width:100%"></div>`,
+  `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn danger" data-act="${act}" data-arg="${esc(arg)}">${LX('ຢືນຢັນຍົກເລີກ','Confirm void')}</button>`,'sm');}
+const bPayVoid=a=>bReason(LX('ຍົກເລີກການຈ່າຍ','Void payment'),'bPayVoidGo',a);
+async function bPayVoidGo(a){const[pid,iid]=String(a).split('|');const why=($('#bVr')||{}).value||'';if(!why.trim()){toast(LX('ກະລຸນາໃສ່ເຫດຜົນ','Reason is required'),'bad');return;}
+  try{const r=await call('dorm.payVoid',{id:pid,reason:why});bPutPay(r.payment);bPutInv(r.invoice);toast(LX('ຍົກເລີກແລ້ວ','Voided'),'ok');if(iid)bInv(iid);else closeModal();dmBillRefresh();}catch(e){fail(e);}}
+const bInvVoid=id=>bReason(LX('ຍົກເລີກໃບແຈ້ງໜີ້','Void invoice'),'bInvVoidGo',id);
+async function bInvVoidGo(id){const why=($('#bVr')||{}).value||'';if(!why.trim()){toast(LX('ກະລຸນາໃສ່ເຫດຜົນ','Reason is required'),'bad');return;}
+  try{const r=await call('dorm.invVoid',{id,reason:why});bPutInv(r);closeModal();toast(LX('ຍົກເລີກແລ້ວ','Voided'),'ok');dmBillRefresh();}catch(e){fail(e);}}
+async function bPayrollPost(){const m=S.f.dorm.bm,L=BL().invoices.filter(i=>i.Month===m&&i.PayMethod==='Payroll'&&bBal(i)>0),tot=L.reduce((a,i)=>a+bBal(i),0);
+  if(!await ask(LX(`ບັນທຶກວ່າ ${L.length} ຄົນ ຖືກຫັກເງິນເດືອນແລ້ວ ລວມ ${kip(tot)} ກີບ (${bMonLbl(m)})?`,`Record payroll deduction for ${L.length} people, total ${kip(tot)} (${bMonLbl(m)})?`)))return;
+  try{const r=await call('dorm.payrollPost',{month:m});bPutPay(r.payments);bPutInv(r.invoices);toast(LX('ບັນທຶກແລ້ວ ','Recorded ')+r.payments.length,'ok');bInvoices();}catch(e){fail(e);}}
+function dmBillRefresh(){if(S.page==='dorm'&&S.f.dorm&&S.f.dorm.tab==='bill'){const t=S.f.dorm.btab;({inv:bInvoices,pay:bPayments,due:bDue,util:bUtil,dep:bDeposits,cfg:bSettings}[t]||bInvoices)();}}
+function bInvXls(){const m=S.f.dorm.bm,L=BL().invoices.filter(i=>i.Month===m&&i.Status!=='Void').map(bInvRow);
+  const codes=[];L.forEach(i=>bLines(i).forEach(l=>{if(!codes.find(c=>c.code===l.code))codes.push(l);}));
+  exportXlsx('KGS_Dorm_Invoices_'+m,[{name:LX('ໃບແຈ້ງໜີ້ ','Invoices ')+m,head:[LX('ເລກທີ','No.'),LX('ຊື່','Name'),LX('ລະຫັດ','ID'),LX('ປະເພດ','Type'),LX('ຫ້ອງ','Room'),LX('ມື້','Days'),...codes.map(bLine),LX('ລວມ','Gross'),LX('ຊ່ວຍຈ່າຍ','Subsidy'),LX('ຕ້ອງຈ່າຍ','Net'),LX('ຈ່າຍແລ້ວ','Paid'),LX('ຄ້າງ','Balance'),LX('ວິທີຈ່າຍ','Method'),fl('Status')],
+    rows:L.map(i=>{const ls=bLines(i);return[i.InvoiceID,i.Name,i.EmployeeID,i.PersonType==='Employee'?LX('ພະນັກງານ','Employee'):LX('ຄົນນອກ','Outsider'),i._room,Number(i.Days),...codes.map(c=>{const l=ls.find(x=>x.code===c.code);return l?l.amount:0;}),Number(i.Gross),Number(i.Subsidy),i._net,i._paid,i._bal,bPM(i.PayMethod),LX((B_ST[i.Status]||[0,i.Status])[1],i.Status)];})}]);}
+function bPayrollXls(){const m=S.f.dorm.bm,L=BL().invoices.filter(i=>i.Month===m&&i.PayMethod==='Payroll'&&bBal(i)>0);
+  exportXlsx('KGS_Dorm_Payroll_'+m,[{name:LX('ຫັກເງິນເດືອນ ','Payroll ')+m,head:[LX('ລະຫັດພະນັກງານ','Employee ID'),LX('ຊື່','Name'),fl('Division'),LX('ເລກໃບແຈ້ງໜີ້','Invoice'),LX('ຈຳນວນຫັກ (ກີບ)','Deduct (LAK)')],
+    rows:L.map(i=>{const e=empById(i.EmployeeID);return[i.EmployeeID,i.Name,e?e.Division:'',i.InvoiceID,bBal(i)];}).concat([[LX('ລວມ','Total'),'','','',L.reduce((a,i)=>a+bBal(i),0)]])}]);}
+
+/* ----- prints: invoice + receipt (Times New Roman + Phetsarath OT) ----- */
+function bPrintPages(pages){let pa=$('#printArea');if(!pa){pa=document.createElement('div');pa.id='printArea';document.body.appendChild(pa);}pa.innerHTML=pages.join('');H.printBadgesGo();}
+function bHead(title,no){const logo=hasLogo()?`<img src="${esc(cfg('logo'))}" alt="">`:`<span class="bl">KGS</span>`;
+  return `<div class="pr-head">${logo}<div><b>${esc(companyName())}</b><span>${LX('ຫໍພັກພະນັກງານ','Staff dormitory')}</span></div><div class="pr-date">${esc(no)}<br>${t('es_printed')}: ${fmtD(todayStr())}</div></div><h1>${title}</h1>`;}
+function bInvPage(i){const room=dRoom(i.RoomID),bal=bBal(i);
+  return `<div class="pr-page bp-page">${bHead(LX('ໃບແຈ້ງໜີ້ຄ່າຫໍພັກ','Dormitory invoice'),i.InvoiceID)}
+   <table class="bp-kv"><tr><td>${LX('ຊື່','Name')}</td><td><b>${esc(i.Name)}</b> ${i.EmployeeID?'('+esc(i.EmployeeID)+')':''}</td><td>${LX('ເດືອນ','Month')}</td><td><b>${esc(bMonLbl(i.Month))}</b></td></tr>
+   <tr><td>${LX('ຫ້ອງ','Room')}</td><td>${room?esc(room.Building+' · '+room.RoomNo):'–'} · ${esc(i.Days)} ${LX('ມື້','days')}</td><td>${LX('ກຳນົດຈ່າຍ','Due date')}</td><td>${fmtD(i.DueDate)}</td></tr></table>
+   <table class="pr-t"><thead><tr><th>#</th><th>${LX('ລາຍການ','Item')}</th><th style="text-align:right">${LX('ຈຳນວນ','Qty')}</th><th style="text-align:right">${LX('ເງິນ (ກີບ)','Amount (LAK)')}</th></tr></thead><tbody>
+   ${bLines(i).map((l,k)=>`<tr><td>${k+1}</td><td>${esc(bLine(l))}</td><td style="text-align:right">${l.qty?esc(l.qty):''}</td><td style="text-align:right">${kip(l.amount)}</td></tr>`).join('')}
+   <tr><td></td><td>${LX('ລວມ','Gross')}</td><td></td><td style="text-align:right">${kip(i.Gross)}</td></tr>${Number(i.Subsidy)?`<tr><td></td><td>${LX('ບໍລິສັດຊ່ວຍຈ່າຍ','Company subsidy')}</td><td></td><td style="text-align:right">−${kip(i.Subsidy)}</td></tr>`:''}
+   <tr class="bp-tot"><td></td><td>${LX('ຕ້ອງຈ່າຍ','Amount due')}</td><td></td><td style="text-align:right">${kip(i.Net)}</td></tr>${Number(i.Paid)?`<tr><td></td><td>${LX('ຈ່າຍແລ້ວ','Paid')}</td><td></td><td style="text-align:right">${kip(i.Paid)}</td></tr><tr class="bp-tot"><td></td><td>${LX('ຄ້າງ','Balance')}</td><td></td><td style="text-align:right">${kip(bal)}</td></tr>`:''}</tbody></table>
+   <p class="dm-prn">${LX('ວິທີຈ່າຍ','Payment method')}: <b>${esc(bPM(i.PayMethod))}</b></p>
+   <table class="pr-sign"><tr><td>${LX('ຜູ້ອອກໃບແຈ້ງໜີ້','Issued by')}<br><br>.........................</td><td>${LX('ຜູ້ພັກ','Resident')}<br><br>.........................</td><td>${LX('ການເງິນ','Finance')}<br><br>.........................</td></tr></table></div>`;}
+function bReceipt(pid){const p=BL().payments.find(x=>x.PaymentID===pid);if(!p)return;const i=BL().invoices.find(x=>x.InvoiceID===p.InvoiceID)||{};
+  bPrintPages([`<div class="pr-page bp-page">${bHead(LX('ໃບຮັບເງິນ','Receipt'),p.ReceiptNo)}<table class="bp-kv"><tr><td>${LX('ໄດ້ຮັບເງິນຈາກ','Received from')}</td><td><b>${esc(i.Name||'')}</b> ${i.EmployeeID?'('+esc(i.EmployeeID)+')':''}</td></tr>
+   <tr><td>${LX('ຈຳນວນເງິນ','Amount')}</td><td><b style="font-size:5mm">${kip(p.Amount)} ${LX('ກີບ','LAK')}</b></td></tr><tr><td>${LX('ສຳລັບ','For')}</td><td>${LX('ໃບແຈ້ງໜີ້ ','Invoice ')}${esc(p.InvoiceID)} · ${esc(i.Month?bMonLbl(i.Month):'')}</td></tr>
+   <tr><td>${LX('ວັນທີ','Date')}</td><td>${fmtD(p.Date)}</td></tr><tr><td>${LX('ວິທີ','Method')}</td><td>${esc(bPMp(p.Method))}${p.Ref?' · '+esc(p.Ref):''}</td></tr></table>
+   <table class="pr-sign"><tr><td>${LX('ຜູ້ຈ່າຍ','Paid by')}<br><br>.........................</td><td>${LX('ຜູ້ຮັບເງິນ','Received by')}<br><br>.........................</td><td>${LX('ຢືນຢັນໂດຍ','Confirmed by')}: ${esc(p.ConfirmedBy)}<br>${esc(String(p.ConfirmedAt).slice(0,16))}</td></tr></table></div>`]);}
+
+/* ----- payments ----- */
+function bPayments(){const f=S.f.dorm;f.bps=f.bps===undefined?'Pending':f.bps;
+  const L=BL().payments.filter(p=>(!f.bps||p.Status===f.bps)).map(p=>{const i=BL().invoices.find(x=>x.InvoiceID===p.InvoiceID)||{};return Object.assign({},p,{_n:i.Name||'',_a:Number(p.Amount)});});
+  $('#bBody').innerHTML=`<div class="bar no-print"><select class="in" id="bPs">${opts([['Pending',LX('ລໍຖ້າຢືນຢັນ','Waiting to confirm')],['Confirmed',LX('ຢືນຢັນແລ້ວ','Confirmed')],['Void',LX('ຍົກເລີກ','Void')]],f.bps,fl('Status')+': '+t('all'))}</select><span class="grow"></span>
+   ${!canConfirm()?`<span class="small muted">${LX('ສະເພາະຜູ້ມີສິດ ຈຶ່ງຢືນຢັນໄດ້','Only payment confirmers can confirm')}</span>`:''}</div><div id="bPl"></div>`;
+  $('#bPs').onchange=()=>{f.bps=$('#bPs').value;bPayments();};
+  $('#bPl').innerHTML=dataTable('bpay',[{k:'ReceiptNo',l:LX('ໃບຮັບເງິນ','Receipt')},{k:'Date',l:LX('ວັນທີ','Date'),r:p=>fmtD(p.Date)},{k:'_n',l:LX('ຊື່','Name')},{k:'InvoiceID',l:LX('ໃບແຈ້ງໜີ້','Invoice')},
+   {k:'_a',l:LX('ເງິນ','Amount'),cls:'num',r:p=>kip(p._a)},{k:'Method',l:LX('ວິທີ','Method'),r:p=>esc(bPMp(p.Method))},{k:'Status',l:fl('Status'),r:p=>bBadge(p.Status)},{k:'CreatedBy',l:LX('ບັນທຶກໂດຍ','By')},
+   {k:'_x',l:'',r:p=>`<span style="white-space:nowrap">${p.Status==='Pending'&&canConfirm()?`<button class="btn sm pri" data-act="bPayConfirm" data-arg="${esc(p.PaymentID)}|">${LX('ຢືນຢັນ','Confirm')}</button> `:''}${p.Status==='Confirmed'?`<button class="btn sm" data-act="bReceipt" data-arg="${esc(p.PaymentID)}">${LX('ໃບຮັບເງິນ','Receipt')}</button>`:''}</span>`}],
+   L,{sortK:'Date',sortD:-1,rowAttr:p=>`data-stop`});}
+
+/* ----- outstanding (ageing by days past due) ----- */
+function bDueRows(){const td=todayStr(),by={};
+  BL().invoices.filter(i=>bBal(i)>0).forEach(i=>{const k=i.PersonKey,o=by[k]||(by[k]={key:k,Name:i.Name,EmployeeID:i.EmployeeID,PersonType:i.PersonType,PayMethod:i.PayMethod,n:0,bal:0,b0:0,b30:0,b60:0,b90:0,oldest:i.DueDate});
+    const b=bBal(i),od=i.DueDate&&i.DueDate<td?Math.round((parseD(td)-parseD(i.DueDate))/864e5):0;o.n++;o.bal+=b;if(i.DueDate<o.oldest)o.oldest=i.DueDate;
+    if(od<=0)o.b0+=b;else if(od<=30)o.b30+=b;else if(od<=60)o.b60+=b;else o.b90+=b;});
+  return Object.values(by);}
+function bDueCols(){const k=v=>v?kip(v):'–';return[{k:'Name',l:LX('ຊື່','Name'),r:o=>`<b>${esc(o.Name)}</b><div class="small muted">${esc(o.EmployeeID||LX('ຄົນນອກ','Outsider'))}</div>`,x:o=>o.Name},
+  {k:'PayMethod',l:LX('ວິທີຈ່າຍ','Method'),r:o=>esc(bPM(o.PayMethod)),x:o=>bPM(o.PayMethod)},{k:'n',l:LX('ໃບ','Invoices'),cls:'num'},
+  {k:'b0',l:LX('ຍັງບໍ່ຮອດກຳນົດ','Not yet due'),cls:'num',r:o=>k(o.b0)},{k:'b30',l:LX('ກາຍ 1–30 ມື້','1–30 days late'),cls:'num',r:o=>k(o.b30)},{k:'b60',l:LX('31–60 ມື້','31–60 days'),cls:'num',r:o=>k(o.b60)},
+  {k:'b90',l:LX('ເກີນ 60 ມື້','Over 60 days'),cls:'num',r:o=>o.b90?`<b style="color:#dc2626">${kip(o.b90)}</b>`:'–'},{k:'bal',l:LX('ລວມຄ້າງ','Total due'),cls:'num',r:o=>`<b>${kip(o.bal)}</b>`}];}
+function bDue(){const L=bDueRows(),tot=L.reduce((a,o)=>a+o.bal,0),late=L.reduce((a,o)=>a+o.b30+o.b60+o.b90,0);
+  $('#bBody').innerHTML=`<div class="bar no-print"><span class="small">${LX('ຄ້າງທັງໝົດ','Total outstanding')} <b>${KIP(tot)}</b> · ${LX('ກາຍກຳນົດ','overdue')} <b style="color:#dc2626">${KIP(late)}</b> · ${L.length} ${LX('ຄົນ','people')}</span><span class="grow"></span><button class="btn" data-act="bDueXls">Excel</button></div><div id="bDl"></div>`;
+  $('#bDl').innerHTML=dataTable('bdue',bDueCols(),L,{sortK:'bal',sortD:-1});}
+
+/* ----- utility bills (+ ISO 14001 monthly usage) ----- */
+function bUtil(){const f=S.f.dorm;f.by=f.by||todayStr().slice(0,4);const U=BL().util,M=[];for(let k=1;k<=12;k++)M.push(f.by+'-'+String(k).padStart(2,'0'));
+  const g=(m,kind)=>U.find(u=>u.Month===m&&u.Kind===kind),billed=(m,code)=>BL().invoices.filter(i=>i.Month===m&&i.Status!=='Void').reduce((a,i)=>a+bLines(i).filter(l=>l.code===code).reduce((s,l)=>s+l.amount,0),0);
+  const Y=[];for(let y=+todayStr().slice(0,4);y>=+todayStr().slice(0,4)-4;y--)Y.push(String(y));
+  $('#bBody').innerHTML=`<div class="bar no-print"><select class="in" id="bY">${opts(Y,f.by)}</select><span class="small muted">${LX('ໃສ່ຍອດບິນ ໄຟຟ້າລາວ / ນ້ຳປະປາ ຂອງແຕ່ລະເດືອນ ກ່ອນອອກໃບແຈ້ງໜີ້. ລະບົບຫານໃຫ້ຕາມຈຳນວນຄົນ-ມື້.','Enter the EDL / Nam Papa bills before issuing invoices. They are split by person-days.')}</span><span class="grow"></span>${canBill()?`<button class="btn pri" data-act="bUtilForm">${ic('plus',15)} ${LX('ໃສ່ບິນ','Add bill')}</button>`:''}</div>
+   <div class="card" style="margin-bottom:14px"><h3>${LX('ຄ່າໄຟ / ນ້ຳ ລາຍເດືອນ (ISO 14001)','Electricity / water by month (ISO 14001)')}</h3>${SV.cols(M.map(m=>dMon(+m.slice(5))),[{n:LX('ໄຟ','Electricity'),c:'#f59e0b',v:M.map(m=>Number((g(m,'Electric')||{}).Amount||0)/1000)},{n:LX('ນ້ຳ','Water'),c:'#0891b2',v:M.map(m=>Number((g(m,'Water')||{}).Amount||0)/1000)}],200)}<p class="small muted" style="margin:4px 0 0">${LX('ໜ່ວຍ: ພັນກີບ','Unit: thousand LAK')}</p></div>
+   <div class="tbl-wrap"><table class="tbl"><thead><tr><th>${LX('ເດືອນ','Month')}</th><th class="num">${LX('ບິນໄຟ','Electric bill')}</th><th>${LX('ໜ່ວຍ','Units')}</th><th class="num">${LX('ເກັບຈາກຜູ້ພັກ','Charged')}</th><th class="num">${LX('ບິນນ້ຳ','Water bill')}</th><th>${LX('ໜ່ວຍ','Units')}</th><th class="num">${LX('ເກັບຈາກຜູ້ພັກ','Charged')}</th><th class="num">${LX('ບໍລິສັດຮັບພາລະ','Company share')}</th></tr></thead><tbody>
+   ${M.map(m=>{const e=g(m,'Electric'),w=g(m,'Water'),be=billed(m,'ELEC'),bw=billed(m,'WATER'),bill=Number((e||{}).Amount||0)+Number((w||{}).Amount||0);if(!e&&!w&&!be&&!bw)return '';
+     const cell=u=>u?`<span class="click" data-act="bUtilForm" data-arg="${esc(u.UtilID)}" style="text-decoration:underline dotted">${kip(u.Amount)}</span>`:'–';
+     return `<tr><td>${esc(bMonLbl(m))}</td><td class="num">${cell(e)}</td><td>${esc((e||{}).Units||'')}</td><td class="num">${kip(be)}</td><td class="num">${cell(w)}</td><td>${esc((w||{}).Units||'')}</td><td class="num">${kip(bw)}</td><td class="num">${kip(Math.max(0,bill-be-bw))}</td></tr>`;}).join('')||`<tr><td colspan="8" class="empty">${t('noData')}</td></tr>`}</tbody></table></div>`;
+  $('#bY').onchange=()=>{f.by=$('#bY').value;bUtil();};}
+function bUtilForm(id){const u=id?BL().util.find(x=>x.UtilID===id):null;
+  modal(u?LX('ແກ້ໄຂບິນ','Edit bill'):LX('ໃສ່ບິນໄຟ / ນ້ຳ','Add utility bill'),`<div class="form">
+   <div class="fld"><label class="req">${LX('ເດືອນ','Month')}</label><input class="in" type="month" id="buM" value="${esc(u?u.Month:bMonthNow())}" ${u?'disabled':''}></div>
+   <div class="fld"><label class="req">${LX('ປະເພດ','Kind')}</label><select class="in" id="buK" ${u?'disabled':''}>${opts([['Electric',LX('ໄຟຟ້າ','Electricity')],['Water',LX('ນ້ຳປະປາ','Water')]],u?u.Kind:'Electric')}</select></div>
+   <div class="fld"><label class="req">${LX('ຍອດບິນ (ກີບ)','Bill amount (LAK)')}</label><input class="in" type="number" id="buA" min="0" value="${esc(u?u.Amount:'')}"></div>
+   <div class="fld"><label>${LX('ໜ່ວຍທີ່ໃຊ້ (kWh / m³)','Units used (kWh / m³)')}</label><input class="in" id="buU" maxlength="20" value="${esc(u?u.Units:'')}"></div>
+   <div class="fld wide"><label>${LX('ເລກບິນ / ໝາຍເຫດ','Bill no. / notes')}</label><input class="in" id="buR" maxlength="60" value="${esc(u?u.BillRef:'')}"></div></div>
+   <p class="small muted">${LX('ຖ້າອອກໃບແຈ້ງໜີ້ເດືອນນັ້ນໄປແລ້ວ ຕ້ອງກົດ "ຄິດໄລ່ໃໝ່" ຈຶ່ງໃຊ້ຍອດໃໝ່.','If invoices for that month are already issued, press "Re-calculate" to apply the new amount.')}</p>`,
+   `${u&&canBill()?`<button class="btn danger" data-act="bUtilDel" data-arg="${esc(u.UtilID)}">${LX('ລຶບ','Delete')}</button><span class="grow"></span>`:''}<button class="btn" data-act="closeModal">${t('cancel')}</button>${canBill()?`<button class="btn pri" data-act="bUtilSave">${t('save')}</button>`:''}`);}
+async function bUtilSave(){const p={month:$('#buM').value,kind:$('#buK').value,amount:$('#buA').value,units:$('#buU').value.trim(),ref:$('#buR').value.trim()};
+  if(!p.month||p.amount===''){toast(LX('ກະລຸນາໃສ່ເດືອນ ແລະ ຍອດບິນ','Month and amount are required'),'bad');return;}
+  try{const r=await call('dorm.utilSave',p);bPut('UtilID',r);closeModal();toast(t('saved'),'ok');bUtil();}catch(e){fail(e);}}
+async function bUtilDel(id){if(!await ask(LX('ລຶບບິນນີ້?','Delete this bill?'),{danger:true}))return;try{await call('dorm.utilDelete',{id});BL().util=BL().util.filter(u=>u.UtilID!==id);closeModal();bUtil();}catch(e){fail(e);}}
+
+/* ----- deposits ----- */
+function bDeposits(){const L=BL().deposits.map(d=>Object.assign({},d,{_a:Number(d.Amount)}));const held=L.filter(d=>d.Status==='Held').reduce((a,d)=>a+d._a,0);
+  $('#bBody').innerHTML=`<div class="bar no-print"><span class="small">${LX('ເງິນມັດຈຳທີ່ຖືໄວ້','Deposits held')} <b>${KIP(held)}</b></span><span class="grow"></span>${canBill()?`<button class="btn pri" data-act="bDepForm">${ic('plus',15)} ${LX('ຮັບເງິນມັດຈຳ','Receive deposit')}</button>`:''}</div><div id="bDp"></div>`;
+  $('#bDp').innerHTML=dataTable('bdep',[{k:'DepositID',l:LX('ເລກທີ','No.')},{k:'Name',l:LX('ຊື່','Name')},{k:'_a',l:LX('ເງິນ','Amount'),cls:'num',r:d=>kip(d._a)},{k:'ReceivedDate',l:LX('ວັນຮັບ','Received'),r:d=>fmtD(d.ReceivedDate)},
+   {k:'Status',l:fl('Status'),r:d=>bBadge(d.Status)},{k:'RefundDate',l:LX('ວັນຄືນ','Refunded'),r:d=>d.RefundDate?fmtD(d.RefundDate):''},{k:'Deducted',l:LX('ຫັກ','Deducted'),cls:'num',r:d=>Number(d.Deducted)?kip(d.Deducted):''},
+   {k:'_x',l:'',r:d=>d.Status==='Held'&&canBill()?`<button class="btn sm" data-act="bDepRefund" data-arg="${esc(d.DepositID)}">${LX('ຄືນເງິນ','Refund')}</button>`:''}],L,{sortK:'ReceivedDate',sortD:-1,rowAttr:()=>'data-stop'});}
+function bDepForm(){const c=bCfgFor(null)||{},held=new Set(BL().deposits.filter(d=>d.Status==='Held').map(d=>d.PersonKey));
+  const L=dLive().filter(s=>!held.has(s.PersonType==='Employee'?'E:'+s.EmployeeID:'O:'+(String(s.IDCardNo||'').toUpperCase()||s.StayID)));
+  modal(LX('ຮັບເງິນມັດຈຳ','Receive deposit'),`<div class="form"><div class="fld wide"><label class="req">${LX('ຜູ້ພັກ','Resident')}</label><select class="in" id="bdS">${opts(L.map(s=>[s.StayID,dPerson(s).name+' · '+dRoomLabel(dRoom(s.RoomID))]),'','— '+LX('ເລືອກ','Choose')+' —')}</select></div>
+   <div class="fld"><label class="req">${LX('ຈຳນວນເງິນ','Amount')}</label><input class="in" type="number" id="bdA" min="1"></div><div class="fld"><label>${LX('ວັນທີ','Date')}</label><input class="in" type="date" id="bdD" value="${todayStr()}"></div>
+   <div class="fld"><label>${LX('ເລກໃບຮັບເງິນ','Receipt no.')}</label><input class="in" id="bdR" maxlength="40"></div></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="bDepSave">${t('save')}</button>`);
+  $('#bdS').onchange=()=>{const s=DM().stays.find(x=>x.StayID===$('#bdS').value);const d=(c.deposit||{});if(s&&!$('#bdA').value)$('#bdA').value=d[s.PersonType]||'';};}
+async function bDepSave(){const p={stayId:$('#bdS').value,amount:$('#bdA').value,date:$('#bdD').value,receiptNo:$('#bdR').value.trim()};if(!p.stayId){toast(LX('ກະລຸນາເລືອກຜູ້ພັກ','Choose a resident'),'bad');return;}
+  try{const r=await call('dorm.depAdd',p);bPut('DepositID',r);closeModal();toast(t('saved'),'ok');bDeposits();}catch(e){fail(e);}}
+function bDepRefund(id){const d=BL().deposits.find(x=>x.DepositID===id);if(!d)return;
+  modal(LX('ຄືນເງິນມັດຈຳ','Refund deposit')+' · '+d.Name,`<div class="form"><div class="fld"><label>${LX('ເງິນມັດຈຳ','Deposit')}</label><div><b>${kip(d.Amount)}</b></div></div>
+   <div class="fld"><label>${LX('ຫັກຄ່າເສຍຫາຍ / ໜີ້ຄ້າງ','Deduct (damage / unpaid)')}</label><input class="in" type="number" id="brD" min="0" value="0"></div><div class="fld"><label>${LX('ວັນທີຄືນ','Refund date')}</label><input class="in" type="date" id="brT" value="${todayStr()}"></div>
+   <div class="fld wide"><label>${LX('ເຫດຜົນທີ່ຫັກ','Reason for deduction')}</label><input class="in" id="brN" maxlength="200"></div></div>`,
+   `<button class="btn" data-act="closeModal">${t('cancel')}</button><button class="btn pri" data-act="bDepRefundGo" data-arg="${esc(id)}">${LX('ຢືນຢັນຄືນເງິນ','Confirm refund')}</button>`);}
+async function bDepRefundGo(id){try{const r=await call('dorm.depRefund',{id,deducted:$('#brD').value,date:$('#brT').value,notes:$('#brN').value.trim()});bPut('DepositID',r);closeModal();toast(LX('ຄືນເງິນ ','Refunded ')+kip(r.RefundAmount),'ok');bDeposits();}catch(e){fail(e);}}
+
+/* ----- billing settings (admin) ----- */
+function bSettings(){
+  const c=bCfgFor(null)||{rent:{},meal:{mode:'none'},other:[],subsidy:{Employee:{type:'pct',value:0},Outsider:{type:'pct',value:0}},deposit:{},round:1000,dueDays:10,confirmRoles:['admin','finance']};
+  const ad=role()==='admin',dis=ad?'':'disabled',N=(id,v)=>`<input class="in" type="number" min="0" id="${id}" value="${esc(v||0)}" ${dis}>`;
+  const sub=k=>{const s=(c.subsidy||{})[k]||{type:'pct',value:0};return `<div class="dp-inline"><select class="in" id="bs_s${k}t" ${dis}>${opts([['pct','%'],['fixed',LX('ກີບ / ເດືອນ','LAK / month')]],s.type)}</select>${N('bs_s'+k+'v',s.value)}</div>`;};
+  const hist=BL().cfg.slice().sort((a,b)=>String(b.CfgID).localeCompare(String(a.CfgID)));
+  $('#bBody').innerHTML=`<div class="card"><h3>${LX('ສະຖານະ','Status')}</h3>
+   <div class="form" style="padding:0"><div class="fld"><label>${LX('ເກັບເງິນຫໍພັກ','Dormitory billing')}</label><label class="dm-consent"><input type="checkbox" id="bs_on" ${c.Enabled?'checked':''} ${dis}> <b>${LX('ເປີດໃຊ້','Switched on')}</b></label></div>
+   <div class="fld"><label class="req">${LX('ໃຊ້ຕັ້ງແຕ່ເດືອນ','Applies from month')}</label><input class="in" type="month" id="bs_from" value="${esc(c.EffectiveFrom&&c.EffectiveFrom>bMonthNow()?c.EffectiveFrom:bMonthNow())}" ${dis}></div></div>
+   <p class="small muted" style="margin:6px 0 0">${LX('ທຸກຄັ້ງທີ່ບັນທຶກ ຈະເກັບເປັນສະບັບໃໝ່ ໃຊ້ຕັ້ງແຕ່ເດືອນທີ່ເລືອກ. ໃບແຈ້ງໜີ້ເກົ່າບໍ່ປ່ຽນ.','Each save is kept as a new version applying from the chosen month. Old invoices do not change.')}</p></div>
+   <div class="dsg2" style="margin-top:14px"><div class="card"><h3>${LX('ຄ່າຫ້ອງ (ຕໍ່ຫ້ອງ ຕໍ່ເດືອນ)','Room rent (per room per month)')}</h3><div class="form" style="padding:0">${Object.keys(DG).map(gk=>`<div class="fld"><label>${dGIcon(gk,12)} ${esc(dGender(gk))}</label>${N('bs_r'+gk,(c.rent||{})[gk])}</div>`).join('')}
+     <div class="fld"><label>${LX('ຄ່າຂີ້ເຫຍື້ອ (ຕໍ່ຫ້ອງ ຕໍ່ເດືອນ)','Garbage (per room per month)')}</label>${N('bs_g',c.garbage)}</div></div>
+     <p class="small muted">${LX('ຄ່າຫ້ອງ ແລະ ຂີ້ເຫຍື້ອ ຫານໃຫ້ຄົນໃນຫ້ອງ ຕາມຈຳນວນມື້ທີ່ພັກ. ຄ່າໄຟ / ນ້ຳ ໃສ່ຍອດບິນແຕ່ລະເດືອນ ໃນແຖບ "ບິນໄຟ / ນ້ຳ".','Rent and garbage are split among the room\'s occupants by days. Electricity / water come from the monthly bills.')}</p></div>
+    <div class="card"><h3>${LX('ຄ່າອາຫານ','Meals')}</h3><div class="dm-seg" style="margin-bottom:10px">${[['none',LX('ບໍ່ເກັບ','Not charged')],['per_meal',LX('ຕໍ່ຄາບ','Per meal')],['monthly',LX('ເໝົາເດືອນ','Monthly')]].map(([k,l])=>`<label><input type="radio" name="bs_mm" value="${k}" ${(c.meal||{}).mode===k?'checked':''} ${dis}> ${l}</label>`).join('')}</div>
+     <div class="form" style="padding:0"><div class="fld"><label>${LX('ເຊົ້າ / ຄາບ','Breakfast / meal')}</label>${N('bs_mB',(c.meal||{}).B)}</div><div class="fld"><label>${LX('ທ່ຽງ / ຄາບ','Lunch / meal')}</label>${N('bs_mL',(c.meal||{}).L)}</div>
+     <div class="fld"><label>${LX('ແລງ / ຄາບ','Dinner / meal')}</label>${N('bs_mD',(c.meal||{}).D)}</div><div class="fld"><label>${LX('ເໝົາເດືອນ / ຄົນ','Monthly / person')}</label>${N('bs_mM',(c.meal||{}).monthly)}</div></div></div></div>
+   <div class="dsg2" style="margin-top:14px"><div class="card"><h3>${LX('ບໍລິສັດຊ່ວຍຈ່າຍ (ສະຫວັດດີການ)','Company subsidy (welfare)')}</h3><div class="form" style="padding:0"><div class="fld"><label>${LX('ພະນັກງານ','Employees')}</label>${sub('Employee')}</div><div class="fld"><label>${LX('ຄົນນອກ','Outsiders')}</label>${sub('Outsider')}</div></div>
+     <p class="small muted">${LX('ເຊັ່ນ ພະນັກງານ 100% = ຟຣີ, 50% = ຈ່າຍເຄິ່ງໜຶ່ງ.','E.g. employees 100% = free, 50% = pay half.')}</p></div>
+    <div class="card"><h3>${LX('ເງິນມັດຈຳ ແລະ ອື່ນໆ','Deposit and other')}</h3><div class="form" style="padding:0"><div class="fld wide"><label class="dm-consent"><input type="checkbox" id="bs_dOn" ${(c.deposit||{}).on?'checked':''} ${dis}> ${LX('ເກັບເງິນມັດຈຳ','Take a deposit')}</label></div>
+     <div class="fld"><label>${LX('ມັດຈຳ ພະນັກງານ','Deposit, employee')}</label>${N('bs_dE',(c.deposit||{}).Employee)}</div><div class="fld"><label>${LX('ມັດຈຳ ຄົນນອກ','Deposit, outsider')}</label>${N('bs_dO',(c.deposit||{}).Outsider)}</div>
+     <div class="fld"><label>${LX('ປັດເສດເງິນ','Round to')}</label><select class="in" id="bs_rd" ${dis}>${opts([['1','1'],['100','100'],['500','500'],['1000','1,000']],String(c.round||1000))}</select></div>
+     <div class="fld"><label>${LX('ກຳນົດຈ່າຍ (ມື້ຫຼັງສິ້ນເດືອນ)','Due (days after month end)')}</label>${N('bs_dd',c.dueDays===undefined?10:c.dueDays)}</div>
+     <div class="fld wide"><label>${LX('ຜູ້ມີສິດຢືນຢັນການຮັບເງິນ (admin ສະເໝີ)','Who may confirm payments (admin always)')}</label><div class="dm-seg">${[['finance',t('r_finance')],['dorm',t('r_dorm')],['staff',t('r_staff')]].map(([k,l])=>`<label><input type="checkbox" class="bs_cr" value="${k}" ${(c.confirmRoles||['admin','finance']).includes(k)?'checked':''} ${dis}> ${esc(l)}</label>`).join('')}</div></div></div></div></div>
+   <div class="card" style="margin-top:14px"><h3>${LX('ຄ່າບໍລິການອື່ນ (ອິນເຕີເນັດ, ຊັກເຄື່ອງ, ແອ…)','Other charges (internet, laundry, air-con…)')}</h3><div id="bsOther">${(c.other||[]).map(bOtherRow).join('')}</div>${ad?`<button class="btn sm" data-act="bOtherAdd">${ic('plus',13)} ${LX('ເພີ່ມລາຍການ','Add item')}</button>`:''}</div>
+   ${ad?`<div class="bar" style="margin-top:14px"><span class="grow"></span><button class="btn pri" data-act="bCfgSave">${t('save')}</button></div>`:`<p class="note info small">${LX('ສະເພາະ admin ຈຶ່ງແກ້ໄຂການຕັ້ງຄ່າໄດ້.','Only an admin can change these settings.')}</p>`}
+   ${hist.length?`<details style="margin-top:12px"><summary class="small">${LX('ປະຫວັດການຕັ້ງຄ່າ','Settings history')} (${hist.length})</summary><table class="tbl"><tbody>${hist.map(h=>`<tr><td>${esc(h.CfgID)}</td><td>${LX('ໃຊ້ຕັ້ງແຕ່ ','From ')}${esc(bMonLbl(h.EffectiveFrom))}</td><td>${h.Enabled==='Yes'?bBadge('Confirmed').replace(/>[^<]*</,'>'+LX('ເປີດ','On')+'<'):bBadge('Void').replace(/>[^<]*</,'>'+LX('ປິດ','Off')+'<')}</td><td class="small muted">${esc(h.CreatedBy)} · ${esc(String(h.CreatedAt).slice(0,16))}</td></tr>`).join('')}</tbody></table></details>`:''}`;
+}
+function bOtherRow(o){const ad=role()==='admin',dis=ad?'':'disabled';o=o||{};return `<div class="bs-oth form" style="padding:0;margin-bottom:6px"><div class="fld"><input class="in bo-n" placeholder="${LX('ຊື່ລາຍການ','Item name')}" maxlength="60" value="${esc(o.name||'')}" ${dis}></div>
+  <div class="fld"><select class="in bo-b" ${dis}>${opts([['person',LX('ຕໍ່ຄົນ / ເດືອນ','Per person / month')],['room',LX('ຕໍ່ຫ້ອງ / ເດືອນ','Per room / month')]],o.basis||'person')}</select></div><div class="fld"><input class="in bo-a" type="number" min="0" value="${esc(o.amount||0)}" ${dis}></div></div>`;}
+async function bCfgSave(){const v=id=>$('#'+id).value,on=$('#bs_on').checked,from=v('bs_from');
+  if(!from){toast(LX('ກະລຸນາເລືອກເດືອນ','Choose the start month'),'bad');return;}
+  const cfg={rent:{},garbage:v('bs_g'),meal:{mode:(document.querySelector('[name=bs_mm]:checked')||{}).value||'none',B:v('bs_mB'),L:v('bs_mL'),D:v('bs_mD'),monthly:v('bs_mM')},
+    subsidy:{Employee:{type:v('bs_sEmployeet'),value:v('bs_sEmployeev')},Outsider:{type:v('bs_sOutsidert'),value:v('bs_sOutsiderv')}},deposit:{on:$('#bs_dOn').checked,Employee:v('bs_dE'),Outsider:v('bs_dO')},
+    round:v('bs_rd'),dueDays:v('bs_dd'),confirmRoles:[...document.querySelectorAll('.bs_cr:checked')].map(x=>x.value),
+    other:[...document.querySelectorAll('.bs-oth')].map(r=>({name:r.querySelector('.bo-n').value.trim(),basis:r.querySelector('.bo-b').value,amount:r.querySelector('.bo-a').value})).filter(o=>o.name)};
+  Object.keys(DG).forEach(gk=>cfg.rent[gk]=v('bs_r'+gk));
+  if(on&&!await ask(LX(`ເປີດເກັບເງິນຫໍພັກ ຕັ້ງແຕ່ເດືອນ ${bMonLbl(from)}?`,`Switch billing on from ${bMonLbl(from)}?`)))return;
+  try{const r=await call('dorm.cfgSave',{cfg,effectiveFrom:from,enabled:on});bPut('CfgID',r);toast(t('saved'),'ok');pageDorm();}catch(e){fail(e);}}
+
+/* ----- per-person history in the employee profile ----- */
+function dmEmpHTML(id){if(!canBill()&&!canDorm()&&role()!=='admin')return '';
+  const S1=DM().stays.filter(s=>s.EmployeeID===id&&!['Pending','Rejected'].includes(s.Status)).sort((a,b)=>String(b.CheckIn).localeCompare(String(a.CheckIn)));
+  const I=canBill()?BL().invoices.filter(i=>i.EmployeeID===id&&i.Status!=='Void').sort((a,b)=>String(b.Month).localeCompare(String(a.Month))):[];
+  if(!S1.length&&!I.length)return '';const bal=I.reduce((a,i)=>a+bBal(i),0);
+  return `<div class="card" style="margin-top:14px"><h3>${LX('ຫໍພັກ','Dormitory')}</h3>
+   ${S1.length?`<table class="tbl"><thead><tr><th>${LX('ຫ້ອງ','Room')}</th><th>${LX('ເຂົ້າ','In')}</th><th>${LX('ອອກ','Out')}</th><th>${fl('Status')}</th></tr></thead><tbody>${S1.map(s=>`<tr><td>${esc(dRoomLabel(dRoom(s.RoomID)))}</td><td>${fmtD(s.CheckIn)}</td><td>${s.CheckOut?fmtD(s.CheckOut):'–'}</td><td>${dBadge(s.Status)}</td></tr>`).join('')}</tbody></table>`:''}
+   ${I.length?`<h3 style="font-size:14px;margin:12px 0 6px">${LX('ໃບແຈ້ງໜີ້','Invoices')} · ${LX('ຄ້າງ','balance')} <b style="color:${bal?'#dc2626':'#16a34a'}">${KIP(bal)}</b></h3><table class="tbl"><tbody>${I.slice(0,12).map(i=>`<tr><td>${esc(bMonLbl(i.Month))}</td><td>${esc(i.InvoiceID)}</td><td class="num">${kip(i.Net)}</td><td class="num">${kip(i.Paid)}</td><td>${bBadge(i.Status)}</td></tr>`).join('')}</tbody></table>`:''}</div>`;}
+
+function billActions(){return{
+  bTab:k=>{S.f.dorm.btab=k;dmBill();},bPreview,bRun,bInv,bPaySave,bPayConfirm,bPayVoid,bPayVoidGo,bInvVoid,bInvVoidGo,bPayrollPost,bInvXls,bPayrollXls,
+  bPrintOne:id=>{const i=BL().invoices.find(x=>x.InvoiceID===id);if(i)bPrintPages([bInvPage(i)]);},
+  bPrintAll:()=>{const L=BL().invoices.filter(i=>i.Month===S.f.dorm.bm&&i.Status!=='Void').sort((a,b)=>String(a.InvoiceID).localeCompare(String(b.InvoiceID)));bPrintPages(L.map(bInvPage));},
+  bReceipt,bDueXls:()=>exportXlsx('KGS_Dorm_Outstanding_'+todayStr(),[tableToSheet(LX('ໜີ້ຄ້າງ','Outstanding'),bDueCols(),bDueRows())]),
+  bUtilForm:a=>bUtilForm(a||null),bUtilSave,bUtilDel,bDepForm,bDepSave,bDepRefund,bDepRefundGo,bCfgSave,
+  bOtherAdd:()=>{$('#bsOther').insertAdjacentHTML('beforeend',bOtherRow({}));}
+};}
 
 /* ================= FORMER EMPLOYEES (archive) ================= */
 function pageFormer(){
@@ -3916,7 +4197,7 @@ function tblRefresh(id){
   if(id==='rev'){H.loadReview();return;}
   S.refresh&&S.refresh();
 }
-Object.assign(H,dormActions());
+Object.assign(H,dormActions(),billActions());
 const PAGES={dorm:pageDorm,checkin:pageCheckin,dashboard:pageDashboard,employees:pageEmployees,former:pageFormer,external:pageExternal,activities:pageActivities,calendar:pageCalendar,attendance:pageAttendance,history:pageHistory,reports:pageReports,import:pageImport,settings:pageSettings,admin:pageAdmin};
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modalRoot').innerHTML)closeModal();});
 applyTheme();
